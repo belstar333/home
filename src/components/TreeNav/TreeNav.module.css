@@ -1,0 +1,118 @@
+.treeNav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 18px;
+    border: 1px solid rgba(15, 23, 38, 0.08);
+    border-radius: 24px;
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    box-shadow: 0 18px 40px -34px rgba(15, 23, 38, 0.35);
+}
+
+.treeHeader {
+    color: #0f172a;
+    font-family: var(--font-headline);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.tree,
+.subTree {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.treeItem {
+    position: relative;
+}
+
+.itemRow {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.nodeLink {
+    flex: 1;
+    padding: 12px 14px;
+    color: #475569;
+    text-decoration: none;
+    font-size: 0.94rem;
+    line-height: 1.45;
+    font-weight: 600;
+    border-radius: 16px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.itemRow:hover .nodeLink {
+    color: #0058bd;
+    background: rgba(0, 88, 189, 0.06);
+}
+
+.nodeLink.active {
+    color: #0058bd;
+    background: rgba(0, 88, 189, 0.08);
+}
+
+.itemRow:has(.active)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    border-radius: 999px;
+    background: #0058bd;
+}
+
+.toggle {
+    position: absolute;
+    right: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #64748b;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.itemRow:hover .toggle {
+    color: #0058bd;
+    background: rgba(0, 88, 189, 0.06);
+}
+
+.toggleOpen {
+    transform: rotate(45deg);
+}
+
+.subTree {
+    margin: 6px 0 10px 16px;
+    padding-left: 12px;
+    border-left: 1px solid rgba(15, 23, 38, 0.08);
+}
+
+.subTree .nodeLink {
+    padding: 9px 12px;
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+@media (max-width: 960px) {
+    .treeNav {
+        gap: 10px;
+        padding: 16px;
+        border-radius: 20px;
+    }
+}

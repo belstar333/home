@@ -1,0 +1,160 @@
+.footer {
+  background: #0f1923;
+  color: #fff;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 32px;
+}
+
+/* ── Brand Column ── */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brandLogo {
+  font-family: var(--font-headline);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.brandDesc {
+  color: #8a9bb2;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  max-width: 300px;
+}
+
+/* ── Link Columns ── */
+.linkCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.colTitle {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #6ba3e8;
+  margin-bottom: 20px;
+  letter-spacing: 0;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footerLink {
+  color: #8a9bb2;
+  font-size: 0.88rem;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: #adc6ff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ── Contact List ── */
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contactList li {
+  color: #8a9bb2;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contactList li .material-symbols-outlined {
+  font-size: 1rem;
+  color: #6ba3e8;
+}
+
+/* ── Bottom Bar ── */
+.bottomBar {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.copyright {
+  color: #5b6d82;
+  font-size: 0.82rem;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socialIcon {
+  color: #5b6d82;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.socialIcon:hover {
+  color: #fff;
+}
+
+.socialIcon .material-symbols-outlined {
+  font-size: 1.2rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    padding: 48px 24px;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 24px;
+  }
+}

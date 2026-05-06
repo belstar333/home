@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 24px;
+    gap: 56px;
+}
+
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    padding: 40px 0;
+    position: sticky;
+    top: 92px;
+    align-self: flex-start;
+}
+
+.main {
+    flex: 1;
+    min-width: 0;
+    padding: 40px 0;
+    max-width: 980px;
+}
+
+@media (max-width: 960px) {
+    .container {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 24px 0 0;
+        position: static;
+    }
+    .main {
+        padding: 12px 0 40px;
+        max-width: none;
+    }
+}

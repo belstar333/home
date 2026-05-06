@@ -1,0 +1,468 @@
+.page {
+    --page-accent: #0058bd;
+    --page-accent-strong: #0d2f57;
+    --page-accent-soft: rgba(0, 88, 189, 0.1);
+    --page-surface: #f4f8fd;
+    --page-surface-strong: #0f1726;
+    --page-border: rgba(15, 23, 38, 0.1);
+    --page-muted: rgba(15, 23, 38, 0.68);
+    --hero-min-height: clamp(420px, 58vh, 560px);
+    --hero-radius: 32px;
+    --hero-grid-columns: minmax(0, 1.3fr) minmax(300px, 0.78fr);
+    --hero-bg:
+        linear-gradient(135deg, var(--page-accent-strong) 0%, #101827 46%, var(--page-accent) 100%);
+    --hero-after:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 28%),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.06) 0,
+            rgba(255, 255, 255, 0.06) 1px,
+            transparent 1px,
+            transparent 72px
+        );
+    --hero-after-opacity: 0.24;
+    --hero-overlay-bg:
+        linear-gradient(90deg, rgba(8, 12, 23, 0.92) 0%, rgba(8, 12, 23, 0.74) 42%, rgba(8, 12, 23, 0.24) 100%),
+        radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.16), transparent 32%);
+    --hero-image-opacity: 0.18;
+    --hero-content-max: 760px;
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(8, 12, 23, 0.3));
+    --hero-proof-border: rgba(255, 255, 255, 0.1);
+    --panel-radius: 28px;
+    --panel-bg: linear-gradient(180deg, var(--page-surface), rgba(255, 255, 255, 0.78));
+    --panel-shadow: 0 20px 48px -40px rgba(15, 23, 38, 0.35);
+    --card-radius: 24px;
+    --card-bg: rgba(255, 255, 255, 0.82);
+    --card-shadow: 0 14px 36px -32px rgba(15, 23, 38, 0.45);
+    --card-accent-inset: 0 auto auto 0;
+    --card-accent-width: 100%;
+    --card-accent-height: 4px;
+    --card-accent-radius: 24px 24px 0 0;
+    --card-accent-bg: linear-gradient(90deg, var(--page-accent), transparent 90%);
+    --list-card-bg: rgba(255, 255, 255, 0.82);
+    --process-card-bg: rgba(255, 255, 255, 0.82);
+    --timeline-card-bg: rgba(255, 255, 255, 0.88);
+    --table-bg: rgba(255, 255, 255, 0.88);
+    --table-head-bg: color-mix(in srgb, var(--page-accent-soft) 56%, white);
+    --faq-bg: rgba(255, 255, 255, 0.88);
+    --contact-aside-bg: color-mix(in srgb, var(--page-accent-soft) 68%, white);
+    --form-bg: rgba(255, 255, 255, 0.88);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.page[data-page-theme="service"] {
+    --page-accent: #0058bd;
+    --page-accent-strong: #0c2344;
+    --page-accent-soft: rgba(0, 88, 189, 0.12);
+    --page-surface: #f4f8fd;
+}
+
+.page[data-page-theme="server"] {
+    --page-accent: #2158d6;
+    --page-accent-strong: #112c6e;
+    --page-accent-soft: rgba(33, 88, 214, 0.12);
+    --page-surface: #eef4ff;
+}
+
+.page[data-page-theme="network"] {
+    --page-accent: #0f766e;
+    --page-accent-strong: #0e3b39;
+    --page-accent-soft: rgba(15, 118, 110, 0.12);
+    --page-surface: #eef9f7;
+}
+
+.page[data-page-theme="storage"] {
+    --page-accent: #355cc9;
+    --page-accent-strong: #1b2f67;
+    --page-accent-soft: rgba(53, 92, 201, 0.12);
+    --page-surface: #eef3ff;
+}
+
+.page[data-page-theme="consulting"] {
+    --page-accent: #c26b18;
+    --page-accent-strong: #5d3206;
+    --page-accent-soft: rgba(194, 107, 24, 0.14);
+    --page-surface: #fdf6ee;
+}
+
+.page[data-page-theme="maintenance"] {
+    --page-accent: #c2410c;
+    --page-accent-strong: #61240c;
+    --page-accent-soft: rgba(194, 65, 12, 0.12);
+    --page-surface: #fdf3ef;
+}
+
+.page[data-page-theme="solution"] {
+    --page-accent: #1f74d6;
+    --page-accent-strong: #102850;
+    --page-accent-soft: rgba(31, 116, 214, 0.12);
+    --page-surface: #eff5ff;
+}
+
+.page[data-page-theme="product"] {
+    --page-accent: #305a86;
+    --page-accent-strong: #15253c;
+    --page-accent-soft: rgba(48, 90, 134, 0.12);
+    --page-surface: #f4f7fb;
+}
+
+.page[data-page-theme="about"] {
+    --page-accent: #8d5f34;
+    --page-accent-strong: #2d1d11;
+    --page-accent-soft: rgba(141, 95, 52, 0.12);
+    --page-surface: #f8f3ee;
+}
+
+.page[data-page-variant="service-overview"] {
+    --hero-min-height: clamp(450px, 60vh, 620px);
+    --hero-bg: linear-gradient(128deg, #08172f 0%, #124b93 45%, #2e8fe4 100%);
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(5, 12, 24, 0.9) 0%, rgba(5, 12, 24, 0.68) 44%, rgba(5, 12, 24, 0.18) 100%),
+        radial-gradient(circle at 82% 22%, rgba(135, 208, 255, 0.28), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(4, 19, 43, 0.42));
+}
+
+.page[data-page-variant="server-overview"] {
+    --page-accent: #2d66e4;
+    --page-accent-strong: #122554;
+    --page-accent-soft: rgba(45, 102, 228, 0.12);
+    --page-surface: #eef4ff;
+    --hero-min-height: clamp(470px, 62vh, 660px);
+    --hero-radius: 38px;
+    --hero-bg: linear-gradient(126deg, #0a1530 0%, #16377e 42%, #3f88ef 100%);
+    --hero-after:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 24%),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.08) 0,
+            rgba(255, 255, 255, 0.08) 1px,
+            transparent 1px,
+            transparent 86px
+        );
+    --hero-after-opacity: 0.18;
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(5, 11, 24, 0.94) 0%, rgba(5, 11, 24, 0.66) 48%, rgba(5, 11, 24, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(168, 218, 255, 0.24), transparent 30%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(10, 23, 55, 0.46));
+    --panel-radius: 30px;
+}
+
+.page[data-page-variant="network-overview"] {
+    --hero-min-height: clamp(455px, 60vh, 630px);
+    --hero-radius: 34px;
+    --hero-bg: linear-gradient(126deg, #071814 0%, #0d4d48 44%, #1ea390 100%);
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(5, 16, 13, 0.92) 0%, rgba(5, 16, 13, 0.64) 44%, rgba(5, 16, 13, 0.16) 100%),
+        radial-gradient(circle at 84% 18%, rgba(146, 255, 235, 0.22), transparent 32%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(7, 36, 33, 0.44));
+    --panel-radius: 30px;
+}
+
+.page[data-page-variant="storage-overview"] {
+    --page-accent: #355cc9;
+    --page-accent-strong: #1b2f67;
+    --page-accent-soft: rgba(53, 92, 201, 0.12);
+    --page-surface: #eef3ff;
+    --hero-min-height: clamp(455px, 60vh, 630px);
+    --hero-radius: 34px;
+    --hero-bg: linear-gradient(128deg, #0b142a 0%, #1b3a80 46%, #4b79f0 100%);
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(6, 10, 22, 0.93) 0%, rgba(6, 10, 22, 0.66) 44%, rgba(6, 10, 22, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(170, 199, 255, 0.22), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(13, 24, 58, 0.46));
+    --panel-radius: 30px;
+}
+
+.page[data-page-variant="consulting-overview"] {
+    --hero-min-height: clamp(455px, 60vh, 630px);
+    --hero-radius: 34px;
+    --hero-bg: linear-gradient(128deg, #201308 0%, #6d3a11 46%, #c98022 100%);
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(17, 10, 6, 0.93) 0%, rgba(17, 10, 6, 0.66) 44%, rgba(17, 10, 6, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(255, 214, 164, 0.2), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(55, 28, 8, 0.46));
+    --panel-radius: 30px;
+}
+
+.page[data-page-variant="maintenance-overview"] {
+    --hero-min-height: clamp(455px, 60vh, 630px);
+    --hero-radius: 34px;
+    --hero-bg: linear-gradient(128deg, #1a100b 0%, #6b2c14 44%, #c85a2b 100%);
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(16, 10, 7, 0.93) 0%, rgba(16, 10, 7, 0.64) 44%, rgba(16, 10, 7, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(255, 187, 159, 0.18), transparent 32%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(50, 20, 9, 0.46));
+    --panel-radius: 30px;
+}
+
+.page[data-page-variant="solution-overview"] {
+    --hero-min-height: clamp(470px, 63vh, 680px);
+    --hero-radius: 40px;
+    --hero-bg: linear-gradient(126deg, #08152d 0%, #123d76 42%, #2d8fda 100%);
+    --hero-after:
+        radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.12), transparent 18%),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.05) 0,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px,
+            transparent 82px
+        );
+    --hero-after-opacity: 0.24;
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(6, 12, 26, 0.93) 0%, rgba(6, 12, 26, 0.68) 44%, rgba(6, 12, 26, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(162, 228, 255, 0.2), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(10, 28, 58, 0.44));
+    --panel-radius: 30px;
+}
+
+.page[data-page-variant="product-overview"] {
+    --hero-min-height: clamp(465px, 62vh, 660px);
+    --hero-radius: 38px;
+    --hero-bg: linear-gradient(128deg, #0e1624 0%, #28456a 45%, #4f7da8 100%);
+    --hero-after:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 24%),
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.05) 0,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px,
+            transparent 48px
+        );
+    --hero-after-opacity: 0.22;
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(8, 12, 20, 0.94) 0%, rgba(8, 12, 20, 0.68) 44%, rgba(8, 12, 20, 0.16) 100%),
+        radial-gradient(circle at 82% 18%, rgba(197, 224, 255, 0.18), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(16, 25, 41, 0.44));
+    --panel-radius: 28px;
+}
+
+.page[data-page-variant="product-roseha"] {
+    --page-accent: #2b68d5;
+    --page-accent-strong: #12254e;
+    --page-accent-soft: rgba(43, 104, 213, 0.12);
+    --page-surface: #eef4ff;
+    --hero-radius: 34px;
+    --hero-bg: linear-gradient(128deg, #0b1630 0%, #1d3f84 46%, #3f86ef 100%);
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(7, 13, 26, 0.94) 0%, rgba(7, 13, 26, 0.66) 44%, rgba(7, 13, 26, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(176, 215, 255, 0.2), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(12, 28, 62, 0.46));
+    --panel-radius: 30px;
+}
+
+.page[data-page-variant="product-omniguard"] {
+    --page-accent: #9c4f24;
+    --page-accent-strong: #402014;
+    --page-accent-soft: rgba(156, 79, 36, 0.12);
+    --page-surface: #fcf4ef;
+    --hero-radius: 34px;
+    --hero-bg: linear-gradient(128deg, #170d09 0%, #4f2414 44%, #a55328 100%);
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(14, 9, 7, 0.94) 0%, rgba(14, 9, 7, 0.68) 44%, rgba(14, 9, 7, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(255, 208, 176, 0.18), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(46, 21, 11, 0.46));
+    --panel-radius: 28px;
+}
+
+.page[data-page-variant="about-overview"] {
+    --hero-grid-columns: 1fr;
+    --hero-content-max: 920px;
+    --hero-min-height: clamp(450px, 60vh, 640px);
+    --hero-radius: 38px;
+    --hero-bg: linear-gradient(128deg, #16100c 0%, #4a2d1a 46%, #8f6139 100%);
+    --hero-after:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 24%),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.04) 0,
+            rgba(255, 255, 255, 0.04) 1px,
+            transparent 1px,
+            transparent 82px
+        );
+    --hero-after-opacity: 0.2;
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(16, 10, 7, 0.94) 0%, rgba(16, 10, 7, 0.66) 44%, rgba(16, 10, 7, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(255, 226, 194, 0.18), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(42, 25, 15, 0.46));
+    --panel-radius: 30px;
+}
+
+.page[data-page-variant="about-vision"] {
+    --hero-grid-columns: 1fr;
+    --hero-content-max: 900px;
+    --page-accent: #8d643c;
+    --page-accent-strong: #2f2116;
+    --page-accent-soft: rgba(141, 100, 60, 0.12);
+    --page-surface: #faf5ef;
+    --hero-min-height: clamp(440px, 60vh, 620px);
+    --hero-radius: 36px;
+    --hero-bg: linear-gradient(128deg, #18110d 0%, #5a3821 46%, #a06f42 100%);
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(16, 11, 8, 0.94) 0%, rgba(16, 11, 8, 0.64) 44%, rgba(16, 11, 8, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(255, 225, 190, 0.2), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(46, 28, 17, 0.46));
+    --panel-radius: 32px;
+}
+
+.page[data-page-variant="about-history"] {
+    --hero-grid-columns: 1fr;
+    --hero-content-max: 900px;
+    --page-accent: #3f6987;
+    --page-accent-strong: #162634;
+    --page-accent-soft: rgba(63, 105, 135, 0.12);
+    --page-surface: #eef4f8;
+    --hero-min-height: clamp(440px, 60vh, 620px);
+    --hero-radius: 36px;
+    --hero-bg: linear-gradient(128deg, #0f1821 0%, #22425a 46%, #4c7da0 100%);
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(10, 16, 23, 0.94) 0%, rgba(10, 16, 23, 0.66) 44%, rgba(10, 16, 23, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(193, 223, 255, 0.18), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(21, 38, 52, 0.48));
+    --panel-radius: 30px;
+}
+
+.page[data-page-variant="about-partners"] {
+    --hero-grid-columns: 1fr;
+    --hero-content-max: 900px;
+    --page-accent: #215e70;
+    --page-accent-strong: #0f2931;
+    --page-accent-soft: rgba(33, 94, 112, 0.12);
+    --page-surface: #eef7f9;
+    --hero-min-height: clamp(440px, 60vh, 620px);
+    --hero-radius: 36px;
+    --hero-bg: linear-gradient(128deg, #09161a 0%, #17414c 46%, #2f7b90 100%);
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(7, 14, 17, 0.94) 0%, rgba(7, 14, 17, 0.66) 44%, rgba(7, 14, 17, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(170, 234, 255, 0.18), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(14, 39, 47, 0.48));
+    --panel-radius: 30px;
+}
+
+.page[data-page-variant="about-location"] {
+    --hero-grid-columns: 1fr;
+    --hero-content-max: 900px;
+    --page-accent: #1c6b61;
+    --page-accent-strong: #14322f;
+    --page-accent-soft: rgba(28, 107, 97, 0.12);
+    --page-surface: #eef8f5;
+    --hero-min-height: clamp(430px, 58vh, 600px);
+    --hero-radius: 34px;
+    --hero-bg: linear-gradient(128deg, #0c1817 0%, #1f4b44 46%, #2c897b 100%);
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(9, 16, 14, 0.94) 0%, rgba(9, 16, 14, 0.66) 44%, rgba(9, 16, 14, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(187, 255, 238, 0.18), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(17, 46, 42, 0.46));
+    --panel-radius: 28px;
+}
+
+.page[data-page-variant="contact-page"] {
+    --hero-grid-columns: 1fr;
+    --hero-content-max: 900px;
+    --page-accent: #165c83;
+    --page-accent-strong: #142635;
+    --page-accent-soft: rgba(22, 92, 131, 0.12);
+    --page-surface: #eef5fa;
+    --hero-min-height: clamp(430px, 58vh, 600px);
+    --hero-radius: 34px;
+    --hero-bg: linear-gradient(128deg, #0e1923 0%, #1f4660 46%, #2f7ea8 100%);
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(8, 14, 21, 0.94) 0%, rgba(8, 14, 21, 0.66) 44%, rgba(8, 14, 21, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(181, 224, 255, 0.18), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(20, 38, 53, 0.46));
+    --panel-radius: 28px;
+}
+
+.page[data-page-variant="server-build"] {
+    --page-accent: #bb621f;
+    --page-accent-strong: #4e2f14;
+    --page-accent-soft: rgba(187, 98, 31, 0.12);
+    --page-surface: #fff7ef;
+    --hero-radius: 24px;
+    --hero-bg: linear-gradient(132deg, #1d1410 0%, #714625 48%, #d37a29 100%);
+    --hero-after:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 26%),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.03) 0,
+            rgba(255, 255, 255, 0.03) 2px,
+            transparent 2px,
+            transparent 58px
+        );
+    --hero-after-opacity: 0.24;
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(17, 11, 8, 0.94) 0%, rgba(17, 11, 8, 0.7) 46%, rgba(17, 11, 8, 0.18) 100%),
+        radial-gradient(circle at 84% 20%, rgba(255, 213, 160, 0.22), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(44, 22, 8, 0.46));
+    --panel-radius: 22px;
+    --panel-bg: linear-gradient(180deg, #fffaf4, rgba(255, 248, 241, 0.9));
+    --card-radius: 20px;
+    --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 249, 244, 0.92));
+    --card-accent-inset: 20px auto 20px 18px;
+    --card-accent-width: 4px;
+    --card-accent-height: auto;
+    --card-accent-radius: 999px;
+    --card-accent-bg: linear-gradient(180deg, var(--page-accent), transparent 90%);
+    --table-head-bg: rgba(187, 98, 31, 0.12);
+}
+
+.page[data-page-variant="server-virtualization"] {
+    --page-accent: #0f8f9d;
+    --page-accent-strong: #0a3e45;
+    --page-accent-soft: rgba(15, 143, 157, 0.12);
+    --page-surface: #edf9fb;
+    --hero-radius: 36px;
+    --hero-bg: linear-gradient(132deg, #071c22 0%, #0d5962 46%, #16a6b5 100%);
+    --hero-after:
+        radial-gradient(circle at 24% 20%, rgba(255, 255, 255, 0.12), transparent 18%),
+        radial-gradient(circle at 68% 62%, rgba(255, 255, 255, 0.1), transparent 22%),
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.04) 0,
+            rgba(255, 255, 255, 0.04) 1px,
+            transparent 1px,
+            transparent 64px
+        );
+    --hero-after-opacity: 0.3;
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(5, 19, 24, 0.9) 0%, rgba(5, 19, 24, 0.58) 48%, rgba(5, 19, 24, 0.16) 100%),
+        radial-gradient(circle at 84% 18%, rgba(140, 247, 255, 0.26), transparent 32%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(7, 34, 39, 0.42));
+    --panel-radius: 30px;
+    --panel-bg: linear-gradient(180deg, #f4feff, rgba(246, 254, 255, 0.94));
+    --card-radius: 28px;
+}
+
+.page[data-page-variant="server-ops"] {
+    --page-accent: #1c8d72;
+    --page-accent-strong: #0d322c;
+    --page-accent-soft: rgba(28, 141, 114, 0.12);
+    --page-surface: #eef8f4;
+    --hero-radius: 26px;
+    --hero-bg: linear-gradient(132deg, #071311 0%, #0d2c28 48%, #20856c 100%);
+    --hero-after:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 26%),
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.04) 0,
+            rgba(255, 255, 255, 0.04) 1px,
+            transparent 1px,
+            transparent 38px
+        );
+    --hero-after-opacity: 0.28;
+    --hero-overlay-bg:
+        linear-gradient(92deg, rgba(5, 13, 11, 0.92) 0%, rgba(5, 13, 11, 0.66) 44%, rgba(5, 13, 11, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(151, 255, 224, 0.18), transparent 34%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(6, 28, 23, 0.48));
+    --panel-radius: 22px;
+    --panel-bg: linear-gradient(180deg, #f7fcfa, rgba(244, 251, 248, 0.96));
+    --card-radius: 18px;
+    --card-accent-inset: 0 auto 0 0;
+    --card-accent-width: 5px;
+    --card-accent-height: 100%;
+    --card-accent-radius: 18px 0 0 18px;
+    --card-accent-bg: linear-gradient(180deg, var(--page-accent), color-mix(in srgb, var(--page-accent) 55%, white));
+    --table-head-bg: rgba(28, 141, 114, 0.12);
+}

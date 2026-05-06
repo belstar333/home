@@ -1,0 +1,318 @@
+.gnb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 72px;
+  background: rgba(247, 249, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.gnbInner {
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Logo ── */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--on-background);
+  font-family: var(--font-headline);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.logoMark {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  box-shadow: var(--shadow-primary);
+}
+
+.logoText {
+  letter-spacing: -0.02em;
+}
+
+/* ── Navigation ── */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: var(--radius-md);
+  border: none;
+  background: transparent;
+  color: var(--on-surface-variant);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--primary);
+  background: rgba(0, 88, 189, 0.06);
+}
+
+.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.navLinkOpen {
+  color: var(--primary);
+  background: rgba(0, 88, 189, 0.08);
+}
+
+/* ── Chevron ── */
+.chevron {
+  font-size: 0.65rem;
+  color: var(--outline);
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+/* ── Contact CTA ── */
+.contactCta {
+  margin-left: 12px;
+  height: 42px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--on-primary);
+  font-size: 0.88rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  box-shadow: var(--shadow-primary);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contactCta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 36px -6px rgba(0, 88, 189, 0.3);
+}
+
+.contactCta:active {
+  transform: scale(0.97);
+}
+
+/* ── Mega Dropdown ── */
+.megaDropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 620px;
+  max-width: 840px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-container-lowest);
+  box-shadow: var(--shadow-float);
+  z-index: 120;
+  animation: megaIn 0.2s ease-out;
+}
+
+@keyframes megaIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.megaInner {
+  padding: 20px 24px 24px;
+}
+
+.megaHeader {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(0, 88, 189, 0.06);
+  border-radius: var(--radius-pill);
+  padding: 5px 12px;
+}
+
+.megaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.megaCol {
+  list-style: none;
+}
+
+.megaColTitle {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.megaColTitle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--surface-container);
+}
+
+.megaSubList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.megaSubLink {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--on-surface-variant);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.megaSubLink:hover {
+  color: var(--primary);
+  background: var(--surface-container-low);
+}
+
+/* ── Hidden legacy ── */
+.dropItem,
+.dropLink,
+.dropActive,
+.subArrow,
+.subDrop,
+.subDropRight {
+  display: none;
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--on-background);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+/* ── Mobile ── */
+@media (max-width: 860px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    z-index: 110;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 16px 20px 20px;
+    background: rgba(247, 249, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-float);
+  }
+
+  .navOpen {
+    display: flex;
+  }
+
+  .navItem {
+    width: 100%;
+  }
+
+  .navLink {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .contactCta {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .megaDropdown {
+    position: static;
+    transform: none;
+    min-width: auto;
+    max-width: none;
+    margin-top: 4px;
+    box-shadow: none;
+    border-radius: var(--radius-md);
+    background: var(--surface-container-low);
+  }
+
+  .megaGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,407 @@
+[
+  {
+    "id": "svc",
+    "parentId": null,
+    "title": "Service",
+    "slug": "/service",
+    "category": "service",
+    "order": 1,
+    "pageId": "page_service_root"
+  },
+  {
+    "id": "svc_server",
+    "parentId": "svc",
+    "title": "서버 인프라",
+    "slug": "/service/server",
+    "category": "service",
+    "order": 1,
+    "pageId": "page_service_server"
+  },
+  {
+    "id": "svc_server_build",
+    "parentId": "svc_server",
+    "title": "구축/증설",
+    "slug": "/service/server/build",
+    "category": "service",
+    "order": 1,
+    "pageId": "page_service_server_build"
+  },
+  {
+    "id": "svc_server_virtualization",
+    "parentId": "svc_server",
+    "title": "가상화/클러스터",
+    "slug": "/service/server/virtualization",
+    "category": "service",
+    "order": 2,
+    "pageId": "page_service_server_virtualization"
+  },
+  {
+    "id": "svc_server_ops",
+    "parentId": "svc_server",
+    "title": "운영/모니터링",
+    "slug": "/service/server/ops-monitoring",
+    "category": "service",
+    "order": 3,
+    "pageId": "page_service_server_ops_monitoring"
+  },
+  {
+    "id": "svc_network",
+    "parentId": "svc",
+    "title": "네트워크",
+    "slug": "/service/network",
+    "category": "service",
+    "order": 2,
+    "pageId": "page_service_network"
+  },
+  {
+    "id": "svc_network_design",
+    "parentId": "svc_network",
+    "title": "설계/구축",
+    "slug": "/service/network/design-build",
+    "category": "service",
+    "order": 1,
+    "pageId": "page_service_network_design_build"
+  },
+  {
+    "id": "svc_network_security",
+    "parentId": "svc_network",
+    "title": "보안(방화벽/정책)",
+    "slug": "/service/network/security",
+    "category": "service",
+    "order": 2,
+    "pageId": "page_service_network_security"
+  },
+  {
+    "id": "svc_network_ha",
+    "parentId": "svc_network",
+    "title": "무선/고가용",
+    "slug": "/service/network/ha-wireless",
+    "category": "service",
+    "order": 3,
+    "pageId": "page_service_network_ha_wireless"
+  },
+  {
+    "id": "svc_storage",
+    "parentId": "svc",
+    "title": "스토리지/백업",
+    "slug": "/service/storage-backup",
+    "category": "service",
+    "order": 3,
+    "pageId": "page_service_storage_backup"
+  },
+  {
+    "id": "svc_storage_storage",
+    "parentId": "svc_storage",
+    "title": "스토리지 구축",
+    "slug": "/service/storage-backup/storage",
+    "category": "service",
+    "order": 1,
+    "pageId": "page_service_storage_backup_storage"
+  },
+  {
+    "id": "svc_storage_backup",
+    "parentId": "svc_storage",
+    "title": "백업/복구",
+    "slug": "/service/storage-backup/backup-restore",
+    "category": "service",
+    "order": 2,
+    "pageId": "page_service_storage_backup_backup_restore"
+  },
+  {
+    "id": "svc_storage_dr",
+    "parentId": "svc_storage",
+    "title": "DR/BCP",
+    "slug": "/service/storage-backup/dr-bcp",
+    "category": "service",
+    "order": 3,
+    "pageId": "page_service_storage_backup_dr_bcp"
+  },
+  {
+    "id": "svc_consulting",
+    "parentId": "svc",
+    "title": "컨설팅",
+    "slug": "/service/consulting",
+    "category": "service",
+    "order": 4,
+    "pageId": "page_service_consulting"
+  },
+  {
+    "id": "svc_consulting_assessment",
+    "parentId": "svc_consulting",
+    "title": "인프라 진단",
+    "slug": "/service/consulting/assessment",
+    "category": "service",
+    "order": 1,
+    "pageId": "page_service_consulting_assessment"
+  },
+  {
+    "id": "svc_consulting_arch",
+    "parentId": "svc_consulting",
+    "title": "아키텍처/로드맵",
+    "slug": "/service/consulting/architecture-roadmap",
+    "category": "service",
+    "order": 2,
+    "pageId": "page_service_consulting_architecture_roadmap"
+  },
+  {
+    "id": "svc_consulting_compliance",
+    "parentId": "svc_consulting",
+    "title": "보안/컴플라이언스",
+    "slug": "/service/consulting/security-compliance",
+    "category": "service",
+    "order": 3,
+    "pageId": "page_service_consulting_security_compliance"
+  },
+  {
+    "id": "svc_maintenance",
+    "parentId": "svc",
+    "title": "유지보수",
+    "slug": "/service/maintenance",
+    "category": "service",
+    "order": 5,
+    "pageId": "page_service_maintenance"
+  },
+  {
+    "id": "svc_maintenance_sla",
+    "parentId": "svc_maintenance",
+    "title": "SLA/지원체계",
+    "slug": "/service/maintenance/sla-support",
+    "category": "service",
+    "order": 1,
+    "pageId": "page_service_maintenance_sla_support"
+  },
+  {
+    "id": "svc_maintenance_health",
+    "parentId": "svc_maintenance",
+    "title": "정기점검",
+    "slug": "/service/maintenance/health-check",
+    "category": "service",
+    "order": 2,
+    "pageId": "page_service_maintenance_health_check"
+  },
+  {
+    "id": "svc_maintenance_incident",
+    "parentId": "svc_maintenance",
+    "title": "장애대응/복구",
+    "slug": "/service/maintenance/incident-recovery",
+    "category": "service",
+    "order": 3,
+    "pageId": "page_service_maintenance_incident_recovery"
+  },
+  {
+    "id": "sol",
+    "parentId": null,
+    "title": "Solution",
+    "slug": "/solution",
+    "category": "solution",
+    "order": 2,
+    "pageId": "page_solution_root"
+  },
+  {
+    "id": "sol_meeting",
+    "parentId": "sol",
+    "title": "AI 회의 시스템",
+    "slug": "/solution/meeting",
+    "category": "solution",
+    "order": 1,
+    "pageId": "page_solution_meeting"
+  },
+  {
+    "id": "sol_code",
+    "parentId": "sol",
+    "title": "AI 코드 분석기",
+    "slug": "/solution/code-analysis",
+    "category": "solution",
+    "order": 2,
+    "pageId": "page_solution_code_analysis"
+  },
+  {
+    "id": "sol_agent",
+    "parentId": "sol",
+    "title": "에이전트 오케스트레이션",
+    "slug": "/solution/agent-orchestration",
+    "category": "solution",
+    "order": 3,
+    "pageId": "page_solution_agent_orchestration"
+  },
+  {
+    "id": "sol_llm",
+    "parentId": "sol",
+    "title": "로컬 LLM",
+    "slug": "/solution/local-llm",
+    "category": "solution",
+    "order": 4,
+    "pageId": "page_solution_local_llm"
+  },
+  {
+    "id": "sol_inference",
+    "parentId": "sol",
+    "title": "AI 추론 엔진",
+    "slug": "/solution/ai-inference",
+    "category": "solution",
+    "order": 5,
+    "pageId": "page_solution_ai_inference"
+  },
+  {
+    "id": "sol_dataviz",
+    "parentId": "sol",
+    "title": "데이터 시각화",
+    "slug": "/solution/data-visualization",
+    "category": "solution",
+    "order": 6,
+    "pageId": "page_solution_data_visualization"
+  },
+  {
+    "id": "sol_rag",
+    "parentId": "sol",
+    "title": "엔터프라이즈 RAG",
+    "slug": "/solution/rag",
+    "category": "solution",
+    "order": 7,
+    "pageId": "page_solution_rag"
+  },
+  {
+    "id": "prd",
+    "parentId": null,
+    "title": "Product",
+    "slug": "/product",
+    "category": "product",
+    "order": 3,
+    "pageId": "page_product_root"
+  },
+  {
+    "id": "prd_roseha",
+    "parentId": "prd",
+    "title": "RoseHA",
+    "slug": "/product/roseha",
+    "category": "product",
+    "order": 1,
+    "pageId": "page_product_roseha"
+  },
+  {
+    "id": "prd_roseha_replication",
+    "parentId": "prd_roseha",
+    "title": "실시간 복제",
+    "slug": "/product/roseha/replication",
+    "category": "product",
+    "order": 1,
+    "pageId": "page_product_roseha_replication"
+  },
+  {
+    "id": "prd_roseha_failover",
+    "parentId": "prd_roseha",
+    "title": "장애 감지/페일오버",
+    "slug": "/product/roseha/failover",
+    "category": "product",
+    "order": 2,
+    "pageId": "page_product_roseha_failover"
+  },
+  {
+    "id": "prd_roseha_pitr",
+    "parentId": "prd_roseha",
+    "title": "시점 복구",
+    "slug": "/product/roseha/point-in-time-recovery",
+    "category": "product",
+    "order": 3,
+    "pageId": "page_product_roseha_point_in_time_recovery"
+  },
+  {
+    "id": "prd_roseha_console",
+    "parentId": "prd_roseha",
+    "title": "운영 콘솔",
+    "slug": "/product/roseha/management-console",
+    "category": "product",
+    "order": 4,
+    "pageId": "page_product_roseha_management_console"
+  },
+  {
+    "id": "prd_lsware",
+    "parentId": "prd",
+    "title": "LSware(Omniguard)",
+    "slug": "/product/lsware",
+    "category": "product",
+    "order": 2,
+    "pageId": "page_product_lsware"
+  },
+  {
+    "id": "prd_lsware_uac",
+    "parentId": "prd_lsware",
+    "title": "UAC",
+    "slug": "/product/lsware/uac",
+    "category": "product",
+    "order": 1,
+    "pageId": "page_product_lsware_uac"
+  },
+  {
+    "id": "prd_lsware_ucc",
+    "parentId": "prd_lsware",
+    "title": "UCC",
+    "slug": "/product/lsware/ucc",
+    "category": "product",
+    "order": 2,
+    "pageId": "page_product_lsware_ucc"
+  },
+  {
+    "id": "prd_lsware_secums",
+    "parentId": "prd_lsware",
+    "title": "SecuMS",
+    "slug": "/product/lsware/secums",
+    "category": "product",
+    "order": 3,
+    "pageId": "page_product_lsware_secums"
+  },
+  {
+    "id": "abt",
+    "parentId": null,
+    "title": "About",
+    "slug": "/about",
+    "category": "about",
+    "order": 3,
+    "pageId": "page_about_root"
+  },
+  {
+    "id": "abt_vision",
+    "parentId": "abt",
+    "title": "비전/미션",
+    "slug": "/about/vision-mission",
+    "category": "about",
+    "order": 1,
+    "pageId": "page_about_vision_mission"
+  },
+  {
+    "id": "abt_history",
+    "parentId": "abt",
+    "title": "연혁",
+    "slug": "/about/history",
+    "category": "about",
+    "order": 2,
+    "pageId": "page_about_history"
+  },
+  {
+    "id": "abt_partners",
+    "parentId": "abt",
+    "title": "협력체",
+    "slug": "/about/partners",
+    "category": "about",
+    "order": 3,
+    "pageId": "page_about_partners"
+  },
+  {
+    "id": "abt_location",
+    "parentId": "abt",
+    "title": "오시는길",
+    "slug": "/about/location",
+    "category": "about",
+    "order": 4,
+    "pageId": "page_about_location"
+  },
+  {
+    "id": "contact",
+    "parentId": null,
+    "title": "Contact",
+    "slug": "/contact",
+    "category": "contact",
+    "order": 99,
+    "pageId": "page_contact"
+  }
+]

@@ -1,0 +1,55 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" rx="40" fill="#0C1734"/>
+  <rect x="48" y="48" width="1504" height="904" rx="28" fill="url(#bg)"/>
+  <g opacity="0.24">
+    <path d="M112 220H1488" stroke="#8EC5FF" stroke-width="2" stroke-dasharray="10 14"/>
+    <path d="M112 500H1488" stroke="#8EC5FF" stroke-width="2" stroke-dasharray="10 14"/>
+    <path d="M112 780H1488" stroke="#8EC5FF" stroke-width="2" stroke-dasharray="10 14"/>
+  </g>
+  <text x="116" y="140" fill="#D8EBFF" font-size="42" font-family="Arial, sans-serif" font-weight="700">Server Infrastructure Scope</text>
+  <text x="116" y="184" fill="#8FB2D9" font-size="22" font-family="Arial, sans-serif">Design, build, virtualization, observability and handover in one delivery frame</text>
+
+  <rect x="116" y="250" width="1368" height="150" rx="28" fill="#102148" stroke="#345EAA"/>
+  <text x="152" y="302" fill="#8FB2D9" font-size="18" font-family="Arial, sans-serif" letter-spacing="3">WORKLOAD LAYER</text>
+  <rect x="152" y="324" width="248" height="44" rx="22" fill="#1D4187"/>
+  <rect x="418" y="324" width="248" height="44" rx="22" fill="#1D4187"/>
+  <rect x="684" y="324" width="248" height="44" rx="22" fill="#1D4187"/>
+  <rect x="950" y="324" width="248" height="44" rx="22" fill="#1D4187"/>
+  <rect x="1216" y="324" width="232" height="44" rx="22" fill="#1D4187"/>
+  <text x="224" y="353" fill="#F4FAFF" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">ERP / DB</text>
+  <text x="542" y="353" fill="#F4FAFF" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">VDI / Apps</text>
+  <text x="808" y="353" fill="#F4FAFF" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">WEB / API</text>
+  <text x="1074" y="353" fill="#F4FAFF" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">AI / Analytics</text>
+  <text x="1332" y="353" fill="#F4FAFF" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">Test / Dev</text>
+
+  <rect x="116" y="430" width="1368" height="220" rx="28" fill="#0E1C3D" stroke="#345EAA"/>
+  <text x="152" y="482" fill="#8FB2D9" font-size="18" font-family="Arial, sans-serif" letter-spacing="3">CORE PLATFORM</text>
+  <rect x="152" y="512" width="434" height="102" rx="24" fill="#15306C"/>
+  <rect x="602" y="512" width="434" height="102" rx="24" fill="#15306C"/>
+  <rect x="1052" y="512" width="396" height="102" rx="24" fill="#15306C"/>
+  <text x="190" y="556" fill="#F4FAFF" font-size="26" font-family="Arial, sans-serif" font-weight="700">Build &amp; Refresh</text>
+  <text x="190" y="592" fill="#B7D0F0" font-size="20" font-family="Arial, sans-serif">Capacity, rack, power, validation, handover</text>
+  <text x="640" y="556" fill="#F4FAFF" font-size="26" font-family="Arial, sans-serif" font-weight="700">Virtualization &amp; Cluster</text>
+  <text x="640" y="592" fill="#B7D0F0" font-size="20" font-family="Arial, sans-serif">Resource pools, HA / DR, templates, patch policy</text>
+  <text x="1090" y="556" fill="#F4FAFF" font-size="26" font-family="Arial, sans-serif" font-weight="700">Ops &amp; Monitoring</text>
+  <text x="1090" y="592" fill="#B7D0F0" font-size="20" font-family="Arial, sans-serif">Alert governance, runbooks, RCA loop, reports</text>
+
+  <rect x="116" y="684" width="1368" height="180" rx="28" fill="#0C1730" stroke="#345EAA"/>
+  <text x="152" y="738" fill="#8FB2D9" font-size="18" font-family="Arial, sans-serif" letter-spacing="3">DELIVERABLES</text>
+  <rect x="152" y="766" width="292" height="52" rx="18" fill="#132955"/>
+  <rect x="466" y="766" width="292" height="52" rx="18" fill="#132955"/>
+  <rect x="780" y="766" width="292" height="52" rx="18" fill="#132955"/>
+  <rect x="1094" y="766" width="354" height="52" rx="18" fill="#132955"/>
+  <text x="298" y="799" fill="#F4FAFF" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">Standard Architecture</text>
+  <text x="612" y="799" fill="#F4FAFF" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">Migration &amp; Validation</text>
+  <text x="926" y="799" fill="#F4FAFF" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">Runbook &amp; Checklist</text>
+  <text x="1271" y="799" fill="#F4FAFF" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">Operations Handover Package</text>
+
+  <defs>
+    <linearGradient id="bg" x1="128" y1="84" x2="1492" y2="916" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E2148"/>
+      <stop offset="0.5" stop-color="#0A1732"/>
+      <stop offset="1" stop-color="#12305A"/>
+    </linearGradient>
+  </defs>
+</svg>

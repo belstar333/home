@@ -1,0 +1,1051 @@
+[역할] 너는 시니어 풀스택 개발자 + UI/UX 디자이너다. IT 인프라 기업 사이트를 “고정 레이아웃 + 트리 내비 + SPA 전환 + 웹 편집”까지 포함해 구축한다.
+
+[목표 UX]
+
+상단 GNB(서비스/제품/회사소개)는 Sticky
+
+GNB 클릭 시 좌측 사이드바가 해당 카테고리의 트리 메뉴로 교체
+
+트리 클릭 시 페이지 전체 리프레시 없이, 우측 Content Area만 전환
+
+단, SEO/딥링크를 위해 각 트리 노드는 고유 URL(slug) 라우팅을 가진다 (레이아웃 유지 + Content만 교체)
+
+[정보구조(트리)]
+
+Service: 서버/네트워크/스토리지/컨설팅/유지보수
+
+Product: RoseHA / LSware (+ 하위 기능 노드)
+
+About: 비전/미션, 연혁, 협력체, 오시는길
+
+[디자인]
+
+White 기반 미니멀, 포인트 Deep Blue #003366
+
+메인 Hero: 인프라 무드의 영상/모션 배경 + “Connecting the Future, Securing the Infra”
+
+반응형(PC/Tablet/Mobile), 스크롤 Fade-in
+
+접근성: 트리 메뉴는 키보드 탐색(↑↓, Enter), ARIA role 적용
+
+[콘텐츠 요구]
+
+RoseHA 페이지에: 실시간 복제/장애 감지+페일오버/시점복구 인포그래픽 섹션
+
+LSware(Omniguard): UAC/UCC/SecuMS 카드 섹션
+
+About: 연혁 세로 타임라인, 협력체 로고 슬라이더
+
+[편집 기능(핵심)] — 2단계로 구현
+
+MVP Edit Mode:
+
+/admin 또는 토글로 Edit Mode 진입
+
+텍스트는 클릭해서 즉시 수정(contenteditable 또는 인라인 에디터)
+
+이미지는 드래그앤드롭 교체(업로드 시 미리보기)
+
+저장 버튼 → JSON(ContentStore)로 저장(로컬스토리지 또는 API)
+
+운영형(확장 설계만 포함):
+
+Draft/Preview/Publish 워크플로우
+
+권한(admin/editor/viewer)
+
+변경 이력/롤백(버전)
+
+[데이터 모델(반드시 이 구조 사용)]
+
+NavNode { id, parentId, title, slug, category, order, pageId }
+
+Page { id, title, slug, sections: Section[] }
+
+Section { id, type, blocks: Block[] }
+
+Block는 hero / richText / cards / infographic / timeline / logoSlider / contactForm 등으로 구분
+
+[산출물(반드시 제공)]
+
+폴더/라우팅 구조(Next.js 기준)
+
+AppShell(GNB+Sidebar+ContentFrame) 구현 코드
+
+TreeNav 구현(접근성 포함)
+
+ContentRenderer + 샘플 콘텐츠 데이터(JSON)
+
+EditMode MVP UI(인라인 편집 + 이미지 교체 + 저장)
+
+최소 SEO: sitemap/robots, 메타태그, canonical 처리 방법
+
+[완료 조건(Acceptance Criteria)]
+
+트리 클릭 시 URL이 바뀌고(/service/server 등), 레이아웃은 고정, Content만 전환
+
+모바일에서 Sidebar는 Drawer로 동작
+
+Edit Mode에서 수정한 텍스트/이미지가 저장 후 새로고침에도 유지
+
+5) 다음 단계(바로 품질이 올라가는 체크리스트)
+
+(필수) 콘텐츠/메뉴 노드 목록을 “slug까지” 확정: 예) /product/roseha/replication 처럼
+
+(권장) 문의 전환: “문의하기” 폼(메일/슬랙 웹훅) + 개인정보 고지(간단)
+
+(권장) 운영 안전장치: Draft/Publish 최소 분리
+
+원하시면, 위 “V2 마스터 프롬프트”에 맞춰 트리 노드 전체(슬러그/페이지 타입/블록 구성)까지 한 번에 표로 확정해드릴게요. 그러면 개발이 거의 안 흔들리고, AI 코딩 결과도 일관되게 나옵니다.
+
+출처
+트리 노드 전체(슬러그/페이지 타입/블록 구성)까지 한 번에 표로 확정
+
+아래 표는 **전체 트리 노드(슬러그/페이지 타입/블록 구성)**를 “한 번에” 확정할 수 있게 권장 IA + URL 규칙 + Page/Section/Block 구성까지 포함한 최종안입니다.
+(원칙: 고정 레이아웃 유지 + Content만 교체, 그리고 모든 노드는 고유 URL)
+
+URL/슬러그 규칙(고정)
+
+카테고리 루트:
+
+Service: /service
+
+Product: /product
+
+About: /about
+
+노드 URL: /{category}/{l1}/{l2?}/{l3?}
+
+slug는 영문 소문자 + 하이픈, 약어는 일관되게(ha, dr, uac 등)
+
+블록 타입 표준(고정)
+
+hero (H1 + 서브 + CTA + 배경/미디어 옵션)
+
+subnavHeader (페이지 상단 소제목 + breadcrumbs + “문의/데모” CTA)
+
+richText (문단/리스트/표)
+
+featureCards (아이콘+타이틀+설명 카드)
+
+infographic (프로세스/구성도/단계)
+
+useCases (사례 카드/리스트)
+
+benefits (Before/After 혹은 KPI)
+
+comparisonTable (기능 비교)
+
+timeline (연혁)
+
+logoSlider (협력사/파트너)
+
+faq (Q/A)
+
+contactForm (리드 캡처)
+
+1) Service 트리(전체 확정)
+NavNode Title	slug(URL)	Page Type	Sections(권장)	Blocks(순서)
+Service(루트)	/service	Landing	6	hero → featureCards(서비스 카테고리 5개) → infographic(서비스 프로세스) → useCases → benefits → contactForm
+서버 인프라	/service/server	Category Landing	6	subnavHeader → hero(서버) → featureCards(구축/증설/가상화/표준화) → infographic(아키텍처 예시) → faq → contactForm
+└ 구축/증설	/service/server/build	Detail	5	subnavHeader → richText(개요) → featureCards(범위) → infographic(절차) → contactForm
+└ 가상화/클러스터	/service/server/virtualization	Detail	6	subnavHeader → richText → featureCards → comparisonTable(옵션) → useCases → contactForm
+└ 운영/모니터링	/service/server/ops-monitoring	Detail	6	subnavHeader → richText → featureCards → infographic(운영 체계) → faq → contactForm
+네트워크	/service/network	Category Landing	6	subnavHeader → hero(네트워크) → featureCards(설계/구축/보안/운영) → infographic(토폴로지 예시) → useCases → contactForm
+└ 설계/구축	/service/network/design-build	Detail	5	subnavHeader → richText → infographic(표준 설계) → benefits → contactForm
+└ 보안(방화벽/정책)	/service/network/security	Detail	6	subnavHeader → richText → featureCards → comparisonTable(정책 예) → faq → contactForm
+└ 무선/고가용	/service/network/ha-wireless	Detail	5	subnavHeader → richText → featureCards → useCases → contactForm
+스토리지/백업	/service/storage-backup	Category Landing	7	subnavHeader → hero(스토리지) → featureCards(스토리지/백업/DR/아카이빙) → infographic(백업-복구 흐름) → comparisonTable(RPO/RTO) → faq → contactForm
+└ 스토리지 구축	/service/storage-backup/storage	Detail	6	subnavHeader → richText → featureCards → infographic(구성) → useCases → contactForm
+└ 백업/복구	/service/storage-backup/backup-restore	Detail	6	subnavHeader → richText → infographic(복구 시나리오) → benefits → faq → contactForm
+└ DR/BCP	/service/storage-backup/dr-bcp	Detail	7	subnavHeader → richText → comparisonTable(RPO/RTO 레벨) → infographic(절차) → useCases → faq → contactForm
+컨설팅	/service/consulting	Category Landing	6	subnavHeader → hero(컨설팅) → featureCards(진단/로드맵/보안) → infographic(방법론) → useCases → contactForm
+└ 인프라 진단	/service/consulting/assessment	Detail	5	subnavHeader → richText → featureCards(진단 항목) → benefits → contactForm
+└ 아키텍처/로드맵	/service/consulting/architecture-roadmap	Detail	6	subnavHeader → richText → infographic(로드맵) → useCases → faq → contactForm
+└ 보안/컴플라이언스	/service/consulting/security-compliance	Detail	6	subnavHeader → richText → featureCards → comparisonTable(체크리스트) → faq → contactForm
+유지보수	/service/maintenance	Category Landing	7	subnavHeader → hero(유지보수) → featureCards(SLA/정기점검/장애대응) → infographic(지원 프로세스) → benefits → faq → contactForm
+└ SLA/지원체계	/service/maintenance/sla-support	Detail	6	subnavHeader → richText → featureCards(SLA 레벨) → comparisonTable(등급) → faq → contactForm
+└ 정기점검	/service/maintenance/health-check	Detail	5	subnavHeader → richText → infographic(점검표) → benefits → contactForm
+└ 장애대응/복구	/service/maintenance/incident-recovery	Detail	6	subnavHeader → richText → infographic(대응 단계) → useCases → faq → contactForm
+2) Product 트리(전체 확정)
+NavNode Title	slug(URL)	Page Type	Sections(권장)	Blocks(순서)
+Product(루트)	/product	Landing	6	hero → featureCards(제품 2개) → comparisonTable(제품군 비교) → useCases → faq → contactForm
+RoseHA	/product/roseha	Product Landing	8	subnavHeader → hero(RoseHA) → featureCards(핵심 가치) → infographic(아키텍처/동작) → benefits(RPO/RTO) → useCases → faq → contactForm
+└ 실시간 복제	/product/roseha/replication	Detail	7	subnavHeader → hero(복제) → infographic(실시간 복제 흐름) → featureCards(지원/특징) → comparisonTable(동기/비동기) → useCases → faq → contactForm
+└ 장애 감지/페일오버	/product/roseha/failover	Detail	7	subnavHeader → hero(HA) → infographic(감지→전환) → featureCards(자동/수동) → benefits(다운타임) → faq → contactForm
+└ 시점 복구	/product/roseha/point-in-time-recovery	Detail	7	subnavHeader → hero(PITR) → infographic(복구 시나리오) → featureCards(정책/보관) → useCases → faq → contactForm
+└ 운영 콘솔	/product/roseha/management-console	Detail	6	subnavHeader → richText(콘솔 개요) → featureCards(모니터링/알림) → infographic(대시보드 구조) → faq → contactForm
+LSware(Omniguard)	/product/lsware	Product Landing	8	subnavHeader → hero(Omniguard) → featureCards(제품군 개요) → featureCards(UAC/UCC/SecuMS 카드 섹션) → infographic(통합 운영 구조) → useCases → faq → contactForm
+└ UAC	/product/lsware/uac	Detail	7	subnavHeader → hero(UAC) → featureCards(기능) → infographic(권한 흐름) → comparisonTable(정책 예) → faq → contactForm
+└ UCC	/product/lsware/ucc	Detail	7	subnavHeader → hero(UCC) → featureCards(기능) → infographic(콘텐츠 제어) → useCases → faq → contactForm
+└ SecuMS	/product/lsware/secums	Detail	7	subnavHeader → hero(SecuMS) → featureCards(기능) → infographic(보안 관리 체계) → benefits → faq → contactForm
+3) About 트리(전체 확정)
+NavNode Title	slug(URL)	Page Type	Sections(권장)	Blocks(순서)
+About(루트)	/about	Landing	6	hero(브랜드) → richText(회사 소개) → featureCards(핵심 역량) → logoSlider(협력체) → timeline(요약) → contactForm
+비전/미션	/about/vision-mission	Static	5	subnavHeader → hero → richText(비전/미션) → benefits(핵심 약속) → contactForm
+연혁	/about/history	Static	4	subnavHeader → timeline(세로) → logoSlider(주요 고객/파트너) → contactForm
+협력체	/about/partners	Static	5	subnavHeader → hero(파트너) → logoSlider(전체) → richText(협력 모델) → contactForm
+오시는길	/about/location	Static	5	subnavHeader → richText(주소/연락처) → infographic(약도/교통) → featureCards(주차/대중교통) → contactForm
+(선택) 공통 “문의/리드” 서브페이지
+
+/contact (상단 GNB 우측 CTA로도 연결)
+
+Page Type: Lead
+
+Blocks: hero → richText(문의 안내/개인정보) → contactForm → faq
+
+구현을 위한 JSON 스키마 예시(표 확정값을 그대로 담는 형태)
+
+NavNode는 트리/사이드바 렌더링에 사용
+
+Page는 ContentRenderer가 렌더링
+
+{
+  "nav": [
+    { "id": "svc", "parentId": null, "title": "Service", "slug": "/service", "category": "service", "order": 1, "pageId": "page_service_root" },
+    { "id": "svc_server", "parentId": "svc", "title": "서버 인프라", "slug": "/service/server", "category": "service", "order": 1, "pageId": "page_service_server" }
+  ],
+  "pages": [
+    {
+      "id": "page_service_server",
+      "title": "서버 인프라",
+      "slug": "/service/server",
+      "sections": [
+        { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": {} }] },
+        { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": {} }] }
+      ]
+    }
+  ]
+}
+
+
+원하시면, 위 표를 기반으로 (1) NavNode 전체 JSON, (2) Page 템플릿 JSON(각 페이지에 기본 더미 카피 포함), (3) Next.js routes 자동 생성 규칙까지 “그대로 붙여 넣으면 동작하는 형태”로 한 번에 만들어드릴게요.
+
+(1) NavNode 전체 JSON, (2) Page 템플릿 JSON(각 페이지에 기본 더미 카피 포함), (3) Next.js routes 자동 생성 규칙
+
+아래는 요청하신 (1) NavNode 전체 JSON, (2) Page 템플릿 JSON(기본 더미 카피 포함), (3) Next.js routes 자동 생성 규칙을 그대로 프로젝트에 넣어 쓸 수 있는 형태로 정리한 것입니다. (Next.js App Router 기준)
+
+(1) NavNode 전체 JSON
+
+파일 권장 경로: content/nav.json
+
+[
+  { "id": "svc", "parentId": null, "title": "Service", "slug": "/service", "category": "service", "order": 1, "pageId": "page_service_root" },
+  { "id": "svc_server", "parentId": "svc", "title": "서버 인프라", "slug": "/service/server", "category": "service", "order": 1, "pageId": "page_service_server" },
+  { "id": "svc_server_build", "parentId": "svc_server", "title": "구축/증설", "slug": "/service/server/build", "category": "service", "order": 1, "pageId": "page_service_server_build" },
+  { "id": "svc_server_virtualization", "parentId": "svc_server", "title": "가상화/클러스터", "slug": "/service/server/virtualization", "category": "service", "order": 2, "pageId": "page_service_server_virtualization" },
+  { "id": "svc_server_ops", "parentId": "svc_server", "title": "운영/모니터링", "slug": "/service/server/ops-monitoring", "category": "service", "order": 3, "pageId": "page_service_server_ops_monitoring" },
+
+  { "id": "svc_network", "parentId": "svc", "title": "네트워크", "slug": "/service/network", "category": "service", "order": 2, "pageId": "page_service_network" },
+  { "id": "svc_network_design", "parentId": "svc_network", "title": "설계/구축", "slug": "/service/network/design-build", "category": "service", "order": 1, "pageId": "page_service_network_design_build" },
+  { "id": "svc_network_security", "parentId": "svc_network", "title": "보안(방화벽/정책)", "slug": "/service/network/security", "category": "service", "order": 2, "pageId": "page_service_network_security" },
+  { "id": "svc_network_ha", "parentId": "svc_network", "title": "무선/고가용", "slug": "/service/network/ha-wireless", "category": "service", "order": 3, "pageId": "page_service_network_ha_wireless" },
+
+  { "id": "svc_storage", "parentId": "svc", "title": "스토리지/백업", "slug": "/service/storage-backup", "category": "service", "order": 3, "pageId": "page_service_storage_backup" },
+  { "id": "svc_storage_storage", "parentId": "svc_storage", "title": "스토리지 구축", "slug": "/service/storage-backup/storage", "category": "service", "order": 1, "pageId": "page_service_storage_backup_storage" },
+  { "id": "svc_storage_backup", "parentId": "svc_storage", "title": "백업/복구", "slug": "/service/storage-backup/backup-restore", "category": "service", "order": 2, "pageId": "page_service_storage_backup_backup_restore" },
+  { "id": "svc_storage_dr", "parentId": "svc_storage", "title": "DR/BCP", "slug": "/service/storage-backup/dr-bcp", "category": "service", "order": 3, "pageId": "page_service_storage_backup_dr_bcp" },
+
+  { "id": "svc_consulting", "parentId": "svc", "title": "컨설팅", "slug": "/service/consulting", "category": "service", "order": 4, "pageId": "page_service_consulting" },
+  { "id": "svc_consulting_assessment", "parentId": "svc_consulting", "title": "인프라 진단", "slug": "/service/consulting/assessment", "category": "service", "order": 1, "pageId": "page_service_consulting_assessment" },
+  { "id": "svc_consulting_arch", "parentId": "svc_consulting", "title": "아키텍처/로드맵", "slug": "/service/consulting/architecture-roadmap", "category": "service", "order": 2, "pageId": "page_service_consulting_architecture_roadmap" },
+  { "id": "svc_consulting_compliance", "parentId": "svc_consulting", "title": "보안/컴플라이언스", "slug": "/service/consulting/security-compliance", "category": "service", "order": 3, "pageId": "page_service_consulting_security_compliance" },
+
+  { "id": "svc_maintenance", "parentId": "svc", "title": "유지보수", "slug": "/service/maintenance", "category": "service", "order": 5, "pageId": "page_service_maintenance" },
+  { "id": "svc_maintenance_sla", "parentId": "svc_maintenance", "title": "SLA/지원체계", "slug": "/service/maintenance/sla-support", "category": "service", "order": 1, "pageId": "page_service_maintenance_sla_support" },
+  { "id": "svc_maintenance_health", "parentId": "svc_maintenance", "title": "정기점검", "slug": "/service/maintenance/health-check", "category": "service", "order": 2, "pageId": "page_service_maintenance_health_check" },
+  { "id": "svc_maintenance_incident", "parentId": "svc_maintenance", "title": "장애대응/복구", "slug": "/service/maintenance/incident-recovery", "category": "service", "order": 3, "pageId": "page_service_maintenance_incident_recovery" },
+
+  { "id": "prd", "parentId": null, "title": "Product", "slug": "/product", "category": "product", "order": 2, "pageId": "page_product_root" },
+  { "id": "prd_roseha", "parentId": "prd", "title": "RoseHA", "slug": "/product/roseha", "category": "product", "order": 1, "pageId": "page_product_roseha" },
+  { "id": "prd_roseha_replication", "parentId": "prd_roseha", "title": "실시간 복제", "slug": "/product/roseha/replication", "category": "product", "order": 1, "pageId": "page_product_roseha_replication" },
+  { "id": "prd_roseha_failover", "parentId": "prd_roseha", "title": "장애 감지/페일오버", "slug": "/product/roseha/failover", "category": "product", "order": 2, "pageId": "page_product_roseha_failover" },
+  { "id": "prd_roseha_pitr", "parentId": "prd_roseha", "title": "시점 복구", "slug": "/product/roseha/point-in-time-recovery", "category": "product", "order": 3, "pageId": "page_product_roseha_point_in_time_recovery" },
+  { "id": "prd_roseha_console", "parentId": "prd_roseha", "title": "운영 콘솔", "slug": "/product/roseha/management-console", "category": "product", "order": 4, "pageId": "page_product_roseha_management_console" },
+
+  { "id": "prd_lsware", "parentId": "prd", "title": "LSware(Omniguard)", "slug": "/product/lsware", "category": "product", "order": 2, "pageId": "page_product_lsware" },
+  { "id": "prd_lsware_uac", "parentId": "prd_lsware", "title": "UAC", "slug": "/product/lsware/uac", "category": "product", "order": 1, "pageId": "page_product_lsware_uac" },
+  { "id": "prd_lsware_ucc", "parentId": "prd_lsware", "title": "UCC", "slug": "/product/lsware/ucc", "category": "product", "order": 2, "pageId": "page_product_lsware_ucc" },
+  { "id": "prd_lsware_secums", "parentId": "prd_lsware", "title": "SecuMS", "slug": "/product/lsware/secums", "category": "product", "order": 3, "pageId": "page_product_lsware_secums" },
+
+  { "id": "abt", "parentId": null, "title": "About", "slug": "/about", "category": "about", "order": 3, "pageId": "page_about_root" },
+  { "id": "abt_vision", "parentId": "abt", "title": "비전/미션", "slug": "/about/vision-mission", "category": "about", "order": 1, "pageId": "page_about_vision_mission" },
+  { "id": "abt_history", "parentId": "abt", "title": "연혁", "slug": "/about/history", "category": "about", "order": 2, "pageId": "page_about_history" },
+  { "id": "abt_partners", "parentId": "abt", "title": "협력체", "slug": "/about/partners", "category": "about", "order": 3, "pageId": "page_about_partners" },
+  { "id": "abt_location", "parentId": "abt", "title": "오시는길", "slug": "/about/location", "category": "about", "order": 4, "pageId": "page_about_location" },
+
+  { "id": "contact", "parentId": null, "title": "Contact", "slug": "/contact", "category": "contact", "order": 99, "pageId": "page_contact" }
+]
+
+(2) Page 템플릿 JSON (기본 더미 카피 포함)
+
+파일 권장 경로: content/pages.json
+형식: slug → page 객체로 빠르게 조회되도록 구성 (런타임 O(1))
+
+{
+  "/service": {
+    "id": "page_service_root",
+    "title": "Service",
+    "slug": "/service",
+    "seo": {
+      "title": "서비스 | TechI",
+      "description": "서버, 네트워크, 스토리지/백업, 컨설팅, 유지보수까지 인프라 전 영역 서비스를 제공합니다."
+    },
+    "sections": [
+      { "id": "s1", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Infra Services", "sub": "설계부터 운영까지, 안정적인 인프라 전 과정을 지원합니다.", "ctaPrimary": { "label": "문의하기", "href": "/contact" }, "ctaSecondary": { "label": "서비스 둘러보기", "href": "/service/server" } } }] },
+      { "id": "s2", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "서비스 영역", "items": [
+        { "title": "서버 인프라", "desc": "구축/증설, 가상화, 운영 자동화", "href": "/service/server" },
+        { "title": "네트워크", "desc": "설계/구축, 보안, 고가용", "href": "/service/network" },
+        { "title": "스토리지/백업", "desc": "데이터 보호, DR/BCP, 복구 시나리오", "href": "/service/storage-backup" },
+        { "title": "컨설팅", "desc": "진단, 로드맵, 보안/컴플라이언스", "href": "/service/consulting" },
+        { "title": "유지보수", "desc": "SLA, 정기점검, 장애대응", "href": "/service/maintenance" }
+      ] } }] },
+      { "id": "s3", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "서비스 프로세스", "steps": ["현황 진단", "설계/제안", "구축/이행", "검증", "운영/개선"] } }] },
+      { "id": "s4", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "적용 사례", "items": ["데이터센터 표준화 및 증설", "백업/DR 체계 구축", "보안 정책 고도화", "운영 자동화/관제"] } }] },
+      { "id": "s5", "type": "benefits", "blocks": [{ "type": "benefits", "data": { "title": "기대 효과", "items": ["장애 리스크 감소", "운영 비용 절감", "확장성 확보", "보안/감사 대응 강화"] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "상담/견적 요청", "note": "영업일 기준 1일 내 회신드립니다." } }] }
+    ]
+  },
+
+  "/service/server": {
+    "id": "page_service_server",
+    "title": "서버 인프라",
+    "slug": "/service/server",
+    "seo": { "title": "서버 인프라 | TechI", "description": "구축/증설, 가상화/클러스터, 운영/모니터링까지 서버 인프라 서비스를 제공합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Service", "title": "서버 인프라", "breadcrumbs": ["Service", "Server"], "cta": { "label": "데모/문의", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "서버 인프라 고도화", "sub": "표준화·가상화·자동화로 안정성과 운영 효율을 동시에 확보합니다.", "ctaPrimary": { "label": "구축/증설", "href": "/service/server/build" } } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "핵심 제공 범위", "items": [
+        { "title": "구축/증설", "desc": "용량 계획, 표준 모델, 납품/이행", "href": "/service/server/build" },
+        { "title": "가상화/클러스터", "desc": "HA/FT 설계, 자원 최적화", "href": "/service/server/virtualization" },
+        { "title": "운영/모니터링", "desc": "관제, 알림, 자동화 런북", "href": "/service/server/ops-monitoring" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "참조 아키텍처(예시)", "steps": ["Compute Pool", "Virtualization Layer", "Shared Storage", "Monitoring/Alerting", "Backup/DR"] } }] },
+      { "id": "s5", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "기존 환경에서도 단계적으로 전환이 가능한가요?", "a": "가능합니다. 현행 운영 리스크를 최소화하도록 단계 이행안을 제안합니다." },
+        { "q": "표준 모델은 어떻게 선정하나요?", "a": "워크로드/성능/확장성/운영성 기준으로 후보를 비교하고 표준안을 확정합니다." }
+      ] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "서버 인프라 상담", "note": "현재 구성과 목표를 알려주시면 최적의 이행안을 제안드립니다." } }] }
+    ]
+  },
+
+  "/service/server/build": { "id": "page_service_server_build", "title": "구축/증설", "slug": "/service/server/build",
+    "seo": { "title": "서버 구축/증설 | TechI", "description": "서버 구축 및 증설 프로젝트를 표준 절차로 안정적으로 수행합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Server", "title": "구축/증설", "breadcrumbs": ["Service","Server","Build"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "구축/증설은 용량 계획부터 납품, 설치, 검증, 운영 인계까지 포함합니다. (더미 카피)" } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "범위", "items": [
+        { "title": "용량/성능 계획", "desc": "워크로드 분석 기반 산정" },
+        { "title": "표준 모델 선정", "desc": "TCO/운영성/확장성 평가" },
+        { "title": "이행/검증", "desc": "체크리스트 기반 검증" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "절차", "steps": ["요구사항", "설계", "구축", "검증", "인계"] } }] },
+      { "id": "s5", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "구축/증설 상담", "note": "현재 장비/가상화/스토리지 정보를 공유해 주세요." } }] }
+    ]
+  },
+
+  "/service/server/virtualization": { "id": "page_service_server_virtualization", "title": "가상화/클러스터", "slug": "/service/server/virtualization",
+    "seo": { "title": "가상화/클러스터 | TechI", "description": "고가용 클러스터 및 가상화 기반 표준 운영 체계를 설계합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Server", "title": "가상화/클러스터", "breadcrumbs": ["Service","Server","Virtualization"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "워크로드 특성에 맞춰 가상화/클러스터 구성을 설계하고 운영 표준을 수립합니다. (더미)" } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "핵심 요소", "items": [
+        { "title": "HA/FT 설계", "desc": "장애 시 자동 복구/전환" },
+        { "title": "자원 최적화", "desc": "오버커밋/리소스 풀링" },
+        { "title": "운영 표준화", "desc": "템플릿/패치/배포 표준" }
+      ] } }] },
+      { "id": "s4", "type": "table", "blocks": [{ "type": "comparisonTable", "data": { "title": "옵션 비교(예시)", "columns": ["옵션", "장점", "고려사항"], "rows": [
+        ["Cluster HA", "가용성 향상", "공유 스토리지/네트워크 필요"],
+        ["Replication DR", "재해 대응", "RPO/RTO 정의 필요"]
+      ] } }] },
+      { "id": "s5", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "적용 사례", "items": ["업무계 시스템 HA 구성", "VDI 확장", "표준 이미지 기반 운영"] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "가상화/클러스터 상담", "note": "목표 RTO/RPO와 운영 제약조건을 알려주세요." } }] }
+    ]
+  },
+
+  "/service/server/ops-monitoring": { "id": "page_service_server_ops_monitoring", "title": "운영/모니터링", "slug": "/service/server/ops-monitoring",
+    "seo": { "title": "운영/모니터링 | TechI", "description": "관제/알림/자동화로 운영 품질과 대응 속도를 개선합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Server", "title": "운영/모니터링", "breadcrumbs": ["Service","Server","Ops"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "장애 탐지부터 원인 분석, 복구 자동화까지 운영 체계를 정립합니다. (더미)" } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "구성", "items": [
+        { "title": "관제 대시보드", "desc": "가시성 확보" },
+        { "title": "알림/에스컬레이션", "desc": "SLA 기반 대응" },
+        { "title": "런북 자동화", "desc": "반복 작업 자동화" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "운영 체계", "steps": ["모니터링", "알림", "분석", "조치", "리뷰/개선"] } }] },
+      { "id": "s5", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "기존 도구를 유지하면서 연동 가능한가요?", "a": "가능합니다. API/에이전트 방식으로 통합 구성을 설계합니다." }
+      ] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "운영/관제 상담", "note": "현재 알림 체계와 장애 이력을 공유해 주세요." } }] }
+    ]
+  },
+
+  "/service/network": { "id": "page_service_network", "title": "네트워크", "slug": "/service/network",
+    "seo": { "title": "네트워크 | TechI", "description": "설계/구축부터 보안 정책, 고가용까지 네트워크 전 영역을 지원합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Service", "title": "네트워크", "breadcrumbs": ["Service","Network"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Network Architecture", "sub": "안정성·보안·확장성을 갖춘 네트워크 설계와 운영.", "ctaPrimary": { "label": "설계/구축", "href": "/service/network/design-build" } } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "제공 서비스", "items": [
+        { "title": "설계/구축", "desc": "표준 토폴로지/이행", "href": "/service/network/design-build" },
+        { "title": "보안(방화벽/정책)", "desc": "정책/세그먼트/접근제어", "href": "/service/network/security" },
+        { "title": "무선/고가용", "desc": "AP/컨트롤러/이중화", "href": "/service/network/ha-wireless" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "토폴로지 예시", "steps": ["Core", "Distribution", "Access", "Security Zone", "WAN/Internet"] } }] },
+      { "id": "s5", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "적용 사례", "items": ["세그먼트 분리/정책 고도화", "L3/L4 이중화", "무선 품질 개선"] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "네트워크 상담", "note": "대역/장비/정책 요구사항을 알려주세요." } }] }
+    ]
+  },
+
+  "/service/network/design-build": { "id": "page_service_network_design_build", "title": "설계/구축", "slug": "/service/network/design-build",
+    "seo": { "title": "네트워크 설계/구축 | TechI", "description": "표준 설계와 절차로 네트워크 구축을 수행합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Network", "title": "설계/구축", "breadcrumbs": ["Service","Network","Design/Build"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "요구사항 기반 표준 토폴로지와 장비/정책 구성을 설계합니다. (더미)" } }] },
+      { "id": "s3", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "표준 설계 흐름", "steps": ["현황 파악", "세그먼트 설계", "정책/보안", "구축", "검증"] } }] },
+      { "id": "s4", "type": "benefits", "blocks": [{ "type": "benefits", "data": { "title": "효과", "items": ["구성 표준화", "장애 감소", "확장성 확보"] } }] },
+      { "id": "s5", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "설계/구축 상담", "note": "현재 구성도/요구 대역폭이 있으면 공유해 주세요." } }] }
+    ]
+  },
+
+  "/service/network/security": { "id": "page_service_network_security", "title": "보안(방화벽/정책)", "slug": "/service/network/security",
+    "seo": { "title": "네트워크 보안 | TechI", "description": "방화벽/정책/세그먼트 기반으로 보안을 강화합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Network", "title": "보안(방화벽/정책)", "breadcrumbs": ["Service","Network","Security"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "정책 표준화와 로그 기반 운영으로 보안 수준을 개선합니다. (더미)" } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "핵심", "items": [
+        { "title": "정책 표준화", "desc": "규칙 관리/검토 체계" },
+        { "title": "세그먼트 분리", "desc": "업무/관리/외부 구간 분리" },
+        { "title": "감사 대응", "desc": "로그/리포트 자동화" }
+      ] } }] },
+      { "id": "s4", "type": "table", "blocks": [{ "type": "comparisonTable", "data": { "title": "정책 예시(더미)", "columns": ["구간", "허용", "비고"], "rows": [
+        ["User → App", "443", "WAF 경유"],
+        ["App → DB", "5432", "내부 전용"]
+      ] } }] },
+      { "id": "s5", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "정책 정리(클린업)도 포함되나요?", "a": "포함됩니다. 중복/미사용 규칙을 정리하고 표준안을 수립합니다." }
+      ] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "네트워크 보안 상담", "note": "현재 정책 규모/감사 요구사항을 알려주세요." } }] }
+    ]
+  },
+
+  "/service/network/ha-wireless": { "id": "page_service_network_ha_wireless", "title": "무선/고가용", "slug": "/service/network/ha-wireless",
+    "seo": { "title": "무선/고가용 | TechI", "description": "무선 품질 개선 및 핵심 구간 이중화로 가용성을 강화합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Network", "title": "무선/고가용", "breadcrumbs": ["Service","Network","HA/Wireless"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "컨트롤러 이중화, AP 설계, 핵심 구간 HA로 서비스 연속성을 확보합니다. (더미)" } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "범위", "items": [
+        { "title": "무선 설계", "desc": "커버리지/채널/로밍 최적화" },
+        { "title": "HA 구성", "desc": "Core/Firewall 이중화" },
+        { "title": "품질 측정", "desc": "사전/사후 품질 측정" }
+      ] } }] },
+      { "id": "s4", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "사례", "items": ["대형 사무공간 무선 최적화", "중요 업무망 HA 구축"] } }] },
+      { "id": "s5", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "무선/HA 상담", "note": "시설 규모와 요구 가용성을 알려주세요." } }] }
+    ]
+  },
+
+  "/service/storage-backup": { "id": "page_service_storage_backup", "title": "스토리지/백업", "slug": "/service/storage-backup",
+    "seo": { "title": "스토리지/백업 | TechI", "description": "데이터 보호, DR/BCP, 복구 시나리오까지 설계합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Service", "title": "스토리지/백업", "breadcrumbs": ["Service","Storage/Backup"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "데이터 보호의 표준", "sub": "백업·복구·DR 체계로 운영 리스크를 줄입니다.", "ctaPrimary": { "label": "DR/BCP", "href": "/service/storage-backup/dr-bcp" } } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "핵심 영역", "items": [
+        { "title": "스토리지 구축", "desc": "확장/성능/운영성", "href": "/service/storage-backup/storage" },
+        { "title": "백업/복구", "desc": "정책/보관/검증", "href": "/service/storage-backup/backup-restore" },
+        { "title": "DR/BCP", "desc": "RPO/RTO 기반 설계", "href": "/service/storage-backup/dr-bcp" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "백업-복구 흐름", "steps": ["정책 수립", "백업 수행", "무결성 검증", "복구 리허설", "개선"] } }] },
+      { "id": "s5", "type": "table", "blocks": [{ "type": "comparisonTable", "data": { "title": "RPO/RTO 레벨(예시)", "columns": ["레벨", "RPO", "RTO"], "rows": [
+        ["L1", "24h", "24h"],
+        ["L2", "4h", "4h"],
+        ["L3", "0~1h", "1h"]
+      ] } }] },
+      { "id": "s6", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "복구 리허설(테스트)도 포함되나요?", "a": "권장 범위에 포함됩니다. 정기 리허설로 복구 성공률을 높입니다." }
+      ] } }] },
+      { "id": "s7", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "스토리지/백업 상담", "note": "데이터 규모/보관 기간/목표 RPO/RTO를 알려주세요." } }] }
+    ]
+  },
+
+  "/service/storage-backup/storage": { "id": "page_service_storage_backup_storage", "title": "스토리지 구축", "slug": "/service/storage-backup/storage",
+    "seo": { "title": "스토리지 구축 | TechI", "description": "워크로드 기반 스토리지 아키텍처를 설계합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Storage/Backup", "title": "스토리지 구축", "breadcrumbs": ["Service","Storage/Backup","Storage"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "성능/확장/운영성 기준으로 스토리지 구성을 설계합니다. (더미)" } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "구성 포인트", "items": [
+        { "title": "워크로드 분리", "desc": "IO 특성별 티어링" },
+        { "title": "확장 설계", "desc": "스케일업/아웃 전략" },
+        { "title": "운영성", "desc": "모니터링/알림/표준화" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "구성(예시)", "steps": ["Compute", "SAN/NAS", "Storage Pool", "Backup Target"] } }] },
+      { "id": "s5", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "사례", "items": ["DB 성능 개선", "VM 스토리지 표준화", "아카이빙 분리"] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "스토리지 구축 상담", "note": "주요 워크로드(IOPS/Latency) 정보를 알려주세요." } }] }
+    ]
+  },
+
+  "/service/storage-backup/backup-restore": { "id": "page_service_storage_backup_backup_restore", "title": "백업/복구", "slug": "/service/storage-backup/backup-restore",
+    "seo": { "title": "백업/복구 | TechI", "description": "정책 기반 백업과 복구 시나리오로 데이터 리스크를 줄입니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Storage/Backup", "title": "백업/복구", "breadcrumbs": ["Service","Storage/Backup","Backup/Restore"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "3-2-1 원칙 등 정책 기반 백업과 정기 복구 검증을 수행합니다. (더미)" } }] },
+      { "id": "s3", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "복구 시나리오", "steps": ["파일 단위", "VM 단위", "애플리케이션 단위", "전체 서비스"] } }] },
+      { "id": "s4", "type": "benefits", "blocks": [{ "type": "benefits", "data": { "title": "효과", "items": ["복구 성공률 향상", "다운타임 감소", "감사 대응 강화"] } }] },
+      { "id": "s5", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "백업 검증은 어떻게 하나요?", "a": "샘플 복구/무결성 체크/리허설을 정기 수행합니다." }
+      ] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "백업/복구 상담", "note": "데이터 중요도와 보관 정책을 알려주세요." } }] }
+    ]
+  },
+
+  "/service/storage-backup/dr-bcp": { "id": "page_service_storage_backup_dr_bcp", "title": "DR/BCP", "slug": "/service/storage-backup/dr-bcp",
+    "seo": { "title": "DR/BCP | TechI", "description": "RPO/RTO 기반 재해복구/업무연속성 체계를 설계합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Storage/Backup", "title": "DR/BCP", "breadcrumbs": ["Service","Storage/Backup","DR/BCP"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "업무 중요도에 따라 DR 레벨을 정의하고 이행 로드맵을 수립합니다. (더미)" } }] },
+      { "id": "s3", "type": "table", "blocks": [{ "type": "comparisonTable", "data": { "title": "레벨 정의(예시)", "columns": ["레벨", "구성", "대상"], "rows": [
+        ["Basic", "백업 기반", "비핵심"],
+        ["Standard", "복제+수동 전환", "중요"],
+        ["Premium", "복제+자동 전환", "핵심"]
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "절차", "steps": ["분류", "RPO/RTO 정의", "설계", "구축", "리허설", "개선"] } }] },
+      { "id": "s5", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "사례", "items": ["센터 간 DR 구축", "핵심 시스템 이중화", "정기 전환 리허설"] } }] },
+      { "id": "s6", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "전환 리허설은 서비스 중단이 필요한가요?", "a": "무중단/저중단 방식으로 시나리오를 설계할 수 있습니다." }
+      ] } }] },
+      { "id": "s7", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "DR/BCP 상담", "note": "목표 RPO/RTO와 주요 업무를 알려주세요." } }] }
+    ]
+  },
+
+  "/service/consulting": { "id": "page_service_consulting", "title": "컨설팅", "slug": "/service/consulting",
+    "seo": { "title": "컨설팅 | TechI", "description": "진단, 아키텍처 로드맵, 보안/컴플라이언스를 지원합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Service", "title": "컨설팅", "breadcrumbs": ["Service","Consulting"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Consulting & Roadmap", "sub": "현황을 수치화하고 실행 가능한 로드맵으로 전환합니다.", "ctaPrimary": { "label": "인프라 진단", "href": "/service/consulting/assessment" } } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "영역", "items": [
+        { "title": "인프라 진단", "desc": "리스크/성능/운영성 진단", "href": "/service/consulting/assessment" },
+        { "title": "아키텍처/로드맵", "desc": "목표 상태/단계별 이행", "href": "/service/consulting/architecture-roadmap" },
+        { "title": "보안/컴플라이언스", "desc": "감사 대응/정책 고도화", "href": "/service/consulting/security-compliance" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "방법론(예시)", "steps": ["As-Is 분석", "To-Be 정의", "Gap 분석", "이행 계획", "성과 지표"] } }] },
+      { "id": "s5", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "사례", "items": ["센터 표준화 로드맵", "보안 감사 대응", "운영 자동화 전략"] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "컨설팅 문의", "note": "현황 자료(구성도/장비 목록)가 있으면 공유해 주세요." } }] }
+    ]
+  },
+
+  "/service/consulting/assessment": { "id": "page_service_consulting_assessment", "title": "인프라 진단", "slug": "/service/consulting/assessment",
+    "seo": { "title": "인프라 진단 | TechI", "description": "리스크/성능/운영성 기준으로 진단하고 개선안을 제시합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Consulting", "title": "인프라 진단", "breadcrumbs": ["Service","Consulting","Assessment"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "표준 체크리스트로 현황을 진단하고 우선순위 기반 개선안을 도출합니다. (더미)" } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "진단 항목", "items": [
+        { "title": "가용성", "desc": "이중화/장애 대응" },
+        { "title": "성능", "desc": "병목/용량" },
+        { "title": "보안", "desc": "정책/로그/접근제어" }
+      ] } }] },
+      { "id": "s4", "type": "benefits", "blocks": [{ "type": "benefits", "data": { "title": "산출물(예시)", "items": ["리스크 리스트", "개선 로드맵", "예산/일정 개요"] } }] },
+      { "id": "s5", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "진단 요청", "note": "대상 범위(서버/네트워크/스토리지)를 알려주세요." } }] }
+    ]
+  },
+
+  "/service/consulting/architecture-roadmap": { "id": "page_service_consulting_architecture_roadmap", "title": "아키텍처/로드맵", "slug": "/service/consulting/architecture-roadmap",
+    "seo": { "title": "아키텍처/로드맵 | TechI", "description": "To-Be 설계와 단계 이행 로드맵을 수립합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Consulting", "title": "아키텍처/로드맵", "breadcrumbs": ["Service","Consulting","Roadmap"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "목표 아키텍처(To-Be)와 단계별 이행안을 정의합니다. (더미)" } }] },
+      { "id": "s3", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "로드맵(예시)", "steps": ["0~3개월: 기반 정비", "3~6개월: 핵심 이행", "6~12개월: 고도화"] } }] },
+      { "id": "s4", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "사례", "items": ["클라우드 전환 단계화", "DR 레벨업", "관제 체계 고도화"] } }] },
+      { "id": "s5", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "예산/일정까지 산정해주나요?", "a": "요구 수준에 따라 개략/상세 산정이 가능합니다." }
+      ] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "로드맵 수립 문의", "note": "목표/제약조건(예산/인력/기간)을 알려주세요." } }] }
+    ]
+  },
+
+  "/service/consulting/security-compliance": { "id": "page_service_consulting_security_compliance", "title": "보안/컴플라이언스", "slug": "/service/consulting/security-compliance",
+    "seo": { "title": "보안/컴플라이언스 | TechI", "description": "정책/로그/감사 관점에서 보안 수준을 체계화합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Consulting", "title": "보안/컴플라이언스", "breadcrumbs": ["Service","Consulting","Security/Compliance"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "감사 대응이 가능한 정책/증적 체계를 구축합니다. (더미)" } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "구성", "items": [
+        { "title": "정책 체계화", "desc": "표준/예외 관리" },
+        { "title": "로그/증적", "desc": "수집/보관/리포팅" },
+        { "title": "권한 관리", "desc": "최소 권한/검토" }
+      ] } }] },
+      { "id": "s4", "type": "table", "blocks": [{ "type": "comparisonTable", "data": { "title": "체크리스트(더미)", "columns": ["영역", "점검 항목", "상태"], "rows": [
+        ["권한", "계정/권한 리뷰", "TBD"],
+        ["로그", "수집/보관 정책", "TBD"]
+      ] } }] },
+      { "id": "s5", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "기관/내부 규정에 맞춰 커스터마이징 가능한가요?", "a": "가능합니다. 기준 문서를 바탕으로 체계를 맞춥니다." }
+      ] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "보안/컴플라이언스 문의", "note": "감사 범위/기준을 알려주세요." } }] }
+    ]
+  },
+
+  "/service/maintenance": { "id": "page_service_maintenance", "title": "유지보수", "slug": "/service/maintenance",
+    "seo": { "title": "유지보수 | TechI", "description": "SLA 기반 지원, 정기점검, 장애대응으로 운영 품질을 보장합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Service", "title": "유지보수", "breadcrumbs": ["Service","Maintenance"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Managed Support", "sub": "SLA 기반 운영 지원과 정기 점검으로 안정성을 높입니다.", "ctaPrimary": { "label": "SLA/지원체계", "href": "/service/maintenance/sla-support" } } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "영역", "items": [
+        { "title": "SLA/지원체계", "desc": "등급별 대응/에스컬레이션", "href": "/service/maintenance/sla-support" },
+        { "title": "정기점검", "desc": "체크리스트 기반 점검", "href": "/service/maintenance/health-check" },
+        { "title": "장애대응/복구", "desc": "재발 방지 포함", "href": "/service/maintenance/incident-recovery" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "지원 프로세스", "steps": ["접수", "분류", "조치", "보고", "개선"] } }] },
+      { "id": "s5", "type": "benefits", "blocks": [{ "type": "benefits", "data": { "title": "효과", "items": ["장애 대응 시간 단축", "운영 리스크 감소", "가시성 향상"] } }] },
+      { "id": "s6", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "정기 보고서 제공이 가능한가요?", "a": "가능합니다. 월간/분기 리포트 템플릿으로 제공합니다." }
+      ] } }] },
+      { "id": "s7", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "유지보수 문의", "note": "대상 자산/운영 시간/필요 SLA를 알려주세요." } }] }
+    ]
+  },
+
+  "/service/maintenance/sla-support": { "id": "page_service_maintenance_sla_support", "title": "SLA/지원체계", "slug": "/service/maintenance/sla-support",
+    "seo": { "title": "SLA/지원체계 | TechI", "description": "등급 기반 지원 체계로 운영 품질을 관리합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Maintenance", "title": "SLA/지원체계", "breadcrumbs": ["Service","Maintenance","SLA"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "SLA 등급에 따라 대응 시간과 지원 범위를 정의합니다. (더미)" } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "SLA 요소", "items": [
+        { "title": "대응 시간", "desc": "등급별 초기 대응" },
+        { "title": "에스컬레이션", "desc": "장애 수준별 절차" },
+        { "title": "리포트", "desc": "정기 보고/분석" }
+      ] } }] },
+      { "id": "s4", "type": "table", "blocks": [{ "type": "comparisonTable", "data": { "title": "등급(예시)", "columns": ["등급", "초기 대응", "대상"], "rows": [
+        ["Standard", "4h", "일반"],
+        ["Premium", "1h", "중요"],
+        ["Critical", "15m", "핵심"]
+      ] } }] },
+      { "id": "s5", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "야간/주말 대응이 가능한가요?", "a": "가능합니다. 운영 시간/등급에 따라 구성합니다." }
+      ] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "SLA 설계 문의", "note": "운영 시간과 핵심 업무를 알려주세요." } }] }
+    ]
+  },
+
+  "/service/maintenance/health-check": { "id": "page_service_maintenance_health_check", "title": "정기점검", "slug": "/service/maintenance/health-check",
+    "seo": { "title": "정기점검 | TechI", "description": "정기 점검으로 장애를 예방하고 운영 안정성을 확보합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Maintenance", "title": "정기점검", "breadcrumbs": ["Service","Maintenance","Health Check"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "서버/네트워크/스토리지별 점검 항목을 표준화해 수행합니다. (더미)" } }] },
+      { "id": "s3", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "점검표(예시)", "steps": ["자원 사용률", "로그/알림", "펌웨어/패치", "백업 상태", "보안 설정"] } }] },
+      { "id": "s4", "type": "benefits", "blocks": [{ "type": "benefits", "data": { "title": "효과", "items": ["사전 예방", "장애 감소", "운영 가시성 향상"] } }] },
+      { "id": "s5", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "정기점검 문의", "note": "점검 주기와 대상 범위를 알려주세요." } }] }
+    ]
+  },
+
+  "/service/maintenance/incident-recovery": { "id": "page_service_maintenance_incident_recovery", "title": "장애대응/복구", "slug": "/service/maintenance/incident-recovery",
+    "seo": { "title": "장애대응/복구 | TechI", "description": "장애 대응부터 재발 방지까지 end-to-end로 지원합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Maintenance", "title": "장애대응/복구", "breadcrumbs": ["Service","Maintenance","Incident/Recovery"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "탐지→대응→복구→보고→재발방지까지 프로세스로 수행합니다. (더미)" } }] },
+      { "id": "s3", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "대응 단계", "steps": ["탐지", "분류", "조치", "복구", "RCA", "개선"] } }] },
+      { "id": "s4", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "사례", "items": ["스토리지 장애 복구", "네트워크 루프/장애 대응", "서비스 다운 RCA"] } }] },
+      { "id": "s5", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "보고서(RCA) 제공이 포함되나요?", "a": "포함됩니다. 원인/영향/재발방지 대책을 문서화합니다." }
+      ] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "장애 대응 문의", "note": "현재 상황(증상/로그/영향 범위)을 알려주세요." } }] }
+    ]
+  },
+
+  "/product": { "id": "page_product_root", "title": "Product", "slug": "/product",
+    "seo": { "title": "제품 | TechI", "description": "고가용/DR 제품과 보안 관리 제품군을 제공합니다." },
+    "sections": [
+      { "id": "s1", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Products", "sub": "인프라 가용성과 보안을 위한 제품군.", "ctaPrimary": { "label": "RoseHA", "href": "/product/roseha" }, "ctaSecondary": { "label": "Omniguard", "href": "/product/lsware" } } }] },
+      { "id": "s2", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "제품", "items": [
+        { "title": "RoseHA", "desc": "실시간 복제/장애 감지/시점 복구", "href": "/product/roseha" },
+        { "title": "LSware(Omniguard)", "desc": "UAC/UCC/SecuMS 통합 보안", "href": "/product/lsware" }
+      ] } }] },
+      { "id": "s3", "type": "table", "blocks": [{ "type": "comparisonTable", "data": { "title": "제품군 비교(예시)", "columns": ["제품", "주요 목적", "핵심 기능"], "rows": [
+        ["RoseHA", "가용성/DR", "복제, 페일오버, PITR"],
+        ["Omniguard", "보안/통제", "UAC, UCC, SecuMS"]
+      ] } }] },
+      { "id": "s4", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "적용", "items": ["핵심 업무계 이중화", "랜섬웨어 대응", "권한 통제/감사"] } }] },
+      { "id": "s5", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "PoC 진행이 가능한가요?", "a": "가능합니다. 환경/범위를 정의해 PoC 계획을 제안합니다." }
+      ] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "제품 문의", "note": "원하는 제품과 목표를 알려주세요." } }] }
+    ]
+  },
+
+  "/product/roseha": { "id": "page_product_roseha", "title": "RoseHA", "slug": "/product/roseha",
+    "seo": { "title": "RoseHA | TechI", "description": "실시간 복제, 장애 감지/페일오버, 시점 복구로 업무 연속성을 보장합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Product", "title": "RoseHA", "breadcrumbs": ["Product","RoseHA"], "cta": { "label": "데모/문의", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "High Availability & DR", "sub": "복제·전환·복구를 하나의 체계로.", "ctaPrimary": { "label": "실시간 복제", "href": "/product/roseha/replication" } } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "핵심 가치", "items": [
+        { "title": "업무 연속성", "desc": "장애 시 빠른 전환" },
+        { "title": "데이터 보호", "desc": "시점 복구/정책" },
+        { "title": "운영 편의", "desc": "단일 콘솔 기반 운영" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "동작 개요", "steps": ["실시간 복제", "장애 감지", "페일오버", "시점 복구", "복구 후 페일백"] } }] },
+      { "id": "s5", "type": "benefits", "blocks": [{ "type": "benefits", "data": { "title": "지표(예시)", "items": ["RPO 최소화", "RTO 단축", "운영 표준화"] } }] },
+      { "id": "s6", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "적용 사례", "items": ["DB/업무계 HA", "센터 간 DR", "랜섬웨어 대응(복구)"] } }] },
+      { "id": "s7", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "동기/비동기 복제 모두 가능한가요?", "a": "환경과 거리/대역 조건에 맞춰 옵션을 설계합니다." }
+      ] } }] },
+      { "id": "s8", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "RoseHA 문의", "note": "대상 시스템과 목표 RPO/RTO를 알려주세요." } }] }
+    ]
+  },
+
+  "/product/roseha/replication": { "id": "page_product_roseha_replication", "title": "실시간 복제", "slug": "/product/roseha/replication",
+    "seo": { "title": "RoseHA 실시간 복제 | TechI", "description": "실시간 복제로 데이터 일관성을 유지합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "RoseHA", "title": "실시간 복제", "breadcrumbs": ["Product","RoseHA","Replication"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Real-time Replication", "sub": "데이터 변경을 실시간으로 동기화합니다.", "ctaPrimary": { "label": "페일오버", "href": "/product/roseha/failover" } } }] },
+      { "id": "s3", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "복제 흐름", "steps": ["Primary Write", "Change Capture", "Transmit", "Apply", "Verify"] } }] },
+      { "id": "s4", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "특징", "items": [
+        { "title": "낮은 지연", "desc": "네트워크 조건 최적화" },
+        { "title": "일관성", "desc": "정합성 검증" },
+        { "title": "유연성", "desc": "거리/대역 옵션" }
+      ] } }] },
+      { "id": "s5", "type": "table", "blocks": [{ "type": "comparisonTable", "data": { "title": "동기/비동기(예시)", "columns": ["방식", "장점", "고려사항"], "rows": [
+        ["동기", "일관성 극대화", "대역/지연 제약"],
+        ["비동기", "거리 확장", "RPO 발생"]
+      ] } }] },
+      { "id": "s6", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "사례", "items": ["핵심 DB 복제", "센터 간 복제"] } }] },
+      { "id": "s7", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "복제 구성 문의", "note": "거리/대역/목표 RPO를 알려주세요." } }] }
+    ]
+  },
+
+  "/product/roseha/failover": { "id": "page_product_roseha_failover", "title": "장애 감지/페일오버", "slug": "/product/roseha/failover",
+    "seo": { "title": "RoseHA 페일오버 | TechI", "description": "장애 감지와 자동 전환으로 다운타임을 줄입니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "RoseHA", "title": "장애 감지/페일오버", "breadcrumbs": ["Product","RoseHA","Failover"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Detect & Failover", "sub": "장애를 감지하고 서비스 전환을 자동화합니다.", "ctaPrimary": { "label": "시점 복구", "href": "/product/roseha/point-in-time-recovery" } } }] },
+      { "id": "s3", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "전환 흐름", "steps": ["Health Check", "Quorum 판단", "Failover", "DNS/Endpoint 전환", "서비스 검증"] } }] },
+      { "id": "s4", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "옵션", "items": [
+        { "title": "자동 전환", "desc": "정책 기반 자동화" },
+        { "title": "수동 승인", "desc": "운영 승인 후 전환" },
+        { "title": "페일백", "desc": "복구 후 원복" }
+      ] } }] },
+      { "id": "s5", "type": "benefits", "blocks": [{ "type": "benefits", "data": { "title": "효과", "items": ["다운타임 최소화", "운영 부담 감소", "전환 절차 표준화"] } }] },
+      { "id": "s6", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "오탐/미탐을 줄일 수 있나요?", "a": "멀티 체크와 정책 튜닝으로 오탐을 줄입니다." }
+      ] } }] },
+      { "id": "s7", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "페일오버 문의", "note": "목표 RTO와 전환 정책(자동/승인)을 알려주세요." } }] }
+    ]
+  },
+
+  "/product/roseha/point-in-time-recovery": { "id": "page_product_roseha_point_in_time_recovery", "title": "시점 복구", "slug": "/product/roseha/point-in-time-recovery",
+    "seo": { "title": "RoseHA 시점 복구 | TechI", "description": "원하는 시점으로 복구해 데이터 피해를 최소화합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "RoseHA", "title": "시점 복구", "breadcrumbs": ["Product","RoseHA","PITR"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Point-in-Time Recovery", "sub": "사고 직전 시점으로 신속 복구합니다.", "ctaPrimary": { "label": "운영 콘솔", "href": "/product/roseha/management-console" } } }] },
+      { "id": "s3", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "복구 시나리오", "steps": ["사고 탐지", "복구 시점 선택", "스냅샷/로그 적용", "검증", "서비스 재개"] } }] },
+      { "id": "s4", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "정책", "items": [
+        { "title": "보관 정책", "desc": "기간/빈도 설정" },
+        { "title": "검증", "desc": "무결성 체크" },
+        { "title": "훈련", "desc": "정기 리허설" }
+      ] } }] },
+      { "id": "s5", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "적용", "items": ["랜섬웨어/오삭제 복구", "업데이트 실패 복구"] } }] },
+      { "id": "s6", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "복구 소요 시간은 무엇에 좌우되나요?", "a": "데이터 규모, 스토리지 성능, 시점 보관 방식에 따라 달라집니다." }
+      ] } }] },
+      { "id": "s7", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "시점 복구 문의", "note": "목표 복구 시점/보관 정책을 알려주세요." } }] }
+    ]
+  },
+
+  "/product/roseha/management-console": { "id": "page_product_roseha_management_console", "title": "운영 콘솔", "slug": "/product/roseha/management-console",
+    "seo": { "title": "RoseHA 운영 콘솔 | TechI", "description": "단일 콘솔로 복제/전환/복구를 관리합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "RoseHA", "title": "운영 콘솔", "breadcrumbs": ["Product","RoseHA","Console"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "개요", "body": "대시보드 기반으로 상태/알림/정책을 통합 관리합니다. (더미)" } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "기능", "items": [
+        { "title": "상태 모니터링", "desc": "복제/노드 상태" },
+        { "title": "알림", "desc": "정책 기반 알림/에스컬레이션" },
+        { "title": "리포트", "desc": "운영 리포트" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "대시보드 구성(예시)", "steps": ["Overview", "Replication", "Failover", "Recovery", "Settings"] } }] },
+      { "id": "s5", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "외부 모니터링 도구와 연동되나요?", "a": "API/웹훅 방식으로 연동 구성 가능합니다." }
+      ] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "운영 콘솔 문의", "note": "운영 요구(알림/리포트/권한)를 알려주세요." } }] }
+    ]
+  },
+
+  "/product/lsware": { "id": "page_product_lsware", "title": "LSware(Omniguard)", "slug": "/product/lsware",
+    "seo": { "title": "Omniguard | TechI", "description": "UAC/UCC/SecuMS로 권한·콘텐츠·보안 관리를 통합합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Product", "title": "LSware(Omniguard)", "breadcrumbs": ["Product","Omniguard"], "cta": { "label": "데모/문의", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Unified Security Suite", "sub": "권한/콘텐츠/보안 운영을 하나로.", "ctaPrimary": { "label": "UAC", "href": "/product/lsware/uac" } } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "제품군", "items": [
+        { "title": "UAC", "desc": "사용자/권한/접근 제어", "href": "/product/lsware/uac" },
+        { "title": "UCC", "desc": "콘텐츠/행위 통제", "href": "/product/lsware/ucc" },
+        { "title": "SecuMS", "desc": "보안 관리/운영", "href": "/product/lsware/secums" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "통합 운영 구조", "steps": ["정책 수립", "적용", "모니터링", "감사/리포트", "개선"] } }] },
+      { "id": "s5", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "적용", "items": ["계정 권한 통제", "자료 유출 방지", "감사 대응 리포팅"] } }] },
+      { "id": "s6", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "기존 AD/SSO와 연동 가능한가요?", "a": "가능합니다. 환경에 맞춰 연동 방식을 설계합니다." }
+      ] } }] },
+      { "id": "s7", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "Omniguard 문의", "note": "도입 범위(UAC/UCC/SecuMS)를 알려주세요." } }] }
+    ]
+  },
+
+  "/product/lsware/uac": { "id": "page_product_lsware_uac", "title": "UAC", "slug": "/product/lsware/uac",
+    "seo": { "title": "UAC | Omniguard", "description": "사용자/권한/접근 제어를 체계화합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Omniguard", "title": "UAC", "breadcrumbs": ["Product","Omniguard","UAC"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "User Access Control", "sub": "최소 권한 원칙을 운영 체계로.", "ctaPrimary": { "label": "UCC", "href": "/product/lsware/ucc" } } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "기능(예시)", "items": [
+        { "title": "권한 요청/승인", "desc": "워크플로우 기반" },
+        { "title": "권한 리뷰", "desc": "정기 검토/회수" },
+        { "title": "감사 리포트", "desc": "정책 준수" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "권한 흐름", "steps": ["요청", "승인", "부여", "모니터링", "회수"] } }] },
+      { "id": "s5", "type": "table", "blocks": [{ "type": "comparisonTable", "data": { "title": "정책 예(더미)", "columns": ["정책", "대상", "조건"], "rows": [
+        ["Admin 접근", "관리자", "MFA + 승인"],
+        ["DB 접근", "개발자", "시간 제한"]
+      ] } }] },
+      { "id": "s6", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "권한 이력 추적이 가능한가요?", "a": "가능합니다. 변경 이력과 리포트를 제공합니다." }
+      ] } }] },
+      { "id": "s7", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "UAC 문의", "note": "권한 대상/승인 체계를 알려주세요." } }] }
+    ]
+  },
+
+  "/product/lsware/ucc": { "id": "page_product_lsware_ucc", "title": "UCC", "slug": "/product/lsware/ucc",
+    "seo": { "title": "UCC | Omniguard", "description": "콘텐츠/행위 통제로 데이터 유출을 방지합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Omniguard", "title": "UCC", "breadcrumbs": ["Product","Omniguard","UCC"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "User Content Control", "sub": "민감 정보의 유통을 통제합니다.", "ctaPrimary": { "label": "SecuMS", "href": "/product/lsware/secums" } } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "기능(예시)", "items": [
+        { "title": "콘텐츠 정책", "desc": "반출/공유 제한" },
+        { "title": "행위 탐지", "desc": "이상 행위 감지" },
+        { "title": "리포트", "desc": "감사/분석" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "통제 흐름", "steps": ["정책 정의", "적용", "탐지", "차단/경고", "리포트"] } }] },
+      { "id": "s5", "type": "useCases", "blocks": [{ "type": "useCases", "data": { "title": "사례", "items": ["외부 반출 통제", "민감 정보 탐지", "부정 행위 차단"] } }] },
+      { "id": "s6", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "정책 예외 처리가 가능한가요?", "a": "가능합니다. 승인 기반 예외 정책을 설계합니다." }
+      ] } }] },
+      { "id": "s7", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "UCC 문의", "note": "통제 대상(파일/메일/웹 등)을 알려주세요." } }] }
+    ]
+  },
+
+  "/product/lsware/secums": { "id": "page_product_lsware_secums", "title": "SecuMS", "slug": "/product/lsware/secums",
+    "seo": { "title": "SecuMS | Omniguard", "description": "보안 운영과 정책 관리를 체계화합니다." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "Omniguard", "title": "SecuMS", "breadcrumbs": ["Product","Omniguard","SecuMS"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Security Management System", "sub": "정책/운영/리포트를 통합 관리합니다.", "ctaPrimary": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "기능(예시)", "items": [
+        { "title": "정책 관리", "desc": "표준/배포/버전" },
+        { "title": "운영 대시보드", "desc": "상태/알림" },
+        { "title": "감사 리포트", "desc": "증적/내보내기" }
+      ] } }] },
+      { "id": "s4", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "운영 체계", "steps": ["정책", "적용", "모니터링", "리포트", "개선"] } }] },
+      { "id": "s5", "type": "benefits", "blocks": [{ "type": "benefits", "data": { "title": "효과", "items": ["운영 표준화", "감사 대응 단순화", "가시성 향상"] } }] },
+      { "id": "s6", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "FAQ", "items": [
+        { "q": "데이터 내보내기/연동이 가능한가요?", "a": "API/포맷을 통해 연동 가능합니다." }
+      ] } }] },
+      { "id": "s7", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "SecuMS 문의", "note": "운영/감사 요구사항을 알려주세요." } }] }
+    ]
+  },
+
+  "/about": { "id": "page_about_root", "title": "About", "slug": "/about",
+    "seo": { "title": "회사 소개 | TechI", "description": "미래지향적 디지털 인프라 전문 기업 소개." },
+    "sections": [
+      { "id": "s1", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "About TechI", "sub": "Connecting the Future, Securing the Infra", "ctaPrimary": { "label": "비전/미션", "href": "/about/vision-mission" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "회사 소개", "body": "인프라 구축/운영, DR, 보안 솔루션 역량을 기반으로 고객의 안정적인 서비스를 지원합니다. (더미)" } }] },
+      { "id": "s3", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "핵심 역량", "items": [
+        { "title": "인프라 전문성", "desc": "서버/네트워크/스토리지" },
+        { "title": "가용성/DR", "desc": "업무 연속성" },
+        { "title": "보안/감사", "desc": "정책/운영 체계" }
+      ] } }] },
+      { "id": "s4", "type": "logos", "blocks": [{ "type": "logoSlider", "data": { "title": "협력체/파트너(예시)", "logos": ["Partner A", "Partner B", "Partner C"] } }] },
+      { "id": "s5", "type": "timeline", "blocks": [{ "type": "timeline", "data": { "title": "연혁(요약)", "items": [
+        { "year": "2021", "text": "사업 시작(더미)" },
+        { "year": "2023", "text": "제품/서비스 확장(더미)" },
+        { "year": "2025", "text": "전국 단위 레퍼런스 확보(더미)" }
+      ] } }] },
+      { "id": "s6", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "문의", "note": "협업/제휴 문의 환영합니다." } }] }
+    ]
+  },
+
+  "/about/vision-mission": { "id": "page_about_vision_mission", "title": "비전/미션", "slug": "/about/vision-mission",
+    "seo": { "title": "비전/미션 | TechI", "description": "미래를 연결하고 인프라를 지키는 약속." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "About", "title": "비전/미션", "breadcrumbs": ["About","Vision/Mission"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Vision & Mission", "sub": "신뢰할 수 있는 인프라로 고객의 비즈니스를 지속 가능하게.", "ctaPrimary": { "label": "연혁", "href": "/about/history" } } }] },
+      { "id": "s3", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "비전", "body": "고객의 서비스가 멈추지 않도록, 인프라 운영의 표준을 만든다. (더미)" } }] },
+      { "id": "s4", "type": "benefits", "blocks": [{ "type": "benefits", "data": { "title": "미션", "items": ["안정성", "보안", "운영 효율", "확장성"] } }] },
+      { "id": "s5", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "제휴/문의", "note": "비전과 함께할 파트너를 찾습니다." } }] }
+    ]
+  },
+
+  "/about/history": { "id": "page_about_history", "title": "연혁", "slug": "/about/history",
+    "seo": { "title": "연혁 | TechI", "description": "TechI의 성장 과정." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "About", "title": "연혁", "breadcrumbs": ["About","History"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "timeline", "blocks": [{ "type": "timeline", "data": { "title": "주요 연혁", "items": [
+        { "year": "2021", "text": "설립 및 초기 레퍼런스 확보(더미)" },
+        { "year": "2022", "text": "인프라 서비스 고도화(더미)" },
+        { "year": "2024", "text": "DR/보안 사업 확장(더미)" }
+      ] } }] },
+      { "id": "s3", "type": "logos", "blocks": [{ "type": "logoSlider", "data": { "title": "주요 고객/파트너(예시)", "logos": ["Client A", "Client B", "Client C"] } }] },
+      { "id": "s4", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "프로젝트 문의", "note": "유사 레퍼런스 기반으로 제안드립니다." } }] }
+    ]
+  },
+
+  "/about/partners": { "id": "page_about_partners", "title": "협력체", "slug": "/about/partners",
+    "seo": { "title": "협력체 | TechI", "description": "TechI의 협력 네트워크." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "About", "title": "협력체", "breadcrumbs": ["About","Partners"], "cta": { "label": "제휴 문의", "href": "/contact" } } }] },
+      { "id": "s2", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Partners", "sub": "상호 보완적 협력으로 더 큰 가치를 만듭니다.", "ctaPrimary": { "label": "오시는길", "href": "/about/location" } } }] },
+      { "id": "s3", "type": "logos", "blocks": [{ "type": "logoSlider", "data": { "title": "협력체 목록(더미)", "logos": ["Partner A", "Partner B", "Partner C", "Partner D"] } }] },
+      { "id": "s4", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "협력 모델", "body": "공동 제안/기술 협력/유지보수 체계 등 다양한 형태의 협력을 지향합니다. (더미)" } }] },
+      { "id": "s5", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "협력 문의", "note": "협력 제안서를 공유해 주세요." } }] }
+    ]
+  },
+
+  "/about/location": { "id": "page_about_location", "title": "오시는길", "slug": "/about/location",
+    "seo": { "title": "오시는길 | TechI", "description": "주소/연락처/교통 안내." },
+    "sections": [
+      { "id": "s1", "type": "header", "blocks": [{ "type": "subnavHeader", "data": { "eyebrow": "About", "title": "오시는길", "breadcrumbs": ["About","Location"], "cta": { "label": "문의하기", "href": "/contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "주소/연락처", "body": "주소: (더미)\n전화: (더미)\n이메일: (더미)" } }] },
+      { "id": "s3", "type": "infographic", "blocks": [{ "type": "infographic", "data": { "title": "교통 안내(더미)", "steps": ["지하철 ○○역 하차", "버스 ○○ 정류장", "도보 5분"] } }] },
+      { "id": "s4", "type": "cards", "blocks": [{ "type": "featureCards", "data": { "title": "안내", "items": [
+        { "title": "주차", "desc": "방문 전 문의(더미)" },
+        { "title": "방문 예약", "desc": "사전 예약 권장(더미)" }
+      ] } }] },
+      { "id": "s5", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "title": "방문/미팅 요청", "note": "원하시는 일정 후보를 남겨주세요." } }] }
+    ]
+  },
+
+  "/contact": { "id": "page_contact", "title": "문의하기", "slug": "/contact",
+    "seo": { "title": "문의하기 | TechI", "description": "상담/견적/데모 요청을 남겨주세요." },
+    "sections": [
+      { "id": "s1", "type": "hero", "blocks": [{ "type": "hero", "data": { "h1": "Contact", "sub": "상담/견적/데모 요청을 남겨주세요.", "ctaPrimary": { "label": "제출하기", "href": "#contact" } } }] },
+      { "id": "s2", "type": "content", "blocks": [{ "type": "richText", "data": { "title": "안내", "body": "영업일 기준 1일 내 회신드립니다.\n개인정보 수집/이용 안내 문구(더미)." } }] },
+      { "id": "s3", "type": "contact", "blocks": [{ "type": "contactForm", "data": { "anchor": "contact", "title": "문의 폼", "note": "필수 항목: 이름/연락처/회사/문의 내용" } }] },
+      { "id": "s4", "type": "faq", "blocks": [{ "type": "faq", "data": { "title": "자주 묻는 질문", "items": [
+        { "q": "PoC 기간은 얼마나 걸리나요?", "a": "범위에 따라 다르며 통상 2~4주 내외(더미)입니다." }
+      ] } }] }
+    ]
+  }
+}
+
+(3) Next.js routes 자동 생성 규칙 (App Router)
+핵심 전략
+
+“좌측 트리 클릭 → URL 변경 → 레이아웃(AppShell)은 유지 → Content만 교체”
+
+App Router에서 app/(site)/[...slug]/page.tsx 하나로 모든 페이지를 렌더하면, 레이아웃 고정 + SPA 전환이 자연스럽게 됩니다.
+
+권장 폴더 구조
+app/
+  (site)/
+    layout.tsx              // AppShell: GNB + Sidebar + ContentFrame
+    page.tsx                // 홈(선택)
+    [...slug]/
+      page.tsx              // 모든 콘텐츠 페이지 렌더 (동적 라우트)
+  api/
+    content/
+      save/route.ts         // (옵션) Edit Mode 저장 API
+
+content/
+  nav.json
+  pages.json
+
+lib/
+  content/
+    loadContent.ts          // nav/pages 로딩 + 캐시 + helpers
+    resolvePage.ts          // slug -> page lookup + fallback
+    buildTree.ts            // nav tree 구성
+
+components/
+  AppShell/
+  TreeNav/
+  ContentRenderer/
+  EditMode/
+
+라우팅 규칙
+A) [...slug]에서 slug 문자열 만들기
+
+Next.js params: params.slug = ["service","server"]
+
+slug string: "/" + params.slug.join("/")
+
+예외:
+
+/ 홈은 (site)/page.tsx로 별도 처리 (선택)
+
+혹은 홈도 pages.json에 넣고 slug를 /로 처리해도 됨
+
+B) 페이지 데이터 조회
+
+pages.json을 키가 slug인 object로 만들어 둔 이유: pages[slug]로 즉시 조회
+
+없으면 404 or fallback(/service 같은 상위로 이동) 정책 선택
+
+C) Sidebar 트리 렌더 규칙
+
+현재 경로 slug의 첫 segment로 category 결정:
+
+service|product|about에 따라 해당 루트 아래 노드만 필터링
+
+TreeNav에서 href는 NavNode.slug를 그대로 사용
+
+자동 “정적 경로 생성” 규칙 (generateStaticParams)
+
+nav.json 또는 pages.json을 기준으로 빌드 시 경로 목록 생성
+
+pages.json 키 전체를 순회하면 가장 확실함
+
+app/(site)/[...slug]/page.tsx 예시 로직(규칙):
+
+export async function generateStaticParams() {
+  const pages = await loadPages(); // pages.json
+  const slugs = Object.keys(pages).filter((s) => s !== "/");
+
+  return slugs.map((path) => ({
+    slug: path.replace(/^\//, "").split("/")
+  }));
+}
+
+metadata(SEO) 자동 생성 규칙 (generateMetadata)
+
+pages.json의 seo.title, seo.description로 자동 주입
+
+canonical은 slug 기준으로 생성
+
+export async function generateMetadata({ params }) {
+  const slugPath = "/" + (params.slug ?? []).join("/");
+  const page = await resolvePage(slugPath);
+
+  return {
+    title: page?.seo?.title ?? page?.title ?? "TechI",
+    description: page?.seo?.description ?? "",
+    alternates: { canonical: slugPath }
+  };
+}
+
+Sitemap/Robots 자동 생성 규칙
+
+Next.js App Router의 app/sitemap.ts, app/robots.ts 사용
+
+pages.json 키를 순회해서 sitemap entries 생성
+
+// app/sitemap.ts
+export default async function sitemap() {
+  const pages = await loadPages();
+  const paths = Object.keys(pages);
+
+  return paths.map((path) => ({
+    url: `https://YOUR_DOMAIN${path === "/" ? "" : path}`,
+    lastModified: new Date()
+  }));
+}
+
+“Edit Mode 저장” 규칙(운영 확장)
+
+MVP: LocalStorage 저장(빠름)
+
+운영: /api/content/save로 pages.json 형태의 payload 저장 (DB/파일/Headless CMS로 교체)
+
+권장 payload:
+
+{ slug, patch } (부분 업데이트)
+
+서버에서는 버전(draft/published) 분리 가능

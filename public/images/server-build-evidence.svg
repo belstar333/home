@@ -1,0 +1,63 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" rx="40" fill="#24160E"/>
+  <rect x="44" y="44" width="1512" height="912" rx="32" fill="url(#bg)"/>
+  <text x="112" y="142" fill="#FFF4E7" font-size="42" font-family="Arial, sans-serif" font-weight="700">Build / Refresh Execution Board</text>
+  <text x="112" y="184" fill="#D8B899" font-size="22" font-family="Arial, sans-serif">What gets planned before a server cutover actually starts</text>
+
+  <path d="M180 342H1420" stroke="#E18B35" stroke-width="4" stroke-dasharray="14 16"/>
+
+  <g>
+    <circle cx="220" cy="342" r="22" fill="#E18B35"/>
+    <rect x="120" y="394" width="220" height="154" rx="24" fill="#FFF7EF" stroke="#DFA063"/>
+    <text x="156" y="448" fill="#6D3C16" font-size="24" font-family="Arial, sans-serif" font-weight="700">DISCOVER</text>
+    <text x="156" y="486" fill="#8A5A2C" font-size="20" font-family="Arial, sans-serif">Asset census</text>
+    <text x="156" y="516" fill="#8A5A2C" font-size="20" font-family="Arial, sans-serif">Rack / power</text>
+  </g>
+  <g>
+    <circle cx="520" cy="342" r="22" fill="#E18B35"/>
+    <rect x="420" y="394" width="220" height="154" rx="24" fill="#FFF7EF" stroke="#DFA063"/>
+    <text x="470" y="448" fill="#6D3C16" font-size="24" font-family="Arial, sans-serif" font-weight="700">DESIGN</text>
+    <text x="456" y="486" fill="#8A5A2C" font-size="20" font-family="Arial, sans-serif">Sizing sheet</text>
+    <text x="456" y="516" fill="#8A5A2C" font-size="20" font-family="Arial, sans-serif">Standard model</text>
+  </g>
+  <g>
+    <circle cx="820" cy="342" r="22" fill="#E18B35"/>
+    <rect x="720" y="394" width="220" height="154" rx="24" fill="#FFF7EF" stroke="#DFA063"/>
+    <text x="778" y="448" fill="#6D3C16" font-size="24" font-family="Arial, sans-serif" font-weight="700">STAGE</text>
+    <text x="756" y="486" fill="#8A5A2C" font-size="20" font-family="Arial, sans-serif">Change window</text>
+    <text x="756" y="516" fill="#8A5A2C" font-size="20" font-family="Arial, sans-serif">Rollback path</text>
+  </g>
+  <g>
+    <circle cx="1120" cy="342" r="22" fill="#E18B35"/>
+    <rect x="1020" y="394" width="220" height="154" rx="24" fill="#FFF7EF" stroke="#DFA063"/>
+    <text x="1072" y="448" fill="#6D3C16" font-size="24" font-family="Arial, sans-serif" font-weight="700">CUTOVER</text>
+    <text x="1058" y="486" fill="#8A5A2C" font-size="20" font-family="Arial, sans-serif">Install / config</text>
+    <text x="1058" y="516" fill="#8A5A2C" font-size="20" font-family="Arial, sans-serif">Validation run</text>
+  </g>
+  <g>
+    <circle cx="1380" cy="342" r="22" fill="#E18B35"/>
+    <rect x="1280" y="394" width="220" height="154" rx="24" fill="#FFF7EF" stroke="#DFA063"/>
+    <text x="1335" y="448" fill="#6D3C16" font-size="24" font-family="Arial, sans-serif" font-weight="700">HANDOVER</text>
+    <text x="1310" y="486" fill="#8A5A2C" font-size="20" font-family="Arial, sans-serif">As-built docs</text>
+    <text x="1310" y="516" fill="#8A5A2C" font-size="20" font-family="Arial, sans-serif">Ops checklist</text>
+  </g>
+
+  <rect x="108" y="640" width="1384" height="220" rx="28" fill="#FFF8F1" stroke="#DFA063"/>
+  <text x="148" y="702" fill="#6D3C16" font-size="28" font-family="Arial, sans-serif" font-weight="700">Execution Controls</text>
+  <rect x="148" y="734" width="286" height="78" rx="20" fill="#FFE5C9"/>
+  <rect x="462" y="734" width="286" height="78" rx="20" fill="#FFE5C9"/>
+  <rect x="776" y="734" width="286" height="78" rx="20" fill="#FFE5C9"/>
+  <rect x="1090" y="734" width="362" height="78" rx="20" fill="#FFE5C9"/>
+  <text x="291" y="781" fill="#6D3C16" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">RACK MAP / POWER PLAN</text>
+  <text x="605" y="781" fill="#6D3C16" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">MIGRATION / ROLLBACK</text>
+  <text x="919" y="781" fill="#6D3C16" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">VALIDATION SHEET</text>
+  <text x="1271" y="781" fill="#6D3C16" font-size="22" font-family="Arial, sans-serif" text-anchor="middle">AS-BUILT / HANDOVER DOCS</text>
+
+  <defs>
+    <linearGradient id="bg" x1="88" y1="72" x2="1512" y2="928" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4B2D16"/>
+      <stop offset="0.5" stop-color="#2D1B10"/>
+      <stop offset="1" stop-color="#7A491F"/>
+    </linearGradient>
+  </defs>
+</svg>
