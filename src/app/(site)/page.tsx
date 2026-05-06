@@ -5,23 +5,27 @@ import styles from "./page.module.css";
 const PAIN_SOLUTION_ITEMS = [
     {
         label: "중단 리스크",
-        issue: "교체 시점은 왔지만 서비스 중단이 걱정됩니다",
-        response: "장비만 바꾸는 접근이 아니라 전환 순서, 검증 포인트, 롤백 조건까지 먼저 설계해야 실제 리스크가 줄어듭니다.",
+        issue: "노후 장비 교체 시점이 왔지만 서비스 중단이 걱정된다면",
+        response: "테크아이는 교체 작업 전에 전환 순서, 검증 기준, 롤백 조건을 먼저 설계합니다. 장비 스펙보다 전환 계획이 실제 중단 위험을 줄입니다.",
+        href: "/service/server",
     },
     {
         label: "복구 불확실성",
-        issue: "백업은 하고 있지만 실제 복구가 될지 확신이 없습니다",
-        response: "백업 체계는 저장 여부보다 복구 시나리오와 복구 시간 검증이 먼저 확인되어야 합니다.",
+        issue: "백업은 하고 있지만 실제로 복구가 될지 확신이 없다면",
+        response: "저장 여부보다 복구 여부가 기준이 되어야 합니다. 백업 구성 이후 복구 시나리오와 RTO를 실제 환경에서 검증해 체계를 잡습니다.",
+        href: "/service/storage-backup",
     },
     {
         label: "장애 가시성",
-        issue: "장애가 날 때마다 원인 파악과 대응이 늦어집니다",
-        response: "서버, 네트워크, 스토리지, 운영 로그를 따로 보지 않고 한 흐름으로 연결해야 대응 속도가 달라집니다.",
+        issue: "장애가 날 때마다 원인 파악부터 대응까지 늦어진다면",
+        response: "테크아이는 서버, 네트워크, 스토리지, 운영 로그를 한 흐름으로 연결해 모니터링 구조를 만듭니다. 영역을 나눠 보던 방식에서 벗어나야 대응 속도가 달라집니다.",
+        href: "/service/server/ops-monitoring",
     },
     {
         label: "운영 표준화",
-        issue: "유지보수는 받고 있지만 대응 기준이 제각각입니다",
-        response: "담당자 경험에 의존하는 구조보다 문서와 점검 기준이 남는 운영 체계를 먼저 만들어야 합니다.",
+        issue: "유지보수는 받지만 현장마다 대응 기준이 제각각이라면",
+        response: "담당자가 바뀌어도 환경이 흔들리지 않도록, 인수 문서·점검 항목·대응 기준을 프로젝트 산출물에 함께 남깁니다.",
+        href: "/service/maintenance",
     },
 ];
 
@@ -68,34 +72,42 @@ const SERVICE_DOMAINS = [
     },
 ];
 
+const PARTNER_LOGOS = [
+    { src: "/logos/Hewlett-Packard-Enterprise-Logo-New.png", alt: "Hewlett Packard Enterprise" },
+    { src: "/logos/HP-logo-blue-png-large-size.png", alt: "HP" },
+    { src: "/logos/Cisco-logo.png", alt: "Cisco" },
+    { src: "/logos/NetApp-Logos.png", alt: "NetApp" },
+];
+
+const OS_LOGOS = [
+    { src: "/logos/Windows_logo_-_2012_(dark_blue).svg.png", alt: "Windows Server", label: "Windows Server" },
+    { src: "/logos/Rocky_Linux_logo.svg.png", alt: "Rocky Linux", label: "Rocky Linux" },
+    { src: "/logos/UbuntuCoF.svg.png", alt: "Ubuntu", label: "Ubuntu" },
+];
+
 const DIFFERENTIATORS = [
     {
         number: "01",
-        title: "설계와 운영을 분리하지 않습니다",
-        body: "구축만 끝나는 구조가 아니라 실제 담당 조직이 바로 이어받을 수 있는 운영 기준까지 함께 정리합니다.",
+        title: "구축 이후까지 운영 기준이 남는 프로젝트를 만듭니다",
+        body: "설계부터 인수까지, 담당 조직이 바로 이어받을 수 있는 운영 기준·점검 항목·검증 결과를 프로젝트와 함께 정리합니다. 담당자가 바뀌어도 환경이 흔들리지 않습니다.",
     },
     {
         number: "02",
-        title: "문서와 검증 기준이 남는 프로젝트를 지향합니다",
-        body: "인수 문서, 점검 항목, 검증 결과가 남아야 담당자가 바뀌어도 환경이 흔들리지 않습니다.",
-    },
-    {
-        number: "03",
         title: "공공과 엔터프라이즈 기준으로 수행합니다",
         body: "국가 중요 시스템과 대형 업무 환경에서 요구되는 안정성, 보안성, 연속성을 기본 전제로 봅니다.",
     },
     {
-        number: "04",
+        number: "03",
         title: "AI도 실사용 구조를 먼저 설계합니다",
-        body: "데모 화면보다 인프라 밀도, 운영 지속성, 데이터 흐름, 보호 체계가 실제 활용성을 좌우한다고 봅니다.",
+        body: "RAG 파이프라인, 벡터 DB, GPU 클러스터 — 어떤 구성이든 실제로 운영되려면 네트워크 대역폭, 스토리지 처리량, 장애 대응 체계가 먼저 갖춰져야 합니다.",
     },
 ];
 
 const TRUST_POINTS = [
     { label: "업력", value: "20년" },
-    { label: "파트너십", value: "HPE Gold Partner" },
-    { label: "전문 인력", value: "23명 · 2개 지사" },
-    { label: "수행 경험", value: "170+ Pflops급 AI 데이터센터" },
+    { label: "공인 파트너", value: "HPE · Cisco · NetApp" },
+    { label: "전담 엔지니어", value: "23명 · 2개 거점" },
+    { label: "AI 인프라 수행", value: "170+ Pflops급" },
 ];
 
 export default function Home() {
@@ -117,14 +129,16 @@ export default function Home() {
                         <p className={styles.heroEyebrow}>기업 인프라 엔지니어링</p>
                         <p className={styles.heroBrand}>TechI</p>
                         <h1 className={styles.heroTitle}>
-                            <span className={styles.titleLine}>복잡한 IT환경을</span>
-                            <span className={styles.titleLine}>실제로 운영되는 구조로</span>
-                            <span className={styles.titleLine}>다시 설계합니다.</span>
+                            <span className={styles.titleLine}>끊임없이 흐르는 데이터를 위한</span>
+                            <span className={styles.titleLine}>
+                                가장 견고한 기반,{" "}
+                                <span className={styles.heroTitleAccent}>테크아이</span>
+                            </span>
                         </h1>
                         <p className={styles.heroDescription}>
-                            TechI는 서버, 네트워크, 데이터 보호, 유지보수, 업무형 AI를 따로 떼어 제안하지
-                            않습니다. 현재 환경과 운영 조직을 기준으로, 구축 이후까지 버티는 인프라 구조를
-                            설계합니다.
+                            데이터가 멈추지 않는 환경을 위해 서버·네트워크·스토리지를 하나의 흐름으로
+                            설계합니다. 구축에서 끝나지 않고 실제 현장에서 오래 버티는 인프라 구조,
+                            그게 테크아이의 기준입니다.
                         </p>
                         <div className={styles.heroActions}>
                             <Link href="/service" className={styles.primaryAction}>
@@ -190,8 +204,56 @@ export default function Home() {
                                         <span className={styles.painLabel}>{item.label}</span>
                                         <h3 className={styles.painIssue}>{item.issue}</h3>
                                     </div>
-                                    <p className={styles.painResponse}>{item.response}</p>
+                                    <div className={styles.painResponseWrap}>
+                                        <p className={styles.painResponse}>{item.response}</p>
+                                        <Link href={item.href} className={styles.painLink}>
+                                            관련 서비스 보기
+                                            <span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+                                        </Link>
+                                    </div>
                                 </article>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.proofSection}>
+                <div className={styles.sectionShell}>
+                    <div className={styles.proofHead}>
+                        <p className={styles.sectionEyebrow}>기술 파트너십</p>
+                        <h2 className={styles.proofTitle}>검증된 파트너와 함께 안정적인 인프라를 만듭니다</h2>
+                        <p className={styles.proofBody}>
+                            HPE 골드 파트너 자격으로 서버·스토리지 공급과 기술 지원에 공인된 역량을 갖추고 있습니다. Cisco, NetApp과의 파트너십을 통해 네트워크부터 데이터 보호까지 단일 체계로 제안합니다.
+                        </p>
+                    </div>
+                    <div className={styles.partnerRow}>
+                        {PARTNER_LOGOS.map((logo) => (
+                            <div key={logo.alt} className={styles.partnerItem}>
+                                <Image
+                                    src={logo.src}
+                                    alt={logo.alt}
+                                    width={140}
+                                    height={44}
+                                    className={styles.logoImg}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                    <div className={styles.osEnvWrap}>
+                        <p className={styles.osEnvLabel}>주요 운영 환경</p>
+                        <div className={styles.osRow}>
+                            {OS_LOGOS.map((os) => (
+                                <div key={os.alt} className={styles.osItem}>
+                                    <Image
+                                        src={os.src}
+                                        alt={os.alt}
+                                        width={140}
+                                        height={44}
+                                        className={styles.logoImg}
+                                    />
+                                    <span className={styles.osName}>{os.label}</span>
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -204,8 +266,7 @@ export default function Home() {
                         <div className={styles.domainLead}>
                             <p className={styles.sectionEyebrowDark}>전문 서비스 영역</p>
                             <h2 className={styles.sectionTitleDark}>
-                                <span className={styles.titleLine}>환경에 따라</span>
-                                <span className={styles.titleLine}>다른 서비스 축을</span>
+                                <span className={styles.titleLine}>환경에 따라 다른 서비스 축을</span>
                                 <span className={styles.titleLine}>정교하게 연결합니다</span>
                             </h2>
                             <p className={styles.sectionDescriptionDark}>
@@ -236,15 +297,7 @@ export default function Home() {
                                             <p className={styles.domainDesc}>{item.desc}</p>
                                         </div>
                                     </div>
-                                    <div className={styles.domainVisual}>
-                                        <Image
-                                            src={item.imageSrc}
-                                            alt={item.imageAlt}
-                                            fill
-                                            sizes="(max-width: 900px) 100vw, 18vw"
-                                            className={styles.sectionImage}
-                                        />
-                                    </div>
+                                    <span className={`material-symbols-outlined ${styles.domainArrow}`} aria-hidden="true">arrow_forward</span>
                                 </Link>
                             ))}
                         </div>
@@ -262,7 +315,7 @@ export default function Home() {
                             결과는 남는 기준에서 갈립니다
                         </h2>
                         <p className={styles.sectionDescription}>
-                            TechI는 스펙보다 전환, 검증, 인수, 운영 안정화까지 이어지는 흐름을 더 중요하게
+                            테크아이는 스펙보다 전환, 검증, 인수, 운영 안정화까지 이어지는 흐름을 더 중요하게
                             봅니다. 그래서 프로젝트 이후의 상태가 달라집니다.
                         </p>
                     </div>
@@ -308,7 +361,7 @@ export default function Home() {
                                     서비스 전체 보기
                                 </Link>
                                 <Link href="/about" className={styles.secondaryAction}>
-                                    회사 신뢰 근거 보기
+                                    회사 소개 보기
                                 </Link>
                             </div>
                         </div>
@@ -316,9 +369,18 @@ export default function Home() {
                         <div className={styles.closingSecondary}>
                             <p className={styles.closingKicker}>왜 TechI인가</p>
                             <ul className={styles.closingList}>
-                                <li>공공 · 엔터프라이즈 기준의 고안정성 인프라 수행 경험</li>
-                                <li>장기 파트너십 기반의 공급 안정성과 엔지니어링 체계</li>
-                                <li>전환 계획, 검증 기준, 운영 문서까지 남기는 프로젝트 방식</li>
+                                <li>
+                                    <span className={styles.closingListLabel}>경험</span>
+                                    공공 · 엔터프라이즈 기준의 고안정성 인프라 수행 실적
+                                </li>
+                                <li>
+                                    <span className={styles.closingListLabel}>공급</span>
+                                    HPE · Cisco · NetApp 파트너십 기반의 안정적 장비 공급 체계
+                                </li>
+                                <li>
+                                    <span className={styles.closingListLabel}>문서</span>
+                                    전환 계획, 검증 기준, 운영 문서까지 남기는 프로젝트 방식
+                                </li>
                             </ul>
                         </div>
                     </div>
