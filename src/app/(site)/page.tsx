@@ -184,7 +184,7 @@ export default function Home() {
                             </h2>
                             <p className={styles.sectionDescription}>
                                 같은 문제가 반복된다면 장비 성능보다 구조와 기준을 다시 봐야 할 시점일 수
-                                있습니다. TechI는 현장에서 반복되는 문제를 운영 관점에서 다시 정리합니다.
+                                있습니다. 테크아이는 현장에서 반복되는 문제를 운영 관점에서 다시 정리합니다.
                             </p>
                             <div className={styles.painVisual}>
                                 <Image
@@ -353,7 +353,7 @@ export default function Home() {
                             </h2>
                             <p className={styles.closingBody}>
                                 신규 구축이든 기존 환경 재정비든, 현재 구조와 우선순위를 먼저 정리해야 전환
-                                리스크와 운영 불확실성을 줄일 수 있습니다. TechI는 구축 이후까지 운영되는
+                                리스크와 운영 불확실성을 줄일 수 있습니다. 테크아이는 구축 이후까지 운영되는
                                 기준을 남기는 방향으로 프로젝트를 설계합니다.
                             </p>
                             <div className={styles.heroActions}>
@@ -367,7 +367,7 @@ export default function Home() {
                         </div>
 
                         <div className={styles.closingSecondary}>
-                            <p className={styles.closingKicker}>왜 TechI인가</p>
+                            <p className={styles.closingKicker}>왜 테크아이인가</p>
                             <ul className={styles.closingList}>
                                 <li>
                                     <span className={styles.closingListLabel}>경험</span>

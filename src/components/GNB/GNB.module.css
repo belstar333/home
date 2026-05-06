@@ -33,16 +33,11 @@
 }
 
 .logoMark {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--primary), var(--primary-container));
-  box-shadow: var(--shadow-primary);
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
 .logoText {

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -48,8 +49,14 @@ export default function GNB({ onToggleSidebar }: { onToggleSidebar?: () => void 
         <header className={styles.gnb} ref={menuRef}>
             <div className={styles.gnbInner}>
                 <Link href="/" className={styles.logo} onClick={closeMenus}>
-                    <span className={styles.logoMark}>T</span>
-                    <span className={styles.logoText}>TechI</span>
+                    <Image
+                        src="/logos/techi-v2.png"
+                        alt="테크아이"
+                        width={120}
+                        height={40}
+                        className={styles.logoMark}
+                    />
+                    <span className={styles.logoText}></span>
                 </Link>
 
                 <button

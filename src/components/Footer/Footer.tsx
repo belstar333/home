@@ -21,7 +21,7 @@ export default function Footer() {
         <footer className={styles.footer}>
             <div className={styles.footerGrid}>
                 <div className={styles.brand}>
-                    <div className={styles.brandLogo}>TechI</div>
+                    <div className={styles.brandLogo}>(주)테크아이</div>
                     <p className={styles.brandDesc}>
                         AI와 데이터를 연결하는 최적의 인프라 아키텍트로서, 공공과 엔터프라이즈 환경의 물리적
                         인프라와 운영 구조를 설계합니다.
