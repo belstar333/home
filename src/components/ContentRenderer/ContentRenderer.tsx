@@ -19,6 +19,7 @@ import {
     getPageVariant,
     type PagePresentation,
 } from "@/lib/content/servicePresentation";
+import ServiceCtaBanner from "@/components/ServiceCtaBanner/ServiceCtaBanner";
 import styles from "./ContentRenderer.module.css";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -27,11 +28,12 @@ function renderBlock(
     key: string,
     showContactForm: boolean,
     page: Page,
-    presentation: PagePresentation | null
+    presentation: PagePresentation | null,
+    isDetail: boolean
 ) {
     switch (block.type) {
         case "hero": return <HeroBlock key={key} data={block.data as any} presentation={presentation} />;
-        case "subnavHeader": return <SubnavHeaderBlock key={key} data={block.data as any} />;
+        case "subnavHeader": return isDetail ? null : <SubnavHeaderBlock key={key} data={block.data as any} />;
         case "richText": return <RichTextBlock key={key} data={block.data as any} />;
         case "featureCards": return <FeatureCardsBlock key={key} data={block.data as any} />;
         case "infographic": return <InfographicBlock key={key} data={block.data as any} />;
@@ -62,6 +64,8 @@ export default function ContentRenderer({ page }: { page: Page }) {
     const pageVariant = getPageVariant(page);
     const pageCategory = page.slug.startsWith("/service") ? "service" : "default";
     const presentation = getPagePresentation(page);
+    const isServiceDetail = page.slug.startsWith("/service/") && page.slug.split("/").filter(Boolean).length >= 3;
+    const hasNavBar = page.slug === "/service" || page.slug.startsWith("/service/");
 
     return (
         <article
@@ -69,12 +73,14 @@ export default function ContentRenderer({ page }: { page: Page }) {
             data-page-theme={pageTheme}
             data-page-variant={pageVariant}
             data-page-category={pageCategory}
+            data-is-detail={hasNavBar || undefined}
         >
             {page.sections.map((section) =>
                 section.blocks.map((block, bi) =>
-                    renderBlock(block, `${section.id}-${bi}`, showContactForm, page, presentation)
+                    renderBlock(block, `${section.id}-${bi}`, showContactForm, page, presentation, hasNavBar)
                 )
             )}
+            {isServiceDetail && <ServiceCtaBanner pageTitle={page.title} />}
         </article>
     );
 }

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const slugPath = "/" + (slug ?? []).join("/");
     const page = resolvePage(slugPath);
     return {
-        title: page?.seo?.title ?? page?.title ?? "TechI",
+        title: page?.seo?.title ?? page?.title ?? "테크아이",
         description: page?.seo?.description ?? "",
         alternates: { canonical: slugPath },
     };

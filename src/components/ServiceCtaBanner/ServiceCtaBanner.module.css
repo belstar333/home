@@ -1,0 +1,118 @@
+.banner {
+    background:
+        radial-gradient(circle at 80% 50%, color-mix(in srgb, var(--page-accent) 55%, transparent) 0%, transparent 60%),
+        linear-gradient(135deg, var(--page-accent-strong) 0%, color-mix(in srgb, var(--page-accent-strong) 65%, #040b18) 100%);
+    border-radius: 28px;
+    padding: 52px 52px;
+    margin-bottom: 72px;
+}
+
+.bannerInner {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.bannerCopy {
+    flex: 1;
+    min-width: 0;
+}
+
+.bannerLabel {
+    margin: 0 0 14px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.52);
+}
+
+.bannerTitle {
+    margin: 0 0 16px;
+    font-family: var(--font-headline);
+    font-size: clamp(1.45rem, 2.2vw, 1.95rem);
+    font-weight: 800;
+    line-height: 1.22;
+    letter-spacing: -0.03em;
+    color: #fff;
+    word-break: keep-all;
+}
+
+.bannerBody {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.78;
+    color: rgba(255, 255, 255, 0.68);
+    word-break: keep-all;
+}
+
+.bannerActions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.ctaPrimary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    padding: 0 36px;
+    border-radius: var(--radius-md);
+    background: #fff;
+    color: var(--page-accent);
+    font-size: 0.92rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ctaPrimary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.35);
+}
+
+.ctaSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 28px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.86rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.ctaSecondary:hover {
+    border-color: rgba(255, 255, 255, 0.58);
+    color: #fff;
+}
+
+@media (max-width: 860px) {
+    .banner {
+        padding: 36px 28px;
+    }
+
+    .bannerInner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+    }
+
+    .bannerActions {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .ctaPrimary,
+    .ctaSecondary {
+        flex: 1;
+        min-width: 130px;
+    }
+}

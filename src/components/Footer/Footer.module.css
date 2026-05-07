@@ -1,5 +1,5 @@
 .footer {
-  background: #0f1923;
+  background: #0c1520;
   color: #fff;
   width: 100%;
   margin-top: auto;
@@ -7,7 +7,7 @@
 
 .footerGrid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 48px;
   max-width: 1280px;
   margin: 0 auto;
@@ -21,19 +21,46 @@
   gap: 20px;
 }
 
-.brandLogo {
-  font-family: var(--font-headline);
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.02em;
+.brandLogoLink {
+  display: inline-block;
+  width: fit-content;
+}
+
+.brandLogoImg {
+  display: block;
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
 }
 
 .brandDesc {
-  color: #8a9bb2;
-  font-size: 0.88rem;
-  line-height: 1.7;
-  max-width: 300px;
+  color: #7a8fa8;
+  font-size: 0.87rem;
+  line-height: 1.75;
+  max-width: 280px;
+  word-break: keep-all;
+}
+
+.brandCta {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 20px;
+  width: fit-content;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(107, 163, 232, 0.35);
+  color: #6ba3e8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.brandCta:hover {
+  border-color: rgba(107, 163, 232, 0.7);
+  color: #adc6ff;
+  background: rgba(107, 163, 232, 0.06);
 }
 
 /* ── Link Columns ── */
@@ -45,10 +72,11 @@
 .colTitle {
   font-family: var(--font-headline);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   color: #6ba3e8;
-  margin-bottom: 20px;
-  letter-spacing: 0;
+  margin: 0 0 18px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .linkList {
@@ -57,20 +85,18 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .footerLink {
-  color: #8a9bb2;
-  font-size: 0.88rem;
+  color: #7a8fa8;
+  font-size: 0.87rem;
   transition: color 0.2s ease;
   text-decoration: none;
 }
 
 .footerLink:hover {
-  color: #adc6ff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  color: #c8d8f0;
 }
 
 /* ── Contact List ── */
@@ -84,77 +110,89 @@
 }
 
 .contactList li {
-  color: #8a9bb2;
-  font-size: 0.88rem;
+  color: #7a8fa8;
+  font-size: 0.87rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
 }
 
 .contactList li .material-symbols-outlined {
   font-size: 1rem;
   color: #6ba3e8;
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 
 /* ── Bottom Bar ── */
 .bottomBar {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 24px 32px;
+  padding: 22px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .copyright {
-  color: #5b6d82;
-  font-size: 0.82rem;
+  color: #4a5d72;
+  font-size: 0.8rem;
 }
 
-.socials {
+.bottomLinks {
   display: flex;
-  gap: 16px;
+  gap: 24px;
 }
 
-.socialIcon {
-  color: #5b6d82;
+.bottomLink {
+  color: #4a5d72;
+  font-size: 0.8rem;
   transition: color 0.2s ease;
-  display: flex;
-  align-items: center;
+  text-decoration: none;
 }
 
-.socialIcon:hover {
-  color: #fff;
-}
-
-.socialIcon .material-symbols-outlined {
-  font-size: 1.2rem;
+.bottomLink:hover {
+  color: #7a8fa8;
 }
 
 /* ── Responsive ── */
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
   .footerGrid {
     grid-template-columns: 1fr 1fr;
-    gap: 36px;
-    padding: 48px 24px;
+    gap: 36px 48px;
   }
 
   .brand {
     grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .brandDesc {
+    max-width: 380px;
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   .footerGrid {
     grid-template-columns: 1fr;
     gap: 28px;
+    padding: 44px 24px;
+  }
+
+  .brand {
+    flex-direction: column;
+    gap: 16px;
   }
 
   .bottomBar {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    gap: 12px;
     padding: 20px 24px;
   }
 }

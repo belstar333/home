@@ -16,7 +16,7 @@ function page(config: {
         title: config.title,
         slug: config.slug,
         seo: {
-            title: `${config.title} | TechI`,
+            title: `${config.title} | 테크아이`,
             description: config.description,
         },
         sections: config.sections,
@@ -27,7 +27,7 @@ function subnavHeader(title: string, breadcrumbs: string[]): BlockData {
     return {
         type: "subnavHeader",
         data: {
-            eyebrow: "TechI",
+            eyebrow: "테크아이",
             title,
             breadcrumbs,
         },
@@ -128,47 +128,47 @@ const servicePageOverrides: Record<string, Page> = {
         title: "서비스",
         slug: "/service",
         description:
-            "TechI는 서버, 네트워크, 데이터 보호, 컨설팅, 유지보수를 운영 기준으로 다시 묶는 전략형 서비스 포트폴리오를 제공합니다.",
+            "테크아이는 서버, 네트워크, 스토리지·백업, 컨설팅, 유지보수를 운영 기준 하나로 연결하는 인프라 서비스 포트폴리오를 제공합니다.",
         sections: [
             section(
                 "s1",
                 "hero",
                 heroBlock(
-                    "환경마다 다른 인프라 과제를\n운영 기준으로 다시 묶습니다",
-                    "TechI의 서비스는 서버, 네트워크, 데이터 보호, 컨설팅, 유지보수를 개별 구매 항목처럼 나누지 않습니다. 현재 환경과 운영 조직을 기준으로, 실제로 오래 운영되는 구조를 만드는 서비스 체계로 제안합니다.",
+                    "설치보다 운영,\n납품보다 구조가\n먼저입니다",
+                    "테크아이의 다섯 가지 서비스는 각각 독립된 상품이 아닙니다. 서버, 네트워크, 스토리지, 컨설팅, 유지보수는 하나의 운영 단위 안에서 맞물려 있고, 어떤 영역에서 시작하든 전체 흐름을 염두에 두고 설계합니다.",
                     "/images/about-team-strategy.jpg",
-                    "프로젝트 방향과 서비스 범위를 논의하는 전략 회의",
-                    { label: "회사 소개 보기", href: "/about" },
-                    { label: "솔루션 보기", href: "/solution" }
+                    "인프라 서비스 방향을 함께 검토하는 프로젝트 회의",
+                    { label: "인프라 진단부터 시작하기", href: "/service/consulting/assessment" },
+                    { label: "서버 인프라 보기", href: "/service/server" }
                 )
             ),
             section(
                 "s2",
                 "cards",
-                featureCards("전문 서비스 영역", [
+                featureCards("다섯 가지 전문 서비스 영역", [
                     {
                         title: "서버 인프라",
-                        desc: "신규 구축, 교체, 가상화, 운영 기준 정리까지 서버 환경 전체를 설계합니다.",
+                        desc: "장비 교체와 구축은 전환 이후 운영 상태가 기준입니다. 사양보다 역할 분리, 전환 순서, 인수 기준을 먼저 설계합니다.",
                         href: "/service/server",
                     },
                     {
                         title: "네트워크",
-                        desc: "회선, 세그먼트, 보안 정책, 무선, 이중화를 포함한 연결 구조를 다룹니다.",
+                        desc: "장애가 났을 때 어느 구간인지 바로 읽혀야 합니다. 연결뿐 아니라 경계, 정책, 이중화, 운영 기준까지 한 구조로 설계합니다.",
                         href: "/service/network",
                     },
                     {
-                        title: "스토리지 · 백업",
-                        desc: "저장, 백업, 복구, DR을 하나의 데이터 보호 체계로 정리합니다.",
+                        title: "스토리지·백업",
+                        desc: "백업이 있다는 말보다 실제로 복구되는지가 먼저입니다. 저장, 백업, 복구, DR을 하나의 데이터 보호 흐름으로 연결합니다.",
                         href: "/service/storage-backup",
                     },
                     {
                         title: "컨설팅",
-                        desc: "현황 분석, 진단, 로드맵, 보안·컴플라이언스 검토를 실행 계획으로 연결합니다.",
+                        desc: "보고서로 끝나는 진단은 의미가 없습니다. 현황 분석에서 실행 가능한 로드맵과 우선순위까지 연결합니다.",
                         href: "/service/consulting",
                     },
                     {
                         title: "유지보수",
-                        desc: "SLA, 정기점검, 장애 대응, RCA를 포함한 장기 운영 지원 구조를 만듭니다.",
+                        desc: "빠른 대응보다 재발을 줄이는 체계가 먼저입니다. SLA, 정기점검, 장애 대응, RCA를 하나의 운영 구조로 만듭니다.",
                         href: "/service/maintenance",
                     },
                 ])
@@ -179,26 +179,26 @@ const servicePageOverrides: Record<string, Page> = {
                 imageGallery({
                     eyebrow: "Field Scenes",
                     title: "서비스는 소개 문구보다 실제 프로젝트 장면이 더 정확하게 설명합니다",
-                    body: "설계 회의, 장비 설치, 연결 검토 같은 장면은 TechI가 어디까지 개입하고 무엇을 기준으로 정리하는지 가장 직접적으로 보여줍니다.",
+                    body: "설계 회의, 장비 설치, 연결 검토 같은 장면은 테크아이가 어디까지 개입하고 무엇을 기준으로 정리하는지 가장 직접적으로 보여줍니다.",
                     items: [
                         {
                             imageSrc: "/images/technical-design-review.jpg",
                             imageAlt: "기술 설계 자료를 검토하는 장면",
-                            caption: "서비스 범위는 보통 설계 문서와 운영 기준을 함께 맞추는 자리에서 정리됩니다.",
+                            caption: "서비스 범위는 설계 문서와 운영 기준을 함께 맞추는 자리에서 정리됩니다.",
                             imageWidth: 6000,
                             imageHeight: 4000,
                         },
                         {
                             imageSrc: "/images/server-photo-install.jpg",
                             imageAlt: "서버 장비 설치 현장",
-                            caption: "구축은 납품이 아니라 설치 이후 상태를 기준으로 검증해야 의미가 있습니다.",
+                            caption: "구축은 설치 이후 상태를 기준으로 검증해야 비로소 완료됩니다.",
                             imageWidth: 1600,
                             imageHeight: 1067,
                         },
                         {
                             imageSrc: "/images/network-fiber-photo.jpg",
                             imageAlt: "네트워크 광케이블과 연결 환경",
-                            caption: "연결 품질과 보호 체계는 결국 실제 운영 환경 안에서 함께 봐야 합니다.",
+                            caption: "연결 품질과 보호 체계는 실제 운영 환경 안에서 함께 검토해야 합니다.",
                             imageWidth: 1600,
                             imageHeight: 1067,
                         },
@@ -209,31 +209,31 @@ const servicePageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Strategic Service Portfolio",
-                    title: "기술 영역을 나열하지 않고 운영 흐름 안에서 서비스를 다시 묶습니다",
-                    body: "서버, 네트워크, 데이터 보호, 운영 지원은 따로 움직이지 않습니다. 현황 진단부터 설계, 구축, 전환, 운영 인수까지 한 흐름으로 연결돼야 프로젝트 이후에도 품질이 유지됩니다.",
+                    eyebrow: "One Integrated Approach",
+                    title: "어느 서비스에서 시작하든\n전체 운영 구조를 함께 봅니다",
+                    body: "단일 서비스를 요청해도 서버, 네트워크, 스토리지, 운영 체계는 서로 맞닿아 있습니다. 테크아이는 요청된 범위만 처리하지 않고, 현재 환경에서 연결된 구조 전체를 함께 검토해 이후에 충돌하지 않는 방식으로 설계합니다.",
                     imageSrc: "/images/consulting-review-photo.jpg",
                     imageAlt: "프로젝트 문서를 함께 검토하는 회의 장면",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1068,
-                    caption: "Service structure / diagnose, design, build, handover, operation",
+                    caption: "Service approach / diagnose → design → build → validate → handover",
                     points: [
-                        "현재 환경과 운영 제약을 먼저 구조화합니다.",
-                        "기술 선택보다 전환 이후 운영 상태를 먼저 검토합니다.",
-                        "검증 항목과 인수 문서가 남는 구조로 프로젝트를 마무리합니다.",
+                        "요청된 범위도 전체 운영 환경 맥락에서 먼저 검토합니다.",
+                        "서비스 간 경계와 책임 구간을 미리 정리해 중복과 공백을 줄입니다.",
+                        "구축 완료보다 운영팀이 실제로 인수하는 시점을 완료 기준으로 삼습니다.",
                     ],
                 })
             ),
             section(
                 "s5",
                 "benefits",
-                benefits("TechI가 서비스 초기에 먼저 정리하는 항목", [
-                    "현재 구조에서 반복적으로 문제를 만드는 병목 구간과 운영 리스크",
-                    "중단 허용 범위, 복구 목표, 보안 요구, 운영 인력 수준 같은 현실 조건",
-                    "즉시 조치가 필요한 과제와 중장기적으로 분리해야 할 과제",
-                    "구축 완료보다 운영 안정화와 인수 품질을 기준으로 한 완료 조건",
+                benefits("이런 상황에서 테크아이를 가장 많이 찾습니다", [
+                    "담당 업체마다 기준이 달라 전체 인프라를 한 번에 다시 정리해야 하는 경우",
+                    "장비 교체나 전산실 재구성을 앞두고 어디서부터 손봐야 할지 판단이 필요한 경우",
+                    "장애가 반복되지만 서버·네트워크·스토리지 중 어디가 원인인지 구분이 어려운 경우",
+                    "운영 담당자가 바뀌어도 일관된 수준의 운영이 유지되는 체계가 필요한 경우",
                 ])
             ),
         ],
@@ -243,7 +243,7 @@ const servicePageOverrides: Record<string, Page> = {
         title: "서버 인프라",
         slug: "/service/server",
         description:
-            "TechI는 구축, 증설, 가상화, 모니터링을 분리하지 않고 서버 운영 체계 전체를 기준으로 설계합니다.",
+            "테크아이는 구축, 증설, 가상화, 모니터링을 분리하지 않고 서버 운영 체계 전체를 기준으로 설계합니다.",
         sections: [
             section("s1", "header", subnavHeader("서버 인프라", ["서비스", "서버 인프라"])),
             section(
@@ -251,29 +251,29 @@ const servicePageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "서버 인프라는 설치보다\n전환 이후의 운영 상태가\n더 중요합니다",
-                    "TechI는 신규 구축, 교체, 증설, 가상화, 모니터링을 각각 따로 보지 않습니다. 서버가 실제 서비스 환경 안에서 어떤 역할을 하고, 전환 이후 어떻게 운영될지를 기준으로 전체 구조를 다시 설계합니다.",
+                    "테크아이는 신규 구축, 교체, 증설, 가상화, 모니터링을 각각 따로 보지 않습니다. 서버가 실제 서비스 환경 안에서 어떤 역할을 하고, 전환 이후 어떻게 운영될지를 기준으로 전체 구조를 다시 설계합니다.",
                     "/images/hero-datacenter.jpg",
                     "고밀도 서버 인프라와 데이터센터 전경",
                     { label: "구축·증설 보기", href: "/service/server/build" },
-                    { label: "가상화/클러스터 보기", href: "/service/server/virtualization" }
+                    { label: "가상화·클러스터 보기", href: "/service/server/virtualization" }
                 )
             ),
             section(
                 "s3",
                 "cards",
-                featureCards("서버 인프라 세부 서비스", [
+                featureCards("서버 인프라 세 가지 서비스", [
                     {
-                        title: "구축/증설",
+                        title: "서버 구축·증설",
                         desc: "사양 선정, 배치, 전환, 검증, 인수 기준까지 포함해 서버 교체와 확장을 수행합니다.",
                         href: "/service/server/build",
                     },
                     {
-                        title: "가상화/클러스터",
+                        title: "가상화·클러스터",
                         desc: "자원 풀, HA 정책, 확장 전략, 운영 표준까지 함께 고려한 플랫폼 구조를 제안합니다.",
                         href: "/service/server/virtualization",
                     },
                     {
-                        title: "운영/모니터링",
+                        title: "운영·모니터링",
                         desc: "관제 화면보다 알림 기준, 에스컬레이션, 런북, RCA가 먼저 보이는 체계를 만듭니다.",
                         href: "/service/server/ops-monitoring",
                     },
@@ -317,7 +317,7 @@ const servicePageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "Technical Field Expertise",
                     title: "성능보다 먼저 보는 것은 역할 분리와 전환 기준입니다",
-                    body: "서버 인프라는 스펙표보다 역할 정의, 자원 배치, 전환 순서, 검증 항목이 먼저 정리돼야 안정적입니다. TechI는 구축 이후 운영팀이 바로 이어받을 수 있는 상태를 목표로 프로젝트를 설계합니다.",
+                    body: "서버 인프라는 스펙표보다 역할 정의, 자원 배치, 전환 순서, 검증 항목이 먼저 정리돼야 안정적입니다. 테크아이는 구축 이후 운영팀이 바로 이어받을 수 있는 상태를 목표로 프로젝트를 설계합니다.",
                     imageSrc: "/images/technical-design-review.jpg",
                     imageAlt: "아키텍처 설계 자료를 검토하는 기술 회의",
                     layout: "imageLeft",
@@ -349,7 +349,7 @@ const servicePageOverrides: Record<string, Page> = {
         title: "네트워크",
         slug: "/service/network",
         description:
-            "TechI는 네트워크를 연결 장비가 아니라 경계, 정책, 이중화, 운영 기준을 포함한 서비스 기반으로 설계합니다.",
+            "테크아이는 네트워크를 연결 장비가 아니라 경계, 정책, 이중화, 운영 기준을 포함한 서비스 기반으로 설계합니다.",
         sections: [
             section("s1", "header", subnavHeader("네트워크", ["서비스", "네트워크"])),
             section(
@@ -357,29 +357,29 @@ const servicePageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "네트워크는 연결보다\n경계와 운영 기준이\n먼저 설계되어야 합니다",
-                    "TechI는 코어, 액세스, 무선, 방화벽, 대외 연결을 따로 보지 않습니다. 트래픽 흐름과 운영 책임 구간을 기준으로, 장애가 발생했을 때 어디를 봐야 하는지 바로 읽히는 네트워크 구조를 설계합니다.",
+                    "테크아이는 코어, 액세스, 무선, 방화벽, 대외 연결을 따로 보지 않습니다. 트래픽 흐름과 운영 책임 구간을 기준으로, 장애가 발생했을 때 어디를 봐야 하는지 바로 읽히는 네트워크 구조를 설계합니다.",
                     "/images/hero-network.jpg",
                     "네트워크 장비와 연결 구조를 상징하는 이미지",
-                    { label: "설계/구축 보기", href: "/service/network/design-build" },
-                    { label: "보안(방화벽/정책) 보기", href: "/service/network/security" }
+                    { label: "구축·증설 보기", href: "/service/network/design-build" },
+                    { label: "네트워크 보안 보기", href: "/service/network/security" }
                 )
             ),
             section(
                 "s3",
                 "cards",
-                featureCards("네트워크 세부 서비스", [
+                featureCards("네트워크 세 가지 서비스", [
                     {
-                        title: "설계/구축",
+                        title: "네트워크 구축 및 증설",
                         desc: "토폴로지, 장비 배치, 회선 구성, 전환 계획, 현장 검증까지 포함한 구축 서비스를 제공합니다.",
                         href: "/service/network/design-build",
                     },
                     {
-                        title: "보안(방화벽/정책)",
+                        title: "네트워크 보안",
                         desc: "세그먼트, 접근 정책, 방화벽 룰, 대외 연결 구조를 운영 기준과 함께 정리합니다.",
                         href: "/service/network/security",
                     },
                     {
-                        title: "무선/고가용",
+                        title: "이중화 및 무선",
                         desc: "무선 품질, 로밍, 이중화, 장애 분리 기준을 포함한 가용성 중심 구성을 설계합니다.",
                         href: "/service/network/ha-wireless",
                     },
@@ -452,40 +452,40 @@ const servicePageOverrides: Record<string, Page> = {
     }),
     "/service/storage-backup": page({
         id: "service_storage_overview_override",
-        title: "스토리지/백업",
+        title: "스토리지·백업",
         slug: "/service/storage-backup",
         description:
-            "TechI는 스토리지, 백업, 복구, DR을 개별 제품이 아니라 하나의 데이터 보호 체계로 설계합니다.",
+            "테크아이는 스토리지, 백업, 복구, DR을 개별 제품이 아니라 하나의 데이터 보호 체계로 설계합니다.",
         sections: [
-            section("s1", "header", subnavHeader("스토리지/백업", ["서비스", "스토리지/백업"])),
+            section("s1", "header", subnavHeader("스토리지·백업", ["서비스", "스토리지·백업"])),
             section(
                 "s2",
                 "hero",
                 heroBlock(
                     "데이터 보호는 저장보다\n복구 가능성이 먼저\n확인되어야 합니다",
-                    "TechI는 스토리지, 백업, 복구, DR을 따로 제안하지 않습니다. 데이터 중요도와 복구 목표를 기준으로, 장애가 발생했을 때 실제로 어느 순서로 복구할지까지 포함한 보호 구조를 설계합니다.",
+                    "테크아이는 스토리지, 백업, 복구, DR을 따로 제안하지 않습니다. 데이터 중요도와 복구 목표를 기준으로, 장애가 발생했을 때 실제로 어느 순서로 복구할지까지 포함한 보호 구조를 설계합니다.",
                     "/images/server-photo-racks.jpg",
                     "스토리지와 서버 랙 환경",
-                    { label: "스토리지 구축 보기", href: "/service/storage-backup/storage" },
-                    { label: "백업/복구 보기", href: "/service/storage-backup/backup-restore" }
+                    { label: "스토리지 설계 보기", href: "/service/storage-backup/storage" },
+                    { label: "백업·복구 보기", href: "/service/storage-backup/backup-restore" }
                 )
             ),
             section(
                 "s3",
                 "cards",
-                featureCards("데이터 보호 세부 서비스", [
+                featureCards("데이터 보호 세 가지 서비스", [
                     {
-                        title: "스토리지 구축",
+                        title: "스토리지 설계",
                         desc: "워크로드 특성과 성장 계획에 맞춘 저장 구조, 성능, 가용성, 용량 계획을 설계합니다.",
                         href: "/service/storage-backup/storage",
                     },
                     {
-                        title: "백업/복구",
+                        title: "백업 및 복구",
                         desc: "정책, 보존 주기, 복구 시나리오, 복구 검증 체계를 함께 정리합니다.",
                         href: "/service/storage-backup/backup-restore",
                     },
                     {
-                        title: "DR/BCP",
+                        title: "DR 및 BCP",
                         desc: "서비스 연속성을 기준으로 RPO/RTO, 전환 절차, 리허설 범위까지 포함해 설계합니다.",
                         href: "/service/storage-backup/dr-bcp",
                     },
@@ -547,7 +547,7 @@ const servicePageOverrides: Record<string, Page> = {
             section(
                 "s6",
                 "benefits",
-                benefits("TechI가 데이터 보호 프로젝트에서 먼저 보는 항목", [
+                benefits("테크아이가 데이터 보호 프로젝트에서 먼저 보는 항목", [
                     "어떤 데이터를 먼저 복구해야 서비스 영향이 가장 작아지는지에 대한 우선순위",
                     "백업 보관 여부가 아니라 실제 복구 가능 시간과 검증 이력이 있는지 여부",
                     "스토리지 성능과 증설 계획이 백업/복구 정책과 충돌하지 않는 구조인지 여부",
@@ -561,7 +561,7 @@ const servicePageOverrides: Record<string, Page> = {
         title: "컨설팅",
         slug: "/service/consulting",
         description:
-            "TechI의 컨설팅은 현황 분석에서 멈추지 않고 실행 가능한 로드맵과 우선순위를 남기는 데 집중합니다.",
+            "테크아이의 컨설팅은 현황 분석에서 멈추지 않고 실행 가능한 로드맵과 우선순위를 남기는 데 집중합니다.",
         sections: [
             section("s1", "header", subnavHeader("컨설팅", ["서비스", "컨설팅"])),
             section(
@@ -569,29 +569,29 @@ const servicePageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "진단은 보고서보다\n다음 실행 단계가\n남아야 의미가 있습니다",
-                    "TechI의 컨설팅은 현황을 설명하는 보고서로 끝나지 않습니다. 현재 리스크를 기술 과제와 운영 과제로 다시 나누고, 우선순위와 일정, 예산, 조직 제약까지 반영한 다음 단계의 기준을 정리합니다.",
+                    "테크아이의 컨설팅은 현황을 설명하는 보고서로 끝나지 않습니다. 현재 리스크를 기술 과제와 운영 과제로 다시 나누고, 우선순위와 일정, 예산, 조직 제약까지 반영한 다음 단계의 기준을 정리합니다.",
                     "/images/about-team-strategy.jpg",
                     "프로젝트 방향과 우선순위를 논의하는 팀 미팅",
                     { label: "인프라 진단 보기", href: "/service/consulting/assessment" },
-                    { label: "아키텍처/로드맵 보기", href: "/service/consulting/architecture-roadmap" }
+                    { label: "아키텍처 로드맵 보기", href: "/service/consulting/architecture-roadmap" }
                 )
             ),
             section(
                 "s3",
                 "cards",
-                featureCards("컨설팅 세부 서비스", [
+                featureCards("컨설팅 세 가지 서비스", [
                     {
                         title: "인프라 진단",
                         desc: "현재 구조, 병목, 리스크를 파악해 개선 우선순위를 도출합니다.",
                         href: "/service/consulting/assessment",
                     },
                     {
-                        title: "아키텍처/로드맵",
+                        title: "아키텍처 로드맵",
                         desc: "To-Be 구조와 단계별 투자·실행 계획을 현실적인 순서로 정리합니다.",
                         href: "/service/consulting/architecture-roadmap",
                     },
                     {
-                        title: "보안/컴플라이언스",
+                        title: "보안 및 컴플라이언스",
                         desc: "보안 정책, 감사 대응, 운영 통제 관점에서 필요한 구조와 과제를 정리합니다.",
                         href: "/service/consulting/security-compliance",
                     },
@@ -635,7 +635,7 @@ const servicePageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "Strategic IT Consulting",
                     title: "현재 리스크를 실행 가능한 과제로 다시 정렬합니다",
-                    body: "좋은 진단은 문제를 많이 적어내는 것이 아니라, 무엇을 지금 바꾸고 무엇을 나중으로 미뤄야 하는지 명확하게 정리하는 것입니다. TechI는 기술 구조와 운영 제약을 함께 보며 실행 가능한 로드맵을 제시합니다.",
+                    body: "좋은 진단은 문제를 많이 적어내는 것이 아니라, 무엇을 지금 바꾸고 무엇을 나중으로 미뤄야 하는지 명확하게 정리하는 것입니다. 테크아이는 기술 구조와 운영 제약을 함께 보며 실행 가능한 로드맵을 제시합니다.",
                     imageSrc: "/images/technical-design-review.jpg",
                     imageAlt: "기술 로드맵과 현재 구조를 함께 검토하는 장면",
                     layout: "imageRight",
@@ -667,7 +667,7 @@ const servicePageOverrides: Record<string, Page> = {
         title: "유지보수",
         slug: "/service/maintenance",
         description:
-            "TechI는 SLA, 정기점검, 장애대응, RCA를 분리하지 않고 재발을 줄이는 운영 체계로 유지보수를 설계합니다.",
+            "테크아이는 SLA, 정기점검, 장애대응, RCA를 분리하지 않고 재발을 줄이는 운영 체계로 유지보수를 설계합니다.",
         sections: [
             section("s1", "header", subnavHeader("유지보수", ["서비스", "유지보수"])),
             section(
@@ -675,29 +675,29 @@ const servicePageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "운영 지원은 대응 속도보다\n재발을 줄이는 체계가\n먼저 갖춰져야 합니다",
-                    "TechI의 유지보수는 단순 접수형 대응에 머물지 않습니다. 지원 범위, SLA, 정기점검, 장애 대응, RCA, 권고안을 하나의 운영 구조로 묶어 반복 이슈를 줄이는 방향으로 설계합니다.",
+                    "테크아이의 유지보수는 단순 접수형 대응에 머물지 않습니다. 지원 범위, SLA, 정기점검, 장애 대응, RCA, 권고안을 하나의 운영 구조로 묶어 반복 이슈를 줄이는 방향으로 설계합니다.",
                     "/images/server-ops-photo.jpg",
                     "운영 환경을 모니터링하는 장면",
-                    { label: "SLA/지원체계 보기", href: "/service/maintenance/sla-support" },
-                    { label: "정기점검 보기", href: "/service/maintenance/health-check" }
+                    { label: "SLA 기반 지원 보기", href: "/service/maintenance/sla-support" },
+                    { label: "정기 헬스체크 보기", href: "/service/maintenance/health-check" }
                 )
             ),
             section(
                 "s3",
                 "cards",
-                featureCards("운영 지원 세부 서비스", [
+                featureCards("운영 지원 세 가지 서비스", [
                     {
-                        title: "SLA/지원체계",
+                        title: "SLA 기반 지원",
                         desc: "대상 자산, 지원 시간, 응답 기준, 에스컬레이션 구조를 명확히 정의합니다.",
                         href: "/service/maintenance/sla-support",
                     },
                     {
-                        title: "정기점검",
+                        title: "정기 헬스체크",
                         desc: "정기 점검을 통해 누적 이슈, 용량 변화, 교체 시점, 위험 신호를 미리 확인합니다.",
                         href: "/service/maintenance/health-check",
                     },
                     {
-                        title: "장애대응/복구",
+                        title: "장애 대응 및 복구",
                         desc: "장애 접수, 초기 대응, 복구, RCA, 재발 방지 과제까지 한 흐름으로 정리합니다.",
                         href: "/service/maintenance/incident-recovery",
                     },

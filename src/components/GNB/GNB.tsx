@@ -35,8 +35,7 @@ export default function GNB({ onToggleSidebar }: { onToggleSidebar?: () => void 
         return () => document.removeEventListener("mousedown", handleOutsideClick);
     }, []);
 
-    const handleCategoryClick = (category: string, event: React.MouseEvent) => {
-        event.preventDefault();
+    const handleCategoryClick = (category: string) => {
         setOpenCategory((prev) => (prev === category ? null : category));
     };
 
@@ -79,26 +78,29 @@ export default function GNB({ onToggleSidebar }: { onToggleSidebar?: () => void 
 
                         return (
                             <div key={item.category} className={styles.navItem}>
-                                <button
-                                    className={[
-                                        styles.navLink,
-                                        activeCategory === item.category ? styles.active : "",
-                                        isOpen ? styles.navLinkOpen : "",
-                                    ].join(" ")}
-                                    onClick={(event) => handleCategoryClick(item.category, event)}
-                                    aria-expanded={isOpen}
-                                    aria-haspopup="true"
-                                >
-                                    {item.label}
-                                    <span
-                                        className={`material-symbols-outlined ${styles.chevron} ${
-                                            isOpen ? styles.chevronOpen : ""
-                                        }`}
-                                        aria-hidden="true"
+                                <div className={`${styles.navLinkGroup} ${isOpen ? styles.navLinkGroupOpen : ""}`}>
+                                    <Link
+                                        href={item.href}
+                                        className={`${styles.navLink} ${activeCategory === item.category ? styles.active : ""}`}
+                                        onClick={closeMenus}
                                     >
-                                        expand_more
-                                    </span>
-                                </button>
+                                        {item.label}
+                                    </Link>
+                                    <button
+                                        className={`${styles.navChevronBtn} ${isOpen ? styles.navChevronBtnOpen : ""}`}
+                                        onClick={() => handleCategoryClick(item.category)}
+                                        aria-expanded={isOpen}
+                                        aria-haspopup="true"
+                                        aria-label={`${item.label} 하위 메뉴`}
+                                    >
+                                        <span
+                                            className={`material-symbols-outlined ${styles.chevron} ${isOpen ? styles.chevronOpen : ""}`}
+                                            aria-hidden="true"
+                                        >
+                                            expand_more
+                                        </span>
+                                    </button>
+                                </div>
 
                                 {isOpen && tree.length > 0 && (
                                     <div className={styles.megaDropdown}>

@@ -9,16 +9,7 @@ export default function SubnavHeaderBlock({ data }: { data: SubnavHeaderData }) 
     return (
         <div className={styles.subnavHeader}>
             <div className={styles.subnavLeft}>
-                <span className={styles.eyebrow}>{data.eyebrow}</span>
                 <h2 className={styles.subnavTitle}>{data.title}</h2>
-                <nav className={styles.breadcrumbs} aria-label="breadcrumb">
-                    {data.breadcrumbs.map((crumb, i) => (
-                        <span key={i}>
-                            {i > 0 && <span className={styles.breadSep}>/</span>}
-                            <span>{crumb}</span>
-                        </span>
-                    ))}
-                </nav>
             </div>
             {cta && (
                 <div className={styles.subnavRight}>

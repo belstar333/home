@@ -1,0 +1,95 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    background: #f4f8fd;
+}
+
+.inner {
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.code {
+    margin: 0;
+    font-family: var(--font-headline);
+    font-size: clamp(5rem, 16vw, 9rem);
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: 1;
+    color: transparent;
+    background: linear-gradient(135deg, #0058bd 0%, #2d88f0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title {
+    margin: 0;
+    font-family: var(--font-headline);
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #0f1726;
+}
+
+.body {
+    margin: 0;
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: rgba(15, 23, 38, 0.6);
+    word-break: keep-all;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.ctaPrimary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 28px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #0058bd, #2d88f0);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ctaPrimary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -8px rgba(0, 88, 189, 0.4);
+}
+
+.ctaSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 24px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(0, 88, 189, 0.25);
+    color: #0058bd;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.ctaSecondary:hover {
+    border-color: rgba(0, 88, 189, 0.5);
+    background: rgba(0, 88, 189, 0.04);
+}

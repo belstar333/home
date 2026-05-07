@@ -2,7 +2,7 @@
   {
     "id": "svc",
     "parentId": null,
-    "title": "Service",
+    "title": "서비스",
     "slug": "/service",
     "category": "service",
     "order": 1,

@@ -20,6 +20,27 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logos/techi-v2.png",
   },
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    siteName: "(주)테크아이",
+    title: "(주)테크아이 - IT 인프라 전문 기업",
+    description: "서버, 네트워크, 스토리지, DR, 보안까지 — IT 인프라 전문 기업 테크아이",
+    images: [
+      {
+        url: "/images/hero-datacenter.jpg",
+        width: 1200,
+        height: 800,
+        alt: "테크아이 데이터센터 인프라",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "(주)테크아이 - IT 인프라 전문 기업",
+    description: "서버, 네트워크, 스토리지, DR, 보안까지 — IT 인프라 전문 기업 테크아이",
+    images: ["/images/hero-datacenter.jpg"],
+  },
 };
 
 export default function RootLayout({

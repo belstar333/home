@@ -75,6 +75,8 @@
     font-size: clamp(2.3rem, 4.2vw, 3.9rem);
     line-height: 1.04;
     letter-spacing: -0.04em;
+    white-space: pre-line;
+    word-break: keep-all;
 }
 
 .heroSub {
@@ -302,6 +304,8 @@
     font-size: clamp(1.45rem, 2.4vw, 2.1rem);
     line-height: 1.15;
     letter-spacing: -0.03em;
+    white-space: pre-line;
+    word-break: keep-all;
 }
 
 .richText,
@@ -339,6 +343,7 @@
 
 .featureCards,
 .useCases,
+.benefits,
 .mediaFeature,
 .imageGallery {
     display: grid;
@@ -619,6 +624,7 @@
 }
 
 .infographic,
+.benefits,
 .compTable,
 .faq,
 .timeline,
@@ -679,10 +685,10 @@
 .useCaseItem,
 .benefitCard {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 14px;
+    grid-template-columns: 1fr;
+    gap: 10px;
     align-items: start;
-    padding: 18px;
+    padding: 22px 20px;
     border-radius: 22px;
     border: 1px solid var(--page-border);
     background: var(--list-card-bg);
@@ -691,16 +697,17 @@
 .useCaseNumber,
 .benefitIcon {
     color: var(--page-accent);
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     font-weight: 800;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
+    padding-top: 2px;
 }
 
 .useCaseText,
 .benefitCard span {
     color: var(--on-background);
-    font-size: 0.94rem;
-    line-height: 1.68;
+    font-size: 0.96rem;
+    line-height: 1.72;
 }
 
 .contactForm {
@@ -1632,7 +1639,7 @@
 :global([data-page-variant="generic-service"]) .benefitGrid,
 :global([data-page-variant="generic-service"]) .useCaseList {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px 20px;
+    gap: 0 24px;
 }
 
 :global([data-page-variant="service-overview"]) .benefitCard,
@@ -1649,11 +1656,13 @@
 :global([data-page-variant="maintenance-overview"]) .useCaseItem,
 :global([data-page-variant="generic-service"]) .benefitCard,
 :global([data-page-variant="generic-service"]) .useCaseItem {
-    padding: 18px 0;
+    padding: 17px 0;
     border: 0;
-    border-top: 1px solid color-mix(in srgb, var(--page-accent) 18%, white);
+    border-top: 1px solid color-mix(in srgb, var(--page-accent) 15%, white);
     border-radius: 0;
     background: transparent;
+    grid-template-columns: 2.4rem 1fr;
+    gap: 22px;
 }
 
 :global([data-page-variant="service-overview"]) .faq,
@@ -1662,7 +1671,14 @@
 :global([data-page-variant="storage-overview"]) .faq,
 :global([data-page-variant="consulting-overview"]) .faq,
 :global([data-page-variant="maintenance-overview"]) .faq,
-:global([data-page-variant="generic-service"]) .faq {
+:global([data-page-variant="generic-service"]) .faq,
+:global([data-page-variant="service-overview"]) .benefits,
+:global([data-page-variant="server-overview"]) .benefits,
+:global([data-page-variant="network-overview"]) .benefits,
+:global([data-page-variant="storage-overview"]) .benefits,
+:global([data-page-variant="consulting-overview"]) .benefits,
+:global([data-page-variant="maintenance-overview"]) .benefits,
+:global([data-page-variant="generic-service"]) .benefits {
     padding: 0;
 }
 

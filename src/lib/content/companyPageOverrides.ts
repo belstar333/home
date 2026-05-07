@@ -1,4 +1,4 @@
-import type { BlockData, Page, Section } from "./types";
+﻿import type { BlockData, Page, Section } from "./types";
 
 function section(id: string, type: string, ...blocks: BlockData[]): Section {
     return { id, type, blocks };
@@ -16,7 +16,7 @@ function page(config: {
         title: config.title,
         slug: config.slug,
         seo: {
-            title: `${config.title} | TechI`,
+            title: `${config.title} | 테크아이`,
             description: config.description,
         },
         sections: config.sections,
@@ -27,7 +27,7 @@ function subnavHeader(title: string, breadcrumbs: string[]): BlockData {
     return {
         type: "subnavHeader",
         data: {
-            eyebrow: "TechI",
+            eyebrow: "테크아이",
             title,
             breadcrumbs,
         },
@@ -149,16 +149,16 @@ const companyPageOverrides: Record<string, Page> = {
         title: "회사 소개",
         slug: "/about",
         description:
-            "기술을 공급하는 데서 끝나지 않고 운영 가능한 결과를 만드는 TechI의 일하는 방식과 신뢰 기반을 소개합니다.",
+            "기술을 공급하는 데서 끝나지 않고 운영 가능한 결과를 만드는 테크아이의 일하는 방식과 신뢰 기반을 소개합니다.",
         sections: [
             section(
                 "s1",
                 "hero",
                 heroBlock(
                     "기술을 공급하는 회사보다 운영 가능한 결과를 만드는 회사를 지향합니다",
-                    "TechI는 서버, 네트워크, 데이터 보호, 운영 지원, 업무형 AI까지 각 기술을 따로 나누기보다 고객 환경이 실제로 안정적으로 돌아가게 만드는 데 집중해 왔습니다. 구축 이후의 운영, 인수, 대응까지 이어지는 구조를 만드는 것이 저희가 일하는 방식입니다.",
+                    "테크아이는 서버, 네트워크, 데이터 보호, 운영 지원, 업무형 AI까지 각 기술을 따로 나누기보다 고객 환경이 실제로 안정적으로 돌아가게 만드는 데 집중해 왔습니다. 구축 이후의 운영, 인수, 대응까지 이어지는 구조를 만드는 것이 저희가 일하는 방식입니다.",
                     "/images/about-team-strategy.jpg",
-                    "TechI 엔지니어가 프로젝트 방향과 구조를 검토하는 장면",
+                    "테크아이 엔지니어가 프로젝트 방향과 구조를 검토하는 장면",
                     { label: "회사 연혁 보기", href: "/about/history" },
                     { label: "상담 문의하기", href: "/contact" }
                 )
@@ -243,7 +243,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "s5",
                 "media",
                 mediaFeature({
-                    eyebrow: "Why Clients Choose TechI",
+                    eyebrow: "Why Clients Choose 테크아이",
                     title: "결국 이런 이유로 저희를 찾게 됩니다",
                     body: "한 영역만 보는 것이 아니라 전체 운영 환경 안에서 문제를 보고, 실제 설치와 변경, 점검, 인수 과정을 거친 경험을 바탕으로 현실적인 방향을 제안합니다. 도입 순간보다 운영 이후가 더 중요하다는 전제를 놓지 않는 것도 저희가 자주 선택되는 이유 중 하나입니다.",
                     imageSrc: "/images/consulting-review-photo.jpg",
@@ -263,7 +263,7 @@ const companyPageOverrides: Record<string, Page> = {
             section(
                 "s6",
                 "timeline",
-                timeline("TechI가 걸어온 흐름", [
+                timeline("테크아이가 걸어온 흐름", [
                     { year: "2004-2009", text: "회사 설립, HPE 파트너십 체결, 기업부설연구소 설립으로 엔지니어링 기반을 마련했습니다." },
                     { year: "2010-2019", text: "공공·엔터프라이즈 구축과 유지보수 범위를 넓히며 현장 실행력을 축적했습니다." },
                     { year: "2020-Present", text: "AI 데이터센터, 위성 지상체, 고밀도 GPU 클러스터 등 초고성능 인프라 영역으로 확장했습니다." },
@@ -284,7 +284,7 @@ const companyPageOverrides: Record<string, Page> = {
         title: "비전 · 미션",
         slug: "/about/vision-mission",
         description:
-            "AI 시대를 지탱하는 물리적 인프라와 운영 구조를 설계하는 TechI의 비전과 미션을 소개합니다.",
+            "AI 시대를 지탱하는 물리적 인프라와 운영 구조를 설계하는 테크아이의 비전과 미션을 소개합니다.",
         sections: [
             section("s1", "header", subnavHeader("비전 · 미션", ["회사 소개", "비전 · 미션"])),
             section(
@@ -292,7 +292,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "AI 시대를 지탱하는 물리적 기반을 설계합니다",
-                    "TechI의 비전은 AI와 데이터가 멈추지 않고 흐를 수 있는 안정적인 물리 기반을 설계하는 것입니다. 성능만이 아니라 안정성, 보안성, 복구 가능성, 운영 지속성을 함께 보는 구조를 제안합니다.",
+                    "테크아이의 비전은 AI와 데이터가 멈추지 않고 흐를 수 있는 안정적인 물리 기반을 설계하는 것입니다. 성능만이 아니라 안정성, 보안성, 복구 가능성, 운영 지속성을 함께 보는 구조를 제안합니다.",
                     "/images/hero-engineering.jpg",
                     "엔지니어가 설계 원칙과 운영 기준을 검토하는 장면",
                     { label: "회사 소개 보기", href: "/about" },
@@ -345,7 +345,7 @@ const companyPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "Design Principle",
                     title: "좋은 인프라는 결국 현장에서 오래 버티는 인프라입니다",
-                    body: "TechI는 AI 인프라를 단순한 고성능 장비 구성으로 보지 않습니다. AI TRiSM 관점의 보안과 거버넌스, 이중화, 백업, 운영 문서와 점검 기준까지 포함해 장기 운영 구조를 설계합니다.",
+                    body: "테크아이는 AI 인프라를 단순한 고성능 장비 구성으로 보지 않습니다. AI TRiSM 관점의 보안과 거버넌스, 이중화, 백업, 운영 문서와 점검 기준까지 포함해 장기 운영 구조를 설계합니다.",
                     imageSrc: "/images/hero-datacenter.jpg",
                     imageAlt: "고밀도 데이터센터 인프라 전경",
                     layout: "imageLeft",
@@ -363,7 +363,7 @@ const companyPageOverrides: Record<string, Page> = {
             section(
                 "s6",
                 "benefits",
-                benefits("TechI가 설계에서 지키는 기준", [
+                benefits("테크아이가 설계에서 지키는 기준", [
                     "도입 시점의 성능보다 장기 운영의 지속성을 먼저 검토합니다.",
                     "백업, DR, 접근 통제, 운영 기준을 별도 과제가 아닌 기본 요소로 포함합니다.",
                     "프로젝트 종료 후에도 남는 문서와 검증 기준을 deliverable로 봅니다.",
@@ -376,7 +376,7 @@ const companyPageOverrides: Record<string, Page> = {
         title: "회사 연혁",
         slug: "/about/history",
         description:
-            "2004년 설립 이후 공공과 엔터프라이즈 인프라에서 AI 데이터센터까지 확장해 온 TechI의 성장 흐름입니다.",
+            "2004년 설립 이후 공공과 엔터프라이즈 인프라에서 AI 데이터센터까지 확장해 온 테크아이의 성장 흐름입니다.",
         sections: [
             section("s1", "header", subnavHeader("회사 연혁", ["회사 소개", "회사 연혁"])),
             section(
@@ -384,7 +384,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "2004년의 엔지니어링 DNA가 고밀도 AI 인프라까지 이어졌습니다",
-                    "TechI의 연혁은 매출 성장보다 수행 범위의 확장에 가깝습니다. 엔터프라이즈 인프라 구축에서 출발해, 현재는 AI 데이터센터와 고밀도 GPU 클러스터까지 설계하는 조직으로 진화했습니다.",
+                    "테크아이의 연혁은 매출 성장보다 수행 범위의 확장에 가깝습니다. 엔터프라이즈 인프라 구축에서 출발해, 현재는 AI 데이터센터와 고밀도 GPU 클러스터까지 설계하는 조직으로 진화했습니다.",
                     "/images/about-office-building.jpg",
                     "회사 외관과 조직의 성장을 상징하는 이미지",
                     { label: "협업 구조 보기", href: "/about/partners" },
@@ -426,7 +426,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "s4",
                 "timeline",
                 timeline("Timeline", [
-                    { year: "2004-2009", text: "TechI 설립, HPE 파트너십 체결, 기업부설연구소 설립으로 기초 체계를 만들었습니다." },
+                    { year: "2004-2009", text: "테크아이 설립, HPE 파트너십 체결, 기업부설연구소 설립으로 기초 체계를 만들었습니다." },
                     { year: "2010-2019", text: "공공·엔터프라이즈 구축과 유지보수 범위를 넓히며 현장 역량을 쌓았습니다." },
                     { year: "2020-Present", text: "AI 데이터센터, 위성 지상체, 고밀도 GPU 클러스터 등 초고성능 인프라로 수행 수준을 끌어올렸습니다." },
                 ])
@@ -446,7 +446,7 @@ const companyPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "Signature References",
                     title: "대규모 공공 인프라 경험이 현재의 기술 신뢰를 만들었습니다",
-                    body: "TechI는 소규모 범용 구축을 반복한 조직이 아니라, 물리 규모와 운영 난이도가 높은 공공 프로젝트를 통해 기술 체계를 끌어올려 왔습니다. 그래서 현재 엔터프라이즈와 AI 인프라 영역에서도 신뢰를 얻고 있습니다.",
+                    body: "테크아이는 소규모 범용 구축을 반복한 조직이 아니라, 물리 규모와 운영 난이도가 높은 공공 프로젝트를 통해 기술 체계를 끌어올려 왔습니다. 그래서 현재 엔터프라이즈와 AI 인프라 영역에서도 신뢰를 얻고 있습니다.",
                     imageSrc: "/images/hero-datacenter.jpg",
                     imageAlt: "고밀도 데이터센터 랙 구성이 보이는 이미지",
                     layout: "imageRight",
@@ -476,7 +476,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "국가 중요 기관과 엔터프라이즈가 반복해서 선택한 파트너",
-                    "TechI는 HPE Gold Partner를 중심으로 Intel, IBM 등 핵심 파트너와 협업하며, 공공·사법·국방·유통·제조까지 다양한 고객군의 인프라 프로젝트를 수행해 왔습니다. 이 조합이 공급 안정성과 현장 실행력을 동시에 만듭니다.",
+                    "테크아이는 HPE Gold Partner를 중심으로 Intel, IBM 등 핵심 파트너와 협업하며, 공공·사법·국방·유통·제조까지 다양한 고객군의 인프라 프로젝트를 수행해 왔습니다. 이 조합이 공급 안정성과 현장 실행력을 동시에 만듭니다.",
                     "/images/dark-console-operator.jpg",
                     "운영 화면을 점검하는 콘솔 환경 이미지",
                     { label: "오시는 길 보기", href: "/about/location" },
@@ -540,7 +540,7 @@ const companyPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "Why It Matters",
                     title: "벤더 파트너십과 현장 지원 체계를 함께 갖춘 구조",
-                    body: "좋은 파트너십은 단순 공급 계약이 아니라 고객 환경에 맞는 기술 선택과 운영 지원이 함께 이어질 때 의미가 있습니다. TechI는 파트너 생태계와 현장 지원 조직을 결합해 실제 운영 단계까지 대응할 수 있는 구조를 갖추고 있습니다.",
+                    body: "좋은 파트너십은 단순 공급 계약이 아니라 고객 환경에 맞는 기술 선택과 운영 지원이 함께 이어질 때 의미가 있습니다. 테크아이는 파트너 생태계와 현장 지원 조직을 결합해 실제 운영 단계까지 대응할 수 있는 구조를 갖추고 있습니다.",
                     imageSrc: "/images/technical-design-review.jpg",
                     imageAlt: "기술 설계와 검토 자료를 함께 보는 장면",
                     layout: "imageLeft",
@@ -570,7 +570,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "대전 본사와 서울 지사에서 프로젝트 미팅을 진행합니다",
-                    "TechI는 대전 본사와 서울 지사를 거점으로 방문 미팅과 기술 워크숍을 운영합니다. 첫 미팅은 단순 소개가 아니라 현재 환경과 검토 범위를 빠르게 정리하는 자리로 진행합니다.",
+                    "테크아이는 대전 본사와 서울 지사를 거점으로 방문 미팅과 기술 워크숍을 운영합니다. 첫 미팅은 단순 소개가 아니라 현재 환경과 검토 범위를 빠르게 정리하는 자리로 진행합니다.",
                     "/images/about-office-lobby.jpg",
                     "회사 로비와 방문 미팅 공간 이미지",
                     { label: "회사 소개 보기", href: "/about" },
@@ -625,7 +625,7 @@ const companyPageOverrides: Record<string, Page> = {
                     points: [
                         "본사(HQ): 대전광역시 서구 둔산대로 117번길 25",
                         "서울 지사: 서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터",
-                        "대표전화 042-471-9430 / 웹사이트 www.techi.co.kr",
+                        "대표전화 042-471-9430 / 웹사이트 www.테크아이.co.kr",
                     ],
                 })
             ),
@@ -636,7 +636,7 @@ const companyPageOverrides: Record<string, Page> = {
                     { title: "대전 본사", desc: "대전광역시 서구 둔산대로 117번길 25" },
                     { title: "서울 지사", desc: "서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터" },
                     { title: "대표전화", desc: "042-471-9430" },
-                    { title: "웹사이트", desc: "www.techi.co.kr" },
+                    { title: "웹사이트", desc: "www.테크아이.co.kr" },
                 ])
             ),
             section(
@@ -661,41 +661,39 @@ const companyPageOverrides: Record<string, Page> = {
     }),
     "/contact": page({
         id: "company_contact",
-        title: "문의하기",
+        title: "상담 문의",
         slug: "/contact",
         description:
-            "대전 본사와 서울 지사를 기반으로 프로젝트 범위와 초기 검토 항목을 정리하는 TechI 상담 페이지입니다.",
+            "정해진 솔루션 없이 현재 인프라 환경부터 함께 읽습니다. 테크아이 상담은 현황 파악과 범위 정의에서 시작합니다.",
         sections: [
             section(
                 "s1",
                 "hero",
                 heroBlock(
-                    "프로젝트 상담을 위한 기본 정보를 남겨주세요",
-                    "상담은 단순 문의 접수가 아니라 현재 환경, 목표, 일정, 검토 범위를 빠르게 구조화하는 첫 단계입니다. 남겨주신 정보를 바탕으로 가장 적합한 미팅 방식과 초기 검토 범위를 안내드립니다.",
+                    "상담은 제안이 아니라\n현재 환경을 함께\n읽는 데서 시작합니다",
+                    "정해진 솔루션을 먼저 제시하지 않습니다. 현재 운영 환경, 반복되는 문제, 목표 일정을 먼저 파악하고, 그 다음 단계에서 필요한 범위와 방향을 함께 정리합니다.",
                     "/images/contact-consultation-desk.jpg",
-                    "상담 데스크에서 프로젝트 자료를 검토하는 이미지",
-                    { label: "서비스 보기", href: "/service" },
-                    { label: "회사 소개 보기", href: "/about" }
+                    "상담 자리에서 프로젝트 자료를 함께 검토하는 이미지"
                 )
             ),
             section(
                 "s2",
                 "media",
                 mediaFeature({
-                    eyebrow: "Consultation Intake",
-                    title: "첫 상담에서 바로 검토 범위를 정리할 수 있도록 준비합니다",
-                    body: "구축, 증설, 보안, AI 도입, 운영 개선처럼 과제의 종류가 달라도 상담의 핵심은 같습니다. 현재 환경과 목표, 검토 범위가 정리되어 있으면 첫 미팅에서 필요한 점검 항목과 다음 단계가 더 명확해집니다.",
+                    eyebrow: "Consultation Process",
+                    title: "첫 미팅에서 바로\n다음 단계가 보이도록\n준비합니다",
+                    body: "상담 이후에 '검토해보겠다'는 말이 반복되지 않도록, 첫 미팅에서 현재 환경과 과제, 검토 가능한 범위를 빠르게 구조화합니다. 구축 종류나 규모와 관계없이 같은 방식으로 시작합니다.",
                     imageSrc: "/images/contact-laptop-work.jpg",
-                    imageAlt: "노트북으로 상담 내용을 정리하는 장면",
+                    imageAlt: "노트북으로 인프라 현황과 상담 내용을 정리하는 장면",
                     layout: "imageLeft",
                     tone: "photo",
                     imageWidth: 3342,
                     imageHeight: 5939,
-                    caption: "Consultation / environment review, scope definition, next step",
+                    caption: "Consultation flow / environment review → scope → next step",
                     points: [
-                        "본사(HQ): 대전광역시 서구 둔산대로 117번길 25",
-                        "서울 지사: 서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터",
-                        "대표전화 042-471-9430 / 웹사이트 www.techi.co.kr",
+                        "본사 대전광역시 서구 둔산대로 117번길 25 · 대표전화 042-471-9430",
+                        "서울 지사 강동구 고덕비즈밸리로 26, 강동 U1센터",
+                        "대전 본사·서울 지사 방문 미팅 또는 온라인 미팅으로 진행합니다.",
                     ],
                 })
             ),
@@ -703,8 +701,8 @@ const companyPageOverrides: Record<string, Page> = {
                 "s3",
                 "contact",
                 contactForm(
-                    "상담 정보 남기기",
-                    "현재 환경, 목표, 일정, 검토 범위를 남겨주시면 첫 미팅에서 필요한 검토 항목을 빠르게 정리해드립니다."
+                    "상담 내용 남기기",
+                    "현재 환경, 주요 과제, 목표 일정, 검토 중인 범위를 간단히 적어주시면 첫 미팅 전에 관련 내용을 미리 검토합니다."
                 )
             ),
             section(
@@ -712,16 +710,20 @@ const companyPageOverrides: Record<string, Page> = {
                 "faq",
                 faq("상담 전에 자주 확인하는 내용", [
                     {
-                        q: "첫 상담에서는 무엇을 확인하나요?",
-                        a: "현재 운영 환경, 주요 과제, 검토 범위, 목표 일정, 내부 의사결정 구조를 우선 확인합니다.",
+                        q: "첫 상담은 어떻게 진행되나요?",
+                        a: "현재 운영 환경과 주요 과제를 먼저 파악하고, 검토 범위와 목표 일정을 함께 정리합니다. 제안 자료보다 현황 파악이 먼저입니다.",
                     },
                     {
                         q: "온라인 미팅도 가능한가요?",
-                        a: "가능합니다. 대전 본사, 서울 지사, 온라인 미팅 중 프로젝트 성격에 맞는 방식으로 조율합니다.",
+                        a: "대전 본사, 서울 지사 방문 미팅과 온라인 미팅 모두 가능합니다. 프로젝트 성격과 일정에 맞게 조율합니다.",
                     },
                     {
-                        q: "어떤 자료를 미리 준비하면 좋나요?",
-                        a: "현재 시스템 개요, 구성도, 주요 이슈, 일정 관련 메모 정도면 충분합니다.",
+                        q: "미리 준비할 자료가 있나요?",
+                        a: "현재 시스템 구성도, 주요 이슈, 일정 메모 정도면 충분합니다. 아무것도 없어도 현황 파악부터 함께 시작할 수 있습니다.",
+                    },
+                    {
+                        q: "특정 서비스 하나만 문의해도 되나요?",
+                        a: "물론입니다. 특정 서비스만 필요해도 연관된 구조 전체를 함께 검토해 이후에 충돌하지 않는 방식으로 진행합니다.",
                     },
                 ])
             ),

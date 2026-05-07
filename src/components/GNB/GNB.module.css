@@ -55,20 +55,22 @@
   position: relative;
 }
 
+.navLinkGroup {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
 .navLink {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   height: 40px;
-  padding: 0 16px;
-  border-radius: var(--radius-md);
-  border: none;
-  background: transparent;
+  padding: 0 8px 0 16px;
   color: var(--on-surface-variant);
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 500;
-  cursor: pointer;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
@@ -82,7 +84,31 @@
   font-weight: 600;
 }
 
-.navLinkOpen {
+.navLinkGroupOpen .navLink {
+  color: var(--primary);
+  background: rgba(0, 88, 189, 0.08);
+}
+
+.navChevronBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 30px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--outline);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navChevronBtn:hover {
+  color: var(--primary);
+  background: rgba(0, 88, 189, 0.06);
+}
+
+.navChevronBtnOpen {
   color: var(--primary);
   background: rgba(0, 88, 189, 0.08);
 }
@@ -284,9 +310,14 @@
     width: 100%;
   }
 
-  .navLink {
+  .navLinkGroup {
     width: 100%;
     justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .navLink {
+    flex: 1;
   }
 
   .contactCta {

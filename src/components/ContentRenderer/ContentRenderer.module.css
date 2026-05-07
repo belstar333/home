@@ -52,6 +52,10 @@
     gap: 28px;
 }
 
+.page[data-is-detail] {
+    padding-top: 24px;
+}
+
 .page[data-page-theme="service"] {
     --page-accent: #0058bd;
     --page-accent-strong: #0c2344;

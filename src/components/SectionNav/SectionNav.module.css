@@ -1,0 +1,71 @@
+/* scroll wrapper — edge fade on right */
+.navScroll {
+    position: relative;
+}
+
+.navScroll::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60px;
+    background: linear-gradient(to right, transparent, var(--section-bar-bg, rgba(247, 249, 255, 0.88)));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.nav {
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── Tab list ── */
+.siblingList {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.siblingLink {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 22px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: rgba(13, 29, 43, 0.42);
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.siblingLink:hover {
+    color: rgba(13, 29, 43, 0.72);
+    border-bottom-color: rgba(13, 29, 43, 0.18);
+}
+
+.siblingLink.active {
+    color: var(--primary, #0058bd);
+    font-weight: 600;
+    border-bottom-color: var(--primary, #0058bd);
+}
+
+@media (max-width: 768px) {
+    .siblingLink {
+        font-size: 0.875rem;
+        padding: 12px 16px;
+    }
+}

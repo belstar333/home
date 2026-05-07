@@ -1,6 +1,7 @@
 import { loadNav } from "@/lib/content/loadContent";
 import { buildTree, getCategoryFromSlug } from "@/lib/content/buildTree";
-import TreeNav from "@/components/TreeNav/TreeNav";
+import SectionNav from "@/components/SectionNav/SectionNav";
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import styles from "./subpageLayout.module.css";
 
 export default async function SubpageLayout({
@@ -12,19 +13,34 @@ export default async function SubpageLayout({
 }) {
     const { slug } = await params;
     const slugPath = "/" + (slug ?? []).join("/");
+
     const category = getCategoryFromSlug(slugPath);
-    
     const navNodes = loadNav();
     const tree = buildTree(navNodes, category);
 
-    return (
-        <div className={styles.container}>
-            <aside className={styles.sidebar}>
-                <TreeNav tree={tree} category={category} />
-            </aside>
-            <div className={styles.main}>
+    // Show sectionBar for root category pages that have children (e.g. /service),
+    // or any depth-2+ subpage.
+    const isRootWithNav = slug.length === 1 && tree.some((n) => n.slug === slugPath && n.children.length > 0);
+
+    if (!isRootWithNav && slug.length < 2) {
+        return (
+            <div className={styles.containerFull}>
                 {children}
             </div>
-        </div>
+        );
+    }
+
+    return (
+        <>
+            <div className={styles.sectionBar}>
+                <div className={styles.sectionBarInner}>
+                    {slug.length >= 2 && <Breadcrumb slug={slug} tree={tree} />}
+                    <SectionNav tree={tree} />
+                </div>
+            </div>
+            <div className={styles.containerFull}>
+                {children}
+            </div>
+        </>
     );
 }
