@@ -55,13 +55,15 @@ function heroBlock(
     };
 }
 
-function featureCards(title: string, items: Array<{ title: string; desc: string; href?: string }>): BlockData {
+function featureCards(
+    title: string,
+    items: Array<{ title: string; desc: string; href?: string; imageSrc?: string; imageAlt?: string }>,
+    variant?: "standard" | "image-cards",
+    eyebrow?: string
+): BlockData {
     return {
         type: "featureCards",
-        data: {
-            title,
-            items,
-        },
+        data: { title, items, variant, eyebrow },
     };
 }
 
@@ -145,40 +147,55 @@ const servicePageOverrides: Record<string, Page> = {
             section(
                 "s2",
                 "cards",
-                featureCards("다섯 가지 전문 서비스 영역", [
-                    {
-                        title: "서버 인프라",
-                        desc: "장비 교체와 구축은 전환 이후 운영 상태가 기준입니다. 사양보다 역할 분리, 전환 순서, 인수 기준을 먼저 설계합니다.",
-                        href: "/service/server",
-                    },
-                    {
-                        title: "네트워크",
-                        desc: "장애가 났을 때 어느 구간인지 바로 읽혀야 합니다. 연결뿐 아니라 경계, 정책, 이중화, 운영 기준까지 한 구조로 설계합니다.",
-                        href: "/service/network",
-                    },
-                    {
-                        title: "스토리지·백업",
-                        desc: "백업이 있다는 말보다 실제로 복구되는지가 먼저입니다. 저장, 백업, 복구, DR을 하나의 데이터 보호 흐름으로 연결합니다.",
-                        href: "/service/storage-backup",
-                    },
-                    {
-                        title: "컨설팅",
-                        desc: "보고서로 끝나는 진단은 의미가 없습니다. 현황 분석에서 실행 가능한 로드맵과 우선순위까지 연결합니다.",
-                        href: "/service/consulting",
-                    },
-                    {
-                        title: "유지보수",
-                        desc: "빠른 대응보다 재발을 줄이는 체계가 먼저입니다. SLA, 정기점검, 장애 대응, RCA를 하나의 운영 구조로 만듭니다.",
-                        href: "/service/maintenance",
-                    },
-                ])
+                featureCards(
+                    "다섯 가지 전문 서비스 영역",
+                    [
+                        {
+                            title: "서버 인프라",
+                            desc: "장비 교체와 구축은 전환 이후 운영 상태가 기준입니다. 사양보다 역할 분리, 전환 순서, 인수 기준을 먼저 설계합니다.",
+                            href: "/service/server",
+                            imageSrc: "/images/server-photo-install.jpg",
+                            imageAlt: "서버 장비 설치 현장",
+                        },
+                        {
+                            title: "네트워크",
+                            desc: "장애가 났을 때 어느 구간인지 바로 읽혀야 합니다. 연결뿐 아니라 경계, 정책, 이중화, 운영 기준까지 한 구조로 설계합니다.",
+                            href: "/service/network",
+                            imageSrc: "/images/network-fiber-photo.jpg",
+                            imageAlt: "네트워크 광케이블 환경",
+                        },
+                        {
+                            title: "스토리지·백업",
+                            desc: "백업이 있다는 말보다 실제로 복구되는지가 먼저입니다. 저장, 백업, 복구, DR을 하나의 데이터 보호 흐름으로 연결합니다.",
+                            href: "/service/storage-backup",
+                            imageSrc: "/images/server-photo-racks.jpg",
+                            imageAlt: "스토리지와 서버 랙 환경",
+                        },
+                        {
+                            title: "컨설팅",
+                            desc: "보고서로 끝나는 진단은 의미가 없습니다. 현황 분석에서 실행 가능한 로드맵과 우선순위까지 연결합니다.",
+                            href: "/service/consulting",
+                            imageSrc: "/images/technical-design-review.jpg",
+                            imageAlt: "기술 설계 자료를 검토하는 장면",
+                        },
+                        {
+                            title: "유지보수",
+                            desc: "빠른 대응보다 재발을 줄이는 체계가 먼저입니다. SLA, 정기점검, 장애 대응, RCA를 하나의 운영 구조로 만듭니다.",
+                            href: "/service/maintenance",
+                            imageSrc: "/images/server-ops-photo.jpg",
+                            imageAlt: "운영 환경을 모니터링하는 장면",
+                        },
+                    ],
+                    "image-cards",
+                    "서비스 포트폴리오"
+                )
             ),
             section(
                 "s3",
                 "gallery",
                 imageGallery({
                     eyebrow: "Field Scenes",
-                    title: "서비스는 소개 문구보다 실제 프로젝트 장면이 더 정확하게 설명합니다",
+                    title: "현장 장면이 서비스를 더 정확하게 말합니다",
                     body: "설계 회의, 장비 설치, 연결 검토 같은 장면은 테크아이가 어디까지 개입하고 무엇을 기준으로 정리하는지 가장 직접적으로 보여줍니다.",
                     items: [
                         {
@@ -254,28 +271,25 @@ const servicePageOverrides: Record<string, Page> = {
                     "테크아이는 신규 구축, 교체, 증설, 가상화, 모니터링을 각각 따로 보지 않습니다. 서버가 실제 서비스 환경 안에서 어떤 역할을 하고, 전환 이후 어떻게 운영될지를 기준으로 전체 구조를 다시 설계합니다.",
                     "/images/hero-datacenter.jpg",
                     "고밀도 서버 인프라와 데이터센터 전경",
-                    { label: "구축·증설 보기", href: "/service/server/build" },
-                    { label: "가상화·클러스터 보기", href: "/service/server/virtualization" }
+                    { label: "인프라 진단부터 시작하기", href: "/service/consulting/assessment" },
+                    { label: "서버 구축 서비스 보기", href: "/service/server/build" }
                 )
             ),
             section(
                 "s3",
                 "cards",
-                featureCards("서버 인프라 세 가지 서비스", [
+                featureCards("각 서비스가 다루는 범위", [
                     {
                         title: "서버 구축·증설",
                         desc: "사양 선정, 배치, 전환, 검증, 인수 기준까지 포함해 서버 교체와 확장을 수행합니다.",
-                        href: "/service/server/build",
                     },
                     {
                         title: "가상화·클러스터",
                         desc: "자원 풀, HA 정책, 확장 전략, 운영 표준까지 함께 고려한 플랫폼 구조를 제안합니다.",
-                        href: "/service/server/virtualization",
                     },
                     {
                         title: "운영·모니터링",
                         desc: "관제 화면보다 알림 기준, 에스컬레이션, 런북, RCA가 먼저 보이는 체계를 만듭니다.",
-                        href: "/service/server/ops-monitoring",
                     },
                 ])
             ),
@@ -360,28 +374,25 @@ const servicePageOverrides: Record<string, Page> = {
                     "테크아이는 코어, 액세스, 무선, 방화벽, 대외 연결을 따로 보지 않습니다. 트래픽 흐름과 운영 책임 구간을 기준으로, 장애가 발생했을 때 어디를 봐야 하는지 바로 읽히는 네트워크 구조를 설계합니다.",
                     "/images/hero-network.jpg",
                     "네트워크 장비와 연결 구조를 상징하는 이미지",
-                    { label: "구축·증설 보기", href: "/service/network/design-build" },
-                    { label: "네트워크 보안 보기", href: "/service/network/security" }
+                    { label: "네트워크 진단부터 시작하기", href: "/service/consulting/assessment" },
+                    { label: "구축·증설 서비스 보기", href: "/service/network/design-build" }
                 )
             ),
             section(
                 "s3",
                 "cards",
-                featureCards("네트워크 세 가지 서비스", [
+                featureCards("각 네트워크 서비스가 다루는 범위", [
                     {
                         title: "네트워크 구축 및 증설",
                         desc: "토폴로지, 장비 배치, 회선 구성, 전환 계획, 현장 검증까지 포함한 구축 서비스를 제공합니다.",
-                        href: "/service/network/design-build",
                     },
                     {
                         title: "네트워크 보안",
                         desc: "세그먼트, 접근 정책, 방화벽 룰, 대외 연결 구조를 운영 기준과 함께 정리합니다.",
-                        href: "/service/network/security",
                     },
                     {
                         title: "이중화 및 무선",
                         desc: "무선 품질, 로밍, 이중화, 장애 분리 기준을 포함한 가용성 중심 구성을 설계합니다.",
-                        href: "/service/network/ha-wireless",
                     },
                 ])
             ),

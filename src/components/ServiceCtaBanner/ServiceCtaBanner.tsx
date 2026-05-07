@@ -19,11 +19,11 @@ export default function ServiceCtaBanner({ pageTitle }: { pageTitle?: string }) 
                     </p>
                 </div>
                 <div className={styles.bannerActions}>
-                    <Link href="/contact" className={styles.ctaPrimary}>
-                        상담 신청
-                    </Link>
-                    <Link href="/service/consulting/assessment" className={styles.ctaSecondary}>
+                    <Link href="/service/consulting/assessment" className={styles.ctaPrimary}>
                         인프라 진단 먼저 보기
+                    </Link>
+                    <Link href="/contact" className={styles.ctaSecondary}>
+                        상담 신청
                     </Link>
                 </div>
             </div>

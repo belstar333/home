@@ -60,18 +60,18 @@ export default function HeroBlock({
                         </div>
                     )}
                 </div>
-                {presentation && (
+                {(presentation?.proofTitle || presentation?.proofLabel || (presentation?.deliverables?.length ?? 0) > 0) && (
                     <aside className={styles.heroProof}>
-                        {presentation.proofLabel && (
+                        {presentation?.proofLabel && (
                             <span className={styles.heroProofLabel}>{presentation.proofLabel}</span>
                         )}
-                        {presentation.proofTitle && (
+                        {presentation?.proofTitle && (
                             <h2 className={styles.heroProofTitle}>{presentation.proofTitle}</h2>
                         )}
-                        {presentation.proofBody && (
+                        {presentation?.proofBody && (
                             <p className={styles.heroProofBody}>{presentation.proofBody}</p>
                         )}
-                        {presentation.deliverables && presentation.deliverables.length > 0 && (
+                        {presentation?.deliverables && presentation.deliverables.length > 0 && (
                             <ul className={styles.heroProofList}>
                                 {presentation.deliverables.map((item, index) => (
                                     <li key={item} className={styles.heroProofItem}>

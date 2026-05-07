@@ -39,11 +39,15 @@ export interface FeatureCardItem {
   title: string;
   desc: string;
   href?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export interface FeatureCardsData {
   title: string;
   items: FeatureCardItem[];
+  variant?: "standard" | "image-cards";
+  eyebrow?: string;
 }
 
 export interface InfographicData {

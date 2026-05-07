@@ -252,10 +252,11 @@ const familyDefaults: Record<Exclude<PageTheme, "default">, PresentationConfig> 
 const pageOverrides: Record<string, Partial<PresentationConfig>> = {
     "/service": {
         heroLabel: "통합 서비스 포트폴리오",
-        proofLabel: "서비스 운영 관점",
-        proofTitle: "기술 영역을 나열하지 않고 실제 운영 관점에서 서비스를 구성합니다.",
-        proofBody:
-            "서버, 네트워크, 데이터 보호, 컨설팅, 유지보수를 분리된 메뉴가 아니라 고객 환경을 안정화하는 연결된 서비스 체계로 제안합니다.",
+        proofLabel: "",
+        proofTitle: "",
+        proofBody: "",
+        trustPoints: [],
+        deliverables: [],
     },
     "/service/server": {
         heroLabel: "미션크리티컬 서버 인프라",
@@ -263,6 +264,11 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
         proofTitle: "서버 프로젝트는 구축 일정보다 운영 인수 품질이 먼저 보여야 합니다.",
         proofBody:
             "신규 구축, 교체, 가상화, 모니터링을 하나의 흐름으로 정리해 장애 대응과 운영 표준까지 이어지게 설계합니다.",
+        deliverables: [
+            "진단 · 설계안 · 배치 계획",
+            "구축 · 전환 · 검증 기록",
+            "인수 · 런북 · 운영 체계",
+        ],
     },
     "/service/server/build": {
         heroLabel: "구축·증설 프로젝트",
@@ -270,6 +276,11 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
         proofTitle: "장비 반입보다 중요한 것은 전환 이후에도 흔들리지 않는 표준입니다.",
         proofBody:
             "사양 선정, 배치, 전환, 검증, 인수 문서까지 단계별 기준을 명확히 해야 구축 이후 운영 공백이 생기지 않습니다.",
+        deliverables: [
+            "구축 전 현황 분석 · 리스크 점검",
+            "전환 단계별 검증 기준 · 롤백 조건",
+            "운영팀 인수 가능 상태 확인",
+        ],
     },
     "/service/server/virtualization": {
         heroLabel: "가상화·클러스터 설계",
@@ -277,6 +288,11 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
         proofTitle: "가상화는 통합 효율보다 운영 안정성과 장애 격리가 먼저 설계되어야 합니다.",
         proofBody:
             "자원 풀, HA 정책, 패치 기준, 확장 전략을 동시에 정리해 운영 규모가 커져도 편차가 커지지 않게 만듭니다.",
+        deliverables: [
+            "자원 풀 분리 기준 · 정책 설계",
+            "HA 장애 격리 구조 검증",
+            "변경 관리 · 운영 표준 수립",
+        ],
     },
     "/service/server/ops-monitoring": {
         heroLabel: "운영·모니터링 체계",
@@ -284,9 +300,19 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
         proofTitle: "관제는 화면보다 응답 체계와 런북이 먼저 갖춰져야 효과가 납니다.",
         proofBody:
             "임계치, 알림, 에스컬레이션, 런북, RCA를 하나의 흐름으로 묶어 MTTR을 줄이고 재발을 관리합니다.",
+        trustPoints: [
+            "알림 임계값과 수집 범위를 먼저 정의합니다.",
+            "에스컬레이션 경로와 런북을 운영 체계에 통합합니다.",
+            "반복 알림 구간을 구조 개선 과제로 전환합니다.",
+        ],
+        deliverables: [
+            "알림 기준 · 임계값 설계서",
+            "에스컬레이션 절차 · 런북",
+            "정기 운영 보고 · RCA 기록",
+        ],
     },
     "/service/network": {
-        heroLabel: "연결 품질 중심 네트워크",
+        heroLabel: "운영 기준 중심 네트워크",
         proofLabel: "네트워크 운영 관점",
         proofTitle: "좋은 네트워크는 빠른 연결보다 장애 구간이 바로 읽히는 구조여야 합니다.",
         proofBody:

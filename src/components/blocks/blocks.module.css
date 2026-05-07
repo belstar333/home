@@ -84,7 +84,7 @@
     max-width: 680px;
     color: rgba(255, 255, 255, 0.82);
     font-size: clamp(1rem, 1.7vw, 1.14rem);
-    line-height: 1.75;
+    line-height: 1.7;
 }
 
 .heroHighlights {
@@ -101,7 +101,7 @@
     gap: 10px;
     padding: 16px;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
+    border-radius: 12px;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
 }
@@ -141,9 +141,9 @@
 }
 
 .ctaPrimary {
-    color: #fff;
-    background: linear-gradient(135deg, var(--page-accent), color-mix(in srgb, var(--page-accent) 64%, white));
-    box-shadow: 0 14px 32px -16px color-mix(in srgb, var(--page-accent) 70%, black);
+  color: #ffffff;
+  background: #0052cc;
+  box-shadow: 0 8px 24px -8px rgba(0, 82, 204, 0.6);
 }
 
 .ctaPrimary:hover {
@@ -247,7 +247,7 @@
 }
 
 .eyebrow {
-    color: var(--page-accent);
+    color: #0052cc;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -278,19 +278,19 @@
 }
 
 .subnavCta {
-    display: inline-flex;
+  display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 44px;
     padding: 0 20px;
     border-radius: 999px;
-    background: var(--page-accent);
+    background: #0052cc;
     color: #fff;
     text-decoration: none;
     font-size: 0.92rem;
     font-weight: 700;
-    box-shadow: 0 12px 28px -18px color-mix(in srgb, var(--page-accent) 80%, black);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 24px -8px rgba(0, 82, 204, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .subnavCta:hover {
@@ -338,7 +338,7 @@
     margin: 0;
     color: var(--page-muted);
     font-size: 1rem;
-    line-height: 1.85;
+    line-height: 1.7;
 }
 
 .featureCards,
@@ -358,7 +358,7 @@
 
 .imageGalleryEyebrow {
     margin: 0;
-    color: var(--page-accent);
+    color: #0052cc;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -369,7 +369,7 @@
     margin: 0;
     color: var(--page-muted);
     font-size: 0.98rem;
-    line-height: 1.75;
+    line-height: 1.7;
 }
 
 .imageGalleryGrid {
@@ -383,7 +383,7 @@
     min-height: 260px;
     margin: 0;
     overflow: hidden;
-    border-radius: 28px;
+    border-radius: 12px;
     background: #0f1724;
 }
 
@@ -449,7 +449,7 @@
 
 .mediaFeatureEyebrow {
     margin: 0;
-    color: var(--page-accent);
+    color: #0052cc;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -460,7 +460,7 @@
     margin: 0;
     color: var(--page-muted);
     font-size: 0.98rem;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 .mediaFeaturePoints {
@@ -477,16 +477,16 @@
     gap: 12px;
     align-items: start;
     padding: 14px 16px;
-    border-radius: 18px;
+    border-radius: 12px;
     border: 1px solid var(--page-border);
     background: rgba(255, 255, 255, 0.7);
     color: var(--on-background);
     font-size: 0.93rem;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .mediaFeaturePointIndex {
-    color: var(--page-accent);
+    color: #0052cc;
     font-size: 0.74rem;
     font-weight: 800;
     letter-spacing: 0.16em;
@@ -504,7 +504,7 @@
     min-height: 360px;
     aspect-ratio: 16 / 10;
     padding: 18px;
-    border-radius: 24px;
+    border-radius: 12px;
     overflow: hidden;
     border: 1px solid color-mix(in srgb, var(--page-accent) 16%, white);
     background:
@@ -517,7 +517,7 @@
     aspect-ratio: auto;
     padding: 0;
     border: 0;
-    border-radius: 28px;
+    border-radius: 12px;
     background: #0f1724;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
@@ -589,7 +589,7 @@
 }
 
 .cardIcon {
-    color: var(--page-accent);
+    color: #0052cc;
     font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 0.16em;
@@ -607,7 +607,7 @@
     margin: 0;
     color: var(--page-muted);
     font-size: 0.94rem;
-    line-height: 1.68;
+    line-height: 1.7;
 }
 
 .cardArrow {
@@ -618,7 +618,7 @@
     padding: 0 12px;
     border-radius: 999px;
     background: var(--page-accent-soft);
-    color: var(--page-accent);
+    color: #0052cc;
     font-size: 0.78rem;
     font-weight: 700;
 }
@@ -644,7 +644,7 @@
     grid-template-columns: auto 1fr;
     gap: 14px;
     padding: 18px;
-    border-radius: 22px;
+    border-radius: 12px;
     background: var(--process-card-bg);
     border: 1px solid var(--page-border);
 }
@@ -656,7 +656,7 @@
     width: 44px;
     height: 44px;
     border-radius: 14px;
-    background: var(--page-accent);
+    background: #0052cc;
     color: #fff;
     font-size: 0.8rem;
     font-weight: 800;
@@ -689,14 +689,14 @@
     gap: 10px;
     align-items: start;
     padding: 22px 20px;
-    border-radius: 22px;
+    border-radius: 12px;
     border: 1px solid var(--page-border);
     background: var(--list-card-bg);
 }
 
 .useCaseNumber,
 .benefitIcon {
-    color: var(--page-accent);
+    color: #0052cc;
     font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 0.14em;
@@ -732,7 +732,7 @@
     gap: 14px;
     align-content: start;
     padding: 22px;
-    border-radius: 24px;
+    border-radius: 12px;
     background: var(--contact-aside-bg);
     border: 1px solid color-mix(in srgb, var(--page-accent) 18%, white);
 }
@@ -745,7 +745,7 @@
     padding: 0 12px;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.76);
-    color: var(--page-accent);
+    color: #0052cc;
     font-size: 0.76rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -778,7 +778,7 @@
 }
 
 .contactChecklistIndex {
-    color: var(--page-accent);
+    color: #0052cc;
     font-size: 0.76rem;
     font-weight: 800;
     letter-spacing: 0.14em;
@@ -794,19 +794,19 @@
 
 .contactSuccess {
     padding: 18px 20px;
-    border-radius: 20px;
+    border-radius: 12px;
     background: #f3f8f5;
     color: #215642;
     border: 1px solid rgba(33, 86, 66, 0.12);
     font-weight: 600;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .form {
     display: grid;
     gap: 16px;
     padding: 22px;
-    border-radius: 24px;
+    border-radius: 12px;
     background: var(--form-bg);
     border: 1px solid var(--page-border);
 }
@@ -822,7 +822,7 @@
     width: 100%;
     padding: 14px 16px;
     border: 1px solid color-mix(in srgb, var(--page-accent) 18%, #d8dee7);
-    border-radius: 16px;
+    border-radius: 12px;
     background: #fff;
     color: var(--on-background);
     font-size: 0.94rem;
@@ -832,7 +832,7 @@
 
 .formInput:focus,
 .formTextarea:focus {
-    border-color: var(--page-accent);
+    border-color: #0052cc;
     box-shadow: 0 0 0 4px color-mix(in srgb, var(--page-accent) 14%, white);
 }
 
@@ -864,7 +864,7 @@
 
 .tableWrap {
     overflow: auto;
-    border-radius: 22px;
+    border-radius: 12px;
     border: 1px solid var(--page-border);
     background: var(--table-bg);
     margin-top: 18px;
@@ -891,7 +891,7 @@
     border-top: 1px solid var(--page-border);
     color: var(--page-muted);
     font-size: 0.92rem;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .table td:first-child {
@@ -929,13 +929,13 @@
     margin-top: 8px;
     margin-left: 3px;
     border-radius: 50%;
-    background: var(--page-accent);
+    background: #0052cc;
     box-shadow: 0 0 0 6px var(--page-accent-soft);
 }
 
 .timelineContent {
     padding: 16px 18px;
-    border-radius: 20px;
+    border-radius: 12px;
     border: 1px solid var(--page-border);
     background: var(--timeline-card-bg);
 }
@@ -947,7 +947,7 @@
     padding: 0 10px;
     border-radius: 999px;
     background: var(--page-accent-soft);
-    color: var(--page-accent);
+    color: #0052cc;
     font-size: 0.76rem;
     font-weight: 700;
 }
@@ -963,7 +963,7 @@
     overflow: hidden;
     margin-top: 18px;
     padding: 14px 0;
-    border-radius: 22px;
+    border-radius: 12px;
     border: 1px solid var(--page-border);
     background: rgba(255, 255, 255, 0.88);
 }
@@ -982,7 +982,7 @@
     min-width: 164px;
     height: 68px;
     padding: 0 16px;
-    border-radius: 18px;
+    border-radius: 12px;
     background: var(--page-surface);
 }
 
@@ -1016,7 +1016,7 @@
 
 .faqItem {
     border: 1px solid var(--page-border);
-    border-radius: 20px;
+    border-radius: 12px;
     background: var(--faq-bg);
     overflow: hidden;
 }
@@ -1038,7 +1038,7 @@
 }
 
 .faqToggle {
-    color: var(--page-accent);
+    color: #0052cc;
     font-size: 1rem;
     font-weight: 700;
     flex-shrink: 0;
@@ -1093,12 +1093,16 @@
     min-height: 0;
 }
 
+:global([data-page-variant="server-overview"]) .mediaFeature[data-layout="image-left"][data-tone="photo"] {
+    grid-template-columns: minmax(0, 0.88fr) minmax(340px, 1.12fr);
+}
+
 :global([data-page-variant="server-build"]) .heroProof {
     align-content: center;
 }
 
 :global([data-page-variant="server-build"]) .cardGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
 }
 
@@ -1107,15 +1111,20 @@
 }
 
 :global([data-page-variant="server-build"]) .tableWrap {
-    border-radius: 18px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="server-build"]) .mediaFeature {
-    border-radius: 22px;
+    border-radius: 12px;
+    grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+}
+
+:global([data-page-variant="server-build"]) .mediaFeaturePoint {
+    padding: 18px 0;
 }
 
 :global([data-page-variant="server-build"]) .mediaFeatureImageWrap {
-    border-radius: 18px;
+    border-radius: 12px;
     background:
         linear-gradient(180deg, rgba(255, 250, 243, 0.96), rgba(251, 244, 234, 0.92));
 }
@@ -1152,7 +1161,7 @@
 
 :global([data-page-variant="server-build"]) .timelineContent {
     min-height: 100%;
-    border-radius: 18px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="server-virtualization"]) .heroProof {
@@ -1160,7 +1169,7 @@
 }
 
 :global([data-page-variant="server-virtualization"]) .cardGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
 }
 
@@ -1181,11 +1190,11 @@
 }
 
 :global([data-page-variant="server-virtualization"]) .mediaFeature {
-    border-radius: 30px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="server-virtualization"]) .mediaFeatureImageWrap {
-    border-radius: 28px;
+    border-radius: 12px;
     background:
         radial-gradient(circle at 24% 18%, rgba(15, 143, 157, 0.14), transparent 28%),
         linear-gradient(180deg, rgba(244, 254, 255, 0.96), rgba(236, 250, 252, 0.94));
@@ -1214,7 +1223,7 @@
     gap: 18px;
     align-content: start;
     min-height: 216px;
-    border-radius: 28px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="server-virtualization"]) .stepNumber {
@@ -1226,7 +1235,7 @@
 }
 
 :global([data-page-variant="server-ops"]) .cardGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
 }
 
@@ -1256,19 +1265,19 @@
 }
 
 :global([data-page-variant="server-ops"]) .tableWrap {
-    border-radius: 18px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="server-ops"]) .timelineContent {
-    border-radius: 16px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="server-ops"]) .mediaFeature {
-    border-radius: 22px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="server-ops"]) .mediaFeatureImageWrap {
-    border-radius: 18px;
+    border-radius: 12px;
     background:
         linear-gradient(180deg, rgba(245, 252, 249, 0.98), rgba(238, 248, 244, 0.94));
 }
@@ -1348,7 +1357,7 @@
 :global([data-page-variant="maintenance-overview"]) .heroHighlightItem,
 :global([data-page-variant="generic-service"]) .heroHighlightItem {
     min-height: 132px;
-    border-radius: 22px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="service-overview"]) .heroProof,
@@ -1574,18 +1583,27 @@
 :global([data-page-variant="consulting-overview"]) .mediaFeatureImageWrap[data-tone="photo"],
 :global([data-page-variant="maintenance-overview"]) .mediaFeatureImageWrap[data-tone="photo"],
 :global([data-page-variant="generic-service"]) .mediaFeatureImageWrap[data-tone="photo"] {
-    border-radius: 32px;
+    border-radius: 12px;
     box-shadow: 0 24px 48px -32px rgba(10, 24, 49, 0.44);
 }
 
 :global([data-page-variant="service-overview"]) .imageGalleryGrid,
-:global([data-page-variant="server-overview"]) .imageGalleryGrid,
-:global([data-page-variant="network-overview"]) .imageGalleryGrid,
 :global([data-page-variant="storage-overview"]) .imageGalleryGrid,
 :global([data-page-variant="consulting-overview"]) .imageGalleryGrid,
 :global([data-page-variant="maintenance-overview"]) .imageGalleryGrid,
 :global([data-page-variant="generic-service"]) .imageGalleryGrid {
     grid-template-columns: minmax(0, 1.16fr) minmax(300px, 0.84fr);
+}
+
+:global([data-page-variant="server-overview"]) .imageGalleryGrid,
+:global([data-page-variant="network-overview"]) .imageGalleryGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+:global([data-page-variant="server-overview"]) .imageGalleryItemFeature,
+:global([data-page-variant="network-overview"]) .imageGalleryItemFeature {
+    grid-row: span 1;
+    min-height: 260px;
 }
 
 :global([data-page-variant="service-overview"]) .imageGalleryItem,
@@ -1595,7 +1613,7 @@
 :global([data-page-variant="consulting-overview"]) .imageGalleryItem,
 :global([data-page-variant="maintenance-overview"]) .imageGalleryItem,
 :global([data-page-variant="generic-service"]) .imageGalleryItem {
-    border-radius: 30px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="service-overview"]) .benefits,
@@ -1725,11 +1743,11 @@
 }
 
 :global([data-page-variant="solution-overview"]) .mediaFeature {
-    border-radius: 30px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="solution-overview"]) .mediaFeatureImageWrap[data-tone="photo"] {
-    border-radius: 30px;
+    border-radius: 12px;
     box-shadow: 0 22px 42px -26px rgba(9, 24, 49, 0.44);
 }
 
@@ -1740,7 +1758,7 @@
 }
 
 :global([data-page-variant="product-overview"]) .tableWrap {
-    border-radius: 24px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="product-roseha"]) .heroProof {
@@ -1748,11 +1766,11 @@
 }
 
 :global([data-page-variant="product-roseha"]) .mediaFeature {
-    border-radius: 30px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="product-roseha"]) .mediaFeatureImageWrap {
-    border-radius: 28px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="product-omniguard"]) .card::after {
@@ -1767,11 +1785,11 @@
 }
 
 :global([data-page-variant="product-omniguard"]) .mediaFeature {
-    border-radius: 26px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="product-omniguard"]) .mediaFeatureImageWrap[data-tone="photo"] {
-    border-radius: 24px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="about-overview"]) .richText {
@@ -1908,7 +1926,7 @@
 :global([data-page-variant="about-history"]) .imageGalleryItem,
 :global([data-page-variant="about-partners"]) .imageGalleryItem,
 :global([data-page-variant="about-location"]) .imageGalleryItem {
-    border-radius: 26px;
+    border-radius: 12px;
 }
 
 :global([data-page-variant="about-overview"]) .timelineTrack {
@@ -2087,7 +2105,7 @@
 
 :global([data-page-variant="about-overview"]) .logoSlider,
 :global([data-page-variant="about-overview"]) .timeline {
-    border-radius: 30px;
+    border-radius: 12px;
 }
 
 @media (max-width: 1100px) {
@@ -2267,7 +2285,7 @@
     .faq,
     .timeline,
     .logoSlider {
-        border-radius: 24px;
+        border-radius: 12px;
     }
 
     .hero {
@@ -2350,5 +2368,143 @@
     :global([data-page-variant="server-ops"]) .cardArrow {
         grid-column: auto;
         grid-row: auto;
+    }
+}
+
+/* ── Image-card grid variant ── */
+.featureCardsEyebrow {
+    margin: 0;
+    color: var(--page-accent, #0052cc);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.imageCardGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.imageCard {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--page-border);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.imageCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 38px -18px rgba(15, 23, 38, 0.22);
+}
+
+.imageCardWide {
+    grid-column: 1 / -1;
+    flex-direction: row;
+}
+
+.imageCardImageWrap {
+    position: relative;
+    flex-shrink: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #0f1724;
+}
+
+.imageCardWide .imageCardImageWrap {
+    flex: 0 0 42%;
+    aspect-ratio: unset;
+    min-height: 260px;
+}
+
+.imageCardImg {
+    object-fit: cover;
+    transition: transform 0.42s ease;
+}
+
+.imageCard:hover .imageCardImg {
+    transform: scale(1.04);
+}
+
+.imageCardBody {
+    display: grid;
+    align-content: start;
+    gap: 10px;
+    padding: 22px 24px;
+    flex: 1;
+}
+
+.imageCardWide .imageCardBody {
+    align-content: center;
+    padding: 28px 36px;
+    gap: 12px;
+}
+
+.imageCardNumber {
+    color: var(--page-accent, #0052cc);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.imageCardTitle {
+    margin: 0;
+    color: var(--on-background);
+    font-family: var(--font-headline);
+    font-size: 1.14rem;
+    line-height: 1.28;
+    letter-spacing: -0.02em;
+}
+
+.imageCardWide .imageCardTitle {
+    font-size: 1.38rem;
+}
+
+.imageCardDesc {
+    margin: 0;
+    color: var(--page-muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+.imageCardCta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--page-accent, #0052cc);
+    font-size: 0.86rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-top: 4px;
+}
+
+.imageCardCta::after {
+    content: "→";
+    transition: transform 0.2s ease;
+}
+
+.imageCard:hover .imageCardCta::after {
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .imageCardGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .imageCardWide {
+        flex-direction: column;
+    }
+
+    .imageCardWide .imageCardImageWrap {
+        flex: unset;
+        aspect-ratio: 16 / 9;
     }
 }

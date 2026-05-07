@@ -34,7 +34,7 @@ export default async function SubpageLayout({
         <>
             <div className={styles.sectionBar}>
                 <div className={styles.sectionBarInner}>
-                    {slug.length >= 2 && <Breadcrumb slug={slug} tree={tree} />}
+                    <Breadcrumb slug={slug} tree={tree} />
                     <SectionNav tree={tree} />
                 </div>
             </div>

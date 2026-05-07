@@ -121,6 +121,9 @@
 
 .page[data-page-variant="service-overview"] {
     --hero-min-height: clamp(450px, 60vh, 620px);
+    --hero-grid-columns: 1fr;
+    --hero-content-max: 860px;
+    gap: 48px;
     --hero-bg: linear-gradient(128deg, #08172f 0%, #124b93 45%, #2e8fe4 100%);
     --hero-overlay-bg:
         linear-gradient(92deg, rgba(5, 12, 24, 0.9) 0%, rgba(5, 12, 24, 0.68) 44%, rgba(5, 12, 24, 0.18) 100%),

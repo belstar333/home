@@ -95,10 +95,12 @@ body {
   font-family: var(--font-body);
   background-color: var(--background);
   color: var(--on-background);
-  line-height: 1.6;
+  line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  word-break: keep-all;
+  letter-spacing: -0.02em;
 }
 
 h1,

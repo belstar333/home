@@ -2381,6 +2381,905 @@
       }
     ]
   },
+  "/solution": {
+    "id": "page_solution_root",
+    "title": "AI 솔루션",
+    "slug": "/solution",
+    "seo": {
+      "title": "AI 솔루션 | TechI",
+      "description": "회의, 문서, 검색, 내부망 AI까지 실제 업무 흐름에 연결되는 AI 솔루션을 제안합니다."
+    },
+    "sections": [
+      {
+        "id": "s1",
+        "type": "hero",
+        "blocks": [
+          {
+            "type": "hero",
+            "data": {
+              "h1": "멋진 AI보다 실제로 계속 쓰게 되는 AI가 더 중요합니다",
+              "sub": "TechI는 AI를 하나의 유행어처럼 설명하지 않습니다. 회의 정리, 문서 검색, 반복 업무, 내부망 AI처럼 실제 현업이 매일 부딪히는 장면 안에서 어떤 흐름을 줄이고 무엇을 자동화할지부터 설계합니다.",
+              "ctaPrimary": {
+                "label": "상담 문의하기",
+                "href": "/contact"
+              },
+              "imageSrc": "/images/solution-data-workshop.jpg",
+              "imageAlt": "AI 솔루션 대표 이미지"
+            }
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "type": "media",
+        "blocks": [
+          {
+            "type": "mediaFeature",
+            "data": {
+              "eyebrow": "Technical / Strategic Detail",
+              "title": "저희는 이 페이지에서 이런 디테일을 먼저 봅니다",
+              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현장 상태, 기준, 점검, 인수 방식까지 같이 봐야 도입 이후 품질이 달라집니다.",
+              "imageSrc": "/images/solution-meeting-ui.jpg",
+              "imageAlt": "AI 솔루션 상세 장면",
+              "layout": "imageRight",
+              "tone": "photo",
+              "imageWidth": 1600,
+              "imageHeight": 1067,
+              "points": [
+                "기능 시연보다 실제 사용 장면과 역할 분리를 먼저 봅니다",
+                "권한, 보안, 데이터 구조를 함께 설계해 내부 신뢰를 높입니다",
+                "AI가 한 번 쓰이고 끝나지 않도록 운영 흐름 안에 넣습니다"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "type": "faq",
+        "blocks": [
+          {
+            "type": "faq",
+            "data": {
+              "title": "FAQ",
+              "items": [
+                {
+                  "q": "AI 솔루션 도입 전에 무엇을 준비하면 좋나요?",
+                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
+                },
+                {
+                  "q": "기존 환경과 병행 적용도 가능한가요?",
+                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
+                },
+                {
+                  "q": "도입 범위는 어떻게 정하나요?",
+                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "type": "contact",
+        "blocks": [
+          {
+            "type": "contactForm",
+            "data": {
+              "title": "AI 솔루션 상담",
+              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/solution/meeting": {
+    "id": "page_solution_meeting",
+    "title": "AI ?? ???",
+    "slug": "/solution/meeting",
+    "seo": {
+      "title": "AI ?? ??? | TechI",
+      "description": "?? ??? ??, ???, ?? ???? ???? ??? AI ?? ???."
+    },
+    "sections": [
+      {
+        "id": "s1",
+        "type": "header",
+        "blocks": [
+          {
+            "type": "subnavHeader",
+            "data": {
+              "eyebrow": "Solution",
+              "title": "AI ?? ???",
+              "breadcrumbs": [
+                "Solution",
+                "Meeting"
+              ],
+              "cta": {
+                "label": "상담 요청",
+                "href": "/contact"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "type": "hero",
+        "blocks": [
+          {
+            "type": "hero",
+            "data": {
+              "h1": "회의 내용을 남기는 수준이 아니라 실행으로 이어지게 만듭니다",
+              "sub": "회의록이 쌓이기만 하고 후속 액션이 흐려지는 조직에 적합합니다. TechI는 요약, 담당자 구분, 일정 반영, 공유 흐름까지 포함한 회의 자동화 체계를 설계합니다.",
+              "ctaPrimary": {
+                "label": "상담 요청",
+                "href": "/contact"
+              },
+              "imageSrc": "/images/solution-meeting-room.jpg",
+              "imageAlt": "AI ?? ??? 대표 이미지"
+            }
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "type": "media",
+        "blocks": [
+          {
+            "type": "mediaFeature",
+            "data": {
+              "eyebrow": "Detail Focus",
+              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
+              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
+              "imageSrc": "/images/solution-meeting-ui.jpg",
+              "imageAlt": "AI ?? ??? 상세 장면",
+              "layout": "imageRight",
+              "tone": "photo",
+              "imageWidth": 1600,
+              "imageHeight": 1067,
+              "points": [
+                "현재 환경의 상태와 제약을 함께 확인합니다",
+                "운영팀이 이해할 수 있는 기준으로 정리합니다",
+                "도입 이후에도 재사용 가능한 구조를 남깁니다"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "type": "faq",
+        "blocks": [
+          {
+            "type": "faq",
+            "data": {
+              "title": "FAQ",
+              "items": [
+                {
+                  "q": "AI ?? ??? 도입 전에 무엇을 준비하면 좋나요?",
+                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
+                },
+                {
+                  "q": "기존 환경과 병행 적용도 가능한가요?",
+                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
+                },
+                {
+                  "q": "도입 범위는 어떻게 정하나요?",
+                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s5",
+        "type": "contact",
+        "blocks": [
+          {
+            "type": "contactForm",
+            "data": {
+              "title": "AI ?? ??? 상담",
+              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/solution/code-analysis": {
+    "id": "page_solution_code_analysis",
+    "title": "AI ?? ???",
+    "slug": "/solution/code-analysis",
+    "seo": {
+      "title": "AI ?? ??? | TechI",
+      "description": "?? ???, ?? ???, ?? ??? ?? ???? AI ?? ???."
+    },
+    "sections": [
+      {
+        "id": "s1",
+        "type": "header",
+        "blocks": [
+          {
+            "type": "subnavHeader",
+            "data": {
+              "eyebrow": "Solution",
+              "title": "AI ?? ???",
+              "breadcrumbs": [
+                "Solution",
+                "Code Analysis"
+              ],
+              "cta": {
+                "label": "상담 요청",
+                "href": "/contact"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "type": "hero",
+        "blocks": [
+          {
+            "type": "hero",
+            "data": {
+              "h1": "리뷰 속도보다 중요한 것은 변경 리스크를 더 빨리 드러내는 일입니다",
+              "sub": "코드 분석은 단순 자동 리뷰가 아니라 팀의 검토 기준을 구조화하고 위험 변경을 빠르게 구분해 검토 밀도를 높이는 방향으로 설계해야 합니다.",
+              "ctaPrimary": {
+                "label": "상담 요청",
+                "href": "/contact"
+              },
+              "imageSrc": "/images/hero-code.jpg",
+              "imageAlt": "AI ?? ??? 대표 이미지"
+            }
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "type": "media",
+        "blocks": [
+          {
+            "type": "mediaFeature",
+            "data": {
+              "eyebrow": "Detail Focus",
+              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
+              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
+              "imageSrc": "/images/solution-code-review.jpg",
+              "imageAlt": "AI ?? ??? 상세 장면",
+              "layout": "imageRight",
+              "tone": "photo",
+              "imageWidth": 1600,
+              "imageHeight": 1067,
+              "points": [
+                "현재 환경의 상태와 제약을 함께 확인합니다",
+                "운영팀이 이해할 수 있는 기준으로 정리합니다",
+                "도입 이후에도 재사용 가능한 구조를 남깁니다"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "type": "faq",
+        "blocks": [
+          {
+            "type": "faq",
+            "data": {
+              "title": "FAQ",
+              "items": [
+                {
+                  "q": "AI ?? ??? 도입 전에 무엇을 준비하면 좋나요?",
+                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
+                },
+                {
+                  "q": "기존 환경과 병행 적용도 가능한가요?",
+                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
+                },
+                {
+                  "q": "도입 범위는 어떻게 정하나요?",
+                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s5",
+        "type": "contact",
+        "blocks": [
+          {
+            "type": "contactForm",
+            "data": {
+              "title": "AI ?? ??? 상담",
+              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/solution/agent-orchestration": {
+    "id": "page_solution_agent_orchestration",
+    "title": "???? ???????",
+    "slug": "/solution/agent-orchestration",
+    "seo": {
+      "title": "???? ??????? | TechI",
+      "description": "?? AI? ??? ?? ???? ?? ???? ???????."
+    },
+    "sections": [
+      {
+        "id": "s1",
+        "type": "header",
+        "blocks": [
+          {
+            "type": "subnavHeader",
+            "data": {
+              "eyebrow": "Solution",
+              "title": "???? ???????",
+              "breadcrumbs": [
+                "Solution",
+                "Agent Orchestration"
+              ],
+              "cta": {
+                "label": "상담 요청",
+                "href": "/contact"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "type": "hero",
+        "blocks": [
+          {
+            "type": "hero",
+            "data": {
+              "h1": "한 번의 답변보다 여러 단계 작업을 안정적으로 이어주는 구조가 필요합니다",
+              "sub": "검색, 판단, 생성, 승인, 전달이 섞인 업무에서는 단일 챗봇보다 단계형 에이전트 흐름이 더 적합합니다. TechI는 이 구조를 운영 가능한 수준으로 설계합니다.",
+              "ctaPrimary": {
+                "label": "상담 요청",
+                "href": "/contact"
+              },
+              "imageSrc": "/images/solution-monitoring-room.jpg",
+              "imageAlt": "???? ??????? 대표 이미지"
+            }
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "type": "media",
+        "blocks": [
+          {
+            "type": "mediaFeature",
+            "data": {
+              "eyebrow": "Detail Focus",
+              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
+              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
+              "imageSrc": "/images/solution-ai-inference-ui.jpg",
+              "imageAlt": "???? ??????? 상세 장면",
+              "layout": "imageRight",
+              "tone": "photo",
+              "imageWidth": 1600,
+              "imageHeight": 1067,
+              "points": [
+                "현재 환경의 상태와 제약을 함께 확인합니다",
+                "운영팀이 이해할 수 있는 기준으로 정리합니다",
+                "도입 이후에도 재사용 가능한 구조를 남깁니다"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "type": "faq",
+        "blocks": [
+          {
+            "type": "faq",
+            "data": {
+              "title": "FAQ",
+              "items": [
+                {
+                  "q": "???? ??????? 도입 전에 무엇을 준비하면 좋나요?",
+                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
+                },
+                {
+                  "q": "기존 환경과 병행 적용도 가능한가요?",
+                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
+                },
+                {
+                  "q": "도입 범위는 어떻게 정하나요?",
+                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s5",
+        "type": "contact",
+        "blocks": [
+          {
+            "type": "contactForm",
+            "data": {
+              "title": "???? ??????? 상담",
+              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/solution/local-llm": {
+    "id": "page_solution_local_llm",
+    "title": "?? LLM",
+    "slug": "/solution/local-llm",
+    "seo": {
+      "title": "?? LLM | TechI",
+      "description": "???? ????? ??? ?? ?? LLM ??? ?? ??."
+    },
+    "sections": [
+      {
+        "id": "s1",
+        "type": "header",
+        "blocks": [
+          {
+            "type": "subnavHeader",
+            "data": {
+              "eyebrow": "Solution",
+              "title": "?? LLM",
+              "breadcrumbs": [
+                "Solution",
+                "Local Llm"
+              ],
+              "cta": {
+                "label": "상담 요청",
+                "href": "/contact"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "type": "hero",
+        "blocks": [
+          {
+            "type": "hero",
+            "data": {
+              "h1": "외부 의존 없이 내부 정책에 맞는 LLM 운영 환경을 만듭니다",
+              "sub": "보안, 데이터 반출, 응답 속도, 비용 예측성 때문에 외부형 모델이 맞지 않는 조직에는 Local LLM이 더 적합합니다. TechI는 인프라부터 운영 정책까지 함께 설계합니다.",
+              "ctaPrimary": {
+                "label": "상담 요청",
+                "href": "/contact"
+              },
+              "imageSrc": "/images/server-virtualization-photo.jpg",
+              "imageAlt": "?? LLM 대표 이미지"
+            }
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "type": "media",
+        "blocks": [
+          {
+            "type": "mediaFeature",
+            "data": {
+              "eyebrow": "Detail Focus",
+              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
+              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
+              "imageSrc": "/images/server-photo-racks.jpg",
+              "imageAlt": "?? LLM 상세 장면",
+              "layout": "imageRight",
+              "tone": "photo",
+              "imageWidth": 1600,
+              "imageHeight": 1067,
+              "points": [
+                "현재 환경의 상태와 제약을 함께 확인합니다",
+                "운영팀이 이해할 수 있는 기준으로 정리합니다",
+                "도입 이후에도 재사용 가능한 구조를 남깁니다"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "type": "faq",
+        "blocks": [
+          {
+            "type": "faq",
+            "data": {
+              "title": "FAQ",
+              "items": [
+                {
+                  "q": "?? LLM 도입 전에 무엇을 준비하면 좋나요?",
+                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
+                },
+                {
+                  "q": "기존 환경과 병행 적용도 가능한가요?",
+                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
+                },
+                {
+                  "q": "도입 범위는 어떻게 정하나요?",
+                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s5",
+        "type": "contact",
+        "blocks": [
+          {
+            "type": "contactForm",
+            "data": {
+              "title": "?? LLM 상담",
+              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/solution/ai-inference": {
+    "id": "page_solution_ai_inference",
+    "title": "AI ?? ??",
+    "slug": "/solution/ai-inference",
+    "seo": {
+      "title": "AI ?? ?? | TechI",
+      "description": "???? ??, ?? ???? ???? ????? ???? AI ?? ??."
+    },
+    "sections": [
+      {
+        "id": "s1",
+        "type": "header",
+        "blocks": [
+          {
+            "type": "subnavHeader",
+            "data": {
+              "eyebrow": "Solution",
+              "title": "AI ?? ??",
+              "breadcrumbs": [
+                "Solution",
+                "Ai Inference"
+              ],
+              "cta": {
+                "label": "상담 요청",
+                "href": "/contact"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "type": "hero",
+        "blocks": [
+          {
+            "type": "hero",
+            "data": {
+              "h1": "모델 연결이 아니라 서비스 품질을 보장하는 추론 체계가 필요합니다",
+              "sub": "추론 환경은 응답 속도, 장애 복구, 버전 관리, 사용량 모니터링이 함께 잡혀야 실제 서비스에 넣을 수 있습니다. TechI는 운영 기준을 포함한 AI 추론 환경을 설계합니다.",
+              "ctaPrimary": {
+                "label": "상담 요청",
+                "href": "/contact"
+              },
+              "imageSrc": "/images/solution-monitoring-room.jpg",
+              "imageAlt": "AI ?? ?? 대표 이미지"
+            }
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "type": "media",
+        "blocks": [
+          {
+            "type": "mediaFeature",
+            "data": {
+              "eyebrow": "Detail Focus",
+              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
+              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
+              "imageSrc": "/images/solution-ai-inference-ui.jpg",
+              "imageAlt": "AI ?? ?? 상세 장면",
+              "layout": "imageRight",
+              "tone": "photo",
+              "imageWidth": 1600,
+              "imageHeight": 1067,
+              "points": [
+                "현재 환경의 상태와 제약을 함께 확인합니다",
+                "운영팀이 이해할 수 있는 기준으로 정리합니다",
+                "도입 이후에도 재사용 가능한 구조를 남깁니다"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "type": "faq",
+        "blocks": [
+          {
+            "type": "faq",
+            "data": {
+              "title": "FAQ",
+              "items": [
+                {
+                  "q": "AI ?? ?? 도입 전에 무엇을 준비하면 좋나요?",
+                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
+                },
+                {
+                  "q": "기존 환경과 병행 적용도 가능한가요?",
+                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
+                },
+                {
+                  "q": "도입 범위는 어떻게 정하나요?",
+                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s5",
+        "type": "contact",
+        "blocks": [
+          {
+            "type": "contactForm",
+            "data": {
+              "title": "AI ?? ?? 상담",
+              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/solution/data-visualization": {
+    "id": "page_solution_data_visualization",
+    "title": "??? ???",
+    "slug": "/solution/data-visualization",
+    "seo": {
+      "title": "??? ??? | TechI",
+      "description": "??, ??, ?? ???? ???? ???? ???? ??? ???."
+    },
+    "sections": [
+      {
+        "id": "s1",
+        "type": "header",
+        "blocks": [
+          {
+            "type": "subnavHeader",
+            "data": {
+              "eyebrow": "Solution",
+              "title": "??? ???",
+              "breadcrumbs": [
+                "Solution",
+                "Data Visualization"
+              ],
+              "cta": {
+                "label": "상담 요청",
+                "href": "/contact"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "type": "hero",
+        "blocks": [
+          {
+            "type": "hero",
+            "data": {
+              "h1": "좋은 대시보드는 예쁘게 보이는 화면이 아니라 같은 판단을 만드는 화면입니다",
+              "sub": "운영 대시보드와 보고 화면은 목적이 다릅니다. TechI는 운영팀, 실무팀, 의사결정자가 각자 필요한 기준으로 읽을 수 있는 데이터 시각화 구조를 설계합니다.",
+              "ctaPrimary": {
+                "label": "상담 요청",
+                "href": "/contact"
+              },
+              "imageSrc": "/images/solution-data-workshop.jpg",
+              "imageAlt": "??? ??? 대표 이미지"
+            }
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "type": "media",
+        "blocks": [
+          {
+            "type": "mediaFeature",
+            "data": {
+              "eyebrow": "Detail Focus",
+              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
+              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
+              "imageSrc": "/images/product-console-ui.jpg",
+              "imageAlt": "??? ??? 상세 장면",
+              "layout": "imageRight",
+              "tone": "photo",
+              "imageWidth": 1600,
+              "imageHeight": 1067,
+              "points": [
+                "현재 환경의 상태와 제약을 함께 확인합니다",
+                "운영팀이 이해할 수 있는 기준으로 정리합니다",
+                "도입 이후에도 재사용 가능한 구조를 남깁니다"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "type": "faq",
+        "blocks": [
+          {
+            "type": "faq",
+            "data": {
+              "title": "FAQ",
+              "items": [
+                {
+                  "q": "??? ??? 도입 전에 무엇을 준비하면 좋나요?",
+                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
+                },
+                {
+                  "q": "기존 환경과 병행 적용도 가능한가요?",
+                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
+                },
+                {
+                  "q": "도입 범위는 어떻게 정하나요?",
+                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s5",
+        "type": "contact",
+        "blocks": [
+          {
+            "type": "contactForm",
+            "data": {
+              "title": "??? ??? 상담",
+              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/solution/rag": {
+    "id": "page_solution_rag",
+    "title": "?????? RAG",
+    "slug": "/solution/rag",
+    "seo": {
+      "title": "?????? RAG | TechI",
+      "description": "?? ??? ?? ??? ?? ???? ???? ?????? RAG."
+    },
+    "sections": [
+      {
+        "id": "s1",
+        "type": "header",
+        "blocks": [
+          {
+            "type": "subnavHeader",
+            "data": {
+              "eyebrow": "Solution",
+              "title": "?????? RAG",
+              "breadcrumbs": [
+                "Solution",
+                "Rag"
+              ],
+              "cta": {
+                "label": "상담 요청",
+                "href": "/contact"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "type": "hero",
+        "blocks": [
+          {
+            "type": "hero",
+            "data": {
+              "h1": "사내 문서를 찾는 수준이 아니라 근거와 함께 답하게 만들어야 합니다",
+              "sub": "RAG는 검색 엔진을 한 번 더 만드는 일이 아닙니다. 권한, 출처, 문서 품질, 운영 로그를 포함해 팀이 신뢰할 수 있는 응답 구조를 만드는 것이 핵심입니다.",
+              "ctaPrimary": {
+                "label": "상담 요청",
+                "href": "/contact"
+              },
+              "imageSrc": "/images/hero-code.jpg",
+              "imageAlt": "?????? RAG 대표 이미지"
+            }
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "type": "media",
+        "blocks": [
+          {
+            "type": "mediaFeature",
+            "data": {
+              "eyebrow": "Detail Focus",
+              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
+              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
+              "imageSrc": "/images/solution-knowledge-ui.jpg",
+              "imageAlt": "?????? RAG 상세 장면",
+              "layout": "imageRight",
+              "tone": "photo",
+              "imageWidth": 1600,
+              "imageHeight": 1067,
+              "points": [
+                "현재 환경의 상태와 제약을 함께 확인합니다",
+                "운영팀이 이해할 수 있는 기준으로 정리합니다",
+                "도입 이후에도 재사용 가능한 구조를 남깁니다"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "type": "faq",
+        "blocks": [
+          {
+            "type": "faq",
+            "data": {
+              "title": "FAQ",
+              "items": [
+                {
+                  "q": "?????? RAG 도입 전에 무엇을 준비하면 좋나요?",
+                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
+                },
+                {
+                  "q": "기존 환경과 병행 적용도 가능한가요?",
+                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
+                },
+                {
+                  "q": "도입 범위는 어떻게 정하나요?",
+                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "s5",
+        "type": "contact",
+        "blocks": [
+          {
+            "type": "contactForm",
+            "data": {
+              "title": "?????? RAG 상담",
+              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
+            }
+          }
+        ]
+      }
+    ]
+  },
   "/product": {
     "id": "page_product_root",
     "title": "제품",
@@ -4218,905 +5117,6 @@
                   "a": "?????. ?? ??? ???? ????? ??? ? ?? ? ?? ???? ??? ? ????."
                 }
               ]
-            }
-          }
-        ]
-      }
-    ]
-  },
-  "/solution": {
-    "id": "page_solution_root",
-    "title": "AI 솔루션",
-    "slug": "/solution",
-    "seo": {
-      "title": "AI 솔루션 | TechI",
-      "description": "회의, 문서, 검색, 내부망 AI까지 실제 업무 흐름에 연결되는 AI 솔루션을 제안합니다."
-    },
-    "sections": [
-      {
-        "id": "s1",
-        "type": "hero",
-        "blocks": [
-          {
-            "type": "hero",
-            "data": {
-              "h1": "멋진 AI보다 실제로 계속 쓰게 되는 AI가 더 중요합니다",
-              "sub": "TechI는 AI를 하나의 유행어처럼 설명하지 않습니다. 회의 정리, 문서 검색, 반복 업무, 내부망 AI처럼 실제 현업이 매일 부딪히는 장면 안에서 어떤 흐름을 줄이고 무엇을 자동화할지부터 설계합니다.",
-              "ctaPrimary": {
-                "label": "상담 문의하기",
-                "href": "/contact"
-              },
-              "imageSrc": "/images/solution-data-workshop.jpg",
-              "imageAlt": "AI 솔루션 대표 이미지"
-            }
-          }
-        ]
-      },
-      {
-        "id": "s2",
-        "type": "media",
-        "blocks": [
-          {
-            "type": "mediaFeature",
-            "data": {
-              "eyebrow": "Technical / Strategic Detail",
-              "title": "저희는 이 페이지에서 이런 디테일을 먼저 봅니다",
-              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현장 상태, 기준, 점검, 인수 방식까지 같이 봐야 도입 이후 품질이 달라집니다.",
-              "imageSrc": "/images/solution-meeting-ui.jpg",
-              "imageAlt": "AI 솔루션 상세 장면",
-              "layout": "imageRight",
-              "tone": "photo",
-              "imageWidth": 1600,
-              "imageHeight": 1067,
-              "points": [
-                "기능 시연보다 실제 사용 장면과 역할 분리를 먼저 봅니다",
-                "권한, 보안, 데이터 구조를 함께 설계해 내부 신뢰를 높입니다",
-                "AI가 한 번 쓰이고 끝나지 않도록 운영 흐름 안에 넣습니다"
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s3",
-        "type": "faq",
-        "blocks": [
-          {
-            "type": "faq",
-            "data": {
-              "title": "FAQ",
-              "items": [
-                {
-                  "q": "AI 솔루션 도입 전에 무엇을 준비하면 좋나요?",
-                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
-                },
-                {
-                  "q": "기존 환경과 병행 적용도 가능한가요?",
-                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
-                },
-                {
-                  "q": "도입 범위는 어떻게 정하나요?",
-                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s4",
-        "type": "contact",
-        "blocks": [
-          {
-            "type": "contactForm",
-            "data": {
-              "title": "AI 솔루션 상담",
-              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  "/solution/meeting": {
-    "id": "page_solution_meeting",
-    "title": "AI ?? ???",
-    "slug": "/solution/meeting",
-    "seo": {
-      "title": "AI ?? ??? | TechI",
-      "description": "?? ??? ??, ???, ?? ???? ???? ??? AI ?? ???."
-    },
-    "sections": [
-      {
-        "id": "s1",
-        "type": "header",
-        "blocks": [
-          {
-            "type": "subnavHeader",
-            "data": {
-              "eyebrow": "Solution",
-              "title": "AI ?? ???",
-              "breadcrumbs": [
-                "Solution",
-                "Meeting"
-              ],
-              "cta": {
-                "label": "상담 요청",
-                "href": "/contact"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "s2",
-        "type": "hero",
-        "blocks": [
-          {
-            "type": "hero",
-            "data": {
-              "h1": "회의 내용을 남기는 수준이 아니라 실행으로 이어지게 만듭니다",
-              "sub": "회의록이 쌓이기만 하고 후속 액션이 흐려지는 조직에 적합합니다. TechI는 요약, 담당자 구분, 일정 반영, 공유 흐름까지 포함한 회의 자동화 체계를 설계합니다.",
-              "ctaPrimary": {
-                "label": "상담 요청",
-                "href": "/contact"
-              },
-              "imageSrc": "/images/solution-meeting-room.jpg",
-              "imageAlt": "AI ?? ??? 대표 이미지"
-            }
-          }
-        ]
-      },
-      {
-        "id": "s3",
-        "type": "media",
-        "blocks": [
-          {
-            "type": "mediaFeature",
-            "data": {
-              "eyebrow": "Detail Focus",
-              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
-              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
-              "imageSrc": "/images/solution-meeting-ui.jpg",
-              "imageAlt": "AI ?? ??? 상세 장면",
-              "layout": "imageRight",
-              "tone": "photo",
-              "imageWidth": 1600,
-              "imageHeight": 1067,
-              "points": [
-                "현재 환경의 상태와 제약을 함께 확인합니다",
-                "운영팀이 이해할 수 있는 기준으로 정리합니다",
-                "도입 이후에도 재사용 가능한 구조를 남깁니다"
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s4",
-        "type": "faq",
-        "blocks": [
-          {
-            "type": "faq",
-            "data": {
-              "title": "FAQ",
-              "items": [
-                {
-                  "q": "AI ?? ??? 도입 전에 무엇을 준비하면 좋나요?",
-                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
-                },
-                {
-                  "q": "기존 환경과 병행 적용도 가능한가요?",
-                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
-                },
-                {
-                  "q": "도입 범위는 어떻게 정하나요?",
-                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s5",
-        "type": "contact",
-        "blocks": [
-          {
-            "type": "contactForm",
-            "data": {
-              "title": "AI ?? ??? 상담",
-              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  "/solution/code-analysis": {
-    "id": "page_solution_code_analysis",
-    "title": "AI ?? ???",
-    "slug": "/solution/code-analysis",
-    "seo": {
-      "title": "AI ?? ??? | TechI",
-      "description": "?? ???, ?? ???, ?? ??? ?? ???? AI ?? ???."
-    },
-    "sections": [
-      {
-        "id": "s1",
-        "type": "header",
-        "blocks": [
-          {
-            "type": "subnavHeader",
-            "data": {
-              "eyebrow": "Solution",
-              "title": "AI ?? ???",
-              "breadcrumbs": [
-                "Solution",
-                "Code Analysis"
-              ],
-              "cta": {
-                "label": "상담 요청",
-                "href": "/contact"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "s2",
-        "type": "hero",
-        "blocks": [
-          {
-            "type": "hero",
-            "data": {
-              "h1": "리뷰 속도보다 중요한 것은 변경 리스크를 더 빨리 드러내는 일입니다",
-              "sub": "코드 분석은 단순 자동 리뷰가 아니라 팀의 검토 기준을 구조화하고 위험 변경을 빠르게 구분해 검토 밀도를 높이는 방향으로 설계해야 합니다.",
-              "ctaPrimary": {
-                "label": "상담 요청",
-                "href": "/contact"
-              },
-              "imageSrc": "/images/hero-code.jpg",
-              "imageAlt": "AI ?? ??? 대표 이미지"
-            }
-          }
-        ]
-      },
-      {
-        "id": "s3",
-        "type": "media",
-        "blocks": [
-          {
-            "type": "mediaFeature",
-            "data": {
-              "eyebrow": "Detail Focus",
-              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
-              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
-              "imageSrc": "/images/solution-code-review.jpg",
-              "imageAlt": "AI ?? ??? 상세 장면",
-              "layout": "imageRight",
-              "tone": "photo",
-              "imageWidth": 1600,
-              "imageHeight": 1067,
-              "points": [
-                "현재 환경의 상태와 제약을 함께 확인합니다",
-                "운영팀이 이해할 수 있는 기준으로 정리합니다",
-                "도입 이후에도 재사용 가능한 구조를 남깁니다"
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s4",
-        "type": "faq",
-        "blocks": [
-          {
-            "type": "faq",
-            "data": {
-              "title": "FAQ",
-              "items": [
-                {
-                  "q": "AI ?? ??? 도입 전에 무엇을 준비하면 좋나요?",
-                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
-                },
-                {
-                  "q": "기존 환경과 병행 적용도 가능한가요?",
-                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
-                },
-                {
-                  "q": "도입 범위는 어떻게 정하나요?",
-                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s5",
-        "type": "contact",
-        "blocks": [
-          {
-            "type": "contactForm",
-            "data": {
-              "title": "AI ?? ??? 상담",
-              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  "/solution/agent-orchestration": {
-    "id": "page_solution_agent_orchestration",
-    "title": "???? ???????",
-    "slug": "/solution/agent-orchestration",
-    "seo": {
-      "title": "???? ??????? | TechI",
-      "description": "?? AI? ??? ?? ???? ?? ???? ???????."
-    },
-    "sections": [
-      {
-        "id": "s1",
-        "type": "header",
-        "blocks": [
-          {
-            "type": "subnavHeader",
-            "data": {
-              "eyebrow": "Solution",
-              "title": "???? ???????",
-              "breadcrumbs": [
-                "Solution",
-                "Agent Orchestration"
-              ],
-              "cta": {
-                "label": "상담 요청",
-                "href": "/contact"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "s2",
-        "type": "hero",
-        "blocks": [
-          {
-            "type": "hero",
-            "data": {
-              "h1": "한 번의 답변보다 여러 단계 작업을 안정적으로 이어주는 구조가 필요합니다",
-              "sub": "검색, 판단, 생성, 승인, 전달이 섞인 업무에서는 단일 챗봇보다 단계형 에이전트 흐름이 더 적합합니다. TechI는 이 구조를 운영 가능한 수준으로 설계합니다.",
-              "ctaPrimary": {
-                "label": "상담 요청",
-                "href": "/contact"
-              },
-              "imageSrc": "/images/solution-monitoring-room.jpg",
-              "imageAlt": "???? ??????? 대표 이미지"
-            }
-          }
-        ]
-      },
-      {
-        "id": "s3",
-        "type": "media",
-        "blocks": [
-          {
-            "type": "mediaFeature",
-            "data": {
-              "eyebrow": "Detail Focus",
-              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
-              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
-              "imageSrc": "/images/solution-ai-inference-ui.jpg",
-              "imageAlt": "???? ??????? 상세 장면",
-              "layout": "imageRight",
-              "tone": "photo",
-              "imageWidth": 1600,
-              "imageHeight": 1067,
-              "points": [
-                "현재 환경의 상태와 제약을 함께 확인합니다",
-                "운영팀이 이해할 수 있는 기준으로 정리합니다",
-                "도입 이후에도 재사용 가능한 구조를 남깁니다"
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s4",
-        "type": "faq",
-        "blocks": [
-          {
-            "type": "faq",
-            "data": {
-              "title": "FAQ",
-              "items": [
-                {
-                  "q": "???? ??????? 도입 전에 무엇을 준비하면 좋나요?",
-                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
-                },
-                {
-                  "q": "기존 환경과 병행 적용도 가능한가요?",
-                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
-                },
-                {
-                  "q": "도입 범위는 어떻게 정하나요?",
-                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s5",
-        "type": "contact",
-        "blocks": [
-          {
-            "type": "contactForm",
-            "data": {
-              "title": "???? ??????? 상담",
-              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  "/solution/local-llm": {
-    "id": "page_solution_local_llm",
-    "title": "?? LLM",
-    "slug": "/solution/local-llm",
-    "seo": {
-      "title": "?? LLM | TechI",
-      "description": "???? ????? ??? ?? ?? LLM ??? ?? ??."
-    },
-    "sections": [
-      {
-        "id": "s1",
-        "type": "header",
-        "blocks": [
-          {
-            "type": "subnavHeader",
-            "data": {
-              "eyebrow": "Solution",
-              "title": "?? LLM",
-              "breadcrumbs": [
-                "Solution",
-                "Local Llm"
-              ],
-              "cta": {
-                "label": "상담 요청",
-                "href": "/contact"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "s2",
-        "type": "hero",
-        "blocks": [
-          {
-            "type": "hero",
-            "data": {
-              "h1": "외부 의존 없이 내부 정책에 맞는 LLM 운영 환경을 만듭니다",
-              "sub": "보안, 데이터 반출, 응답 속도, 비용 예측성 때문에 외부형 모델이 맞지 않는 조직에는 Local LLM이 더 적합합니다. TechI는 인프라부터 운영 정책까지 함께 설계합니다.",
-              "ctaPrimary": {
-                "label": "상담 요청",
-                "href": "/contact"
-              },
-              "imageSrc": "/images/server-virtualization-photo.jpg",
-              "imageAlt": "?? LLM 대표 이미지"
-            }
-          }
-        ]
-      },
-      {
-        "id": "s3",
-        "type": "media",
-        "blocks": [
-          {
-            "type": "mediaFeature",
-            "data": {
-              "eyebrow": "Detail Focus",
-              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
-              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
-              "imageSrc": "/images/server-photo-racks.jpg",
-              "imageAlt": "?? LLM 상세 장면",
-              "layout": "imageRight",
-              "tone": "photo",
-              "imageWidth": 1600,
-              "imageHeight": 1067,
-              "points": [
-                "현재 환경의 상태와 제약을 함께 확인합니다",
-                "운영팀이 이해할 수 있는 기준으로 정리합니다",
-                "도입 이후에도 재사용 가능한 구조를 남깁니다"
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s4",
-        "type": "faq",
-        "blocks": [
-          {
-            "type": "faq",
-            "data": {
-              "title": "FAQ",
-              "items": [
-                {
-                  "q": "?? LLM 도입 전에 무엇을 준비하면 좋나요?",
-                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
-                },
-                {
-                  "q": "기존 환경과 병행 적용도 가능한가요?",
-                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
-                },
-                {
-                  "q": "도입 범위는 어떻게 정하나요?",
-                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s5",
-        "type": "contact",
-        "blocks": [
-          {
-            "type": "contactForm",
-            "data": {
-              "title": "?? LLM 상담",
-              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  "/solution/ai-inference": {
-    "id": "page_solution_ai_inference",
-    "title": "AI ?? ??",
-    "slug": "/solution/ai-inference",
-    "seo": {
-      "title": "AI ?? ?? | TechI",
-      "description": "???? ??, ?? ???? ???? ????? ???? AI ?? ??."
-    },
-    "sections": [
-      {
-        "id": "s1",
-        "type": "header",
-        "blocks": [
-          {
-            "type": "subnavHeader",
-            "data": {
-              "eyebrow": "Solution",
-              "title": "AI ?? ??",
-              "breadcrumbs": [
-                "Solution",
-                "Ai Inference"
-              ],
-              "cta": {
-                "label": "상담 요청",
-                "href": "/contact"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "s2",
-        "type": "hero",
-        "blocks": [
-          {
-            "type": "hero",
-            "data": {
-              "h1": "모델 연결이 아니라 서비스 품질을 보장하는 추론 체계가 필요합니다",
-              "sub": "추론 환경은 응답 속도, 장애 복구, 버전 관리, 사용량 모니터링이 함께 잡혀야 실제 서비스에 넣을 수 있습니다. TechI는 운영 기준을 포함한 AI 추론 환경을 설계합니다.",
-              "ctaPrimary": {
-                "label": "상담 요청",
-                "href": "/contact"
-              },
-              "imageSrc": "/images/solution-monitoring-room.jpg",
-              "imageAlt": "AI ?? ?? 대표 이미지"
-            }
-          }
-        ]
-      },
-      {
-        "id": "s3",
-        "type": "media",
-        "blocks": [
-          {
-            "type": "mediaFeature",
-            "data": {
-              "eyebrow": "Detail Focus",
-              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
-              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
-              "imageSrc": "/images/solution-ai-inference-ui.jpg",
-              "imageAlt": "AI ?? ?? 상세 장면",
-              "layout": "imageRight",
-              "tone": "photo",
-              "imageWidth": 1600,
-              "imageHeight": 1067,
-              "points": [
-                "현재 환경의 상태와 제약을 함께 확인합니다",
-                "운영팀이 이해할 수 있는 기준으로 정리합니다",
-                "도입 이후에도 재사용 가능한 구조를 남깁니다"
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s4",
-        "type": "faq",
-        "blocks": [
-          {
-            "type": "faq",
-            "data": {
-              "title": "FAQ",
-              "items": [
-                {
-                  "q": "AI ?? ?? 도입 전에 무엇을 준비하면 좋나요?",
-                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
-                },
-                {
-                  "q": "기존 환경과 병행 적용도 가능한가요?",
-                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
-                },
-                {
-                  "q": "도입 범위는 어떻게 정하나요?",
-                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s5",
-        "type": "contact",
-        "blocks": [
-          {
-            "type": "contactForm",
-            "data": {
-              "title": "AI ?? ?? 상담",
-              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  "/solution/data-visualization": {
-    "id": "page_solution_data_visualization",
-    "title": "??? ???",
-    "slug": "/solution/data-visualization",
-    "seo": {
-      "title": "??? ??? | TechI",
-      "description": "??, ??, ?? ???? ???? ???? ???? ??? ???."
-    },
-    "sections": [
-      {
-        "id": "s1",
-        "type": "header",
-        "blocks": [
-          {
-            "type": "subnavHeader",
-            "data": {
-              "eyebrow": "Solution",
-              "title": "??? ???",
-              "breadcrumbs": [
-                "Solution",
-                "Data Visualization"
-              ],
-              "cta": {
-                "label": "상담 요청",
-                "href": "/contact"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "s2",
-        "type": "hero",
-        "blocks": [
-          {
-            "type": "hero",
-            "data": {
-              "h1": "좋은 대시보드는 예쁘게 보이는 화면이 아니라 같은 판단을 만드는 화면입니다",
-              "sub": "운영 대시보드와 보고 화면은 목적이 다릅니다. TechI는 운영팀, 실무팀, 의사결정자가 각자 필요한 기준으로 읽을 수 있는 데이터 시각화 구조를 설계합니다.",
-              "ctaPrimary": {
-                "label": "상담 요청",
-                "href": "/contact"
-              },
-              "imageSrc": "/images/solution-data-workshop.jpg",
-              "imageAlt": "??? ??? 대표 이미지"
-            }
-          }
-        ]
-      },
-      {
-        "id": "s3",
-        "type": "media",
-        "blocks": [
-          {
-            "type": "mediaFeature",
-            "data": {
-              "eyebrow": "Detail Focus",
-              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
-              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
-              "imageSrc": "/images/product-console-ui.jpg",
-              "imageAlt": "??? ??? 상세 장면",
-              "layout": "imageRight",
-              "tone": "photo",
-              "imageWidth": 1600,
-              "imageHeight": 1067,
-              "points": [
-                "현재 환경의 상태와 제약을 함께 확인합니다",
-                "운영팀이 이해할 수 있는 기준으로 정리합니다",
-                "도입 이후에도 재사용 가능한 구조를 남깁니다"
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s4",
-        "type": "faq",
-        "blocks": [
-          {
-            "type": "faq",
-            "data": {
-              "title": "FAQ",
-              "items": [
-                {
-                  "q": "??? ??? 도입 전에 무엇을 준비하면 좋나요?",
-                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
-                },
-                {
-                  "q": "기존 환경과 병행 적용도 가능한가요?",
-                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
-                },
-                {
-                  "q": "도입 범위는 어떻게 정하나요?",
-                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s5",
-        "type": "contact",
-        "blocks": [
-          {
-            "type": "contactForm",
-            "data": {
-              "title": "??? ??? 상담",
-              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
-            }
-          }
-        ]
-      }
-    ]
-  },
-  "/solution/rag": {
-    "id": "page_solution_rag",
-    "title": "?????? RAG",
-    "slug": "/solution/rag",
-    "seo": {
-      "title": "?????? RAG | TechI",
-      "description": "?? ??? ?? ??? ?? ???? ???? ?????? RAG."
-    },
-    "sections": [
-      {
-        "id": "s1",
-        "type": "header",
-        "blocks": [
-          {
-            "type": "subnavHeader",
-            "data": {
-              "eyebrow": "Solution",
-              "title": "?????? RAG",
-              "breadcrumbs": [
-                "Solution",
-                "Rag"
-              ],
-              "cta": {
-                "label": "상담 요청",
-                "href": "/contact"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "s2",
-        "type": "hero",
-        "blocks": [
-          {
-            "type": "hero",
-            "data": {
-              "h1": "사내 문서를 찾는 수준이 아니라 근거와 함께 답하게 만들어야 합니다",
-              "sub": "RAG는 검색 엔진을 한 번 더 만드는 일이 아닙니다. 권한, 출처, 문서 품질, 운영 로그를 포함해 팀이 신뢰할 수 있는 응답 구조를 만드는 것이 핵심입니다.",
-              "ctaPrimary": {
-                "label": "상담 요청",
-                "href": "/contact"
-              },
-              "imageSrc": "/images/hero-code.jpg",
-              "imageAlt": "?????? RAG 대표 이미지"
-            }
-          }
-        ]
-      },
-      {
-        "id": "s3",
-        "type": "media",
-        "blocks": [
-          {
-            "type": "mediaFeature",
-            "data": {
-              "eyebrow": "Detail Focus",
-              "title": "이 페이지에서는 이런 디테일이 먼저 보여야 합니다",
-              "body": "좋은 구조는 이름보다 실제 운영 단계에서 차이가 납니다. 현재 상태, 기준, 점검, 문서, 운영 흐름까지 같이 봐야 도입 이후 품질이 달라집니다.",
-              "imageSrc": "/images/solution-knowledge-ui.jpg",
-              "imageAlt": "?????? RAG 상세 장면",
-              "layout": "imageRight",
-              "tone": "photo",
-              "imageWidth": 1600,
-              "imageHeight": 1067,
-              "points": [
-                "현재 환경의 상태와 제약을 함께 확인합니다",
-                "운영팀이 이해할 수 있는 기준으로 정리합니다",
-                "도입 이후에도 재사용 가능한 구조를 남깁니다"
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s4",
-        "type": "faq",
-        "blocks": [
-          {
-            "type": "faq",
-            "data": {
-              "title": "FAQ",
-              "items": [
-                {
-                  "q": "?????? RAG 도입 전에 무엇을 준비하면 좋나요?",
-                  "a": "현재 환경, 주요 이슈, 목표 일정 정도만 있어도 첫 상담에서 현실적인 범위를 빠르게 잡을 수 있습니다."
-                },
-                {
-                  "q": "기존 환경과 병행 적용도 가능한가요?",
-                  "a": "가능합니다. 현재 자산 상태와 목표 구조를 비교해 단계별 적용 방안을 제안합니다."
-                },
-                {
-                  "q": "도입 범위는 어떻게 정하나요?",
-                  "a": "예산, 일정, 운영 인력, 목표 수준을 함께 보고 가장 현실적인 범위를 정리합니다."
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "s5",
-        "type": "contact",
-        "blocks": [
-          {
-            "type": "contactForm",
-            "data": {
-              "title": "?????? RAG 상담",
-              "note": "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다."
             }
           }
         ]

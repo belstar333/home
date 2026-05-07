@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { FeatureCardsData } from "@/lib/content/types";
 import { isContactHref } from "@/lib/content/isContactHref";
@@ -8,6 +9,57 @@ function makeBadgeLabel(index: number) {
 }
 
 export default function FeatureCardsBlock({ data }: { data: FeatureCardsData }) {
+    if (data.variant === "image-cards") {
+        return (
+            <section className={styles.featureCards}>
+                {data.eyebrow && <p className={styles.featureCardsEyebrow}>{data.eyebrow}</p>}
+                <h3 className={styles.sectionTitle}>{data.title}</h3>
+                <div className={styles.imageCardGrid}>
+                    {data.items.map((item, index) => {
+                        const href = item.href && !isContactHref(item.href) ? item.href : undefined;
+                        const isWide = index === data.items.length - 1 && data.items.length % 2 !== 0;
+                        const cardClass = `${styles.imageCard}${isWide ? ` ${styles.imageCardWide}` : ""}`;
+                        const content = (
+                            <>
+                                <div className={styles.imageCardImageWrap}>
+                                    {item.imageSrc && (
+                                        <Image
+                                            src={item.imageSrc}
+                                            alt={item.imageAlt ?? item.title}
+                                            fill
+                                            sizes={isWide ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
+                                            className={styles.imageCardImg}
+                                        />
+                                    )}
+                                </div>
+                                <div className={styles.imageCardBody}>
+                                    <span className={styles.imageCardNumber}>{makeBadgeLabel(index)}</span>
+                                    <h4 className={styles.imageCardTitle}>{item.title}</h4>
+                                    <p className={styles.imageCardDesc}>{item.desc}</p>
+                                    {href && <span className={styles.imageCardCta}>자세히 보기</span>}
+                                </div>
+                            </>
+                        );
+
+                        if (href) {
+                            return (
+                                <Link key={`${item.title}-${index}`} href={href} className={cardClass}>
+                                    {content}
+                                </Link>
+                            );
+                        }
+
+                        return (
+                            <div key={`${item.title}-${index}`} className={cardClass}>
+                                {content}
+                            </div>
+                        );
+                    })}
+                </div>
+            </section>
+        );
+    }
+
     return (
         <section className={styles.featureCards}>
             <h3 className={styles.sectionTitle}>{data.title}</h3>

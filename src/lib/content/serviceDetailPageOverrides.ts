@@ -120,8 +120,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "장비를 올리는 것은 구축의 시작이지 끝이 아닙니다. 테크아이는 랙 배치와 전원 계획부터 OS 구성, 전환 시나리오, 운영팀 인수까지 한 흐름으로 진행해 설치 이후에도 흔들리지 않는 서버 인프라를 만듭니다.",
                     "/images/server-photo-racks.jpg",
                     "데이터센터 서버 랙과 구축 현장을 보여주는 이미지",
-                    { label: "가상화·클러스터 보기", href: "/service/server/virtualization" },
-                    { label: "운영·모니터링 보기", href: "/service/server/ops-monitoring" }
+                    { label: "구축 환경 진단 먼저 받기", href: "/service/consulting/assessment" }
                 )
             ),
             section(
@@ -186,12 +185,11 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 "s2",
                 "hero",
                 heroBlock(
-                    "가상화는 플랫폼보다\n운영 기준과 자원 정책이\n먼저 설계되어야 합니다",
+                    "가상화는 플랫폼보다\n운영 기준이\n먼저입니다",
                     "VMware, Hyper-V, KVM 중 어느 플랫폼을 쓰느냐보다 자원 풀을 어떻게 나누고, 장애 시 어느 VM이 우선 복구되며, 변경은 어떤 절차로 승인받는지가 먼저 정의되어야 합니다. 테크아이는 가상화 구조와 운영 기준을 함께 설계합니다.",
                     "/images/hero-datacenter.jpg",
                     "가상화 인프라와 서버 클러스터를 상징하는 데이터센터 이미지",
-                    { label: "서버 구축·증설 보기", href: "/service/server/build" },
-                    { label: "운영·모니터링 보기", href: "/service/server/ops-monitoring" }
+                    { label: "가상화 환경 진단 먼저 받기", href: "/service/consulting/assessment" }
                 )
             ),
             section(
@@ -239,7 +237,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 caseList("이런 환경에서 주로 검토합니다", [
                     "물리 서버에서 가상화로 전환하면서 HA와 자원 정책을 처음 설계해야 하는 경우",
                     "VM이 많아졌지만 자원 배분 기준이 없어 성능 문제와 운영 혼선이 반복되는 환경",
-                    "기존 가상화 환경을 다른 플랫폼으로 마이그레이션해야 하는 프로젝트",
+                    "기존 가상화 환경을 다른 플랫폼으로 전환해야 하는 프로젝트",
                     "클러스터 노드 증설 또는 교체 시 기존 운영에 영향을 최소화해야 하는 경우",
                 ])
             ),
@@ -260,8 +258,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "모니터링 도구가 있어도 어떤 알림에 어떻게 대응하는지 기준이 없으면 운영자는 항상 과부하 상태입니다. 테크아이는 수집 범위, 알림 임계값, 에스컬레이션 절차, 런북을 함께 설계해 실제로 작동하는 운영 체계를 만듭니다.",
                     "/images/dark-console-operator.jpg",
                     "콘솔에서 서버 운영 상태를 모니터링하는 운영자 이미지",
-                    { label: "서버 구축·증설 보기", href: "/service/server/build" },
-                    { label: "가상화·클러스터 보기", href: "/service/server/virtualization" }
+                    { label: "운영 체계 진단 먼저 받기", href: "/service/consulting/assessment" }
                 )
             ),
             section(
@@ -310,7 +307,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "모니터링 도구는 있지만 알림이 너무 많아 정작 중요한 이벤트를 놓치는 환경",
                     "담당자마다 대응 방식이 달라 장애 시 혼선이 생기는 운영 조직",
                     "야간·주말 대응 기준이 없어 에스컬레이션이 지연되는 경우",
-                    "서버 운영 지표와 알림 이력을 경영 보고나 SLA 측정에 활용해야 하는 환경",
+                    "운영 지표와 알림 이력을 SLA 보고에 연결해야 하는 환경",
                 ])
             ),
         ],
@@ -330,8 +327,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "신규 구축과 증설은 장비를 더 넣는 작업이 아니라, 서비스 흐름과 장애 영향 범위를 다시 정리하는 작업이어야 합니다. 테크아이는 코어, 액세스, 방화벽, 회선, 무선 구성을 한 번에 검토하고 실제 운영에 바로 이어지는 기준으로 구축합니다.",
                     "/images/hero-network.jpg",
                     "네트워크 인프라 구조를 상징하는 장비와 연결 이미지",
-                    { label: "네트워크 보안 보기", href: "/service/network/security" },
-                    { label: "이중화·무선 보기", href: "/service/network/ha-wireless" }
+                    { label: "구축 환경 진단 먼저 받기", href: "/service/consulting/assessment" }
                 )
             ),
             section(
@@ -400,8 +396,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "네트워크 보안은 장비를 더 넣는다고 강해지지 않습니다. 망 구간, 접근 주체, 허용 정책, 예외 처리, 감사 근거가 같은 기준으로 묶여야 실제 운영이 가능합니다. 테크아이는 네트워크 구조와 정책 운영을 함께 정리합니다.",
                     "/images/hero-security.jpg",
                     "보안 인프라와 관제 이미지를 상징하는 히어로",
-                    { label: "구축·증설 보기", href: "/service/network/design-build" },
-                    { label: "이중화·무선 보기", href: "/service/network/ha-wireless" }
+                    { label: "보안 환경 진단 먼저 받기", href: "/service/consulting/assessment" }
                 )
             ),
             section(
@@ -470,8 +465,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "이중화와 무선 인프라는 장애가 났을 때 어떻게 버티는지가 먼저 정의되어야 합니다. 테크아이는 코어 절체, 링크 이중화, 무선 커버리지, 로밍 품질, 관리 포인트를 한 번에 검토해 실제 사용자가 체감하는 안정성을 설계합니다.",
                     "/images/hero-network.jpg",
                     "네트워크 이중화와 무선 환경을 상징하는 장비 이미지",
-                    { label: "구축·증설 보기", href: "/service/network/design-build" },
-                    { label: "보안 보기", href: "/service/network/security" }
+                    { label: "이중화·무선 환경 진단 먼저 받기", href: "/service/consulting/assessment" }
                 )
             ),
             section(
