@@ -3,7 +3,7 @@
         radial-gradient(circle at 80% 50%, color-mix(in srgb, var(--page-accent) 55%, transparent) 0%, transparent 60%),
         linear-gradient(135deg, var(--page-accent-strong) 0%, color-mix(in srgb, var(--page-accent-strong) 65%, #040b18) 100%);
     border-radius: 28px;
-    padding: 52px 52px;
+    padding: 52px;
     margin-bottom: 72px;
 }
 

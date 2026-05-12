@@ -40,10 +40,6 @@
   flex-shrink: 0;
 }
 
-.logoText {
-  letter-spacing: -0.02em;
-}
-
 /* ── Navigation ── */
 .nav {
   display: flex;
@@ -115,7 +111,7 @@
 
 /* ── Chevron ── */
 .chevron {
-  font-size: 0.65rem;
+  font-size: 1rem;
   color: var(--outline);
   transition: transform 0.2s ease;
 }
@@ -247,16 +243,6 @@
 .megaSubLink:hover {
   color: var(--primary);
   background: var(--surface-container-low);
-}
-
-/* ── Hidden legacy ── */
-.dropItem,
-.dropLink,
-.dropActive,
-.subArrow,
-.subDrop,
-.subDropRight {
-  display: none;
 }
 
 /* ── Hamburger ── */

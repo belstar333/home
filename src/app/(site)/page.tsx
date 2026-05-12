@@ -361,7 +361,7 @@ export default function Home() {
                 <div className={styles.sectionShell}>
                     <div className={`${styles.closingLayout} ${styles.revealSlow} ${closingVisible ? styles.active : ""}`}>
                         <div className={styles.closingPrimary}>
-                            <p className={styles.heroEyebrow}>프로젝트 검토의 시작</p>
+                            <p className={styles.sectionEyebrow}>프로젝트 검토의 시작</p>
                             <h2 className={styles.closingTitle}>
                                 <span className={styles.titleLine}>프로젝트가 커질수록 필요한 건</span>
                                 <span className={styles.titleLine}>더 많은 설명이 아니라</span>

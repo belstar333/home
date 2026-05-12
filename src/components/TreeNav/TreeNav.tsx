@@ -77,7 +77,7 @@ export default function TreeNav({ tree, category }: { tree: TreeNode[]; category
     const categoryLabels: Record<string, string> = {
         service: "서비스",
         product: "제품",
-        about: "회사소개",
+        about: "회사 소개",
         contact: "문의",
     };
 

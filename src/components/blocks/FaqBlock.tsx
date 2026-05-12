@@ -21,11 +21,19 @@ export default function FaqBlock({ data }: { data: FaqData }) {
                             className={styles.faqQuestion}
                             onClick={() => setOpenIdx(openIdx === index ? null : index)}
                             aria-expanded={openIdx === index}
+                            aria-controls={`faq-answer-${index}`}
                         >
                             <span>{item.q}</span>
-                            <span className={styles.faqToggle}>{openIdx === index ? "-" : "+"}</span>
+                            <span className={`material-symbols-outlined ${styles.faqToggle}`} aria-hidden="true">
+                                {openIdx === index ? "expand_less" : "expand_more"}
+                            </span>
                         </button>
-                        {openIdx === index && <div className={styles.faqAnswer}>{item.a}</div>}
+                        <div
+                            className={`${styles.faqAnswer} ${openIdx === index ? styles.faqAnswerOpen : ""}`}
+                            id={`faq-answer-${index}`}
+                        >
+                            <div>{item.a}</div>
+                        </div>
                     </div>
                 ))}
             </div>

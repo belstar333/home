@@ -8,7 +8,7 @@ export default function ServiceCtaBanner({ pageTitle }: { pageTitle?: string }) 
         <section className={styles.banner}>
             <div className={styles.bannerInner}>
                 <div className={styles.bannerCopy}>
-                    <p className={styles.bannerLabel}>상담 문의</p>
+                    <p className={styles.bannerLabel}>도입 검토</p>
                     <h2 className={styles.bannerTitle}>
                         {titleLine}
                         <br />먼저 현재 환경을 함께 확인합니다.
