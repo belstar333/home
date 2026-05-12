@@ -4,7 +4,6 @@
         linear-gradient(135deg, var(--page-accent-strong) 0%, color-mix(in srgb, var(--page-accent-strong) 65%, #040b18) 100%);
     border-radius: 28px;
     padding: 52px;
-    margin-bottom: 72px;
 }
 
 .bannerInner {

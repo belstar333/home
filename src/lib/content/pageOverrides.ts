@@ -139,7 +139,7 @@ const pageOverrides: Record<string, Page> = {
                     imageHeight: 5939,
                     caption: "상담 흐름 / 환경 파악, 범위 정의, 다음 단계",
                     points: [
-                        "본사(HQ): 대전광역시 서구 둔산대로 117번길 25",
+                        "본사(HQ): 대전광역시 서구 둔산대로117번길 25",
                         "서울 지사: 서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터",
                         "대표전화: 042-471-9430 / 웹사이트: www.techi.co.kr",
                     ],

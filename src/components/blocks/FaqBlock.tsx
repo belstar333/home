@@ -5,7 +5,7 @@ import type { FaqData } from "@/lib/content/types";
 import styles from "./blocks.module.css";
 
 export default function FaqBlock({ data }: { data: FaqData }) {
-    const [openIdx, setOpenIdx] = useState<number | null>(null);
+    const [openIdx, setOpenIdx] = useState<number | null>(0);
 
     return (
         <section className={styles.faq}>

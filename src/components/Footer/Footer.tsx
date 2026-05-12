@@ -36,11 +36,10 @@ export default function Footer() {
                         />
                     </Link>
                     <p className={styles.brandDesc}>
-                        서버, 네트워크, 스토리지, 컨설팅, 유지보수를 운영 기준 하나로 연결하는
-                        IT 인프라 전문 기업입니다.
+                        운영 기준 하나로 연결하는 IT 인프라 전문 기업입니다.
                     </p>
                     <Link href="/contact" className={styles.brandCta}>
-                        상담 문의하기
+                        문의하기
                     </Link>
                 </div>
 
@@ -88,7 +87,7 @@ export default function Footer() {
                         <li>
                             <span className="material-symbols-outlined" aria-hidden="true">location_on</span>
                             <Link href="/about/location" className={styles.footerLink}>
-                                대전광역시 서구 둔산대로 117번길 25
+                                대전광역시 서구 둔산대로117번길 25
                             </Link>
                         </li>
                     </ul>

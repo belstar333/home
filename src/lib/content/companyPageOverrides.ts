@@ -156,7 +156,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "기술을 공급하는 회사보다 운영 가능한 결과를 만드는 회사를 지향합니다",
-                    "테크아이는 서버, 네트워크, 데이터 보호, 운영 지원, 업무형 AI까지 각 기술을 따로 나누기보다 고객 환경이 실제로 안정적으로 돌아가게 만드는 데 집중해 왔습니다. 구축 이후의 운영, 인수, 대응까지 이어지는 구조를 만드는 것이 저희가 일하는 방식입니다.",
+                    "테크아이는 서버, 네트워크, 데이터 보호, 운영 지원, 업무형 AI까지 각 기술을 따로 다루기보다 고객 환경이 실제로 안정적으로 돌아가게 만드는 데 집중해 왔습니다. 구축 이후의 운영, 인수, 대응까지 이어지는 구조를 만드는 것이 저희가 일하는 방식입니다.",
                     "/images/about-team-strategy.jpg",
                     "테크아이 엔지니어가 프로젝트 방향과 구조를 검토하는 장면",
                     { label: "회사 연혁 보기", href: "/about/history" },
@@ -245,7 +245,7 @@ const companyPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "테크아이를 선택하는 이유",
                     title: "결국 이런 이유로 저희를 찾게 됩니다",
-                    body: "한 영역만 보는 것이 아니라 전체 운영 환경 안에서 문제를 보고, 실제 설치와 변경, 점검, 인수 과정을 거친 경험을 바탕으로 현실적인 방향을 제안합니다. 도입 순간보다 운영 이후가 더 중요하다는 전제를 놓지 않는 것도 저희가 자주 선택되는 이유 중 하나입니다.",
+                    body: "한 영역만 보지 않고 전체 운영 환경 안에서 문제를 봅니다. 실제 설치·변경·점검·인수 과정을 거친 경험을 바탕으로 현실적인 방향을 제안드립니다.",
                     imageSrc: "/images/consulting-review-photo.jpg",
                     imageAlt: "프로젝트 문서를 함께 검토하는 장면",
                     layout: "imageRight",
@@ -699,9 +699,9 @@ const companyPageOverrides: Record<string, Page> = {
                     imageHeight: 4032,
                     caption: "본사·지사 / 미팅 조율, 프로젝트 접수, 범위 검토",
                     points: [
-                        "본사(HQ): 대전광역시 서구 둔산대로 117번길 25",
+                        "본사(HQ): 대전광역시 서구 둔산대로117번길 25",
                         "서울 지사: 서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터",
-                        "대표전화 042-471-9430 / 웹사이트 www.테크아이.co.kr",
+                        "대표전화 042-471-9430 / 웹사이트 www.techi.co.kr",
                     ],
                 })
             ),
@@ -709,10 +709,10 @@ const companyPageOverrides: Record<string, Page> = {
                 "s5",
                 "cards",
                 featureCards("사무소 안내", [
-                    { title: "대전 본사", desc: "대전광역시 서구 둔산대로 117번길 25" },
+                    { title: "대전 본사", desc: "대전광역시 서구 둔산대로117번길 25" },
                     { title: "서울 지사", desc: "서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터" },
                     { title: "대표전화", desc: "042-471-9430" },
-                    { title: "웹사이트", desc: "www.테크아이.co.kr" },
+                    { title: "웹사이트", desc: "www.techi.co.kr" },
                 ])
             ),
             section(
@@ -767,7 +767,7 @@ const companyPageOverrides: Record<string, Page> = {
                     imageHeight: 5939,
                     caption: "상담 흐름 / 환경 파악 → 범위 정의 → 다음 단계",
                     points: [
-                        "본사 대전광역시 서구 둔산대로 117번길 25 · 대표전화 042-471-9430",
+                        "본사 대전광역시 서구 둔산대로117번길 25 · 대표전화 042-471-9430",
                         "서울 지사 강동구 고덕비즈밸리로 26, 강동 U1센터",
                         "대전 본사·서울 지사 방문 미팅 또는 온라인 미팅으로 진행합니다.",
                     ],

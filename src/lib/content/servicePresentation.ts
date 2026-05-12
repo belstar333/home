@@ -54,7 +54,7 @@ const familyDefaults: Record<Exclude<PageTheme, "default">, PresentationConfig> 
         proofLabel: "프로젝트 기준",
         proofTitle: "구축만 끝내는 서비스가 아니라 운영 기준까지 함께 설계합니다.",
         proofBody:
-            "진단, 범위 정의, 설계, 구축, 검증, 인수까지 같은 언어로 연결해야 실제 운영 품질이 흔들리지 않습니다. TechI는 각 서비스 영역을 단일 과업이 아니라 운영 체계로 제안합니다.",
+            "진단, 범위 정의, 설계, 구축, 검증, 인수까지 같은 언어로 연결해야 실제 운영 품질이 흔들리지 않습니다. 테크아이는 각 서비스 영역을 단일 과업이 아니라 운영 체계로 제안합니다.",
         trustPoints: [
             "현재 환경과 목표 범위를 먼저 구조화합니다.",
             "구축 결과보다 운영 가능한 상태를 우선 기준으로 잡습니다.",
@@ -227,10 +227,10 @@ const familyDefaults: Record<Exclude<PageTheme, "default">, PresentationConfig> 
     },
     about: {
         heroLabel: "회사 운영 철학",
-        proofLabel: "TechI가 일하는 방식",
+        proofLabel: "테크아이가 일하는 방식",
         proofTitle: "기술 설명보다 수행 기준과 운영 결과로 신뢰를 보여주는 회사를 지향합니다.",
         proofBody:
-            "TechI는 구축, 보호, 운영, AI 확장을 따로 보지 않고 고객 환경의 지속성과 인수 품질을 기준으로 프로젝트를 수행합니다.",
+            "테크아이는 구축, 보호, 운영, AI 확장을 따로 보지 않고 고객 환경의 지속성과 인수 품질을 기준으로 프로젝트를 수행합니다.",
         trustPoints: [
             "설계부터 인수 문서까지 책임 범위를 분명히 합니다.",
             "운영 조직이 바로 사용할 결과물을 남깁니다.",
@@ -408,7 +408,7 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
             "권한, 접속, 로그, 감사 대응 항목이 운영팀의 실제 절차와 맞아떨어지도록 적용 범위를 정리합니다.",
     },
     "/about": {
-        heroLabel: "TechI 소개",
+        heroLabel: "테크아이 소개",
         proofLabel: "신뢰 포인트",
         proofTitle: "브로슈어형 소개보다 실제 수행 근거가 먼저 보이도록 정리합니다.",
         proofBody:
@@ -429,7 +429,7 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
         proofLabel: "설계 철학",
         proofTitle: "좋은 인프라는 성능보다 먼저 오래 운영될 수 있어야 합니다.",
         proofBody:
-            "TechI는 AI 인프라를 고성능 장비 구성으로만 보지 않고 보안, 복구, 운영성까지 포함한 장기 구조로 설계합니다.",
+            "테크아이는 AI 인프라를 고성능 장비 구성으로만 보지 않고 보안, 복구, 운영성까지 포함한 장기 구조로 설계합니다.",
         trustPoints: [
             "AI 시대 물리 기반 설계",
             "보안·운영 기준 동시 반영",
@@ -444,7 +444,7 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
     "/about/history": {
         heroLabel: "Growth Timeline",
         proofLabel: "핵심 이정표",
-        proofTitle: "TechI의 성장은 매출 확대보다 수행 범위의 확장에 더 가깝습니다.",
+        proofTitle: "테크아이의 성장은 매출 확대보다 수행 범위의 확장에 더 가깝습니다.",
         proofBody:
             "초기 엔터프라이즈 인프라 구축에서 시작해, 현재는 AI 데이터센터와 고밀도 GPU 인프라까지 대응합니다.",
         trustPoints: [
@@ -453,9 +453,9 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
             "AI 인프라 영역 진입",
         ],
         deliverables: [
-            "Foundation",
-            "Enterprise Expansion",
-            "AI & Space Era",
+            "기반 구축",
+            "사업 확장",
+            "AI·우주 인프라",
         ],
     },
     "/about/partners": {
@@ -463,7 +463,7 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
         proofLabel: "협업 구조",
         proofTitle: "공급 안정성과 현장 실행력이 함께 있을 때 파트너십은 신뢰가 됩니다.",
         proofBody:
-            "TechI는 핵심 벤더 파트너십과 현장 지원 조직을 결합해 운영 단계까지 이어지는 협업 구조를 갖추고 있습니다.",
+            "테크아이는 핵심 벤더 파트너십과 현장 지원 조직을 결합해 운영 단계까지 이어지는 협업 구조를 갖추고 있습니다.",
         trustPoints: [
             "HPE Gold Partner",
             "Intel · IBM 연계",

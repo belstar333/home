@@ -203,6 +203,7 @@
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.2;
+  font-variant-numeric: tabular-nums;
 }
 
 .closingKicker {
@@ -479,7 +480,7 @@
   height: 52px;
   object-fit: contain;
   object-position: center;
-  filter: grayscale(30%) opacity(72%);
+  filter: grayscale(85%) opacity(58%);
   transition: filter 0.35s ease, transform 0.35s ease;
 }
 

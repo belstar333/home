@@ -389,7 +389,7 @@
   {
     "id": "abt_location",
     "parentId": "abt",
-    "title": "오시는길",
+    "title": "오시는 길",
     "slug": "/about/location",
     "category": "about",
     "order": 4,

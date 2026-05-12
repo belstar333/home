@@ -557,6 +557,17 @@
     list-style: none;
 }
 
+/* 5개 항목: auto-fit 2열이면 2+2+1 고아 발생 → 3열 강제 */
+.cardGrid:has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 600px) {
+    .cardGrid:has(> :nth-child(5):last-child) {
+        grid-template-columns: 1fr;
+    }
+}
+
 .card {
     position: relative;
     display: grid;
@@ -583,6 +594,14 @@
 }
 
 .card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--page-accent) 42%, white);
+    box-shadow: 0 20px 42px -30px rgba(15, 23, 38, 0.5);
+}
+
+.card:focus-visible {
+    outline: 2px solid var(--page-accent);
+    outline-offset: 2px;
     transform: translateY(-4px);
     border-color: color-mix(in srgb, var(--page-accent) 42%, white);
     box-shadow: 0 20px 42px -30px rgba(15, 23, 38, 0.5);
@@ -817,6 +836,48 @@
     gap: 16px;
 }
 
+.formField {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formLabel {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--on-background);
+}
+
+.formRequired {
+    color: #EF4444;
+    margin-left: 2px;
+}
+
+.privacyLabel {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: color-mix(in srgb, var(--on-background) 72%, transparent);
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.privacyCheckbox {
+    flex-shrink: 0;
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--page-accent);
+    cursor: pointer;
+}
+
+.formSla {
+    font-size: 0.82rem;
+    color: color-mix(in srgb, var(--on-background) 55%, transparent);
+    margin: 0;
+}
+
 .formInput,
 .formTextarea {
     width: 100%;
@@ -858,8 +919,14 @@
     box-shadow: 0 14px 30px -18px color-mix(in srgb, var(--page-accent) 72%, black);
 }
 
-.formSubmit:hover {
+.formSubmit:hover:not(:disabled) {
     transform: translateY(-2px);
+}
+
+.formSubmit:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
 .tableWrap {
@@ -1044,9 +1111,14 @@
     user-select: none;
 }
 
+.faqQuestion:hover {
+    background: color-mix(in srgb, var(--page-accent) 5%, white);
+}
+
 .faqQuestion:focus-visible {
-    outline: 2px solid #0052cc;
+    outline: 2px solid var(--page-accent);
     outline-offset: -2px;
+    background: color-mix(in srgb, var(--page-accent) 5%, white);
 }
 
 .faqAnswer {
@@ -1778,6 +1850,20 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+:global([data-page-variant="product-overview"]) .card {
+    min-height: 210px;
+    align-content: start;
+    background: linear-gradient(
+        155deg,
+        color-mix(in srgb, var(--page-accent) 9%, white) 0%,
+        rgba(255, 255, 255, 0.96) 52%
+    );
+}
+
+:global([data-page-variant="product-overview"]) .card::before {
+    height: 6px;
+}
+
 :global([data-page-variant="product-overview"]) .tableWrap {
     border-radius: 12px;
 }
@@ -2039,7 +2125,7 @@
     width: 14px;
     height: 14px;
     margin-top: 10px;
-    margin-left: 0;
+    margin-left: 8px;
     box-shadow: 0 0 0 8px var(--page-accent-soft);
 }
 

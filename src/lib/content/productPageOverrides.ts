@@ -107,7 +107,7 @@ const productPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "제품은 기능보다 먼저\n운영 목적이 분명해야\n현장에서 살아남습니다",
-                    "TechI는 제품을 카탈로그처럼 나열하지 않습니다. 고가용성, 복구, 접근 제어, 감사 대응처럼 실제 운영 과제에 맞춰 RoseHA와 Omniguard 제품군을 제안하고, 도입 이후 운영 구조까지 함께 설계합니다.",
+                    "테크아이는 제품을 카탈로그처럼 나열하지 않습니다. 고가용성, 복구, 접근 제어, 감사 대응처럼 실제 운영 과제에 맞춰 RoseHA와 Omniguard 제품군을 제안하고, 도입 이후 운영 구조까지 함께 설계합니다.",
                     "/images/hero-cloud.jpg",
                     "엔터프라이즈 제품 라인업과 운영 환경 개요",
                     { label: "RoseHA 보기", href: "/product/roseha" },
@@ -136,7 +136,7 @@ const productPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "제품 소개",
                     title: "좋은 제품은 화면보다 운영 목적이 더 먼저 설명됩니다",
-                    body: "도입 전에는 기능표보다 어떤 문제를 해결할 것인지가 먼저 분명해야 합니다. TechI는 제품별 적용 범위, 검증 포인트, 운영 방식, 인수 기준을 함께 정리해 제품 도입이 실제 운영 개선으로 이어지게 만듭니다.",
+                    body: "도입 전에는 기능표보다 어떤 문제를 해결할 것인지가 먼저 분명해야 합니다. 테크아이는 제품별 적용 범위, 검증 포인트, 운영 방식, 인수 기준을 함께 정리해 제품 도입이 실제 운영 개선으로 이어지게 만듭니다.",
                     imageSrc: "/images/product-console-ui.jpg",
                     imageAlt: "운영 콘솔과 제품 대시보드 화면",
                     layout: "imageRight",
@@ -175,7 +175,7 @@ const productPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "중요 서비스는\n장애가 없는 것보다\n복구가 예측 가능해야 합니다",
-                    "RoseHA는 실시간 복제, 장애 감지, 자동 전환, 시점 복구, 운영 콘솔을 하나의 흐름으로 묶는 고가용성 제품군입니다. TechI는 단순 설치가 아니라 운영 환경에 맞는 DR·HA 체계로 RoseHA를 설계하고 적용합니다.",
+                    "RoseHA는 실시간 복제, 장애 감지, 자동 전환, 시점 복구, 운영 콘솔을 하나의 흐름으로 묶는 고가용성 제품군입니다. 테크아이는 단순 설치가 아니라 운영 환경에 맞는 DR·HA 체계로 RoseHA를 설계하고 적용합니다.",
                     "/images/hero-datacenter.jpg",
                     "미션크리티컬 서비스 고가용성을 위한 데이터센터 인프라",
                     { label: "실시간 복제 보기", href: "/product/roseha/replication" },
@@ -214,7 +214,7 @@ const productPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "가용성 플랫폼",
                     title: "고가용성은 장애 감지부터 운영 화면까지 이어져야 완성됩니다",
-                    body: "HA 제품은 단일 기능으로 설명되지 않습니다. 복제, 감지, 절체, 복구, 운영 가시성이 하나의 구조 안에서 연결되어야 운영팀이 실제로 믿고 사용할 수 있습니다. TechI는 RoseHA를 고객 환경에 맞는 서비스 연속성 체계로 설계합니다.",
+                    body: "HA 제품은 단일 기능으로 설명되지 않습니다. 복제, 감지, 절체, 복구, 운영 가시성이 하나의 구조 안에서 연결되어야 운영팀이 실제로 믿고 사용할 수 있습니다. 테크아이는 RoseHA를 고객 환경에 맞는 서비스 연속성 체계로 설계합니다.",
                     imageSrc: "/images/product-roseha-ui.png",
                     imageAlt: "Rose HA/DR 제품 구성과 핵심 기능을 보여주는 마케팅 인포그래픽",
                     layout: "imageRight",
@@ -533,7 +533,7 @@ const productPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "보안 운영은\n장비 수보다 먼저\n통제 기준이 분명해야 합니다",
-                    "Omniguard 제품군은 권한 통제, 세션 제어, 감사와 증적 관리를 한 흐름으로 묶어 운영 보안 수준을 높입니다. TechI는 고객 환경에 맞는 통제 기준과 운영 절차까지 함께 설계합니다.",
+                    "Omniguard 제품군은 권한 통제, 세션 제어, 감사와 증적 관리를 한 흐름으로 묶어 운영 보안 수준을 높입니다. 테크아이는 고객 환경에 맞는 통제 기준과 운영 절차까지 함께 설계합니다.",
                     "/images/hero-security.jpg",
                     "Omniguard 보안 정책과 접근 통제를 관리하는 운영 환경",
                     { label: "UAC 보기", href: "/product/lsware/uac" },
@@ -606,7 +606,7 @@ const productPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "중요 시스템 접근은\n누가 들어갔는지보다\n왜 허용됐는지가 더 중요합니다",
-                    "UAC는 특권 계정과 중요 시스템 접근을 통제하는 기능입니다. TechI는 승인 기준, 권한 부여 방식, 로그 이력, 운영 절차를 함께 설계해 실제 통제가 작동하는 환경을 만듭니다.",
+                    "UAC는 특권 계정과 중요 시스템 접근을 통제하는 기능입니다. 테크아이는 승인 기준, 권한 부여 방식, 로그 이력, 운영 절차를 함께 설계해 실제 통제가 작동하는 환경을 만듭니다.",
                     "/images/hero-security.jpg",
                     "UAC 권한 요청·승인·사용 이력을 관리하는 보안 운영 화면",
                     { label: "UCC 보기", href: "/product/lsware/ucc" },
@@ -637,7 +637,7 @@ const productPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "권한 통제",
                     title: "권한 통제는 막는 기능이 아니라 운영 기준을 분명하게 만드는 기능입니다",
-                    body: "중요 시스템 접근은 모든 것을 차단하는 방식으로는 지속되지 않습니다. TechI는 필요할 때 필요한 권한만 허용하고, 그 과정이 이력으로 남는 구조를 통해 보안과 운영의 균형을 맞춥니다.",
+                    body: "중요 시스템 접근은 모든 것을 차단하는 방식으로는 지속되지 않습니다. 테크아이는 필요할 때 필요한 권한만 허용하고, 그 과정이 이력으로 남는 구조를 통해 보안과 운영의 균형을 맞춥니다.",
                     imageSrc: "/images/product-omniguard-ui.png",
                     imageAlt: "통합 모듈식 서버보안 솔루션 Omniguard 제품 소개 이미지",
                     layout: "imageRight",
@@ -676,7 +676,7 @@ const productPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "접속을 허용하는 순간부터\n세션 통제가 시작되어야\n보안이 작동합니다",
-                    "UCC는 단순 접속 중계가 아니라 세션 제어와 기록을 통해 운영 행위를 더 안전하게 관리하는 기능입니다. TechI는 원격 작업과 외부 협력 접근이 많은 환경에 맞춰 세션 통제 체계를 설계합니다.",
+                    "UCC는 단순 접속 중계가 아니라 세션 제어와 기록을 통해 운영 행위를 더 안전하게 관리하는 기능입니다. 테크아이는 원격 작업과 외부 협력 접근이 많은 환경에 맞춰 세션 통제 체계를 설계합니다.",
                     "/images/hero-security.jpg",
                     "UCC 접속 경로와 세션 흐름을 통제하는 보안 운영 환경",
                     { label: "UAC 보기", href: "/product/lsware/uac" },
@@ -707,7 +707,7 @@ const productPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "세션 관리",
                     title: "세션 관리가 분명해질수록 외부 접근 리스크가 줄어듭니다",
-                    body: "보안 사고는 접속 자체보다 접속 후 행위 통제가 느슨할 때 커집니다. TechI는 UCC를 통해 세션 가시성과 작업 통제 수준을 높여 원격 운영 환경을 더 안전하게 만듭니다.",
+                    body: "보안 사고는 접속 자체보다 접속 후 행위 통제가 느슨할 때 커집니다. 테크아이는 UCC를 통해 세션 가시성과 작업 통제 수준을 높여 원격 운영 환경을 더 안전하게 만듭니다.",
                     imageSrc: "/images/product-omniguard-ui.png",
                     imageAlt: "통합 모듈식 서버보안 솔루션 Omniguard 제품 소개 이미지",
                     layout: "imageRight",
@@ -746,7 +746,7 @@ const productPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "보안 운영의 신뢰는\n통제 기능보다 먼저\n증적 관리에서 결정됩니다",
-                    "SecuMS는 보안 로그와 감사 증적을 한 체계로 관리해 운영과 감사 대응을 더 명확하게 만들어 줍니다. TechI는 수집 기준, 보존 정책, 보고 구조를 함께 설계해 실제로 활용 가능한 감사 체계를 제공합니다.",
+                    "SecuMS는 보안 로그와 감사 증적을 한 체계로 관리해 운영과 감사 대응을 더 명확하게 만들어 줍니다. 테크아이는 수집 기준, 보존 정책, 보고 구조를 함께 설계해 실제로 활용 가능한 감사 체계를 제공합니다.",
                     "/images/security-control-room.jpg",
                     "SecuMS 보안 이벤트와 감사 증적을 통합 관리하는 관제 환경",
                     { label: "UAC 보기", href: "/product/lsware/uac" },
@@ -777,7 +777,7 @@ const productPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "감사 증적",
                     title: "로그가 많다고 증적이 되는 것은 아닙니다",
-                    body: "감사 대응에서 중요한 것은 로그 양이 아니라 설명 가능한 구조입니다. TechI는 SecuMS를 통해 어떤 로그를 어떤 기준으로 보존하고, 어떤 형태로 제시할지까지 체계화해 보안 운영의 신뢰도를 높입니다.",
+                    body: "감사 대응에서 중요한 것은 로그 양이 아니라 설명 가능한 구조입니다. 테크아이는 SecuMS를 통해 어떤 로그를 어떤 기준으로 보존하고, 어떤 형태로 제시할지까지 체계화해 보안 운영의 신뢰도를 높입니다.",
                     imageSrc: "/images/product-omniguard-ui.png",
                     imageAlt: "통합 모듈식 서버보안 솔루션 Omniguard 제품 소개 이미지",
                     layout: "imageRight",

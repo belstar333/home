@@ -112,8 +112,8 @@ const DIFFERENTIATORS = [
 const TRUST_POINTS = [
     { label: "업력", value: "20년" },
     { label: "공인 파트너", value: "HPE · Cisco · NetApp" },
-    { label: "전담 엔지니어", value: "23명 · 2개 거점" },
-    { label: "AI 인프라 수행", value: "170+ Pflops급" },
+    { label: "전담 엔지니어", value: "23명 / 2개 거점" },
+    { label: "AI 인프라 수행", value: "170+ PFLOPS" },
 ];
 
 export default function Home() {
