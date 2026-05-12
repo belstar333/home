@@ -65,7 +65,10 @@ export default function ContentRenderer({ page }: { page: Page }) {
     const pageCategory = page.slug.startsWith("/service") ? "service" : "default";
     const presentation = getPagePresentation(page);
     const isServiceDetail = page.slug === "/service" || (page.slug.startsWith("/service/") && page.slug.split("/").filter(Boolean).length >= 2);
-    const hasNavBar = page.slug === "/service" || page.slug.startsWith("/service/");
+    const hasNavBar =
+        page.slug === "/service" || page.slug.startsWith("/service/") ||
+        page.slug === "/solution" || page.slug.startsWith("/solution/") ||
+        page.slug === "/product" || page.slug.startsWith("/product/");
 
     return (
         <article

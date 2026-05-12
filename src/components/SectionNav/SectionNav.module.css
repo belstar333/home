@@ -1,3 +1,9 @@
+/* two-row wrapper */
+.twoRowNav {
+    display: flex;
+    flex-direction: column;
+}
+
 /* scroll wrapper — edge fade on right */
 .navScroll {
     position: relative;
@@ -63,9 +69,82 @@
     border-bottom-color: var(--primary, #0058bd);
 }
 
+/* ── Sub-nav (Row 2) ── */
+.subNavScroll {
+    position: relative;
+    border-top: 1px solid rgba(13, 29, 43, 0.07);
+    background: rgba(13, 29, 43, 0.022);
+}
+
+.subNavScroll::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60px;
+    background: linear-gradient(to right, transparent, rgba(243, 245, 250, 0.92));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.subNav {
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.subNav::-webkit-scrollbar {
+    display: none;
+}
+
+.subNavList {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+
+.subNavLink {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    white-space: nowrap;
+    font-size: 0.84rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: rgba(13, 29, 43, 0.38);
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.subNavLink:hover {
+    color: rgba(13, 29, 43, 0.65);
+    border-bottom-color: rgba(13, 29, 43, 0.15);
+}
+
+.subNavActive {
+    color: var(--primary, #0058bd);
+    font-weight: 600;
+    border-bottom-color: var(--primary, #0058bd);
+}
+
 @media (max-width: 768px) {
     .siblingLink {
         font-size: 0.875rem;
         padding: 12px 16px;
+    }
+
+    .subNavLink {
+        font-size: 0.8rem;
+        padding: 9px 14px;
+    }
+
+    .subNavList {
+        padding-left: 10px;
     }
 }

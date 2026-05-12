@@ -18,7 +18,16 @@ export const metadata: Metadata = {
   title: "(주)테크아이 - IT 인프라 전문 기업",
   description: "서버, 네트워크, 스토리지, DR, 보안까지 — IT 인프라 전문 기업 테크아이",
   icons: {
-    icon: "/logos/techi-v2.png",
+    icon: [
+      { url: "/favicons-mark/favicon-mark-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicons-mark/favicon-mark-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicons-mark/favicon-mark-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicons-mark/favicon-mark-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicons-mark/favicon-mark-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicons-mark/favicon-mark-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: { url: "/favicons-mark/favicon-mark-180x180.png", sizes: "180x180", type: "image/png" },
+    shortcut: "/favicons-mark/favicon-mark-32x32.png",
   },
   openGraph: {
     type: "website",

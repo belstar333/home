@@ -5,31 +5,37 @@ import { usePathname } from "next/navigation";
 import type { TreeNode } from "@/lib/content/types";
 import styles from "./SectionNav.module.css";
 
-type NavContext =
-    | { mode: "children"; overviewSlug: string; children: TreeNode[] }
-    | { mode: "siblings"; siblings: TreeNode[] }
-    | null;
+type NavContext = {
+    row1: { overviewSlug: string; tabs: TreeNode[]; activeSlug: string | null };
+    row2: { overviewSlug: string; tabs: TreeNode[]; activeSlug: string | null } | null;
+} | null;
 
 function findContext(tree: TreeNode[], currentSlug: string): NavContext {
-    // depth-3: current page is a leaf — show siblings
     for (const topNode of tree) {
-        for (const level2 of topNode.children) {
-            if (level2.children.some((n) => n.slug === currentSlug)) {
-                return { mode: "siblings", siblings: level2.children };
-            }
-        }
-    }
-    // depth-2: current page is a category — show its children
-    for (const topNode of tree) {
-        const level2 = topNode.children.find((n) => n.slug === currentSlug);
-        if (level2 && level2.children.length > 0) {
-            return { mode: "children", overviewSlug: currentSlug, children: level2.children };
-        }
-    }
-    // depth-1: current page is a root node — show its children
-    for (const topNode of tree) {
+        // depth-1: on the root category page itself (e.g. /service)
         if (topNode.slug === currentSlug && topNode.children.length > 0) {
-            return { mode: "children", overviewSlug: currentSlug, children: topNode.children };
+            return {
+                row1: { overviewSlug: topNode.slug, tabs: topNode.children, activeSlug: null },
+                row2: null,
+            };
+        }
+        for (const level2 of topNode.children) {
+            // depth-2: on a category page (e.g. /service/server)
+            if (level2.slug === currentSlug && level2.children.length > 0) {
+                return {
+                    row1: { overviewSlug: topNode.slug, tabs: topNode.children, activeSlug: level2.slug },
+                    row2: { overviewSlug: level2.slug, tabs: level2.children, activeSlug: null },
+                };
+            }
+            // depth-3: on a leaf page (e.g. /service/server/build)
+            for (const level3 of level2.children) {
+                if (level3.slug === currentSlug) {
+                    return {
+                        row1: { overviewSlug: topNode.slug, tabs: topNode.children, activeSlug: level2.slug },
+                        row2: { overviewSlug: level2.slug, tabs: level2.children, activeSlug: level3.slug },
+                    };
+                }
+            }
         }
     }
     return null;
@@ -41,50 +47,67 @@ export default function SectionNav({ tree }: { tree: TreeNode[] }) {
 
     if (!context) return null;
 
-    if (context.mode === "children") {
-        return (
+    const { row1, row2 } = context;
+
+    return (
+        <div className={styles.twoRowNav}>
+            {/* Row 1: top-level category tabs */}
             <div className={styles.navScroll}>
-                <nav className={styles.nav} aria-label="서비스 항목 선택">
+                <nav className={styles.nav} aria-label="서비스 카테고리 선택">
                     <ul className={styles.siblingList} role="list">
                         <li>
                             <Link
-                                href={context.overviewSlug}
-                                className={`${styles.siblingLink} ${styles.active}`}
-                                aria-current="page"
+                                href={row1.overviewSlug}
+                                className={`${styles.siblingLink} ${row1.activeSlug === null ? styles.active : ""}`}
+                                aria-current={row1.activeSlug === null ? "page" : undefined}
                             >
                                 전체
                             </Link>
                         </li>
-                        {context.children.map((child) => (
-                            <li key={child.id}>
-                                <Link href={child.slug} className={styles.siblingLink}>
-                                    {child.title}
+                        {row1.tabs.map((tab) => (
+                            <li key={tab.id}>
+                                <Link
+                                    href={tab.slug}
+                                    className={`${styles.siblingLink} ${row1.activeSlug === tab.slug ? styles.active : ""}`}
+                                    aria-current={row1.activeSlug === tab.slug ? "page" : undefined}
+                                >
+                                    {tab.title}
                                 </Link>
                             </li>
                         ))}
                     </ul>
                 </nav>
             </div>
-        );
-    }
 
-    return (
-        <div className={styles.navScroll}>
-            <nav className={styles.nav} aria-label="같은 카테고리 내 페이지 이동">
-                <ul className={styles.siblingList} role="list">
-                    {context.siblings.map((sibling) => (
-                        <li key={sibling.id}>
-                            <Link
-                                href={sibling.slug}
-                                className={`${styles.siblingLink} ${pathname === sibling.slug ? styles.active : ""}`}
-                                aria-current={pathname === sibling.slug ? "page" : undefined}
-                            >
-                                {sibling.title}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
+            {/* Row 2: sub-category tabs */}
+            {row2 && (
+                <div className={styles.subNavScroll}>
+                    <nav className={styles.subNav} aria-label="세부 항목 선택">
+                        <ul className={styles.subNavList} role="list">
+                            <li>
+                                <Link
+                                    href={row2.overviewSlug}
+                                    className={`${styles.subNavLink} ${row2.activeSlug === null ? styles.subNavActive : ""}`}
+                                    aria-current={row2.activeSlug === null ? "page" : undefined}
+                                >
+                                    전체
+                                </Link>
+                            </li>
+                            {row2.tabs.map((tab) => (
+                                <li key={tab.id}>
+                                    <Link
+                                        href={tab.slug}
+                                        className={`${styles.subNavLink} ${row2.activeSlug === tab.slug ? styles.subNavActive : ""}`}
+                                        aria-current={row2.activeSlug === tab.slug ? "page" : undefined}
+                                    >
+                                        {tab.title}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
+            )}
         </div>
     );
 }
