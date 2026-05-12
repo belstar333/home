@@ -23,7 +23,7 @@ export default function ServiceCtaBanner({ pageTitle }: { pageTitle?: string }) 
                         인프라 진단 먼저 보기
                     </Link>
                     <Link href="/contact" className={styles.ctaSecondary}>
-                        상담 신청
+                        상담 문의하기
                     </Link>
                 </div>
             </div>

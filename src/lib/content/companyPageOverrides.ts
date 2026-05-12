@@ -262,11 +262,11 @@ const companyPageOverrides: Record<string, Page> = {
             ),
             section(
                 "s6",
-                "timeline",
-                timeline("테크아이가 걸어온 흐름", [
-                    { year: "2004-2009", text: "회사 설립, HPE 파트너십 체결, 기업부설연구소 설립으로 엔지니어링 기반을 마련했습니다." },
-                    { year: "2010-2019", text: "공공·엔터프라이즈 구축과 유지보수 범위를 넓히며 현장 실행력을 축적했습니다." },
-                    { year: "2020-Present", text: "AI 데이터센터, 위성 지상체, 고밀도 GPU 클러스터 등 초고성능 인프라 영역으로 확장했습니다." },
+                "cards",
+                featureCards("2004년부터 쌓아온 수행 이력", [
+                    { title: "20년+ 프로젝트 경험", desc: "엔터프라이즈 인프라부터 AI 데이터센터까지 확장해 온 수행 이력", href: "/about/history" },
+                    { title: "국가 중요 레퍼런스", desc: "국방과학연구소·국토지리정보원·대법원·공군 등 미션 크리티컬 환경 수행", href: "/about/partners" },
+                    { title: "HPE Gold Partner", desc: "장기 파트너십 기반의 안정적 공급과 기술 지원 체계", href: "/about/partners" },
                 ])
             ),
             section(
@@ -468,7 +468,7 @@ const companyPageOverrides: Record<string, Page> = {
                 timeline("연혁", [
                     { year: "2004-2009", text: "테크아이 설립, HPE 파트너십 체결, 기업부설연구소 설립으로 기초 체계를 만들었습니다." },
                     { year: "2010-2019", text: "공공·엔터프라이즈 구축과 유지보수 범위를 넓히며 현장 역량을 쌓았습니다." },
-                    { year: "2020-Present", text: "AI 데이터센터, 위성 지상체, 고밀도 GPU 클러스터 등 초고성능 인프라로 수행 수준을 끌어올렸습니다." },
+                    { year: "2020–현재", text: "AI 데이터센터, 위성 지상체, 고밀도 GPU 클러스터 등 초고성능 인프라로 수행 수준을 끌어올렸습니다." },
                 ])
             ),
             section(

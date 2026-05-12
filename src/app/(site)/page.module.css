@@ -117,7 +117,8 @@
   line-height: 1.7;
 }
 
-.heroActions {
+.heroActions,
+.closingActions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
@@ -850,7 +851,8 @@
     display: none;
   }
 
-  .heroActions {
+  .heroActions,
+  .closingActions {
     margin-top: 18px;
   }
 }

@@ -15,7 +15,7 @@ const COMPANY_LINKS = [
     { label: "제품", href: "/product" },
     { label: "비전·미션", href: "/about/vision-mission" },
     { label: "회사 연혁", href: "/about/history" },
-    { label: "파트너사", href: "/about/partners" },
+    { label: "협업 구조", href: "/about/partners" },
     { label: "오시는 길", href: "/about/location" },
 ];
 

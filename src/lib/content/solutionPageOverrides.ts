@@ -125,7 +125,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "AI를 기능으로 붙이는 것이 아니라\n실제 업무 흐름으로\n연결합니다",
-                    "TechI의 AI 솔루션은 데모 중심 화면이 아니라 회의, 문서, 코드, 검색, 추론, 운영 업무에 실제로 연결되는 구조를 목표로 합니다. 데이터 위치, 권한, 운영 기준까지 함께 설계해 조직 안에서 지속 가능한 AI 도입을 지원합니다.",
+                    "테크아이의 AI 솔루션은 데모 중심 화면이 아니라 회의, 문서, 코드, 검색, 추론, 운영 업무에 실제로 연결되는 구조를 목표로 합니다. 데이터 위치, 권한, 운영 기준까지 함께 설계해 조직 안에서 지속 가능한 AI 도입을 지원합니다.",
                     "/images/solution-agent-control-room.jpg",
                     "AI 에이전트 흐름과 운영 화면이 보이는 관제 환경",
                     { label: "도입 문의하기", href: "/contact" },
@@ -185,7 +185,7 @@ const solutionPageOverrides: Record<string, Page> = {
             section(
                 "s5",
                 "benefits",
-                benefits("TechI AI 솔루션의 방향", [
+                benefits("테크아이 AI 솔루션의 방향", [
                     "업무에 붙지 않는 실험형 AI보다 운영 가능한 AI를 우선합니다.",
                     "모델 선택보다 데이터 연결과 권한 구조를 먼저 설계합니다.",
                     "화면 시연이 아니라 현업이 계속 사용할 수 있는 배포와 운영 기준을 남깁니다.",
@@ -206,7 +206,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "회의가 끝난 뒤\n정리 업무가 다시 시작되지 않도록\n자동화합니다",
-                    "회의 시스템은 녹취보다 정리 품질이 중요합니다. TechI는 회의 내용 요약, 핵심 결정사항 정리, 후속 액션 생성, 공유 포맷 정리를 하나의 흐름으로 연결해 실제 협업 효율을 높입니다.",
+                    "회의 시스템은 녹취보다 정리 품질이 중요합니다. 테크아이는 회의 내용 요약, 핵심 결정사항 정리, 후속 액션 생성, 공유 포맷 정리를 하나의 흐름으로 연결해 실제 협업 효율을 높입니다.",
                     "/images/solution-meeting-room.jpg",
                     "회의실과 협업 장면을 보여주는 이미지",
                     { label: "도입 문의하기", href: "/contact" },
@@ -237,7 +237,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "회의 자동화 흐름",
                     title: "좋은 회의 AI는 내용을 적는 것이 아니라 후속 조치를 앞당깁니다",
-                    body: "회의 자동화는 요약 품질이 핵심입니다. 누가 무엇을 결정했고 어떤 후속 업무가 생겼는지 바로 보이도록 정리되어야 합니다. TechI는 회의 화면과 업무 연결 구조를 함께 설계해 실무에 바로 사용할 수 있는 회의 AI를 만듭니다.",
+                    body: "회의 자동화는 요약 품질이 핵심입니다. 누가 무엇을 결정했고 어떤 후속 업무가 생겼는지 바로 보이도록 정리되어야 합니다. 테크아이는 회의 화면과 업무 연결 구조를 함께 설계해 실무에 바로 사용할 수 있는 회의 AI를 만듭니다.",
                     imageSrc: "/images/solution-meeting-ui.jpg",
                     imageAlt: "AI 회의 시스템 화면",
                     layout: "imageRight",
@@ -276,7 +276,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "코드 리뷰가 느린 이유는\n읽을 내용이 많아서가 아니라\n판단 기준이 분산되어 있기 때문입니다",
-                    "AI 코드 분석기는 단순 요약 도구가 아니라 변경 위험을 빠르게 드러내는 보조 체계여야 합니다. TechI는 코드 구조, 변경 범위, 영향 분석, 품질 기준을 함께 반영해 실무 리뷰 속도를 높입니다.",
+                    "AI 코드 분석기는 단순 요약 도구가 아니라 변경 위험을 빠르게 드러내는 보조 체계여야 합니다. 테크아이는 코드 구조, 변경 범위, 영향 분석, 품질 기준을 함께 반영해 실무 리뷰 속도를 높입니다.",
                     "/images/hero-code.jpg",
                     "코드 변경 리스크와 리뷰 포인트를 분석하는 개발 화면",
                     { label: "도입 문의하기", href: "/contact" },
@@ -307,7 +307,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "코드 분석",
                     title: "분석 결과는 많을수록 좋은 것이 아니라 더 빨리 판단하게 만들어야 합니다",
-                    body: "개발 조직에서 필요한 것은 요약된 설명이 아니라 어디를 먼저 봐야 하는지에 대한 신호입니다. TechI는 코드 변경점을 실무 검토 흐름에 맞게 정리해 리뷰와 배포 판단을 더 빠르게 할 수 있게 만듭니다.",
+                    body: "개발 조직에서 필요한 것은 요약된 설명이 아니라 어디를 먼저 봐야 하는지에 대한 신호입니다. 테크아이는 코드 변경점을 실무 검토 흐름에 맞게 정리해 리뷰와 배포 판단을 더 빠르게 할 수 있게 만듭니다.",
                     imageSrc: "/images/solution-code-review.jpg",
                     imageAlt: "코드 리뷰와 분석 장면 이미지",
                     layout: "imageRight",
@@ -346,7 +346,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "여러 AI를 붙이는 것보다\n업무 순서에 맞게 조율하는 것이\n더 중요합니다",
-                    "에이전트 오케스트레이션은 도구를 많이 연결하는 기술이 아니라, 어떤 요청을 어떤 순서로 처리하고 누가 최종 확인하는지 정리하는 구조입니다. TechI는 에이전트 흐름을 운영 가능한 업무 체계로 구성합니다.",
+                    "에이전트 오케스트레이션은 도구를 많이 연결하는 기술이 아니라, 어떤 요청을 어떤 순서로 처리하고 누가 최종 확인하는지 정리하는 구조입니다. 테크아이는 에이전트 흐름을 운영 가능한 업무 체계로 구성합니다.",
                     "/images/solution-agent-control-room.jpg",
                     "여러 AI 에이전트 흐름을 하나의 운영 화면에서 관제하는 장면",
                     { label: "도입 문의하기", href: "/contact" },
@@ -377,7 +377,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "오케스트레이션",
                     title: "에이전트는 많아질수록 역할이 더 선명해야 합니다",
-                    body: "업무 자동화에서 중요한 것은 복잡한 에이전트 구성이 아니라 예측 가능한 흐름입니다. TechI는 검색, 분석, 실행, 검토 단계를 명확히 나누고 운영 기준과 로그 체계를 함께 설계해 실제 업무에 쓸 수 있는 오케스트레이션을 구현합니다.",
+                    body: "업무 자동화에서 중요한 것은 복잡한 에이전트 구성이 아니라 예측 가능한 흐름입니다. 테크아이는 검색, 분석, 실행, 검토 단계를 명확히 나누고 운영 기준과 로그 체계를 함께 설계해 실제 업무에 쓸 수 있는 오케스트레이션을 구현합니다.",
                     imageSrc: "/images/solution-monitoring-room.jpg",
                     imageAlt: "AI 에이전트 작업 흐름을 모니터링하는 관제 환경",
                     layout: "imageRight",
@@ -416,7 +416,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "민감한 데이터를 다룰수록\n모델 성능보다 먼저\n통제 구조가 필요합니다",
-                    "로컬 LLM은 단순히 사내 설치형 모델이 아니라 데이터 경로, 권한, 운영 비용, 추론 자원까지 고려한 인프라 설계가 필요합니다. TechI는 보안과 운영 현실을 함께 반영한 로컬 LLM 환경을 제안합니다.",
+                    "로컬 LLM은 단순히 사내 설치형 모델이 아니라 데이터 경로, 권한, 운영 비용, 추론 자원까지 고려한 인프라 설계가 필요합니다. 테크아이는 보안과 운영 현실을 함께 반영한 로컬 LLM 환경을 제안합니다.",
                     "/images/hero-cloud.jpg",
                     "보안 사내망에 구성된 AI 인프라 서버 환경",
                     { label: "도입 문의하기", href: "/contact" },
@@ -486,7 +486,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "AI 응답 품질은\n모델보다 먼저\n추론 구조에서 결정됩니다",
-                    "AI 추론 엔진은 빠른 응답과 안정적인 처리량, 비용 효율을 동시에 고려해야 합니다. TechI는 모델 호출 구조, 캐시, 워크로드 분산, 운영 모니터링까지 함께 설계해 엔터프라이즈 환경에 맞는 추론 체계를 구축합니다.",
+                    "AI 추론 엔진은 빠른 응답과 안정적인 처리량, 비용 효율을 동시에 고려해야 합니다. 테크아이는 모델 호출 구조, 캐시, 워크로드 분산, 운영 모니터링까지 함께 설계해 엔터프라이즈 환경에 맞는 추론 체계를 구축합니다.",
                     "/images/solution-ai-inference-ui.jpg",
                     "AI 추론과 운영 지표 화면",
                     { label: "도입 문의하기", href: "/contact" },
@@ -517,7 +517,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "추론 운영",
                     title: "추론 엔진은 AI 기능보다 운영 품질이 먼저 평가받습니다",
-                    body: "사용자는 응답 속도와 안정성으로 시스템을 판단합니다. TechI는 모델 성능뿐 아니라 요청 분산, 캐시, 장애 대응, 관제 구조를 함께 설계해 기업 환경에서 쓸 수 있는 추론 엔진을 제공합니다.",
+                    body: "사용자는 응답 속도와 안정성으로 시스템을 판단합니다. 테크아이는 모델 성능뿐 아니라 요청 분산, 캐시, 장애 대응, 관제 구조를 함께 설계해 기업 환경에서 쓸 수 있는 추론 엔진을 제공합니다.",
                     imageSrc: "/images/solution-ai-inference-ui.jpg",
                     imageAlt: "AI 추론 엔진 운영 UI",
                     layout: "imageRight",
@@ -556,7 +556,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "좋은 대시보드는\n정보를 더 많이 보여주는 것이 아니라\n판단을 더 빨리 만들게 합니다",
-                    "데이터 시각화는 그래프를 그리는 작업이 아니라 무엇을 보고 결정할지 정의하는 작업입니다. TechI는 운영 지표, 경영 지표, 현업 지표를 목적에 맞게 재구성해 한눈에 읽히는 시각화 체계를 설계합니다.",
+                    "데이터 시각화는 그래프를 그리는 작업이 아니라 무엇을 보고 결정할지 정의하는 작업입니다. 테크아이는 운영 지표, 경영 지표, 현업 지표를 목적에 맞게 재구성해 한눈에 읽히는 시각화 체계를 설계합니다.",
                     "/images/solution-data-workshop.jpg",
                     "데이터 워크숍과 분석 협업 장면",
                     { label: "도입 문의하기", href: "/contact" },
@@ -587,7 +587,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "의사결정 대시보드",
                     title: "시각화는 보기 좋은 화면보다 운영 판단을 앞당겨야 합니다",
-                    body: "많은 대시보드가 데이터를 예쁘게 보여주는 데 그칩니다. TechI는 사용자의 역할과 의사결정 순간을 중심으로 지표 구조를 설계해 더 적은 화면으로 더 빠른 판단이 가능하게 만듭니다.",
+                    body: "많은 대시보드가 데이터를 예쁘게 보여주는 데 그칩니다. 테크아이는 사용자의 역할과 의사결정 순간을 중심으로 지표 구조를 설계해 더 적은 화면으로 더 빠른 판단이 가능하게 만듭니다.",
                     imageSrc: "/images/solution-knowledge-ui.jpg",
                     imageAlt: "운영 데이터와 지표가 정리된 대시보드 화면",
                     layout: "imageRight",
@@ -626,7 +626,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "사내 문서 검색은\n정답보다 먼저\n근거와 권한이 중요합니다",
-                    "엔터프라이즈 RAG는 문서를 많이 읽는 것보다 누가 어떤 문서에 접근할 수 있고 어떤 근거를 제시하는지가 중요합니다. TechI는 검색 품질, 권한 제어, 출처 제시를 함께 설계해 조직이 신뢰할 수 있는 문서 기반 AI를 구현합니다.",
+                    "엔터프라이즈 RAG는 문서를 많이 읽는 것보다 누가 어떤 문서에 접근할 수 있고 어떤 근거를 제시하는지가 중요합니다. 테크아이는 검색 품질, 권한 제어, 출처 제시를 함께 설계해 조직이 신뢰할 수 있는 문서 기반 AI를 구현합니다.",
                     "/images/solution-knowledge-ui.jpg",
                     "내부 문서 기반 검색과 답변 UI",
                     { label: "도입 문의하기", href: "/contact" },
@@ -657,7 +657,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "지식 검색",
                     title: "좋은 RAG는 답변을 잘하는 시스템이 아니라 잘못 답하지 않는 시스템입니다",
-                    body: "기업 환경에서 문서 검색 AI는 정확도만큼 권한 통제와 근거 제시가 중요합니다. TechI는 검색 인덱스, 메타데이터, 권한 구조, 응답 포맷을 함께 설계해 실제 조직이 신뢰할 수 있는 RAG 환경을 만듭니다.",
+                    body: "기업 환경에서 문서 검색 AI는 정확도만큼 권한 통제와 근거 제시가 중요합니다. 테크아이는 검색 인덱스, 메타데이터, 권한 구조, 응답 포맷을 함께 설계해 실제 조직이 신뢰할 수 있는 RAG 환경을 만듭니다.",
                     imageSrc: "/images/solution-knowledge-ui.jpg",
                     imageAlt: "엔터프라이즈 문서 검색과 답변 UI",
                     layout: "imageRight",

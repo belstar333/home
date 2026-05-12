@@ -31,7 +31,7 @@ const PAIN_SOLUTION_ITEMS = [
         icon: "fact_check",
         label: "운영 표준화",
         issue: "유지보수는 받지만 현장마다 대응 기준이 제각각이라면",
-        response: "담당자가 바뀌어도 환경이 흔들리지 않도록, 인수 문서·점검 항목·대응 기준을 프로젝트 산출물에 함께 남깁니다.",
+        response: "인수 문서·점검 항목·대응 기준을 프로젝트 산출물로 함께 납품합니다. 사람이 아닌 기준이 환경을 잡아야 지속됩니다.",
         href: "/service/maintenance",
     },
 ];
@@ -81,7 +81,6 @@ const SERVICE_DOMAINS = [
 
 const PARTNER_LOGOS = [
     { src: "/logos/Hewlett-Packard-Enterprise-Logo-New.png", alt: "Hewlett Packard Enterprise" },
-    { src: "/logos/HP-logo-blue-png-large-size.png", alt: "HP" },
     { src: "/logos/Cisco-logo.png", alt: "Cisco" },
     { src: "/logos/NetApp-Logos.png", alt: "NetApp" },
 ];
@@ -140,7 +139,7 @@ export default function Home() {
                 <div className={styles.heroShell}>
                     <div className={styles.heroCopy}>
                         <p className={`${styles.heroEyebrow} ${styles.reveal} ${heroVisible ? styles.active : ""}`}>기업 인프라 엔지니어링</p>
-                        <p className={`${styles.heroBrand} ${styles.reveal} ${heroVisible ? styles.active : ""}`}>TechI</p>
+                        <p className={`${styles.heroBrand} ${styles.reveal} ${heroVisible ? styles.active : ""}`}>테크아이</p>
                         <h1 className={`${styles.heroTitle} ${styles.reveal} ${styles.delay1} ${heroVisible ? styles.active : ""}`}>
                             <span className={styles.titleLine}>끊임없이 흐르는 데이터를 위한</span>
                             <span className={styles.titleLine}>
@@ -157,8 +156,8 @@ export default function Home() {
                             <Link href="/service" className={styles.primaryAction}>
                                 서비스 보기
                             </Link>
-                            <Link href="/about" className={styles.secondaryAction}>
-                                회사 소개 보기
+                            <Link href="/contact" className={styles.secondaryAction}>
+                                상담 문의하기
                             </Link>
                         </div>
                     </div>
@@ -293,14 +292,14 @@ export default function Home() {
                                     className={styles.sectionImage}
                                 />
                                 <div className={styles.domainLeadCaption}>
-                                    서버 / 네트워크 / 보호 체계 / 운영 / AI
+                                    서버 / 네트워크 / 스토리지 / 컨설팅 / 유지보수
                                 </div>
                             </div>
                         </div>
 
                         <div className={styles.domainList}>
                             {SERVICE_DOMAINS.map((item, idx) => {
-                                const delayClass = idx === 0 ? styles.delay1 : idx === 1 ? styles.delay2 : idx === 2 ? styles.delay3 : idx === 3 ? styles.delay4 : "";
+                                const delayClass = idx === 0 ? styles.delay1 : idx === 1 ? styles.delay2 : idx === 2 ? styles.delay3 : styles.delay4;
                                 return (
                                 <Link key={item.title} href={item.href} className={`${styles.domainItem} ${styles.revealRight} ${delayClass} ${domainVisible ? styles.active : ""}`}>
                                     <div className={styles.domainText}>
@@ -373,12 +372,12 @@ export default function Home() {
                                 리스크와 운영 불확실성을 줄일 수 있습니다. 테크아이는 구축 이후까지 운영되는
                                 기준을 남기는 방향으로 프로젝트를 설계합니다.
                             </p>
-                            <div className={styles.heroActions}>
-                                <Link href="/service" className={styles.primaryAction}>
-                                    서비스 전체 보기
+                            <div className={styles.closingActions}>
+                                <Link href="/contact" className={styles.primaryAction}>
+                                    상담 문의하기
                                 </Link>
-                                <Link href="/about" className={styles.secondaryAction}>
-                                    회사 소개 보기
+                                <Link href="/service" className={styles.secondaryAction}>
+                                    서비스 전체 보기
                                 </Link>
                             </div>
                         </div>

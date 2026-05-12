@@ -55,7 +55,6 @@ export default function GNB({ onToggleSidebar }: { onToggleSidebar?: () => void 
                         height={40}
                         className={styles.logoMark}
                     />
-                    <span className={styles.logoText}></span>
                 </Link>
 
                 <button
@@ -143,6 +142,10 @@ export default function GNB({ onToggleSidebar }: { onToggleSidebar?: () => void 
                         );
                     })}
                 </nav>
+
+                <Link href="/contact" className={styles.contactCta} onClick={closeMenus}>
+                    문의하기
+                </Link>
             </div>
         </header>
     );

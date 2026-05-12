@@ -20,7 +20,7 @@
   {
     "id": "svc_server_build",
     "parentId": "svc_server",
-    "title": "구축/증설",
+    "title": "구축·증설",
     "slug": "/service/server/build",
     "category": "service",
     "order": 1,
@@ -56,7 +56,7 @@
   {
     "id": "svc_network_design",
     "parentId": "svc_network",
-    "title": "설계/구축",
+    "title": "설계·구축",
     "slug": "/service/network/design-build",
     "category": "service",
     "order": 1,
@@ -65,7 +65,7 @@
   {
     "id": "svc_network_security",
     "parentId": "svc_network",
-    "title": "보안(방화벽/정책)",
+    "title": "방화벽·정책",
     "slug": "/service/network/security",
     "category": "service",
     "order": 2,
@@ -74,7 +74,7 @@
   {
     "id": "svc_network_ha",
     "parentId": "svc_network",
-    "title": "무선/고가용",
+    "title": "무선·고가용",
     "slug": "/service/network/ha-wireless",
     "category": "service",
     "order": 3,
@@ -101,7 +101,7 @@
   {
     "id": "svc_storage_backup",
     "parentId": "svc_storage",
-    "title": "백업/복구",
+    "title": "백업·복구",
     "slug": "/service/storage-backup/backup-restore",
     "category": "service",
     "order": 2,
