@@ -194,7 +194,7 @@ const servicePageOverrides: Record<string, Page> = {
                 "s3",
                 "gallery",
                 imageGallery({
-                    eyebrow: "Field Scenes",
+                    eyebrow: "현장 장면",
                     title: "현장 장면이 서비스를 더 정확하게 말합니다",
                     body: "설계 회의, 장비 설치, 연결 검토 같은 장면은 테크아이가 어디까지 개입하고 무엇을 기준으로 정리하는지 가장 직접적으로 보여줍니다.",
                     items: [
@@ -226,7 +226,7 @@ const servicePageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "One Integrated Approach",
+                    eyebrow: "통합 접근 방식",
                     title: "어느 서비스에서 시작하든\n전체 운영 구조를 함께 봅니다",
                     body: "단일 서비스를 요청해도 서버, 네트워크, 스토리지, 운영 체계는 서로 맞닿아 있습니다. 테크아이는 요청된 범위만 처리하지 않고, 현재 환경에서 연결된 구조 전체를 함께 검토해 이후에 충돌하지 않는 방식으로 설계합니다.",
                     imageSrc: "/images/consulting-review-photo.jpg",
@@ -235,7 +235,7 @@ const servicePageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1068,
-                    caption: "Service approach / diagnose → design → build → validate → handover",
+                    caption: "서비스 접근 / 진단 → 설계 → 구축 → 검증 → 인수",
                     points: [
                         "요청된 범위도 전체 운영 환경 맥락에서 먼저 검토합니다.",
                         "서비스 간 경계와 책임 구간을 미리 정리해 중복과 공백을 줄입니다.",
@@ -297,7 +297,7 @@ const servicePageOverrides: Record<string, Page> = {
                 "s4",
                 "gallery",
                 imageGallery({
-                    eyebrow: "Server Project Scenes",
+                    eyebrow: "서버 프로젝트 장면",
                     title: "실제 서버 프로젝트는 이런 장면에서 차이가 납니다",
                     body: "랙 구성, 설치, 점검, 인수 문서 검토는 모두 별개 작업이 아니라 한 운영 흐름의 일부입니다.",
                     items: [
@@ -329,7 +329,7 @@ const servicePageOverrides: Record<string, Page> = {
                 "s5",
                 "media",
                 mediaFeature({
-                    eyebrow: "Technical Field Expertise",
+                    eyebrow: "현장 기술 전문성",
                     title: "성능보다 먼저 보는 것은 역할 분리와 전환 기준입니다",
                     body: "서버 인프라는 스펙표보다 역할 정의, 자원 배치, 전환 순서, 검증 항목이 먼저 정리돼야 안정적입니다. 테크아이는 구축 이후 운영팀이 바로 이어받을 수 있는 상태를 목표로 프로젝트를 설계합니다.",
                     imageSrc: "/images/server-design-review.jpg",
@@ -338,7 +338,7 @@ const servicePageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1067,
-                    caption: "Server engineering / role design, transition planning, operation handover",
+                    caption: "서버 엔지니어링 / 역할 설계, 전환 계획, 운영 인수",
                     points: [
                         "업무 역할별 서버군과 자원 배치 기준을 먼저 나눕니다.",
                         "전환 일정, 검증 포인트, 롤백 조건을 같은 문서 안에서 정리합니다.",
@@ -400,7 +400,7 @@ const servicePageOverrides: Record<string, Page> = {
                 "s4",
                 "gallery",
                 imageGallery({
-                    eyebrow: "Network Delivery Scenes",
+                    eyebrow: "네트워크 수행 장면",
                     title: "네트워크 프로젝트는 연결도만으로 설명되지 않습니다",
                     body: "케이블링, 구간 설계, 보안 통제, 운영 화면까지 함께 봐야 실제 운영 품질이 읽힙니다.",
                     items: [
@@ -432,7 +432,7 @@ const servicePageOverrides: Record<string, Page> = {
                 "s5",
                 "media",
                 mediaFeature({
-                    eyebrow: "Reliable Network Infrastructure",
+                    eyebrow: "신뢰할 수 있는 네트워크",
                     title: "장애가 났을 때 어느 구간이 문제인지 바로 읽혀야 합니다",
                     body: "좋은 네트워크는 평상시 빠른 것만으로 충분하지 않습니다. 장애가 발생했을 때 영향 범위, 우회 경로, 정책 충돌, 책임 구간이 빠르게 파악돼야 실제 운영 품질이 유지됩니다.",
                     imageSrc: "/images/server-design-review.jpg",
@@ -441,7 +441,7 @@ const servicePageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1067,
-                    caption: "Network design / topology, security policy, HA, operation clarity",
+                    caption: "네트워크 설계 / 토폴로지, 보안 정책, 이중화, 운영 명확성",
                     points: [
                         "코어, 액세스, 무선, 대외 연결을 한 운영 구조 안에서 정리합니다.",
                         "세그먼트, 방화벽 정책, 접근 범위를 문서와 변경 기준으로 남깁니다.",
@@ -506,7 +506,7 @@ const servicePageOverrides: Record<string, Page> = {
                 "s4",
                 "gallery",
                 imageGallery({
-                    eyebrow: "Protection Workflow",
+                    eyebrow: "데이터 보호 흐름",
                     title: "데이터 보호는 장비보다 복구 흐름으로 설명되는 편이 더 정확합니다",
                     body: "스토리지 운영, 백업 검토, 장애 시 복구 판단은 모두 한 흐름 안에서 연결되어야 합니다.",
                     items: [
@@ -538,7 +538,7 @@ const servicePageOverrides: Record<string, Page> = {
                 "s5",
                 "media",
                 mediaFeature({
-                    eyebrow: "Comprehensive Data Protection",
+                    eyebrow: "종합 데이터 보호",
                     title: "스토리지, 백업, DR은 하나의 보호 흐름으로 설계해야 합니다",
                     body: "용량만 늘리는 방식으로는 보호 체계가 완성되지 않습니다. 저장 정책, 백업 주기, 복구 목표, DR 전환 절차가 연결돼 있어야 장애 상황에서도 복구 시간을 예측할 수 있습니다.",
                     imageSrc: "/images/storage-backup-verify.jpg",
@@ -547,7 +547,7 @@ const servicePageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1067,
-                    caption: "Data protection / storage, backup, recovery, DR continuity",
+                    caption: "데이터 보호 / 스토리지, 백업, 복구, DR 연속성",
                     points: [
                         "데이터 중요도와 서비스 우선순위부터 먼저 구분합니다.",
                         "RPO/RTO, 보존 정책, 복구 리허설 범위를 한 구조 안에서 정리합니다.",
@@ -612,7 +612,7 @@ const servicePageOverrides: Record<string, Page> = {
                 "s4",
                 "gallery",
                 imageGallery({
-                    eyebrow: "Consulting Scenes",
+                    eyebrow: "컨설팅 장면",
                     title: "좋은 컨설팅은 발표 자료보다 문제를 다시 정렬하는 장면에서 드러납니다",
                     body: "현장 진단, 문서 검토, 방향성 회의는 모두 현재 환경을 어떻게 실행 계획으로 바꾸는지와 연결됩니다.",
                     items: [
@@ -644,7 +644,7 @@ const servicePageOverrides: Record<string, Page> = {
                 "s5",
                 "media",
                 mediaFeature({
-                    eyebrow: "Strategic IT Consulting",
+                    eyebrow: "전략적 IT 컨설팅",
                     title: "현재 리스크를 실행 가능한 과제로 다시 정렬합니다",
                     body: "좋은 진단은 문제를 많이 적어내는 것이 아니라, 무엇을 지금 바꾸고 무엇을 나중으로 미뤄야 하는지 명확하게 정리하는 것입니다. 테크아이는 기술 구조와 운영 제약을 함께 보며 실행 가능한 로드맵을 제시합니다.",
                     imageSrc: "/images/consulting-report-review.jpg",
@@ -653,7 +653,7 @@ const servicePageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1067,
-                    caption: "Consulting workflow / assess, prioritize, roadmap, governance",
+                    caption: "컨설팅 흐름 / 진단, 우선순위, 로드맵, 거버넌스",
                     points: [
                         "현재 문제를 기술 과제와 운영 과제로 구분합니다.",
                         "즉시 조치 과제와 중장기 투자 과제를 분리해 우선순위를 정합니다.",
@@ -718,7 +718,7 @@ const servicePageOverrides: Record<string, Page> = {
                 "s4",
                 "gallery",
                 imageGallery({
-                    eyebrow: "Operations Support Scenes",
+                    eyebrow: "운영 지원 장면",
                     title: "유지보수는 보고서보다 운영 현장의 반복을 줄일 수 있어야 합니다",
                     body: "관제 화면, 점검, 운영 문서 정리는 모두 장애 대응 이후를 더 안정적으로 만들기 위한 장면입니다.",
                     items: [
@@ -750,7 +750,7 @@ const servicePageOverrides: Record<string, Page> = {
                 "s5",
                 "media",
                 mediaFeature({
-                    eyebrow: "Premium Maintenance Service",
+                    eyebrow: "체계적 유지보수 서비스",
                     title: "점검, 대응, 보고, RCA가 하나의 흐름으로 이어져야 합니다",
                     body: "운영 지원은 장애가 생겼을 때만 반응하는 구조로는 충분하지 않습니다. 정기점검과 장애대응, 보고 체계, 재발 방지 과제가 연결돼 있어야 지원 품질이 사람 의존형으로 흘러가지 않습니다.",
                     imageSrc: "/images/maintenance-onsite.jpg",
@@ -759,7 +759,7 @@ const servicePageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1067,
-                    caption: "Maintenance flow / SLA, periodic checks, incident response, RCA",
+                    caption: "유지보수 흐름 / SLA, 정기점검, 장애 대응, RCA",
                     points: [
                         "지원 범위와 SLA를 먼저 정의해 대응 우선순위를 맞춥니다.",
                         "정기점검 결과를 누적 이슈와 교체 시점 판단으로 연결합니다.",

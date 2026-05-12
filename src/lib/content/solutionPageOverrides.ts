@@ -16,7 +16,7 @@ function page(config: {
         title: config.title,
         slug: config.slug,
         seo: {
-            title: `${config.title} | TechI`,
+            title: `${config.title} | 테크아이`,
             description: config.description,
         },
         sections: config.sections,
@@ -27,7 +27,7 @@ function subnavHeader(title: string, breadcrumbs: string[]): BlockData {
     return {
         type: "subnavHeader",
         data: {
-            eyebrow: "TechI",
+            eyebrow: "테크아이",
             title,
             breadcrumbs,
         },
@@ -154,8 +154,8 @@ const solutionPageOverrides: Record<string, Page> = {
                 "s4",
                 "gallery",
                 imageGallery({
-                    eyebrow: "Solution Portfolio",
-                    title: "업무 흐름에 맞춘 AI 적용 축",
+                    eyebrow: "솔루션 포트폴리오",
+                    title: "업무 흐름별 AI 솔루션 영역",
                     body: "회의 자동화, 코드 분석, 오케스트레이션, 로컬 LLM, 추론 엔진, 데이터 시각화, RAG까지 각각의 과제를 분리해 실제 업무에 맞는 방식으로 설계합니다.",
                     items: [
                         {
@@ -209,8 +209,8 @@ const solutionPageOverrides: Record<string, Page> = {
                     "회의 시스템은 녹취보다 정리 품질이 중요합니다. TechI는 회의 내용 요약, 핵심 결정사항 정리, 후속 액션 생성, 공유 포맷 정리를 하나의 흐름으로 연결해 실제 협업 효율을 높입니다.",
                     "/images/solution-meeting-room.jpg",
                     "회의실과 협업 장면을 보여주는 이미지",
-                    { label: "코드 분석기 보기", href: "/solution/code-analysis" },
-                    { label: "데이터 시각화 보기", href: "/solution/data-visualization" }
+                    { label: "도입 문의하기", href: "/contact" },
+                    { label: "솔루션 전체 보기", href: "/solution" }
                 )
             ),
             section(
@@ -235,7 +235,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Meeting Workflow",
+                    eyebrow: "회의 자동화 흐름",
                     title: "좋은 회의 AI는 내용을 적는 것이 아니라 후속 조치를 앞당깁니다",
                     body: "회의 자동화는 요약 품질이 핵심입니다. 누가 무엇을 결정했고 어떤 후속 업무가 생겼는지 바로 보이도록 정리되어야 합니다. TechI는 회의 화면과 업무 연결 구조를 함께 설계해 실무에 바로 사용할 수 있는 회의 AI를 만듭니다.",
                     imageSrc: "/images/solution-meeting-ui.jpg",
@@ -244,7 +244,7 @@ const solutionPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1325,
                     imageHeight: 1668,
-                    caption: "Meeting AI / summarization, action extraction, share-ready output",
+                    caption: "회의 AI / 요약, 액션 추출, 공유 포맷",
                     points: [
                         "회의 요약과 후속 액션을 동시에 정리합니다.",
                         "조직별 회의 포맷에 맞춰 출력 구조를 맞춥니다.",
@@ -279,8 +279,8 @@ const solutionPageOverrides: Record<string, Page> = {
                     "AI 코드 분석기는 단순 요약 도구가 아니라 변경 위험을 빠르게 드러내는 보조 체계여야 합니다. TechI는 코드 구조, 변경 범위, 영향 분석, 품질 기준을 함께 반영해 실무 리뷰 속도를 높입니다.",
                     "/images/hero-code.jpg",
                     "코드 분석과 엔지니어링 화면을 상징하는 이미지",
-                    { label: "에이전트 오케스트레이션 보기", href: "/solution/agent-orchestration" },
-                    { label: "로컬 LLM 보기", href: "/solution/local-llm" }
+                    { label: "도입 문의하기", href: "/contact" },
+                    { label: "솔루션 전체 보기", href: "/solution" }
                 )
             ),
             section(
@@ -305,7 +305,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Code Intelligence",
+                    eyebrow: "코드 분석",
                     title: "분석 결과는 많을수록 좋은 것이 아니라 더 빨리 판단하게 만들어야 합니다",
                     body: "개발 조직에서 필요한 것은 요약된 설명이 아니라 어디를 먼저 봐야 하는지에 대한 신호입니다. TechI는 코드 변경점을 실무 검토 흐름에 맞게 정리해 리뷰와 배포 판단을 더 빠르게 할 수 있게 만듭니다.",
                     imageSrc: "/images/solution-code-review.jpg",
@@ -314,7 +314,7 @@ const solutionPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 7890,
                     imageHeight: 5263,
-                    caption: "Code AI / risk detection, review focus, engineering guidance",
+                    caption: "코드 AI / 리스크 탐지, 리뷰 포인트, 품질 분석",
                     points: [
                         "변경 리스크를 우선순위화해 보여줍니다.",
                         "실제 리뷰 포인트만 빠르게 추려줍니다.",
@@ -349,8 +349,8 @@ const solutionPageOverrides: Record<string, Page> = {
                     "에이전트 오케스트레이션은 도구를 많이 연결하는 기술이 아니라, 어떤 요청을 어떤 순서로 처리하고 누가 최종 확인하는지 정리하는 구조입니다. TechI는 에이전트 흐름을 운영 가능한 업무 체계로 구성합니다.",
                     "/images/solution-agent-control-room.jpg",
                     "여러 AI 워크플로와 운영 화면을 상징하는 이미지",
-                    { label: "로컬 LLM 보기", href: "/solution/local-llm" },
-                    { label: "AI 추론 엔진 보기", href: "/solution/ai-inference" }
+                    { label: "도입 문의하기", href: "/contact" },
+                    { label: "솔루션 전체 보기", href: "/solution" }
                 )
             ),
             section(
@@ -375,7 +375,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Orchestration Flow",
+                    eyebrow: "오케스트레이션",
                     title: "에이전트는 많아질수록 역할이 더 선명해야 합니다",
                     body: "업무 자동화에서 중요한 것은 복잡한 에이전트 구성이 아니라 예측 가능한 흐름입니다. TechI는 검색, 분석, 실행, 검토 단계를 명확히 나누고 운영 기준과 로그 체계를 함께 설계해 실제 업무에 쓸 수 있는 오케스트레이션을 구현합니다.",
                     imageSrc: "/images/solution-monitoring-room.jpg",
@@ -384,7 +384,7 @@ const solutionPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 5464,
                     imageHeight: 8192,
-                    caption: "Agent flow / role separation, approval gate, traceable execution",
+                    caption: "에이전트 흐름 / 역할 분리, 승인 게이트, 추적 실행",
                     points: [
                         "에이전트별 역할과 책임을 분리합니다.",
                         "중요 작업에는 승인과 검토 단계를 남깁니다.",
@@ -419,8 +419,8 @@ const solutionPageOverrides: Record<string, Page> = {
                     "로컬 LLM은 단순히 사내 설치형 모델이 아니라 데이터 경로, 권한, 운영 비용, 추론 자원까지 고려한 인프라 설계가 필요합니다. TechI는 보안과 운영 현실을 함께 반영한 로컬 LLM 환경을 제안합니다.",
                     "/images/hero-cloud.jpg",
                     "사내 AI 인프라와 클라우드 구조를 상징하는 이미지",
-                    { label: "AI 추론 엔진 보기", href: "/solution/ai-inference" },
-                    { label: "엔터프라이즈 RAG 보기", href: "/solution/rag" }
+                    { label: "도입 문의하기", href: "/contact" },
+                    { label: "솔루션 전체 보기", href: "/solution" }
                 )
             ),
             section(
@@ -445,7 +445,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Private AI Stack",
+                    eyebrow: "사내 AI 스택",
                     title: "로컬 LLM은 모델보다 운영 구조에서 성패가 갈립니다",
                     body: "민감한 데이터 환경에서는 모델 선택만으로 프로젝트가 끝나지 않습니다. 어떤 데이터가 들어오고, 누가 접근하며, 추론 자원이 어떻게 소모되는지까지 운영 체계로 묶여야 안정적인 사내 AI가 됩니다.",
                     imageSrc: "/images/hero-datacenter.jpg",
@@ -454,7 +454,7 @@ const solutionPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 6016,
                     imageHeight: 4016,
-                    caption: "Private LLM / controlled data path, inference capacity, operational governance",
+                    caption: "사내 LLM / 데이터 경계, 추론 용량, 운영 거버넌스",
                     points: [
                         "데이터 경계와 접근 권한을 우선 설계합니다.",
                         "실사용량 기준의 추론 인프라 구조를 잡습니다.",
@@ -489,8 +489,8 @@ const solutionPageOverrides: Record<string, Page> = {
                     "AI 추론 엔진은 빠른 응답과 안정적인 처리량, 비용 효율을 동시에 고려해야 합니다. TechI는 모델 호출 구조, 캐시, 워크로드 분산, 운영 모니터링까지 함께 설계해 엔터프라이즈 환경에 맞는 추론 체계를 구축합니다.",
                     "/images/solution-ai-inference-ui.jpg",
                     "AI 추론과 운영 지표 화면",
-                    { label: "로컬 LLM 보기", href: "/solution/local-llm" },
-                    { label: "데이터 시각화 보기", href: "/solution/data-visualization" }
+                    { label: "도입 문의하기", href: "/contact" },
+                    { label: "솔루션 전체 보기", href: "/solution" }
                 )
             ),
             section(
@@ -515,7 +515,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Inference Operations",
+                    eyebrow: "추론 운영",
                     title: "추론 엔진은 AI 기능보다 운영 품질이 먼저 평가받습니다",
                     body: "사용자는 응답 속도와 안정성으로 시스템을 판단합니다. TechI는 모델 성능뿐 아니라 요청 분산, 캐시, 장애 대응, 관제 구조를 함께 설계해 기업 환경에서 쓸 수 있는 추론 엔진을 제공합니다.",
                     imageSrc: "/images/solution-ai-inference-ui.jpg",
@@ -524,7 +524,7 @@ const solutionPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 2294,
                     imageHeight: 1632,
-                    caption: "Inference engine / latency control, workload routing, observable metrics",
+                    caption: "추론 엔진 / 지연 제어, 워크로드 분산, 관측 지표",
                     points: [
                         "요청 유형별 추론 경로를 설계합니다.",
                         "지연 시간과 처리량을 운영 지표로 관리합니다.",
@@ -559,8 +559,8 @@ const solutionPageOverrides: Record<string, Page> = {
                     "데이터 시각화는 그래프를 그리는 작업이 아니라 무엇을 보고 결정할지 정의하는 작업입니다. TechI는 운영 지표, 경영 지표, 현업 지표를 목적에 맞게 재구성해 한눈에 읽히는 시각화 체계를 설계합니다.",
                     "/images/solution-data-workshop.jpg",
                     "데이터 워크숍과 분석 협업 장면",
-                    { label: "AI 추론 엔진 보기", href: "/solution/ai-inference" },
-                    { label: "엔터프라이즈 RAG 보기", href: "/solution/rag" }
+                    { label: "도입 문의하기", href: "/contact" },
+                    { label: "솔루션 전체 보기", href: "/solution" }
                 )
             ),
             section(
@@ -585,16 +585,16 @@ const solutionPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Decision Dashboard",
+                    eyebrow: "의사결정 대시보드",
                     title: "시각화는 보기 좋은 화면보다 운영 판단을 앞당겨야 합니다",
                     body: "많은 대시보드가 데이터를 예쁘게 보여주는 데 그칩니다. TechI는 사용자의 역할과 의사결정 순간을 중심으로 지표 구조를 설계해 더 적은 화면으로 더 빠른 판단이 가능하게 만듭니다.",
-                    imageSrc: "/images/product-console-ui.jpg",
+                    imageSrc: "/images/solution-knowledge-ui.jpg",
                     imageAlt: "운영 데이터와 지표가 정리된 대시보드 화면",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 1692,
                     imageHeight: 1580,
-                    caption: "Visualization / role-based KPI, action-ready dashboard, operational clarity",
+                    caption: "시각화 / 역할별 KPI, 실행형 대시보드, 운영 가독성",
                     points: [
                         "역할별로 필요한 지표와 시각화 밀도를 다르게 설계합니다.",
                         "운영과 보고 목적을 분리해 화면 책임을 명확히 합니다.",
@@ -629,8 +629,8 @@ const solutionPageOverrides: Record<string, Page> = {
                     "엔터프라이즈 RAG는 문서를 많이 읽는 것보다 누가 어떤 문서에 접근할 수 있고 어떤 근거를 제시하는지가 중요합니다. TechI는 검색 품질, 권한 제어, 출처 제시를 함께 설계해 조직이 신뢰할 수 있는 문서 기반 AI를 구현합니다.",
                     "/images/solution-knowledge-ui.jpg",
                     "내부 문서 기반 검색과 답변 UI",
-                    { label: "AI 회의 시스템 보기", href: "/solution/meeting" },
-                    { label: "로컬 LLM 보기", href: "/solution/local-llm" }
+                    { label: "도입 문의하기", href: "/contact" },
+                    { label: "솔루션 전체 보기", href: "/solution" }
                 )
             ),
             section(
@@ -655,7 +655,7 @@ const solutionPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Knowledge Search",
+                    eyebrow: "지식 검색",
                     title: "좋은 RAG는 답변을 잘하는 시스템이 아니라 잘못 답하지 않는 시스템입니다",
                     body: "기업 환경에서 문서 검색 AI는 정확도만큼 권한 통제와 근거 제시가 중요합니다. TechI는 검색 인덱스, 메타데이터, 권한 구조, 응답 포맷을 함께 설계해 실제 조직이 신뢰할 수 있는 RAG 환경을 만듭니다.",
                     imageSrc: "/images/solution-knowledge-ui.jpg",
@@ -664,7 +664,7 @@ const solutionPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1692,
                     imageHeight: 1580,
-                    caption: "Enterprise RAG / permission-aware search, citation trace, grounded answer",
+                    caption: "엔터프라이즈 RAG / 권한 기반 검색, 출처 추적, 근거 기반 답변",
                     points: [
                         "권한 기반 검색 결과만 노출되도록 구성합니다.",
                         "답변의 근거 문서를 명확히 제시합니다.",

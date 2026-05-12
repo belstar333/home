@@ -19,7 +19,7 @@ function page(config: {
         title: config.title,
         slug: config.slug,
         seo: {
-            title: `${config.title} | TechI`,
+            title: `${config.title} | 테크아이`,
             description: config.description,
         },
         sections: config.sections,
@@ -30,7 +30,7 @@ function subnavHeader(title: string, breadcrumbs: string[]): BlockData {
     return {
         type: "subnavHeader",
         data: {
-            eyebrow: "TechI",
+            eyebrow: "테크아이",
             title,
             breadcrumbs,
             cta: {
@@ -290,13 +290,13 @@ const pageOverrides: Record<string, Page> = {
                 "s2",
                 "media",
                 mediaFeature({
-                    eyebrow: "Applied Workflow",
+                    eyebrow: "업무 적용 흐름",
                     title: "회의와 문서를 바로 실행 가능한 다음 단계로 넘기는 구조",
                     body: "AI는 요약만 잘해도 충분하지 않습니다. 회의 메모, 결정 사항, 담당자 액션, 후속 일정이 팀의 실제 운영 도구로 이어질 때 비로소 생산성이 생깁니다.",
                     imageSrc: "/images/solution-meeting-ui.jpg",
                     imageAlt: "회의 내용이 구조화된 AI 업무 화면",
                     layout: "imageRight",
-                    caption: "Meeting Flow / summary, action item, follow-up",
+                    caption: "회의 흐름 / 요약, 액션 아이템, 후속 처리",
                     points: [
                         "회의 결과를 사람 중심 메모가 아니라 실행 항목 기준으로 구조화합니다.",
                         "조직별 승인 흐름과 협업 도구 연계를 함께 고려합니다.",
@@ -307,7 +307,7 @@ const pageOverrides: Record<string, Page> = {
             section(
                 "s3",
                 "cards",
-                featureCards("TechI AI Solution Menu", [
+                featureCards("AI 솔루션 메뉴", [
                     { title: "회의 자동화", desc: "회의록, 결정 사항, 액션 아이템을 구조화합니다.", href: "/solution/meeting" },
                     { title: "코드 분석", desc: "리뷰 기준과 변경 리스크를 자동으로 정리합니다.", href: "/solution/code-analysis" },
                     { title: "Agent Orchestration", desc: "여러 단계 작업을 하나의 흐름으로 엮습니다.", href: "/solution/agent-orchestration" },
@@ -320,13 +320,13 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Knowledge Layer",
+                    eyebrow: "지식 레이어",
                     title: "사내 지식은 검색 속도보다 근거가 남는 응답이 중요합니다",
                     body: "문서 저장소가 많아도 실제 현업은 근거가 보이는 답변을 원합니다. TechI는 출처, 권한, 검색 결과 품질을 함께 설계해 RAG가 업무에 신뢰를 얻도록 만듭니다.",
                     imageSrc: "/images/solution-knowledge-ui.jpg",
                     imageAlt: "근거 문서와 함께 응답을 제공하는 지식 검색 화면",
                     layout: "imageLeft",
-                    caption: "Knowledge Search / source-aware answer, permission-aware retrieval",
+                    caption: "지식 검색 / 출처 기반 응답, 권한 기반 검색",
                     points: [
                         "검색 결과에 출처와 근거를 함께 남깁니다.",
                         "권한에 따라 보이는 문서 범위를 달리 설계합니다.",
@@ -378,13 +378,13 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Meeting Pipeline",
+                    eyebrow: "회의 처리 흐름",
                     title: "결정 사항과 액션 아이템이 명확히 보이는 업무 화면",
                     body: "단순 요약이 아니라 어떤 결론이 났고, 누가 언제까지 무엇을 처리해야 하는지까지 분리해 보여주면 회의 후 공백 시간이 줄어듭니다.",
                     imageSrc: "/images/solution-meeting-ui.jpg",
                     imageAlt: "회의록 요약과 액션 아이템이 정리된 화면",
                     layout: "imageRight",
-                    caption: "Meeting Summary / decision, owner, due date",
+                    caption: "회의 요약 / 결정사항, 담당자, 기한",
                     points: [
                         "회의 목적에 따라 요약 형식을 다르게 설계합니다.",
                         "팀별 템플릿과 승인 흐름을 반영할 수 있습니다.",
@@ -445,7 +445,7 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Review Console",
+                    eyebrow: "리뷰 콘솔",
                     title: "변경 맥락과 잠재 리스크를 함께 읽는 분석 화면",
                     body: "변경 파일만 보는 것이 아니라 영향 범위, 공통 규칙 위반, 취약 가능성, 운영 영향까지 함께 보여주는 구조가 리뷰 효율을 크게 높입니다.",
                     imageSrc: "/images/solution-code-review.jpg",
@@ -454,7 +454,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 7890,
                     imageHeight: 5263,
-                    caption: "Code Review / diff risk, rule check, deployment concern",
+                    caption: "코드 리뷰 / 변경 리스크, 규칙 점검, 배포 우려",
                     points: [
                         "팀별 코드 규칙과 체크 포인트를 반영할 수 있습니다.",
                         "운영 영향이 큰 변경을 우선적으로 드러낼 수 있습니다.",
@@ -515,13 +515,13 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Multi-step Flow",
+                    eyebrow: "다단계 흐름",
                     title: "작업 단계와 검토 포인트가 분리된 운영 화면",
                     body: "에이전트 오케스트레이션은 단순 자동 실행보다 어떤 단계에서 어떤 데이터와 도구를 쓰는지, 어느 지점에서 사람이 개입하는지가 명확해야 안정적입니다.",
                     imageSrc: "/images/solution-ai-inference-ui.jpg",
                     imageAlt: "AI 작업 단계와 상태가 정리된 화면",
                     layout: "imageRight",
-                    caption: "Agent Flow / task routing, approval, status tracking",
+                    caption: "에이전트 흐름 / 작업 라우팅, 승인, 상태 추적",
                     points: [
                         "단계별 역할 분리와 도구 연결 정책을 함께 설계합니다.",
                         "중요 결과물에는 사람 승인 포인트를 둘 수 있습니다.",
@@ -582,7 +582,7 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Inference Stack",
+                    eyebrow: "추론 스택",
                     title: "사내 인프라에 맞는 추론 운영 구조를 먼저 설계합니다",
                     body: "모델을 배포하는 것보다 더 중요한 것은 누가 어떤 데이터를 어디까지 사용할 수 있는지, 어떤 자원으로 어떤 응답 수준을 유지할 수 있는지 정리하는 일입니다.",
                     imageSrc: "/images/server-photo-racks.jpg",
@@ -591,7 +591,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1067,
-                    caption: "Local LLM / model policy, resource, observability",
+                    caption: "Local LLM / 모델 정책, 자원, 관측 가능성",
                     points: [
                         "사내망, GPU, 사용자 수에 맞는 운영 구조를 제안합니다.",
                         "권한과 로그 기준을 함께 설계해 통제가 가능해야 합니다.",
@@ -652,13 +652,13 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Serving Control",
+                    eyebrow: "서빙 제어",
                     title: "응답 상태와 모델 운영이 함께 보이는 구조",
                     body: "단순 API 연결을 넘어 요청량 변화, 에러 비율, 모델 전환, 추론 지연을 함께 읽을 수 있어야 운영팀이 서비스를 안정적으로 관리할 수 있습니다.",
                     imageSrc: "/images/solution-ai-inference-ui.jpg",
                     imageAlt: "추론 운영 상태를 확인하는 화면",
                     layout: "imageRight",
-                    caption: "Inference Ops / latency, model version, fallback",
+                    caption: "추론 운영 / 지연, 모델 버전, 폴백",
                     points: [
                         "모델 버전과 라우팅 정책을 운영 기준으로 정리합니다.",
                         "트래픽 변화에 대응할 수 있는 용량 계획을 함께 세웁니다.",
@@ -719,13 +719,13 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Dashboard Layer",
+                    eyebrow: "대시보드 레이어",
                     title: "운영 지표와 의사결정 지표가 분리된 화면 구성",
                     body: "실시간 상태를 봐야 하는 화면과 주간·월간 흐름을 보는 화면은 목적이 다릅니다. 같은 데이터라도 누가 무엇을 결정할지 기준으로 나누면 가독성과 활용도가 크게 올라갑니다.",
                     imageSrc: "/images/product-console-ui.jpg",
                     imageAlt: "지표와 상태를 정리한 대시보드 화면",
                     layout: "imageLeft",
-                    caption: "Visualization / KPI, trend, action-oriented dashboard",
+                    caption: "시각화 / KPI, 추세, 액션 기반 대시보드",
                     points: [
                         "운영 화면과 보고 화면을 구분해 설계합니다.",
                         "숫자보다 행동 기준이 보이는 지표를 우선 배치합니다.",
@@ -786,13 +786,13 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Evidence-based Answer",
+                    eyebrow: "근거 기반 응답",
                     title: "출처와 권한을 함께 읽는 지식 검색 화면",
                     body: "어떤 문서를 기반으로 답했는지, 최신 문서인지, 사용자가 볼 수 있는 자료인지가 함께 표시되어야 현업은 RAG를 실제 업무에 사용하기 시작합니다.",
                     imageSrc: "/images/solution-knowledge-ui.jpg",
                     imageAlt: "출처와 함께 답변을 제공하는 지식 검색 화면",
                     layout: "imageRight",
-                    caption: "RAG / citation, source quality, permission control",
+                    caption: "RAG / 출처 표기, 문서 품질, 권한 통제",
                     points: [
                         "문서 출처와 최신성 기준을 함께 설계합니다.",
                         "권한에 맞는 검색 결과만 응답에 사용되도록 구성합니다.",
@@ -843,7 +843,7 @@ const pageOverrides: Record<string, Page> = {
             section(
                 "s2",
                 "cards",
-                featureCards("Product Portfolio", [
+                featureCards("제품 포트폴리오", [
                     { title: "RoseHA", desc: "실시간 복제, 자동 전환, 시점 복구를 포함한 고가용성 제품군", href: "/product/roseha" },
                     { title: "Omniguard", desc: "권한, 접속, 감사 대응을 관리하는 보안 통제 제품군", href: "/product/lsware" },
                     { title: "PoC 설계", desc: "기능 검증과 운영 전환 검토를 분리한 파일럿 접근", href: "/contact" },
@@ -854,13 +854,13 @@ const pageOverrides: Record<string, Page> = {
                 "s3",
                 "media",
                 mediaFeature({
-                    eyebrow: "Product View",
+                    eyebrow: "제품 소개",
                     title: "운영 화면과 정책 구조까지 함께 보여야 제품 신뢰도가 생깁니다",
                     body: "제품 기능은 데모에서 보일 수 있습니다. 하지만 실제 운영팀이 신뢰하는 것은 정책 화면, 상태 확인 방식, 장애 시 대응 흐름이 어떻게 정리되는지입니다.",
                     imageSrc: "/images/product-console-ui.jpg",
                     imageAlt: "제품 운영 화면과 정책 구성이 담긴 콘솔 이미지",
                     layout: "imageRight",
-                    caption: "Product Console / policy, status, operational visibility",
+                    caption: "제품 콘솔 / 정책, 상태, 운영 가시성",
                     points: [
                         "운영 콘솔의 가독성과 상태 확인 흐름을 함께 검토합니다.",
                         "기능 검증과 본 운영 정책을 분리해 접근합니다.",
@@ -946,7 +946,7 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Operational Visibility",
+                    eyebrow: "운영 가시성",
                     title: "상태 확인과 제어가 한 화면에서 이어지는 운영 구조",
                     body: "가용성 제품은 장애 시에만 보는 솔루션이 아닙니다. 평소 상태 확인, 복제 지연 체크, 전환 준비 상태 검토가 쉬워야 운영팀이 실제로 신뢰할 수 있습니다.",
                     imageSrc: "/images/server-photo-inspection.jpg",
@@ -955,7 +955,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1068,
-                    caption: "RoseHA Console / replication, failover, recovery visibility",
+                    caption: "RoseHA 콘솔 / 복제, 전환, 복구 가시성",
                     points: [
                         "평상시 상태 확인과 비상시 전환 흐름이 이어집니다.",
                         "운영자가 봐야 할 상태와 경고를 구조적으로 구분합니다.",
@@ -1045,7 +1045,7 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Replication Health",
+                    eyebrow: "복제 상태",
                     title: "복제 대상과 상태를 구조적으로 확인하는 운영 관점",
                     body: "대상 시스템, 지연 상태, 예외 이벤트, 검증 기록이 함께 보여야 복제 체계가 단순 설정이 아니라 살아 있는 운영 항목이 됩니다.",
                     imageSrc: "/images/server-photo-racks.jpg",
@@ -1054,7 +1054,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1067,
-                    caption: "Replication Basis / target system, lag, consistency check",
+                    caption: "복제 기반 / 대상 시스템, 지연, 일관성 점검",
                     points: [
                         "복제 단위와 중요 데이터 구간을 함께 구분합니다.",
                         "복제 지연과 예외 상태를 운영 기준으로 관리합니다.",
@@ -1115,7 +1115,7 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Failover Policy",
+                    eyebrow: "전환 정책",
                     title: "전환 조건과 운영 개입 기준이 명확한 구조",
                     body: "어떤 상황에서 자동 전환을 허용하고, 어떤 경우에는 운영 승인 후 수동으로 전환할지 기준을 명확히 해야 장애 대응 품질이 흔들리지 않습니다.",
                     imageSrc: "/images/server-photo-install.jpg",
@@ -1124,7 +1124,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1067,
-                    caption: "Failover Policy / condition, approval, execution",
+                    caption: "페일오버 정책 / 조건, 승인, 실행",
                     points: [
                         "이상 감지 이벤트와 실제 전환 조건을 분리합니다.",
                         "운영팀 승인 구간을 서비스별로 다르게 둘 수 있습니다.",
@@ -1185,7 +1185,7 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Recovery Visibility",
+                    eyebrow: "복구 가시성",
                     title: "복구 시점과 검증 흐름이 보이는 운영 구조",
                     body: "복구 가능한 시점을 알고 있어도 어떤 데이터를 먼저 검증할지 정리되어 있지 않으면 실제 복구는 늦어집니다. 시점 관리와 검증 기준을 함께 제안합니다.",
                     imageSrc: "/images/office-desk-operator.jpg",
@@ -1194,7 +1194,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 2705,
                     imageHeight: 3500,
-                    caption: "PITR / recovery point, validation, rollback readiness",
+                    caption: "PITR / 복구 시점, 검증, 롤백 준비도",
                     points: [
                         "사고 유형별 복구 시점 판단 기준을 정리합니다.",
                         "복구 후 확인해야 할 데이터 검증 항목을 함께 구성합니다.",
@@ -1255,13 +1255,13 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Console Experience",
+                    eyebrow: "콘솔 경험",
                     title: "복제와 전환 준비도를 빠르게 확인하는 화면 구성",
                     body: "운영 콘솔은 일상 점검과 비상 대응을 동시에 지원해야 합니다. 현재 상태, 지연, 경고, 최근 검증 결과가 한 흐름으로 읽혀야 현장 활용성이 높습니다.",
                     imageSrc: "/images/product-console-ui.jpg",
                     imageAlt: "복제 및 전환 상태를 보여주는 콘솔 화면",
                     layout: "imageLeft",
-                    caption: "Console / health status, failover readiness, audit trail",
+                    caption: "콘솔 / 상태, 전환 준비도, 감사 추적",
                     points: [
                         "운영자가 가장 자주 확인하는 상태를 전면에 배치합니다.",
                         "경고 해석과 조치 흐름이 명확한 구조를 지향합니다.",
@@ -1323,7 +1323,7 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Security Governance",
+                    eyebrow: "보안 거버넌스",
                     title: "권한과 접속, 로그가 하나의 통제 흐름으로 보이는 구조",
                     body: "보안 제품은 기능이 많을수록 좋은 것이 아니라 운영팀이 실제로 관리 가능한 구조여야 합니다. 정책 적용, 사용 이력, 증적 관리가 한 흐름으로 이어지도록 구성합니다.",
                     imageSrc: "/images/dark-console-operator.jpg",
@@ -1332,7 +1332,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 2832,
                     imageHeight: 4256,
-                    caption: "Security Ops / policy, access, audit evidence",
+                    caption: "보안 운영 / 정책, 접근, 감사 증적",
                     points: [
                         "권한 정책과 접속 정책을 한 체계로 관리합니다.",
                         "감사 대응에 필요한 로그와 증적을 함께 정리합니다.",
@@ -1412,7 +1412,7 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Privilege Control",
+                    eyebrow: "권한 통제",
                     title: "권한 요청과 사용 이력이 연결되는 관리 화면",
                     body: "권한 통제는 정책 문서보다 운영 흐름에서 자연스럽게 동작해야 합니다. 요청, 승인, 사용, 점검, 증적이 하나의 구조로 이어져야 현장에서 정착합니다.",
                     imageSrc: "/images/contact-laptop-work.jpg",
@@ -1421,7 +1421,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 3342,
                     imageHeight: 5939,
-                    caption: "UAC / request, approval, usage history",
+                    caption: "UAC / 요청, 승인, 사용 이력",
                     points: [
                         "계정 사용 이력을 빠르게 확인할 수 있습니다.",
                         "승인과 점검 흐름을 조직 기준에 맞게 설계합니다.",
@@ -1482,7 +1482,7 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Access Route",
+                    eyebrow: "접속 경로",
                     title: "접속 경로와 세션 흐름을 읽는 통제 구조",
                     body: "누가 어떤 경로로 어떤 시스템에 접근했는지를 빠르게 확인할 수 있어야 보안팀과 운영팀 모두 부담이 줄어듭니다.",
                     imageSrc: "/images/office-desk-operator.jpg",
@@ -1491,7 +1491,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 2705,
                     imageHeight: 3500,
-                    caption: "UCC / route control, session tracking, audit visibility",
+                    caption: "UCC / 경로 통제, 세션 추적, 감사 가시성",
                     points: [
                         "운영 인력과 협력사 접속 경로를 구분할 수 있습니다.",
                         "세션 정책과 기록 기준을 함께 설계합니다.",
@@ -1552,7 +1552,7 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Security Evidence",
+                    eyebrow: "보안 증적",
                     title: "보안 이벤트와 운영 이력을 함께 읽는 화면 구조",
                     body: "감사 대응은 보안팀만의 과제가 아닙니다. 운영팀과 보안팀이 같은 이벤트를 같은 기준으로 확인할 수 있어야 실제 대응 품질이 올라갑니다.",
                     imageSrc: "/images/security-control-room.jpg",
@@ -1561,7 +1561,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 7008,
                     imageHeight: 4672,
-                    caption: "SecuMS / event, evidence, operational trace",
+                    caption: "SecuMS / 이벤트, 증적, 운영 추적",
                     points: [
                         "이벤트와 증적을 한 흐름으로 정리합니다.",
                         "반복 이슈를 개선 과제로 이어지게 만듭니다.",
@@ -1621,7 +1621,7 @@ const pageOverrides: Record<string, Page> = {
                 "s3",
                 "media",
                 mediaFeature({
-                    eyebrow: "How We Work",
+                    eyebrow: "업무 방식",
                     title: "하드웨어 인프라 위에 AI·데이터 확장을 연결하는 방식",
                     body: "TechI는 Compute & Physical Layer, Management & Security Layer, Application & AI Layer를 따로 보지 않습니다. HCI, GPU, 대규모 스토리지 같은 물리 기반 위에 HA·DR·백업·클라우드 운영을 정리하고, 그 위에 스마트 관제·빅데이터 분석·AI STT/TTS 같은 업무 계층을 연결하는 구조를 지향합니다.",
                     imageSrc: "/images/consulting-review-photo.jpg",
@@ -1630,7 +1630,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1068,
-                    caption: "Full-Stack Infrastructure / physical, management, AI application layers",
+                    caption: "풀스택 인프라 / 물리, 관리, AI 응용 레이어",
                     points: [
                         "Compute & Physical: HCI, NVIDIA GPU, Intel 기반 대규모 스토리지",
                         "Management & Security: HA, DR, 엔터프라이즈 백업, 클라우드 매니지먼트",
@@ -1641,7 +1641,7 @@ const pageOverrides: Record<string, Page> = {
             section(
                 "s4",
                 "cards",
-                featureCards("Executive Summary", [
+                featureCards("핵심 현황", [
                     { title: "업력 20년", desc: "2004년 설립 이후 공공 및 엔터프라이즈 인프라 구축에서 신뢰를 쌓아 왔습니다." },
                     { title: "매출 250억+", desc: "2023년 매출액 기준 250억+ 규모와 안정적 재무구조를 기반으로 성장하고 있습니다." },
                     { title: "23명 · 2개 지사", desc: "IT 전문 인력 23명과 대전 본사·서울 지사를 통해 신속한 기술 대응 체계를 갖추고 있습니다." },
@@ -1690,11 +1690,11 @@ const pageOverrides: Record<string, Page> = {
             section(
                 "s4",
                 "cards",
-                featureCards("Vision, Mission, Principle", [
-                    { title: "Vision", desc: "AI와 데이터를 연결하는 최적의 인프라 아키텍트가 된다." },
-                    { title: "Mission", desc: "AI 시대를 지탱할 물리 인프라와 관리 구조를 안정적으로 설계하고 구축한다." },
-                    { title: "Principle", desc: "기술 스펙보다 운영 가능성, 보안성, 검증 가능성을 우선한다." },
-                    { title: "Framework", desc: "Gartner가 제시한 AI TRiSM 관점까지 고려해 신뢰 가능한 기반을 만든다." },
+                featureCards("비전 · 미션 · 원칙", [
+                    { title: "비전", desc: "AI와 데이터를 연결하는 최적의 인프라 아키텍트가 된다." },
+                    { title: "미션", desc: "AI 시대를 지탱할 물리 인프라와 관리 구조를 안정적으로 설계하고 구축한다." },
+                    { title: "원칙", desc: "기술 스펙보다 운영 가능성, 보안성, 검증 가능성을 우선한다." },
+                    { title: "프레임워크", desc: "Gartner가 제시한 AI TRiSM 관점까지 고려해 신뢰 가능한 기반을 만든다." },
                 ])
             ),
             section(
@@ -1839,7 +1839,7 @@ const pageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Meeting Setup",
+                    eyebrow: "미팅 설정",
                     title: "본사와 서울 지사 기준으로 현장 미팅을 운영합니다",
                     body: "프로젝트 성격에 따라 대전 본사 또는 서울 지사에서 미팅을 진행할 수 있습니다. 방문 전 현재 구조와 검토 과제를 공유해 주시면 더욱 밀도 있는 상담이 가능합니다.",
                     imageSrc: "/images/about-office-building.jpg",
@@ -1848,7 +1848,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 3024,
                     imageHeight: 4032,
-                    caption: "Office Information / HQ, Seoul Branch, project meeting setup",
+                    caption: "사무소 안내 / 본사, 서울 지사, 프로젝트 미팅 설정",
                     points: [
                         "본사(HQ): 대전광역시 서구 둔산대로 117번길 25",
                         "서울 지사: 서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터",
@@ -1859,7 +1859,7 @@ const pageOverrides: Record<string, Page> = {
             section(
                 "s5",
                 "cards",
-                featureCards("Office & Contact", [
+                featureCards("사무소 안내", [
                     { title: "본사(HQ)", desc: "대전광역시 서구 둔산대로 117번길 25" },
                     { title: "서울 지사", desc: "서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터" },
                     { title: "대표전화", desc: "042-471-9430" },
@@ -1899,7 +1899,7 @@ const pageOverrides: Record<string, Page> = {
                 "s3",
                 "media",
                 mediaFeature({
-                    eyebrow: "Consultation Flow",
+                    eyebrow: "상담 흐름",
                     title: "프로젝트 초기 범위를 빠르게 읽는 상담 방식",
                     body: "구축, 개선, 보안, AI 도입처럼 주제가 달라도 핵심은 같습니다. 현재 상태와 목표를 같은 프레임으로 정리해야 다음 단계가 선명해집니다. 필요 시 대전 본사 또는 서울 지사 미팅으로 연결해 보다 상세한 검토를 이어갈 수 있습니다.",
                     imageSrc: "/images/contact-laptop-work.jpg",
@@ -1908,7 +1908,7 @@ const pageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 3342,
                     imageHeight: 5939,
-                    caption: "Consultation / environment review, scope definition, next step",
+                    caption: "상담 흐름 / 환경 파악, 범위 정의, 다음 단계",
                     points: [
                         "본사(HQ): 대전광역시 서구 둔산대로 117번길 25",
                         "서울 지사: 서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터",

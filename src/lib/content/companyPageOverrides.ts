@@ -211,7 +211,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "s4",
                 "gallery",
                 imageGallery({
-                    eyebrow: "How We Work",
+                    eyebrow: "업무 방식",
                     title: "저희는 주로 이런 장면 속에서 일합니다",
                     body: "무엇을 도입할지보다 현재 환경에서 무엇이 먼저 필요한지 정리하는 일, 설치 이후 운영이 흔들리지 않게 만드는 일이 저희 업무의 중심입니다.",
                     items: [
@@ -243,7 +243,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "s5",
                 "media",
                 mediaFeature({
-                    eyebrow: "Why Clients Choose 테크아이",
+                    eyebrow: "테크아이를 선택하는 이유",
                     title: "결국 이런 이유로 저희를 찾게 됩니다",
                     body: "한 영역만 보는 것이 아니라 전체 운영 환경 안에서 문제를 보고, 실제 설치와 변경, 점검, 인수 과정을 거친 경험을 바탕으로 현실적인 방향을 제안합니다. 도입 순간보다 운영 이후가 더 중요하다는 전제를 놓지 않는 것도 저희가 자주 선택되는 이유 중 하나입니다.",
                     imageSrc: "/images/consulting-review-photo.jpg",
@@ -252,7 +252,7 @@ const companyPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1600,
                     imageHeight: 1068,
-                    caption: "Delivery Mindset / scope review, real-world fit, operational continuity",
+                    caption: "협업 방식 / 범위 검토, 현실적 적합성, 운영 연속성",
                     points: [
                         "기술 범위가 넓어서 전체 운영 환경 안에서 문제를 볼 수 있습니다",
                         "현장 경험이 있어 설치, 변경, 점검, 인수 과정의 현실을 압니다",
@@ -303,7 +303,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "s3",
                 "gallery",
                 imageGallery({
-                    eyebrow: "Design Context",
+                    eyebrow: "설계 맥락",
                     title: "비전은 결국 어떤 인프라를 보느냐에서 시작됩니다",
                     items: [
                         {
@@ -333,17 +333,17 @@ const companyPageOverrides: Record<string, Page> = {
             section(
                 "s4",
                 "cards",
-                featureCards("Core Principles", [
-                    { title: "Vision", desc: "AI와 데이터를 연결하는 최적의 인프라 아키텍트가 된다." },
-                    { title: "Mission", desc: "AI 시대를 지탱할 물리 인프라와 운영 구조를 안정적으로 설계한다." },
-                    { title: "Principle", desc: "성능보다 먼저 운영 가능성, 보안성, 복구 가능성을 본다." },
+                featureCards("핵심 원칙", [
+                    { title: "비전", desc: "AI와 데이터를 연결하는 최적의 인프라 아키텍트가 된다." },
+                    { title: "미션", desc: "AI 시대를 지탱할 물리 인프라와 운영 구조를 안정적으로 설계한다." },
+                    { title: "원칙", desc: "성능보다 먼저 운영 가능성, 보안성, 복구 가능성을 본다." },
                 ])
             ),
             section(
                 "s5",
                 "media",
                 mediaFeature({
-                    eyebrow: "Design Principle",
+                    eyebrow: "설계 원칙",
                     title: "좋은 인프라는 결국 현장에서 오래 버티는 인프라입니다",
                     body: "테크아이는 AI 인프라를 단순한 고성능 장비 구성으로 보지 않습니다. AI TRiSM 관점의 보안과 거버넌스, 이중화, 백업, 운영 문서와 점검 기준까지 포함해 장기 운영 구조를 설계합니다.",
                     imageSrc: "/images/hero-datacenter.jpg",
@@ -352,7 +352,7 @@ const companyPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 2000,
                     imageHeight: 1333,
-                    caption: "AI Infrastructure / resilience, governance, continuity",
+                    caption: "AI 인프라 / 복원력, 거버넌스, 연속성",
                     points: [
                         "AI 워크로드를 위한 고밀도 물리 인프라 설계",
                         "보안·거버넌스·복구 기준을 기본 구조에 포함",
@@ -395,7 +395,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "s3",
                 "gallery",
                 imageGallery({
-                    eyebrow: "Scale of Work",
+                    eyebrow: "수행 규모",
                     title: "성장 과정은 결국 다뤄본 인프라 규모로 보입니다",
                     items: [
                         {
@@ -425,7 +425,7 @@ const companyPageOverrides: Record<string, Page> = {
             section(
                 "s4",
                 "timeline",
-                timeline("Timeline", [
+                timeline("연혁", [
                     { year: "2004-2009", text: "테크아이 설립, HPE 파트너십 체결, 기업부설연구소 설립으로 기초 체계를 만들었습니다." },
                     { year: "2010-2019", text: "공공·엔터프라이즈 구축과 유지보수 범위를 넓히며 현장 역량을 쌓았습니다." },
                     { year: "2020-Present", text: "AI 데이터센터, 위성 지상체, 고밀도 GPU 클러스터 등 초고성능 인프라로 수행 수준을 끌어올렸습니다." },
@@ -435,16 +435,16 @@ const companyPageOverrides: Record<string, Page> = {
                 "s5",
                 "cards",
                 featureCards("대표 이정표", [
-                    { title: "Foundation", desc: "초기부터 HPE 기반 엔터프라이즈 인프라 설계 역량을 축적했습니다." },
-                    { title: "Expansion", desc: "공공·사법·유통·제조 등 다양한 고객군으로 수행 범위를 넓혔습니다." },
-                    { title: "AI Era", desc: "AI 데이터센터와 고밀도 GPU 인프라까지 대응 가능한 수준으로 확장했습니다." },
+                    { title: "설립 초기", desc: "초기부터 HPE 기반 엔터프라이즈 인프라 설계 역량을 축적했습니다." },
+                    { title: "성장·확장", desc: "공공·사법·유통·제조 등 다양한 고객군으로 수행 범위를 넓혔습니다." },
+                    { title: "AI 시대 진입", desc: "AI 데이터센터와 고밀도 GPU 인프라까지 대응 가능한 수준으로 확장했습니다." },
                 ])
             ),
             section(
                 "s6",
                 "media",
                 mediaFeature({
-                    eyebrow: "Signature References",
+                    eyebrow: "대표 레퍼런스",
                     title: "대규모 공공 인프라 경험이 현재의 기술 신뢰를 만들었습니다",
                     body: "테크아이는 소규모 범용 구축을 반복한 조직이 아니라, 물리 규모와 운영 난이도가 높은 공공 프로젝트를 통해 기술 체계를 끌어올려 왔습니다. 그래서 현재 엔터프라이즈와 AI 인프라 영역에서도 신뢰를 얻고 있습니다.",
                     imageSrc: "/images/hero-datacenter.jpg",
@@ -453,7 +453,7 @@ const companyPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 2000,
                     imageHeight: 1333,
-                    caption: "Key References / AI datacenter, satellite ground system, mission critical infrastructure",
+                    caption: "주요 레퍼런스 / AI 데이터센터, 위성 지상체, 미션 크리티컬 인프라",
                     points: [
                         "국방과학연구소: 170+ Pflops 급 딥러닝용 고밀도 GPU 클러스터 구축",
                         "국토지리정보원: 425 위성 지상체 및 국토위성센터 인프라 도입·운영",
@@ -477,8 +477,8 @@ const companyPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "국가 중요 기관과 엔터프라이즈가 반복해서 선택한 파트너",
                     "테크아이는 HPE Gold Partner를 중심으로 Intel, IBM 등 핵심 파트너와 협업하며, 공공·사법·국방·유통·제조까지 다양한 고객군의 인프라 프로젝트를 수행해 왔습니다. 이 조합이 공급 안정성과 현장 실행력을 동시에 만듭니다.",
-                    "/images/dark-console-operator.jpg",
-                    "운영 화면을 점검하는 콘솔 환경 이미지",
+                    "/images/consulting-review-photo.jpg",
+                    "프로젝트 자료를 함께 검토하는 장면",
                     { label: "오시는 길 보기", href: "/about/location" },
                     { label: "회사 소개 보기", href: "/about" }
                 )
@@ -487,7 +487,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "s3",
                 "gallery",
                 imageGallery({
-                    eyebrow: "Delivery Scenes",
+                    eyebrow: "수행 장면",
                     title: "파트너십은 실제 수행 장면에서 신뢰로 바뀝니다",
                     items: [
                         {
@@ -517,28 +517,28 @@ const companyPageOverrides: Record<string, Page> = {
             section(
                 "s4",
                 "cards",
-                featureCards("Core Tech Partners", [
+                featureCards("핵심 기술 파트너", [
                     { title: "HPE Gold Partner", desc: "장기 파트너십을 기반으로 엔터프라이즈 인프라를 설계합니다." },
                     { title: "Intel", desc: "고성능 컴퓨팅과 대규모 스토리지 구성에 필요한 핵심 플랫폼을 연계합니다." },
                     { title: "IBM", desc: "미션 크리티컬 환경에 필요한 시스템 구성 경험을 함께 축적해 왔습니다." },
-                    { title: "IRS Delivery Network", desc: "전국 19개 센터망 기반의 유지보수와 현장 대응 체계를 운영합니다." },
+                    { title: "IRS 현장 지원망", desc: "전국 19개 센터망 기반의 유지보수와 현장 대응 체계를 운영합니다." },
                 ])
             ),
             section(
                 "s5",
                 "cards",
-                featureCards("Representative Customers", [
-                    { title: "Defense & Government", desc: "국방과학연구소, 대한민국 공군, 국토지리정보원, 국토안전관리원" },
-                    { title: "Judicial & Public", desc: "대법원, 법무부 등 높은 안정성과 보안성이 필요한 공공 환경" },
-                    { title: "Enterprise", desc: "GS리테일, GS네트웍스, 파르나스호텔, 대교 등 대규모 업무 환경" },
-                    { title: "Manufacturing", desc: "앰코테크놀로지코리아 등 지속적 생산 운영이 중요한 제조 환경" },
+                featureCards("주요 고객사", [
+                    { title: "국방·정부", desc: "국방과학연구소, 대한민국 공군, 국토지리정보원, 국토안전관리원" },
+                    { title: "사법·공공", desc: "대법원, 법무부 등 높은 안정성과 보안성이 필요한 공공 환경" },
+                    { title: "엔터프라이즈", desc: "GS리테일, GS네트웍스, 파르나스호텔, 대교 등 대규모 업무 환경" },
+                    { title: "제조", desc: "앰코테크놀로지코리아 등 지속적 생산 운영이 중요한 제조 환경" },
                 ])
             ),
             section(
                 "s6",
                 "media",
                 mediaFeature({
-                    eyebrow: "Why It Matters",
+                    eyebrow: "파트너십의 의미",
                     title: "벤더 파트너십과 현장 지원 체계를 함께 갖춘 구조",
                     body: "좋은 파트너십은 단순 공급 계약이 아니라 고객 환경에 맞는 기술 선택과 운영 지원이 함께 이어질 때 의미가 있습니다. 테크아이는 파트너 생태계와 현장 지원 조직을 결합해 실제 운영 단계까지 대응할 수 있는 구조를 갖추고 있습니다.",
                     imageSrc: "/images/technical-design-review.jpg",
@@ -547,7 +547,7 @@ const companyPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 6000,
                     imageHeight: 4000,
-                    caption: "Partner Ecosystem / vendor alliance, field support, service continuity",
+                    caption: "파트너 생태계 / 벤더 협력, 현장 지원, 서비스 연속성",
                     points: [
                         "핵심 벤더 파트너십 기반의 안정적 공급과 설계",
                         "공공과 엔터프라이즈를 모두 경험한 현장 실행력",
@@ -581,7 +581,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "s3",
                 "gallery",
                 imageGallery({
-                    eyebrow: "Meeting Environment",
+                    eyebrow: "미팅 환경",
                     title: "미팅 신뢰도는 공간과 진행 방식에서도 만들어집니다",
                     items: [
                         {
@@ -612,7 +612,7 @@ const companyPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Office Information",
+                    eyebrow: "사무소 안내",
                     title: "프로젝트 성격에 맞춰 본사, 지사, 온라인 미팅을 조율합니다",
                     body: "프로젝트 범위와 참석자 구성에 따라 대전 본사, 서울 지사, 온라인 미팅 중 가장 적합한 방식으로 일정을 조율합니다. 사전 공유 자료가 있으면 첫 미팅에서 더 빠르게 범위를 정리할 수 있습니다.",
                     imageSrc: "/images/about-office-building.jpg",
@@ -621,7 +621,7 @@ const companyPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 3024,
                     imageHeight: 4032,
-                    caption: "HQ & Branch / meeting coordination, project intake, scope review",
+                    caption: "본사·지사 / 미팅 조율, 프로젝트 접수, 범위 검토",
                     points: [
                         "본사(HQ): 대전광역시 서구 둔산대로 117번길 25",
                         "서울 지사: 서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터",
@@ -632,7 +632,7 @@ const companyPageOverrides: Record<string, Page> = {
             section(
                 "s5",
                 "cards",
-                featureCards("Office & Contact", [
+                featureCards("사무소 안내", [
                     { title: "대전 본사", desc: "대전광역시 서구 둔산대로 117번길 25" },
                     { title: "서울 지사", desc: "서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터" },
                     { title: "대표전화", desc: "042-471-9430" },
@@ -689,7 +689,7 @@ const companyPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 3342,
                     imageHeight: 5939,
-                    caption: "Consultation flow / environment review → scope → next step",
+                    caption: "상담 흐름 / 환경 파악 → 범위 정의 → 다음 단계",
                     points: [
                         "본사 대전광역시 서구 둔산대로 117번길 25 · 대표전화 042-471-9430",
                         "서울 지사 강동구 고덕비즈밸리로 26, 강동 U1센터",

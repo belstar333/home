@@ -68,7 +68,8 @@ export default function ContentRenderer({ page }: { page: Page }) {
     const hasNavBar =
         page.slug === "/service" || page.slug.startsWith("/service/") ||
         page.slug === "/solution" || page.slug.startsWith("/solution/") ||
-        page.slug === "/product" || page.slug.startsWith("/product/");
+        page.slug === "/product" || page.slug.startsWith("/product/") ||
+        page.slug === "/about" || page.slug.startsWith("/about/");
 
     return (
         <article

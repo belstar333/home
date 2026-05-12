@@ -20,11 +20,13 @@ function findContext(tree: TreeNode[], currentSlug: string): NavContext {
             };
         }
         for (const level2 of topNode.children) {
-            // depth-2: on a category page (e.g. /service/server)
-            if (level2.slug === currentSlug && level2.children.length > 0) {
+            // depth-2: on a category page — show parent tabs; row2 only if children exist
+            if (level2.slug === currentSlug) {
                 return {
                     row1: { overviewSlug: topNode.slug, tabs: topNode.children, activeSlug: level2.slug },
-                    row2: { overviewSlug: level2.slug, tabs: level2.children, activeSlug: null },
+                    row2: level2.children.length > 0
+                        ? { overviewSlug: level2.slug, tabs: level2.children, activeSlug: null }
+                        : null,
                 };
             }
             // depth-3: on a leaf page (e.g. /service/server/build)

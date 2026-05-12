@@ -191,7 +191,7 @@
   {
     "id": "sol",
     "parentId": null,
-    "title": "Solution",
+    "title": "솔루션",
     "slug": "/solution",
     "category": "solution",
     "order": 2,
@@ -263,7 +263,7 @@
   {
     "id": "prd",
     "parentId": null,
-    "title": "Product",
+    "title": "제품",
     "slug": "/product",
     "category": "product",
     "order": 3,
@@ -353,7 +353,7 @@
   {
     "id": "abt",
     "parentId": null,
-    "title": "About",
+    "title": "회사 소개",
     "slug": "/about",
     "category": "about",
     "order": 3,
@@ -380,7 +380,7 @@
   {
     "id": "abt_partners",
     "parentId": "abt",
-    "title": "협력체",
+    "title": "협업 구조",
     "slug": "/about/partners",
     "category": "about",
     "order": 3,

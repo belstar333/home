@@ -16,7 +16,7 @@ function page(config: {
         title: config.title,
         slug: config.slug,
         seo: {
-            title: `${config.title} | TechI`,
+            title: `${config.title} | 테크아이`,
             description: config.description,
         },
         sections: config.sections,
@@ -27,7 +27,7 @@ function subnavHeader(title: string, breadcrumbs: string[]): BlockData {
     return {
         type: "subnavHeader",
         data: {
-            eyebrow: "TechI",
+            eyebrow: "테크아이",
             title,
             breadcrumbs,
         },
@@ -117,7 +117,7 @@ const productPageOverrides: Record<string, Page> = {
             section(
                 "s3",
                 "cards",
-                featureCards("TechI Product Portfolio", [
+                featureCards("테크아이 제품 포트폴리오", [
                     {
                         title: "RoseHA",
                         desc: "실시간 복제, 장애 감지, 자동 전환, 시점 복구, 운영 콘솔까지 포함한 고가용성·복구 플랫폼입니다.",
@@ -134,7 +134,7 @@ const productPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Product View",
+                    eyebrow: "제품 소개",
                     title: "좋은 제품은 화면보다 운영 목적이 더 먼저 설명됩니다",
                     body: "도입 전에는 기능표보다 어떤 문제를 해결할 것인지가 먼저 분명해야 합니다. TechI는 제품별 적용 범위, 검증 포인트, 운영 방식, 인수 기준을 함께 정리해 제품 도입이 실제 운영 개선으로 이어지게 만듭니다.",
                     imageSrc: "/images/product-console-ui.jpg",
@@ -143,7 +143,7 @@ const productPageOverrides: Record<string, Page> = {
                     tone: "photo",
                     imageWidth: 1692,
                     imageHeight: 1580,
-                    caption: "Operational view / product fit, control point, adoption workflow",
+                    caption: "운영 관점 / 제품 적합성, 통제 포인트, 도입 흐름",
                     points: [
                         "제품 기능보다 운영 목적과 적용 범위를 먼저 정리합니다.",
                         "PoC와 본 운영 전환 기준을 분리해 검증합니다.",
@@ -212,7 +212,7 @@ const productPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Availability Platform",
+                    eyebrow: "가용성 플랫폼",
                     title: "고가용성은 장애 감지부터 운영 화면까지 이어져야 완성됩니다",
                     body: "HA 제품은 단일 기능으로 설명되지 않습니다. 복제, 감지, 절체, 복구, 운영 가시성이 하나의 구조 안에서 연결되어야 운영팀이 실제로 믿고 사용할 수 있습니다. TechI는 RoseHA를 고객 환경에 맞는 서비스 연속성 체계로 설계합니다.",
                     imageSrc: "/images/product-roseha-ui.png",
@@ -221,7 +221,7 @@ const productPageOverrides: Record<string, Page> = {
                     tone: "diagram",
                     imageWidth: 1400,
                     imageHeight: 900,
-                    caption: "RoseHA / replication status, failover control, recovery visibility",
+                    caption: "RoseHA / 복제 상태, 페일오버 제어, 복구 가시성",
                     points: [
                         "복제와 절체, 복구를 한 체계로 운영할 수 있습니다.",
                         "서비스 중요도에 맞춘 가용성 정책을 수립할 수 있습니다.",
@@ -282,7 +282,7 @@ const productPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Replication Control",
+                    eyebrow: "복제 제어",
                     title: "실시간 복제는 보이지 않는 동안 더 안정적이어야 합니다",
                     body: "운영팀이 실시간 복제를 신뢰하려면 평소에는 조용하고 장애 순간에는 명확해야 합니다. RoseHA는 복제 상태와 지연 구간을 운영 관점에서 파악할 수 있게 구성되어 복구 준비 상태를 꾸준히 유지할 수 있습니다.",
                     imageSrc: "/images/product-roseha-ui.png",
@@ -291,7 +291,7 @@ const productPageOverrides: Record<string, Page> = {
                     tone: "diagram",
                     imageWidth: 1400,
                     imageHeight: 900,
-                    caption: "Replication / sync status, lag visibility, recovery readiness",
+                    caption: "복제 / 동기화 상태, 지연 가시성, 복구 준비도",
                     points: [
                         "복제 상태와 지연 구간을 쉽게 파악할 수 있습니다.",
                         "RPO 목표를 더 안정적으로 관리할 수 있습니다.",
@@ -352,7 +352,7 @@ const productPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Failover Policy",
+                    eyebrow: "페일오버 정책",
                     title: "정교한 페일오버는 장애보다 운영 혼선을 먼저 줄입니다",
                     body: "자동 전환은 실패하지 않는 것만큼 불필요하게 작동하지 않는 것도 중요합니다. RoseHA는 서비스 중요도와 시스템 특성에 맞춰 전환 정책을 설계하고, 운영자가 그 상태를 빠르게 파악할 수 있도록 지원합니다.",
                     imageSrc: "/images/product-roseha-ui.png",
@@ -361,7 +361,7 @@ const productPageOverrides: Record<string, Page> = {
                     tone: "diagram",
                     imageWidth: 1400,
                     imageHeight: 900,
-                    caption: "Failover / detection rule, switch policy, operator visibility",
+                    caption: "페일오버 / 감지 규칙, 전환 정책, 운영자 가시성",
                     points: [
                         "서비스 특성에 맞는 감지 기준을 세밀하게 설정합니다.",
                         "오탐과 미탐 리스크를 줄이는 전환 정책을 구성합니다.",
@@ -422,7 +422,7 @@ const productPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Point-in-Time Recovery",
+                    eyebrow: "시점 복구",
                     title: "시점 복구는 되돌릴 수 있다는 말보다 어떤 시점까지 돌아갈 수 있는지가 중요합니다",
                     body: "운영 사고는 항상 완전한 장애 형태로 오지 않습니다. 잘못된 데이터가 정상처럼 흘러가는 경우일수록 정확한 시점 복구가 필요합니다. RoseHA는 복구 가능한 시간 축을 확보하고, 운영팀이 복구 판단을 더 빠르게 할 수 있게 돕습니다.",
                     imageSrc: "/images/product-roseha-ui.png",
@@ -431,7 +431,7 @@ const productPageOverrides: Record<string, Page> = {
                     tone: "diagram",
                     imageWidth: 1400,
                     imageHeight: 900,
-                    caption: "Recovery point / rollback window, validation step, service continuity",
+                    caption: "복구 시점 / 롤백 범위, 검증 단계, 서비스 연속성",
                     points: [
                         "운영 사고에 대응할 수 있는 복구 시점 범위를 확보합니다.",
                         "복구 후 검증 포인트를 함께 설계해 안정성을 높입니다.",
@@ -492,7 +492,7 @@ const productPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Management Console",
+                    eyebrow: "운영 콘솔",
                     title: "운영 콘솔은 상황을 설명하는 화면이 아니라 결정을 돕는 화면이어야 합니다",
                     body: "운영자는 복잡한 이벤트 목록보다 지금 무엇이 문제인지, 얼마나 위험한지, 무엇을 확인해야 하는지를 빠르게 알고 싶어 합니다. RoseHA 콘솔은 가용성 운영의 핵심 상태를 직관적으로 보여주도록 구성됩니다.",
                     imageSrc: "/images/product-roseha-ui.png",
@@ -501,7 +501,7 @@ const productPageOverrides: Record<string, Page> = {
                     tone: "diagram",
                     imageWidth: 1400,
                     imageHeight: 900,
-                    caption: "Console / status overview, event trace, operational decision support",
+                    caption: "콘솔 / 상태 개요, 이벤트 추적, 운영 판단 지원",
                     points: [
                         "복제와 절체 상태를 한눈에 확인할 수 있습니다.",
                         "이벤트 흐름을 빠르게 추적할 수 있습니다.",
@@ -565,7 +565,7 @@ const productPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Security Product Suite",
+                    eyebrow: "보안 제품군",
                     title: "보안 제품은 통제 화면보다 운영 체계와 증적 흐름이 먼저 설명되어야 합니다",
                     body: "보안 통제는 기능이 많다고 강해지지 않습니다. 누가 어떤 권한으로 접근하고, 어떤 세션을 어떻게 통제하며, 어떤 로그를 남겨 감사에 대응하는지가 함께 이어져야 합니다. Omniguard는 그 흐름을 제품 중심으로 정리합니다.",
                     imageSrc: "/images/product-omniguard-ui.png",
@@ -574,7 +574,7 @@ const productPageOverrides: Record<string, Page> = {
                     tone: "diagram",
                     imageWidth: 1600,
                     imageHeight: 600,
-                    caption: "Omniguard / access control, session visibility, audit-ready operations",
+                    caption: "Omniguard / 접근 통제, 세션 가시성, 감사 대응 운영",
                     points: [
                         "권한, 세션, 감사 흐름을 하나의 체계로 연결합니다.",
                         "보안 운영과 감사 대응을 함께 고려한 제품 구성입니다.",
@@ -635,7 +635,7 @@ const productPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Privilege Access",
+                    eyebrow: "권한 통제",
                     title: "권한 통제는 막는 기능이 아니라 운영 기준을 분명하게 만드는 기능입니다",
                     body: "중요 시스템 접근은 모든 것을 차단하는 방식으로는 지속되지 않습니다. TechI는 필요할 때 필요한 권한만 허용하고, 그 과정이 이력으로 남는 구조를 통해 보안과 운영의 균형을 맞춥니다.",
                     imageSrc: "/images/product-omniguard-ui.png",
@@ -644,7 +644,7 @@ const productPageOverrides: Record<string, Page> = {
                     tone: "diagram",
                     imageWidth: 1600,
                     imageHeight: 600,
-                    caption: "UAC / permission policy, approval trail, controlled access",
+                    caption: "UAC / 권한 정책, 승인 이력, 통제된 접근",
                     points: [
                         "권한 부여와 회수를 더 세밀하게 관리할 수 있습니다.",
                         "접근 승인과 작업 이력이 명확하게 남습니다.",
@@ -705,7 +705,7 @@ const productPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Session Control",
+                    eyebrow: "세션 관리",
                     title: "세션 관리가 분명해질수록 외부 접근 리스크가 줄어듭니다",
                     body: "보안 사고는 접속 자체보다 접속 후 행위 통제가 느슨할 때 커집니다. TechI는 UCC를 통해 세션 가시성과 작업 통제 수준을 높여 원격 운영 환경을 더 안전하게 만듭니다.",
                     imageSrc: "/images/product-omniguard-ui.png",
@@ -714,7 +714,7 @@ const productPageOverrides: Record<string, Page> = {
                     tone: "diagram",
                     imageWidth: 1600,
                     imageHeight: 600,
-                    caption: "UCC / session tracking, remote control, external access governance",
+                    caption: "UCC / 세션 추적, 원격 제어, 외부 접근 거버넌스",
                     points: [
                         "원격 접속과 세션 상태를 더 명확히 볼 수 있습니다.",
                         "외부 협력 접근을 통제된 흐름으로 운영할 수 있습니다.",
@@ -775,7 +775,7 @@ const productPageOverrides: Record<string, Page> = {
                 "s4",
                 "media",
                 mediaFeature({
-                    eyebrow: "Audit Evidence",
+                    eyebrow: "감사 증적",
                     title: "로그가 많다고 증적이 되는 것은 아닙니다",
                     body: "감사 대응에서 중요한 것은 로그 양이 아니라 설명 가능한 구조입니다. TechI는 SecuMS를 통해 어떤 로그를 어떤 기준으로 보존하고, 어떤 형태로 제시할지까지 체계화해 보안 운영의 신뢰도를 높입니다.",
                     imageSrc: "/images/product-omniguard-ui.png",
@@ -784,7 +784,7 @@ const productPageOverrides: Record<string, Page> = {
                     tone: "diagram",
                     imageWidth: 1600,
                     imageHeight: 600,
-                    caption: "SecuMS / audit evidence, log governance, reporting clarity",
+                    caption: "SecuMS / 감사 증적, 로그 거버넌스, 보고 명확성",
                     points: [
                         "보안 로그를 목적에 맞게 통합 관리할 수 있습니다.",
                         "감사 대응에 필요한 증적 구조를 표준화할 수 있습니다.",
