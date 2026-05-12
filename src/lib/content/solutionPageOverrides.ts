@@ -127,9 +127,9 @@ const solutionPageOverrides: Record<string, Page> = {
                     "AI를 기능으로 붙이는 것이 아니라\n실제 업무 흐름으로\n연결합니다",
                     "TechI의 AI 솔루션은 데모 중심 화면이 아니라 회의, 문서, 코드, 검색, 추론, 운영 업무에 실제로 연결되는 구조를 목표로 합니다. 데이터 위치, 권한, 운영 기준까지 함께 설계해 조직 안에서 지속 가능한 AI 도입을 지원합니다.",
                     "/images/solution-agent-control-room.jpg",
-                    "AI 운영 환경과 분석 화면을 상징하는 이미지",
-                    { label: "AI 회의 시스템 보기", href: "/solution/meeting" },
-                    { label: "엔터프라이즈 RAG 보기", href: "/solution/rag" }
+                    "AI 에이전트 흐름과 운영 화면이 보이는 관제 환경",
+                    { label: "도입 문의하기", href: "/contact" },
+                    { label: "AI 회의 시스템 보기", href: "/solution/meeting" }
                 )
             ),
             section(
@@ -198,7 +198,7 @@ const solutionPageOverrides: Record<string, Page> = {
         id: "solution_meeting_override",
         title: "AI 회의 시스템",
         slug: "/solution/meeting",
-        description: "회의 기록, 요약, 액션아이템 정리를 자동화하는 AI 회의 시스템을 제공합니다.",
+        description: "회의 후 정리에 쏟는 시간을 줄이고 싶다면 — 기록·요약·액션아이템을 자동화하는 AI 회의 시스템입니다.",
         sections: [
             section("s1", "header", subnavHeader("AI 회의 시스템", ["솔루션", "AI 회의 시스템"])),
             section(
@@ -268,7 +268,7 @@ const solutionPageOverrides: Record<string, Page> = {
         id: "solution_code_analysis_override",
         title: "AI 코드 분석기",
         slug: "/solution/code-analysis",
-        description: "코드 변경 리스크, 품질 이슈, 구조적 문제를 빠르게 파악하는 AI 코드 분석 솔루션을 제공합니다.",
+        description: "코드 리뷰 부담을 줄이면서 변경 리스크와 품질 이슈를 자동으로 짚어주는 AI 코드 분석 솔루션입니다.",
         sections: [
             section("s1", "header", subnavHeader("AI 코드 분석기", ["솔루션", "AI 코드 분석기"])),
             section(
@@ -278,7 +278,7 @@ const solutionPageOverrides: Record<string, Page> = {
                     "코드 리뷰가 느린 이유는\n읽을 내용이 많아서가 아니라\n판단 기준이 분산되어 있기 때문입니다",
                     "AI 코드 분석기는 단순 요약 도구가 아니라 변경 위험을 빠르게 드러내는 보조 체계여야 합니다. TechI는 코드 구조, 변경 범위, 영향 분석, 품질 기준을 함께 반영해 실무 리뷰 속도를 높입니다.",
                     "/images/hero-code.jpg",
-                    "코드 분석과 엔지니어링 화면을 상징하는 이미지",
+                    "코드 변경 리스크와 리뷰 포인트를 분석하는 개발 화면",
                     { label: "도입 문의하기", href: "/contact" },
                     { label: "솔루션 전체 보기", href: "/solution" }
                 )
@@ -338,7 +338,7 @@ const solutionPageOverrides: Record<string, Page> = {
         id: "solution_agent_orchestration_override",
         title: "에이전트 오케스트레이션",
         slug: "/solution/agent-orchestration",
-        description: "복수의 AI 에이전트와 도구를 업무 흐름에 맞게 연결하는 에이전트 오케스트레이션 솔루션을 제공합니다.",
+        description: "반복 업무를 자동화하고 싶지만 단일 AI로는 한계를 느낀다면 — 복수 에이전트를 연결하는 오케스트레이션 솔루션입니다.",
         sections: [
             section("s1", "header", subnavHeader("에이전트 오케스트레이션", ["솔루션", "에이전트 오케스트레이션"])),
             section(
@@ -348,7 +348,7 @@ const solutionPageOverrides: Record<string, Page> = {
                     "여러 AI를 붙이는 것보다\n업무 순서에 맞게 조율하는 것이\n더 중요합니다",
                     "에이전트 오케스트레이션은 도구를 많이 연결하는 기술이 아니라, 어떤 요청을 어떤 순서로 처리하고 누가 최종 확인하는지 정리하는 구조입니다. TechI는 에이전트 흐름을 운영 가능한 업무 체계로 구성합니다.",
                     "/images/solution-agent-control-room.jpg",
-                    "여러 AI 워크플로와 운영 화면을 상징하는 이미지",
+                    "여러 AI 에이전트 흐름을 하나의 운영 화면에서 관제하는 장면",
                     { label: "도입 문의하기", href: "/contact" },
                     { label: "솔루션 전체 보기", href: "/solution" }
                 )
@@ -379,7 +379,7 @@ const solutionPageOverrides: Record<string, Page> = {
                     title: "에이전트는 많아질수록 역할이 더 선명해야 합니다",
                     body: "업무 자동화에서 중요한 것은 복잡한 에이전트 구성이 아니라 예측 가능한 흐름입니다. TechI는 검색, 분석, 실행, 검토 단계를 명확히 나누고 운영 기준과 로그 체계를 함께 설계해 실제 업무에 쓸 수 있는 오케스트레이션을 구현합니다.",
                     imageSrc: "/images/solution-monitoring-room.jpg",
-                    imageAlt: "오케스트레이션과 운영을 상징하는 모니터링 룸 이미지",
+                    imageAlt: "AI 에이전트 작업 흐름을 모니터링하는 관제 환경",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 5464,
@@ -418,7 +418,7 @@ const solutionPageOverrides: Record<string, Page> = {
                     "민감한 데이터를 다룰수록\n모델 성능보다 먼저\n통제 구조가 필요합니다",
                     "로컬 LLM은 단순히 사내 설치형 모델이 아니라 데이터 경로, 권한, 운영 비용, 추론 자원까지 고려한 인프라 설계가 필요합니다. TechI는 보안과 운영 현실을 함께 반영한 로컬 LLM 환경을 제안합니다.",
                     "/images/hero-cloud.jpg",
-                    "사내 AI 인프라와 클라우드 구조를 상징하는 이미지",
+                    "보안 사내망에 구성된 AI 인프라 서버 환경",
                     { label: "도입 문의하기", href: "/contact" },
                     { label: "솔루션 전체 보기", href: "/solution" }
                 )
@@ -449,7 +449,7 @@ const solutionPageOverrides: Record<string, Page> = {
                     title: "로컬 LLM은 모델보다 운영 구조에서 성패가 갈립니다",
                     body: "민감한 데이터 환경에서는 모델 선택만으로 프로젝트가 끝나지 않습니다. 어떤 데이터가 들어오고, 누가 접근하며, 추론 자원이 어떻게 소모되는지까지 운영 체계로 묶여야 안정적인 사내 AI가 됩니다.",
                     imageSrc: "/images/hero-datacenter.jpg",
-                    imageAlt: "로컬 AI 인프라를 상징하는 데이터센터 이미지",
+                    imageAlt: "사내 LLM 운영을 위한 GPU 서버와 데이터센터 인프라",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 6016,
@@ -478,7 +478,7 @@ const solutionPageOverrides: Record<string, Page> = {
         id: "solution_ai_inference_override",
         title: "AI 추론 엔진",
         slug: "/solution/ai-inference",
-        description: "응답 성능, 처리량, 안정성을 고려한 엔터프라이즈 AI 추론 엔진 구축 서비스를 제공합니다.",
+        description: "AI 응답이 느리거나 부하에서 불안정하다면 — 성능·처리량·안정성을 함께 설계하는 추론 엔진 구축 서비스입니다.",
         sections: [
             section("s1", "header", subnavHeader("AI 추론 엔진", ["솔루션", "AI 추론 엔진"])),
             section(
@@ -548,7 +548,7 @@ const solutionPageOverrides: Record<string, Page> = {
         id: "solution_data_visualization_override",
         title: "데이터 시각화",
         slug: "/solution/data-visualization",
-        description: "운영 데이터와 의사결정 지표를 한 화면에서 빠르게 읽을 수 있도록 정리하는 데이터 시각화 솔루션을 제공합니다.",
+        description: "데이터는 있지만 의사결정이 느리다면 — 핵심 지표를 한 화면에서 바로 읽히도록 정리하는 시각화 솔루션입니다.",
         sections: [
             section("s1", "header", subnavHeader("데이터 시각화", ["솔루션", "데이터 시각화"])),
             section(
@@ -618,7 +618,7 @@ const solutionPageOverrides: Record<string, Page> = {
         id: "solution_rag_override",
         title: "엔터프라이즈 RAG",
         slug: "/solution/rag",
-        description: "권한과 근거를 함께 관리하는 엔터프라이즈 문서 검색 및 답변 시스템을 제공합니다.",
+        description: "내부 문서에서 정확한 답을 찾기 어렵다면 — 권한과 출처를 함께 관리하는 엔터프라이즈 RAG 시스템입니다.",
         sections: [
             section("s1", "header", subnavHeader("엔터프라이즈 RAG", ["솔루션", "엔터프라이즈 RAG"])),
             section(

@@ -188,7 +188,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "가상화는 플랫폼보다\n운영 기준이\n먼저입니다",
                     "VMware, Hyper-V, KVM 중 어느 플랫폼을 쓰느냐보다 자원 풀을 어떻게 나누고, 장애 시 어느 VM이 우선 복구되며, 변경은 어떤 절차로 승인받는지가 먼저 정의되어야 합니다. 테크아이는 가상화 구조와 운영 기준을 함께 설계합니다.",
                     "/images/hero-datacenter.jpg",
-                    "가상화 인프라와 서버 클러스터를 상징하는 데이터센터 이미지",
+                    "가상화 플랫폼과 서버 클러스터가 구성된 데이터센터 인프라",
                     { label: "가상화 환경 진단 먼저 받기", href: "/service/consulting/assessment" }
                 )
             ),
@@ -326,7 +326,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "배선과 정책이 따로 놀지 않도록\n현장 중심 네트워크를\n다시 설계합니다",
                     "신규 구축과 증설은 장비를 더 넣는 작업이 아니라, 서비스 흐름과 장애 영향 범위를 다시 정리하는 작업이어야 합니다. 테크아이는 코어, 액세스, 방화벽, 회선, 무선 구성을 한 번에 검토하고 실제 운영에 바로 이어지는 기준으로 구축합니다.",
                     "/images/hero-network.jpg",
-                    "네트워크 인프라 구조를 상징하는 장비와 연결 이미지",
+                    "코어·액세스·방화벽이 연결된 네트워크 인프라 구조 장비",
                     { label: "구축 환경 진단 먼저 받기", href: "/service/consulting/assessment" }
                 )
             ),
@@ -395,7 +395,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "정책이 쌓이는 보안이 아니라\n운영 기준이 보이는 보안으로\n다시 정리합니다",
                     "네트워크 보안은 장비를 더 넣는다고 강해지지 않습니다. 망 구간, 접근 주체, 허용 정책, 예외 처리, 감사 근거가 같은 기준으로 묶여야 실제 운영이 가능합니다. 테크아이는 네트워크 구조와 정책 운영을 함께 정리합니다.",
                     "/images/hero-security.jpg",
-                    "보안 인프라와 관제 이미지를 상징하는 히어로",
+                    "망 구간과 접근 정책을 통합 관리하는 네트워크 보안 관제 환경",
                     { label: "보안 환경 진단 먼저 받기", href: "/service/consulting/assessment" }
                 )
             ),
@@ -603,7 +603,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "백업이 있다는 말보다\n얼마나 빨리 복구되는지가\n더 중요합니다",
                     "백업 체계는 저장 주기만으로 설명되지 않습니다. 어떤 데이터를 어느 시점으로, 누가, 어떤 절차로 복구하는지가 정의되어 있어야 운영 기준이 됩니다. 테크아이는 백업과 복구를 분리하지 않고 하나의 운영 흐름으로 설계합니다.",
                     "/images/hero-cloud.jpg",
-                    "데이터 보호와 복구 체계를 상징하는 클라우드 이미지",
+                    "데이터 보호 정책과 복구 흐름이 설계된 클라우드 인프라 환경",
                     { label: "스토리지 설계 보기", href: "/service/storage-backup/storage" },
                     { label: "DR·BCP 보기", href: "/service/storage-backup/dr-bcp" }
                 )
@@ -673,7 +673,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "재해복구는 문서가 아니라\n서비스를 다시 살리는 순서로\n설계되어야 합니다",
                     "DR과 BCP는 선언적 문구보다 우선순위와 절체 기준이 더 중요합니다. 테크아이는 서비스 중요도, 복구 시점, 대체 자원, 운영 역할을 함께 정리해 실제 위기 상황에서 실행 가능한 복구 체계를 설계합니다.",
                     "/images/hero-datacenter.jpg",
-                    "재해복구와 업무연속성을 상징하는 데이터센터 이미지",
+                    "재해복구 우선순위와 절체 기준이 적용된 이중화 데이터센터",
                     { label: "스토리지 설계 보기", href: "/service/storage-backup/storage" },
                     { label: "백업·복구 보기", href: "/service/storage-backup/backup-restore" }
                 )
@@ -813,7 +813,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "좋은 로드맵은\n큰 그림보다 먼저\n실행 순서를 분명히 합니다",
                     "아키텍처 로드맵은 기술 미래상을 그리는 문서가 아니라, 현재 환경에서 어떤 순서로 바꿔야 가장 안정적으로 전환할 수 있는지를 정리하는 계획이어야 합니다. 테크아이는 예산, 일정, 운영 인력까지 반영해 단계별 로드맵을 설계합니다.",
                     "/images/hero-cloud.jpg",
-                    "인프라 로드맵과 확장 구조를 상징하는 클라우드 이미지",
+                    "단계별 인프라 전환 계획과 확장 구조가 반영된 클라우드 아키텍처",
                     { label: "인프라 진단 보기", href: "/service/consulting/assessment" },
                     { label: "보안·컴플라이언스 보기", href: "/service/consulting/security-compliance" }
                 )
@@ -883,7 +883,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "보안 요구사항을\n운영 가능한 정책과 절차로\n구체화합니다",
                     "컴플라이언스는 체크리스트 통과가 아니라 실제 환경에서 계속 지켜질 수 있어야 의미가 있습니다. 테크아이는 보안 요구사항을 망 구조, 접근 통제, 로그, 점검, 증적 관리까지 이어지는 운영 기준으로 구체화합니다.",
                     "/images/hero-security.jpg",
-                    "보안 거버넌스와 통제를 상징하는 이미지",
+                    "보안 거버넌스 정책과 접근 통제 기준을 운영하는 보안 환경",
                     { label: "인프라 진단 보기", href: "/service/consulting/assessment" },
                     { label: "아키텍처 로드맵 보기", href: "/service/consulting/architecture-roadmap" }
                 )
@@ -914,7 +914,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     title: "보안은 요구사항이 아니라 실행 기준으로 남아야 합니다",
                     body: "규정은 조직마다 다르지만, 실제로 필요한 것은 누가 어떤 조건에서 무엇을 검토하고 기록할지에 대한 기준입니다. 테크아이는 보안과 컴플라이언스를 조직의 운영 흐름 안으로 끌어들여 실행 가능한 형태로 정리합니다.",
                     imageSrc: "/images/security-control-room.jpg",
-                    imageAlt: "보안 통제와 운영을 상징하는 관제실 이미지",
+                    imageAlt: "보안 이벤트와 컴플라이언스 운영 현황을 모니터링하는 관제실",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 4000,
@@ -953,7 +953,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "지원 체계는\n빠른 답변보다 먼저\n명확한 기준이 필요합니다",
                     "유지보수는 연락처만 있어서는 운영되지 않습니다. 장애 등급, 응답 시간, 조치 범위, 보고 방식, 정기 점검 항목이 명확해야 실제 운영 품질이 안정됩니다. 테크아이는 SLA를 문장으로 두지 않고 운영 체계로 연결합니다.",
                     "/images/office-desk-operator.jpg",
-                    "운영 지원과 서비스 데스크를 상징하는 이미지",
+                    "장애 접수부터 조치 완료까지 대응 흐름을 처리하는 서비스 데스크",
                     { label: "정기 헬스체크 보기", href: "/service/maintenance/health-check" },
                     { label: "장애 대응·복구 보기", href: "/service/maintenance/incident-recovery" }
                 )

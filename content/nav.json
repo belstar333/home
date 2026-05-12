@@ -317,7 +317,7 @@
   {
     "id": "prd_lsware",
     "parentId": "prd",
-    "title": "LSware(Omniguard)",
+    "title": "Omniguard",
     "slug": "/product/lsware",
     "category": "product",
     "order": 2,
@@ -362,7 +362,7 @@
   {
     "id": "abt_vision",
     "parentId": "abt",
-    "title": "비전/미션",
+    "title": "비전·미션",
     "slug": "/about/vision-mission",
     "category": "about",
     "order": 1,
@@ -398,7 +398,7 @@
   {
     "id": "contact",
     "parentId": null,
-    "title": "Contact",
+    "title": "문의하기",
     "slug": "/contact",
     "category": "contact",
     "order": 99,

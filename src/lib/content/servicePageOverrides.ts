@@ -373,7 +373,7 @@ const servicePageOverrides: Record<string, Page> = {
                     "네트워크는 연결보다\n경계와 운영 기준이\n먼저 설계되어야 합니다",
                     "테크아이는 코어, 액세스, 무선, 방화벽, 대외 연결을 따로 보지 않습니다. 트래픽 흐름과 운영 책임 구간을 기준으로, 장애가 발생했을 때 어디를 봐야 하는지 바로 읽히는 네트워크 구조를 설계합니다.",
                     "/images/hero-network.jpg",
-                    "네트워크 장비와 연결 구조를 상징하는 이미지",
+                    "코어·액세스·방화벽 구간이 분리된 네트워크 장비와 연결 구조",
                     { label: "네트워크 진단부터 시작하기", href: "/service/consulting/assessment" },
                     { label: "구축·증설 서비스 보기", href: "/service/network/design-build" }
                 )
@@ -413,7 +413,7 @@ const servicePageOverrides: Record<string, Page> = {
                         },
                         {
                             imageSrc: "/images/hero-network.jpg",
-                            imageAlt: "네트워크 인프라를 상징하는 장비 이미지",
+                            imageAlt: "장애 구간이 분리된 토폴로지 기반의 네트워크 인프라 장비",
                             caption: "토폴로지 설계는 장비 리스트보다 장애 구간 분리가 먼저 읽혀야 합니다.",
                             imageWidth: 2400,
                             imageHeight: 1600,

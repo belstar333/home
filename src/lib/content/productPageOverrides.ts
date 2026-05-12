@@ -99,7 +99,7 @@ const productPageOverrides: Record<string, Page> = {
         id: "product_root_override",
         title: "제품",
         slug: "/product",
-        description: "고가용성, 복구, 접근 통제, 감사 대응을 위한 TechI 제품 포트폴리오를 소개합니다.",
+        description: "서비스 중단·데이터 손실·보안 사고에 대비하는 테크아이 제품 포트폴리오 — RoseHA와 Omniguard를 소개합니다.",
         sections: [
             section("s1", "header", subnavHeader("제품", ["제품"])),
             section(
@@ -109,7 +109,7 @@ const productPageOverrides: Record<string, Page> = {
                     "제품은 기능보다 먼저\n운영 목적이 분명해야\n현장에서 살아남습니다",
                     "TechI는 제품을 카탈로그처럼 나열하지 않습니다. 고가용성, 복구, 접근 제어, 감사 대응처럼 실제 운영 과제에 맞춰 RoseHA와 Omniguard 제품군을 제안하고, 도입 이후 운영 구조까지 함께 설계합니다.",
                     "/images/hero-cloud.jpg",
-                    "제품 포트폴리오와 운영 목적을 상징하는 이미지",
+                    "엔터프라이즈 제품 라인업과 운영 환경 개요",
                     { label: "RoseHA 보기", href: "/product/roseha" },
                     { label: "Omniguard 보기", href: "/product/lsware" }
                 )
@@ -167,7 +167,7 @@ const productPageOverrides: Record<string, Page> = {
         id: "product_roseha_root_override",
         title: "RoseHA",
         slug: "/product/roseha",
-        description: "실시간 복제와 자동 전환, 시점 복구, 운영 콘솔을 포함한 고가용성 및 재해복구 제품 RoseHA를 소개합니다.",
+        description: "서비스 중단과 데이터 손실을 막아야 한다면 — 실시간 복제·자동 전환·시점 복구를 하나로 묶은 HA 제품 RoseHA입니다.",
         sections: [
             section("s1", "header", subnavHeader("RoseHA", ["제품", "RoseHA"])),
             section(
@@ -177,7 +177,7 @@ const productPageOverrides: Record<string, Page> = {
                     "중요 서비스는\n장애가 없는 것보다\n복구가 예측 가능해야 합니다",
                     "RoseHA는 실시간 복제, 장애 감지, 자동 전환, 시점 복구, 운영 콘솔을 하나의 흐름으로 묶는 고가용성 제품군입니다. TechI는 단순 설치가 아니라 운영 환경에 맞는 DR·HA 체계로 RoseHA를 설계하고 적용합니다.",
                     "/images/hero-datacenter.jpg",
-                    "고가용성 시스템과 데이터센터를 상징하는 이미지",
+                    "미션크리티컬 서비스 고가용성을 위한 데이터센터 인프라",
                     { label: "실시간 복제 보기", href: "/product/roseha/replication" },
                     { label: "장애 감지·페일오버 보기", href: "/product/roseha/failover" }
                 )
@@ -255,7 +255,7 @@ const productPageOverrides: Record<string, Page> = {
                     "복제는 데이터를 옮기는 기능이 아니라\n복구 시점을 지키는 기준입니다",
                     "실시간 복제는 장애 이후 얼마나 최근 상태로 서비스를 복구할 수 있는지를 결정합니다. RoseHA는 운영 데이터와 대기 시스템을 지속적으로 동기화해 장애 발생 시 손실 범위를 줄이고 복구 준비 상태를 유지합니다.",
                     "/images/hero-datacenter.jpg",
-                    "실시간 복제와 데이터센터를 상징하는 이미지",
+                    "실시간 데이터 복제 대상 인프라가 구성된 데이터센터",
                     { label: "페일오버 보기", href: "/product/roseha/failover" },
                     { label: "시점 복구 보기", href: "/product/roseha/point-in-time-recovery" }
                 )
@@ -325,7 +325,7 @@ const productPageOverrides: Record<string, Page> = {
                     "자동 전환은 빠르기만 해서는 안 되고\n정확한 조건 위에서\n작동해야 합니다",
                     "장애 감지와 페일오버는 오탐과 미탐 모두가 리스크가 됩니다. RoseHA는 서비스 상태와 시스템 조건을 기준으로 자동 전환을 수행하고, 운영자가 판단할 수 있는 가시성을 함께 제공합니다.",
                     "/images/hero-cloud.jpg",
-                    "장애 감지와 전환 흐름을 상징하는 이미지",
+                    "장애 감지 이후 자동·수동 전환 조건을 설계하는 환경",
                     { label: "실시간 복제 보기", href: "/product/roseha/replication" },
                     { label: "운영 콘솔 보기", href: "/product/roseha/management-console" }
                 )
@@ -395,7 +395,7 @@ const productPageOverrides: Record<string, Page> = {
                     "장애보다 더 까다로운 사고는\n데이터가 잘못된 상태로\n정상 동작할 때입니다",
                     "시점 복구는 삭제, 오염, 잘못된 배치, 운영 실수처럼 시스템은 살아 있지만 데이터가 틀어진 상황에 대응하는 핵심 기능입니다. RoseHA는 원하는 시점으로 안전하게 되돌릴 수 있는 복구 옵션을 제공합니다.",
                     "/images/hero-cloud.jpg",
-                    "복구 시점과 데이터 보호를 상징하는 이미지",
+                    "특정 시점으로 복구하기 위한 데이터 보호 체계 환경",
                     { label: "실시간 복제 보기", href: "/product/roseha/replication" },
                     { label: "운영 콘솔 보기", href: "/product/roseha/management-console" }
                 )
@@ -525,7 +525,7 @@ const productPageOverrides: Record<string, Page> = {
         id: "product_omniguard_root_override",
         title: "Omniguard",
         slug: "/product/lsware",
-        description: "권한 제어, 세션 통제, 보안 감사와 증적 관리를 통합 지원하는 Omniguard 제품군을 소개합니다.",
+        description: "내부 계정 관리와 감사 대응이 부담이라면 — 권한 제어·세션 통제·증적 관리를 통합한 Omniguard 제품군입니다.",
         sections: [
             section("s1", "header", subnavHeader("Omniguard", ["제품", "Omniguard"])),
             section(
@@ -535,7 +535,7 @@ const productPageOverrides: Record<string, Page> = {
                     "보안 운영은\n장비 수보다 먼저\n통제 기준이 분명해야 합니다",
                     "Omniguard 제품군은 권한 통제, 세션 제어, 감사와 증적 관리를 한 흐름으로 묶어 운영 보안 수준을 높입니다. TechI는 고객 환경에 맞는 통제 기준과 운영 절차까지 함께 설계합니다.",
                     "/images/hero-security.jpg",
-                    "보안 운영과 통제 구조를 상징하는 이미지",
+                    "Omniguard 보안 정책과 접근 통제를 관리하는 운영 환경",
                     { label: "UAC 보기", href: "/product/lsware/uac" },
                     { label: "SecuMS 보기", href: "/product/lsware/secums" }
                 )
@@ -608,7 +608,7 @@ const productPageOverrides: Record<string, Page> = {
                     "중요 시스템 접근은\n누가 들어갔는지보다\n왜 허용됐는지가 더 중요합니다",
                     "UAC는 특권 계정과 중요 시스템 접근을 통제하는 기능입니다. TechI는 승인 기준, 권한 부여 방식, 로그 이력, 운영 절차를 함께 설계해 실제 통제가 작동하는 환경을 만듭니다.",
                     "/images/hero-security.jpg",
-                    "권한 통제와 보안 운영을 상징하는 이미지",
+                    "UAC 권한 요청·승인·사용 이력을 관리하는 보안 운영 화면",
                     { label: "UCC 보기", href: "/product/lsware/ucc" },
                     { label: "SecuMS 보기", href: "/product/lsware/secums" }
                 )
@@ -678,7 +678,7 @@ const productPageOverrides: Record<string, Page> = {
                     "접속을 허용하는 순간부터\n세션 통제가 시작되어야\n보안이 작동합니다",
                     "UCC는 단순 접속 중계가 아니라 세션 제어와 기록을 통해 운영 행위를 더 안전하게 관리하는 기능입니다. TechI는 원격 작업과 외부 협력 접근이 많은 환경에 맞춰 세션 통제 체계를 설계합니다.",
                     "/images/hero-security.jpg",
-                    "세션 연결과 보안 운영을 상징하는 이미지",
+                    "UCC 접속 경로와 세션 흐름을 통제하는 보안 운영 환경",
                     { label: "UAC 보기", href: "/product/lsware/uac" },
                     { label: "SecuMS 보기", href: "/product/lsware/secums" }
                 )
@@ -748,7 +748,7 @@ const productPageOverrides: Record<string, Page> = {
                     "보안 운영의 신뢰는\n통제 기능보다 먼저\n증적 관리에서 결정됩니다",
                     "SecuMS는 보안 로그와 감사 증적을 한 체계로 관리해 운영과 감사 대응을 더 명확하게 만들어 줍니다. TechI는 수집 기준, 보존 정책, 보고 구조를 함께 설계해 실제로 활용 가능한 감사 체계를 제공합니다.",
                     "/images/security-control-room.jpg",
-                    "감사 대응과 보안 증적 관리를 상징하는 이미지",
+                    "SecuMS 보안 이벤트와 감사 증적을 통합 관리하는 관제 환경",
                     { label: "UAC 보기", href: "/product/lsware/uac" },
                     { label: "UCC 보기", href: "/product/lsware/ucc" }
                 )
