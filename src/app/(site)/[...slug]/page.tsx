@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { loadPages } from "@/lib/content/loadContent";
 import { resolvePage } from "@/lib/content/resolvePage";
 import ContentRenderer from "@/components/ContentRenderer/ContentRenderer";
-import EditToggle from "@/components/EditMode/EditToggle";
 import type { Metadata } from "next";
 
 interface Props {
@@ -32,11 +31,5 @@ export default async function SlugPage({ params }: Props) {
     const slugPath = "/" + slug.join("/");
     const page = resolvePage(slugPath);
     if (!page) notFound();
-    const showEditToggle = process.env.NODE_ENV !== "production";
-    return (
-        <>
-            <ContentRenderer page={page} />
-            {showEditToggle && <EditToggle />}
-        </>
-    );
+    return <ContentRenderer page={page} />;
 }

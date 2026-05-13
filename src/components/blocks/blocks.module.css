@@ -72,8 +72,8 @@
     margin: 0;
     color: #fff;
     font-family: var(--font-headline);
-    font-size: clamp(2.3rem, 4.2vw, 3.9rem);
-    line-height: 1.04;
+    font-size: clamp(1.9rem, 3.4vw, 3rem);
+    line-height: 1.06;
     letter-spacing: -0.04em;
     white-space: pre-line;
     word-break: keep-all;
@@ -625,8 +625,8 @@
 .cardDesc {
     margin: 0;
     color: var(--page-muted);
-    font-size: 0.94rem;
-    line-height: 1.7;
+    font-size: max(14px, 0.94rem);
+    line-height: 1.72;
 }
 
 .cardArrow {
@@ -2614,6 +2614,42 @@
         flex: unset;
         aspect-ratio: 16 / 9;
     }
+}
+
+/* 5-item image-card grid: switch from 2-col (2+2+1 orphan) to 3-col equal cards */
+.imageCardGrid:has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.imageCardGrid:has(> :nth-child(5):last-child) .imageCardWide {
+    grid-column: auto;
+    flex-direction: column;
+}
+
+.imageCardGrid:has(> :nth-child(5):last-child) .imageCardWide .imageCardImageWrap {
+    flex: unset;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+}
+
+.imageCardGrid:has(> :nth-child(5):last-child) .imageCardWide .imageCardBody {
+    align-content: start;
+    padding: 22px 24px;
+    gap: 10px;
+}
+
+.imageCardGrid:has(> :nth-child(5):last-child) .imageCardWide .imageCardTitle {
+    font-size: 1.14rem;
+}
+
+/* 3-item image gallery: equal 3-column grid instead of 1-big + 2-stacked */
+.imageGalleryGrid:has(> :nth-child(3):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.imageGalleryGrid:has(> :nth-child(3):last-child) .imageGalleryItemFeature {
+    grid-row: auto;
+    min-height: 260px;
 }
 
 @media (prefers-reduced-motion: reduce) {

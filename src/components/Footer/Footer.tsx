@@ -95,7 +95,7 @@ export default function Footer() {
             </div>
 
             <div className={styles.bottomBar}>
-                <p className={styles.copyright}>© {currentYear} (주)테크아이. All rights reserved.</p>
+                <p className={styles.copyright}>Since 2004 · © {currentYear} (주)테크아이</p>
                 <div className={styles.bottomLinks}>
                     <Link href="/contact" className={styles.bottomLink}>문의하기</Link>
                     <Link href="/about/location" className={styles.bottomLink}>오시는 길</Link>

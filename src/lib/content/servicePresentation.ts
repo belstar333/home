@@ -409,20 +409,11 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
     },
     "/about": {
         heroLabel: "테크아이 소개",
-        proofLabel: "신뢰 포인트",
-        proofTitle: "브로슈어형 소개보다 실제 수행 근거가 먼저 보이도록 정리합니다.",
-        proofBody:
-            "업력, 재무 기반, 전문 인력, 파트너십, 공공 레퍼런스를 짧고 명확하게 보여주는 구성이 핵심입니다.",
-        trustPoints: [
-            "업력 20년",
-            "매출 250억+ · 전문 인력 23명",
-            "HPE Gold Partner",
-        ],
-        deliverables: [
-            "공공·엔터프라이즈 인프라 수행 경험",
-            "170+ Pflops AI 데이터센터 경험",
-            "전국 19개 센터망 운영 지원",
-        ],
+        proofLabel: "",
+        proofTitle: "",
+        proofBody: "",
+        trustPoints: [],
+        deliverables: [],
     },
     "/about/vision-mission": {
         heroLabel: "Vision & Mission",

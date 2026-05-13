@@ -139,7 +139,6 @@ export default function Home() {
                 <div className={styles.heroShell}>
                     <div className={styles.heroCopy}>
                         <p className={`${styles.heroEyebrow} ${styles.reveal} ${heroVisible ? styles.active : ""}`}>기업 인프라 엔지니어링</p>
-                        <p className={`${styles.heroBrand} ${styles.reveal} ${heroVisible ? styles.active : ""}`}>테크아이</p>
                         <h1 className={`${styles.heroTitle} ${styles.reveal} ${styles.delay1} ${heroVisible ? styles.active : ""}`}>
                             <span className={styles.titleLine}>끊임없이 흐르는 데이터를 위한</span>
                             <span className={styles.titleLine}>
