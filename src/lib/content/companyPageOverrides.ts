@@ -577,6 +577,8 @@ const companyPageOverrides: Record<string, Page> = {
                 "cards",
                 featureCards("핵심 기술 파트너", [
                     { title: "HPE Gold Partner", desc: "장기 파트너십을 기반으로 엔터프라이즈 인프라를 설계합니다." },
+                    { title: "Cisco", desc: "네트워크 구조, 보안 정책, 무선 인프라 전 영역에서 신뢰할 수 있는 기술 기반을 제공합니다." },
+                    { title: "NetApp", desc: "스토리지 구성과 데이터 보호, 복구 체계에 검증된 플랫폼을 연계합니다." },
                     { title: "Intel", desc: "고성능 컴퓨팅과 대규모 스토리지 구성에 필요한 핵심 플랫폼을 연계합니다." },
                     { title: "IBM", desc: "미션 크리티컬 환경에 필요한 시스템 구성 경험을 함께 축적해 왔습니다." },
                     { title: "IRS 현장 지원망", desc: "전국 19개 센터망 기반의 유지보수와 현장 대응 체계를 운영합니다." },

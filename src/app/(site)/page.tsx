@@ -83,12 +83,8 @@ const PARTNER_LOGOS = [
     { src: "/logos/Hewlett-Packard-Enterprise-Logo-New.png", alt: "Hewlett Packard Enterprise" },
     { src: "/logos/Cisco-logo.png", alt: "Cisco" },
     { src: "/logos/NetApp-Logos.png", alt: "NetApp" },
-];
-
-const OS_LOGOS = [
-    { src: "/logos/Windows_logo_-_2012_(dark_blue).svg.png", alt: "Windows Server", label: "Windows Server" },
-    { src: "/logos/Rocky_Linux_logo.svg.png", alt: "Rocky Linux", label: "Rocky Linux" },
-    { src: "/logos/UbuntuCoF.svg.png", alt: "Ubuntu", label: "Ubuntu" },
+    { src: "/logos/Intel_logo.png", alt: "Intel" },
+    { src: "/logos/ibm-logo-svgrepo-com_v3.png", alt: "IBM" },
 ];
 
 const DIFFERENTIATORS = [
@@ -248,23 +244,6 @@ export default function Home() {
                                 />
                             </div>
                         ))}
-                    </div>
-                    <div className={`${styles.osEnvWrap} ${styles.reveal} ${styles.delay2} ${proofVisible ? styles.active : ""}`}>
-                        <p className={styles.osEnvLabel}>주요 운영 환경</p>
-                        <div className={styles.osRow}>
-                            {OS_LOGOS.map((os) => (
-                                <div key={os.alt} className={styles.osItem}>
-                                    <Image
-                                        src={os.src}
-                                        alt={os.alt}
-                                        width={140}
-                                        height={44}
-                                        className={styles.logoImg}
-                                    />
-                                    <span className={styles.osName}>{os.label}</span>
-                                </div>
-                            ))}
-                        </div>
                     </div>
                 </div>
             </section>
