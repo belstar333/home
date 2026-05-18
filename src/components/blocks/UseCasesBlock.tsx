@@ -7,8 +7,11 @@ export default function UseCasesBlock({ data }: { data: UseCasesData }) {
             <h3 className={styles.sectionTitle}>{data.title}</h3>
             <ul className={styles.useCaseList}>
                 {data.items.map((item, index) => (
-                    <li key={`${item}-${index}`} className={styles.useCaseItem}>
-                        <span className={styles.useCaseNumber}>{String(index + 1).padStart(2, "0")}</span>
+                    <li key={`${item}-${index}`} className={`${styles.useCaseItem}${data.icons?.[index] ? ` ${styles.useCaseItemWithIcon}` : ""}`}>
+                        {data.icons?.[index]
+                            ? <span className={`material-symbols-outlined ${styles.useCaseIcon}`} aria-hidden="true">{data.icons[index]}</span>
+                            : <span className={styles.useCaseNumber}>{String(index + 1).padStart(2, "0")}</span>
+                        }
                         <span className={styles.useCaseText}>{item}</span>
                     </li>
                 ))}

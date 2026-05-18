@@ -55,7 +55,7 @@ function heroBlock(
     };
 }
 
-function featureCards(title: string, items: Array<{ title: string; desc: string; href?: string }>): BlockData {
+function featureCards(title: string, items: Array<{ title: string; desc: string; href?: string; icon?: string }>): BlockData {
     return {
         type: "featureCards",
         data: {
@@ -264,9 +264,9 @@ const companyPageOverrides: Record<string, Page> = {
                 "s6",
                 "cards",
                 featureCards("2004년부터 쌓아온 수행 이력", [
-                    { title: "20년+ 프로젝트 경험", desc: "엔터프라이즈 인프라부터 AI 데이터센터까지 확장해 온 수행 이력", href: "/about/history" },
-                    { title: "국가 중요 레퍼런스", desc: "국방과학연구소·국토지리정보원·대법원·공군 등 미션 크리티컬 환경 수행", href: "/about/partners" },
-                    { title: "HPE Gold Partner", desc: "장기 파트너십 기반의 안정적 공급과 기술 지원 체계", href: "/about/partners" },
+                    { title: "20년+ 프로젝트 경험", desc: "엔터프라이즈 인프라부터 AI 데이터센터까지 확장해 온 수행 이력", href: "/about/history", icon: "history" },
+                    { title: "국가 중요 레퍼런스", desc: "국방과학연구소·국토지리정보원·대법원·공군 등 미션 크리티컬 환경 수행", href: "/about/partners", icon: "verified" },
+                    { title: "HPE Gold Partner", desc: "장기 파트너십 기반의 안정적 공급과 기술 지원 체계", href: "/about/partners", icon: "workspace_premium" },
                 ])
             ),
             section(
@@ -663,11 +663,11 @@ const companyPageOverrides: Record<string, Page> = {
                     title: "미팅 신뢰도는 공간과 진행 방식에서도 만들어집니다",
                     items: [
                         {
-                            imageSrc: "/images/contact-consultation-desk.jpg",
+                            imageSrc: "/images/v2/contact/form-meeting-room.jpg",
                             imageAlt: "상담 데스크에서 자료를 검토하는 이미지",
                             caption: "첫 미팅에서 바로 범위와 우선순위를 정리하는 intake 방식",
-                            imageWidth: 1600,
-                            imageHeight: 1067,
+                            imageWidth: 896,
+                            imageHeight: 1200,
                         },
                         {
                             imageSrc: "/images/about-office-lobby.jpg",
@@ -677,11 +677,11 @@ const companyPageOverrides: Record<string, Page> = {
                             imageHeight: 4032,
                         },
                         {
-                            imageSrc: "/images/contact-consultation-desk.jpg",
+                            imageSrc: "/images/v2/about/reason-empty-meeting-room.jpg",
                             imageAlt: "상담 자료를 함께 검토하는 미팅 장면",
                             caption: "사전 공유 자료가 있으면 첫 미팅에서 더 빠르게 방향을 잡을 수 있습니다.",
-                            imageWidth: 1600,
-                            imageHeight: 1067,
+                            imageWidth: 1200,
+                            imageHeight: 896,
                         },
                     ],
                 })
@@ -750,7 +750,7 @@ const companyPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "상담은 제안이 아니라\n현재 환경을 함께\n읽는 데서 시작합니다",
                     "정해진 솔루션을 먼저 제시하지 않습니다. 현재 운영 환경, 반복되는 문제, 목표 일정을 먼저 파악하고, 그 다음 단계에서 필요한 범위와 방향을 함께 정리합니다.",
-                    "/images/contact-consultation-desk.jpg",
+                    "/images/v2/contact/form-meeting-prep-desk.jpg",
                     "상담 자리에서 프로젝트 자료를 함께 검토하는 이미지"
                 )
             ),
@@ -761,12 +761,12 @@ const companyPageOverrides: Record<string, Page> = {
                     eyebrow: "Consultation Process",
                     title: "첫 미팅에서 바로\n다음 단계가 보이도록\n준비합니다",
                     body: "상담 이후에 '검토해보겠다'는 말이 반복되지 않도록, 첫 미팅에서 현재 환경과 과제, 검토 가능한 범위를 빠르게 구조화합니다. 구축 종류나 규모와 관계없이 같은 방식으로 시작합니다.",
-                    imageSrc: "/images/contact-consultation-desk.jpg",
+                    imageSrc: "/images/v2/contact/form-meeting-room.jpg",
                     imageAlt: "엔지니어와 고객이 인프라 현황을 함께 검토하는 상담 장면",
                     layout: "imageLeft",
                     tone: "photo",
-                    imageWidth: 1600,
-                    imageHeight: 1067,
+                    imageWidth: 896,
+                    imageHeight: 1200,
                     caption: "상담 흐름 / 환경 파악 → 범위 정의 → 다음 단계",
                     points: [
                         "본사 대전광역시 서구 둔산대로117번길 25 · 대표전화 042-471-9430",

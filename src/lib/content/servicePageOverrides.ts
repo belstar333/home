@@ -104,22 +104,24 @@ function imageGallery(config: {
     };
 }
 
-function caseList(title: string, items: string[]): BlockData {
+function caseList(title: string, items: string[], icons?: string[]): BlockData {
     return {
         type: "useCases",
         data: {
             title,
             items,
+            ...(icons ? { icons } : {}),
         },
     };
 }
 
-function benefits(title: string, items: string[]): BlockData {
+function benefits(title: string, items: string[], icons?: string[]): BlockData {
     return {
         type: "benefits",
         data: {
             title,
             items,
+            icons,
         },
     };
 }
@@ -251,7 +253,7 @@ const servicePageOverrides: Record<string, Page> = {
                     "장비 교체나 전산실 재구성을 앞두고 어디서부터 손봐야 할지 판단이 필요한 경우",
                     "장애가 반복되지만 서버·네트워크·스토리지 중 어디가 원인인지 구분이 어려운 경우",
                     "운영 담당자가 바뀌어도 일관된 수준의 운영이 유지되는 체계가 필요한 경우",
-                ])
+                ], ["diversity_3", "construction", "wifi_tethering_error", "manage_accounts"])
             ),
         ],
     }),
@@ -269,7 +271,7 @@ const servicePageOverrides: Record<string, Page> = {
                 heroBlock(
                     "장비를 넣는 것이 아니라\n운영팀이 이어받을 수 있는\n서버 구조를 설계합니다",
                     "테크아이는 신규 구축, 교체, 증설, 가상화, 모니터링을 각각 따로 보지 않습니다. 서버가 실제 서비스 환경 안에서 어떤 역할을 하고, 전환 이후 어떻게 운영될지를 기준으로 전체 구조를 다시 설계합니다.",
-                    "/images/hero-datacenter.jpg",
+                    "/images/v2/service/server-hero-bg-texture.jpeg",
                     "고밀도 서버 인프라와 데이터센터 전경",
                     { label: "인프라 진단부터 시작하기", href: "/service/consulting/assessment" },
                     { label: "서버 구축 서비스 보기", href: "/service/server/build" }
@@ -349,12 +351,16 @@ const servicePageOverrides: Record<string, Page> = {
             section(
                 "s6",
                 "useCases",
-                caseList("이런 서버 환경에서 주로 검토합니다", [
-                    "노후 장비 교체와 무중단 전환 조건을 함께 검토해야 하는 환경",
-                    "GPU · HPC 등 고밀도 자원 증설과 냉각 · 전력 · 랙 구성이 함께 중요한 환경",
-                    "가상화 통합 이후 표준 운영 체계와 장애 대응 기준이 필요한 환경",
-                    "서버, 백업, DR까지 하나의 운영 흐름으로 다시 정리해야 하는 환경",
-                ])
+                caseList(
+                    "이런 서버 환경에서 주로 검토합니다",
+                    [
+                        "노후 장비 교체와 무중단 전환 조건을 함께 검토해야 하는 환경",
+                        "GPU · HPC 등 고밀도 자원 증설과 냉각 · 전력 · 랙 구성이 함께 중요한 환경",
+                        "가상화 통합 이후 표준 운영 체계와 장애 대응 기준이 필요한 환경",
+                        "서버, 백업, DR까지 하나의 운영 흐름으로 다시 정리해야 하는 환경",
+                    ],
+                    ["autorenew", "memory", "dns", "backup"]
+                )
             ),
         ],
     }),
@@ -372,7 +378,7 @@ const servicePageOverrides: Record<string, Page> = {
                 heroBlock(
                     "네트워크는 연결보다\n경계와 운영 기준이\n먼저 설계되어야 합니다",
                     "테크아이는 코어, 액세스, 무선, 방화벽, 대외 연결을 따로 보지 않습니다. 트래픽 흐름과 운영 책임 구간을 기준으로, 장애가 발생했을 때 어디를 봐야 하는지 바로 읽히는 네트워크 구조를 설계합니다.",
-                    "/images/hero-network.jpg",
+                    "/images/v2/service/network-hero-bg-texture.jpeg",
                     "코어·액세스·방화벽 구간이 분리된 네트워크 장비와 연결 구조",
                     { label: "네트워크 진단부터 시작하기", href: "/service/consulting/assessment" },
                     { label: "구축·증설 서비스 보기", href: "/service/network/design-build" }
@@ -452,12 +458,16 @@ const servicePageOverrides: Record<string, Page> = {
             section(
                 "s6",
                 "useCases",
-                caseList("이런 네트워크 과제를 주로 맡습니다", [
-                    "증설이 반복되면서 토폴로지와 책임 구간이 복잡해진 환경",
-                    "방화벽 룰과 네트워크 정책이 누적되어 정리가 필요한 환경",
-                    "무선 품질, 로밍, 음영 구간, 고가용 구성이 함께 중요한 환경",
-                    "회선, 보안, 이중화를 동시에 재정비해야 하는 대형 업무 환경",
-                ])
+                caseList(
+                    "이런 네트워크 과제를 주로 맡습니다",
+                    [
+                        "증설이 반복되면서 토폴로지와 책임 구간이 복잡해진 환경",
+                        "방화벽 룰과 네트워크 정책이 누적되어 정리가 필요한 환경",
+                        "무선 품질, 로밍, 음영 구간, 고가용 구성이 함께 중요한 환경",
+                        "회선, 보안, 이중화를 동시에 재정비해야 하는 대형 업무 환경",
+                    ],
+                    ["device_hub", "security", "wifi", "cable"]
+                )
             ),
         ],
     }),
@@ -518,8 +528,8 @@ const servicePageOverrides: Record<string, Page> = {
                             imageHeight: 1067,
                         },
                         {
-                            imageSrc: "/images/storage-backup-verify.jpg",
-                            imageAlt: "백업 완료 상태를 화면에서 확인하는 복구 검증 장면",
+                            imageSrc: "/images/v2/service/storage-noc-monitor-detail.jpeg",
+                            imageAlt: "백업 운영 모니터링 콘솔 클로즈업 화면",
                             caption: "보호 체계는 실제 점검과 검증 이력이 남을 때 비로소 의미가 생깁니다.",
                             imageWidth: 1600,
                             imageHeight: 1067,
@@ -581,8 +591,8 @@ const servicePageOverrides: Record<string, Page> = {
                 heroBlock(
                     "진단은 보고서보다\n다음 실행 단계가\n남아야 의미가 있습니다",
                     "테크아이의 컨설팅은 현황을 설명하는 보고서로 끝나지 않습니다. 현재 리스크를 기술 과제와 운영 과제로 다시 나누고, 우선순위와 일정, 예산, 조직 제약까지 반영한 다음 단계의 기준을 정리합니다.",
-                    "/images/consulting-whiteboard.jpg",
-                    "화이트보드 앞에서 IT 인프라 구조를 그리며 방향을 논의하는 장면",
+                    "/images/v2/service/consulting-hero-bg-paper.jpeg",
+                    "컨설팅 작업 환경을 나타내는 종이·문서 텍스처 배경",
                     { label: "인프라 진단 보기", href: "/service/consulting/assessment" },
                     { label: "아키텍처 로드맵 보기", href: "/service/consulting/architecture-roadmap" }
                 )
@@ -624,15 +634,15 @@ const servicePageOverrides: Record<string, Page> = {
                             imageHeight: 1067,
                         },
                         {
-                            imageSrc: "/images/consulting-review-photo.jpg",
-                            imageAlt: "문서를 함께 검토하는 장면",
+                            imageSrc: "/images/v2/service/consulting-scene-document-closeup.jpeg",
+                            imageAlt: "컨설팅 문서와 검토 메모를 클로즈업한 장면",
                             caption: "현황 분석은 발표 자료보다 실행 가능한 과제로 이어질 때 가치가 있습니다.",
                             imageWidth: 1600,
-                            imageHeight: 1068,
+                            imageHeight: 1067,
                         },
                         {
-                            imageSrc: "/images/consulting-report-review.jpg",
-                            imageAlt: "진단 보고서와 체크리스트를 검토하는 클로즈업",
+                            imageSrc: "/images/v2/service/Consulting_working_session_overhead.jpeg",
+                            imageAlt: "컨설팅 워킹세션 오버헤드 뷰 — 테이블 위 자료와 논의 장면",
                             caption: "To-Be 구조는 기술 스펙보다 예산과 일정, 운영 조직에 맞아야 합니다.",
                             imageWidth: 1600,
                             imageHeight: 1067,
@@ -669,7 +679,7 @@ const servicePageOverrides: Record<string, Page> = {
                     "기술 구조, 예산, 일정, 조직 제약을 함께 반영한 단계별 로드맵",
                     "운영팀과 의사결정 조직이 같은 기준으로 볼 수 있는 문서와 판단 기준",
                     "보안·컴플라이언스 요구까지 포함해 실제 프로젝트로 이어질 수 있는 다음 단계",
-                ])
+                ], ["account_tree", "route", "article", "flag"])
             ),
         ],
     }),
@@ -687,7 +697,7 @@ const servicePageOverrides: Record<string, Page> = {
                 heroBlock(
                     "같은 장애가 반복된다면\n빠른 대응이 아니라\n구조가 바뀌어야 합니다",
                     "테크아이의 유지보수는 단순 접수형 대응에 머물지 않습니다. 지원 범위, SLA, 정기점검, 장애 대응, RCA, 권고안을 하나의 운영 구조로 묶어 반복 이슈를 줄이는 방향으로 설계합니다.",
-                    "/images/server-ops-photo.jpg",
+                    "/images/v2/service/maintenance-hero-bg-texture.jpeg",
                     "운영 환경을 모니터링하는 장면",
                     { label: "SLA 기반 지원 보기", href: "/service/maintenance/sla-support" },
                     { label: "정기 헬스체크 보기", href: "/service/maintenance/health-check" }
@@ -753,8 +763,8 @@ const servicePageOverrides: Record<string, Page> = {
                     eyebrow: "체계적 유지보수 서비스",
                     title: "점검, 대응, 보고, RCA가 하나의 흐름으로 이어져야 합니다",
                     body: "운영 지원은 장애가 생겼을 때만 반응하는 구조로는 충분하지 않습니다. 정기점검과 장애대응, 보고 체계, 재발 방지 과제가 연결돼 있어야 지원 품질이 사람 의존형으로 흘러가지 않습니다.",
-                    imageSrc: "/images/maintenance-onsite.jpg",
-                    imageAlt: "현장 랙 앞에서 정기 점검과 장애 대응을 수행하는 엔지니어",
+                    imageSrc: "/images/v2/service/maintenance-checklist-overhead.jpeg",
+                    imageAlt: "현장 점검 체크리스트를 위에서 내려다본 장면",
                     layout: "imageLeft",
                     tone: "photo",
                     imageWidth: 1600,
@@ -770,12 +780,16 @@ const servicePageOverrides: Record<string, Page> = {
             section(
                 "s6",
                 "useCases",
-                caseList("이런 운영 환경에서 유지보수 체계를 재정비합니다", [
-                    "담당자 경험에 따라 지원 품질과 대응 속도가 달라지는 환경",
-                    "정기점검은 하고 있지만 결과가 실제 개선 과제로 이어지지 않는 환경",
-                    "장애 대응 기록은 남지만 RCA와 재발 방지 체계가 약한 환경",
-                    "SLA, 보고 주기, 우선순위 기준을 다시 정의해야 하는 장기 운영 환경",
-                ])
+                caseList(
+                    "이런 운영 환경에서 유지보수 체계를 재정비합니다",
+                    [
+                        "담당자 경험에 따라 지원 품질과 대응 속도가 달라지는 환경",
+                        "정기점검은 하고 있지만 결과가 실제 개선 과제로 이어지지 않는 환경",
+                        "장애 대응 기록은 남지만 RCA와 재발 방지 체계가 약한 환경",
+                        "SLA, 보고 주기, 우선순위 기준을 다시 정의해야 하는 장기 운영 환경",
+                    ],
+                    ["person", "description", "bar_chart", "schedule"]
+                )
             ),
         ],
     }),

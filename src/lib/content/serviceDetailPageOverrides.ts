@@ -55,13 +55,14 @@ function heroBlock(
     };
 }
 
-function featureCards(title: string, items: Array<{ title: string; desc: string; href?: string }>): BlockData {
+function featureCards(
+    title: string,
+    items: Array<{ title: string; desc: string; href?: string }>,
+    variant?: "standard" | "image-cards" | "badges" | "before-after"
+): BlockData {
     return {
         type: "featureCards",
-        data: {
-            title,
-            items,
-        },
+        data: { title, items, variant },
     };
 }
 
@@ -155,7 +156,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     eyebrow: "구축 엔지니어링",
                     title: "장비가 올라가기 전에\n더 많은 것을 결정합니다",
                     body: "구축 현장에서 가장 많은 시간이 낭비되는 지점은 설치 도중 발견되는 사전 미결 항목입니다. 랙 배치, 전원 용량, 네트워크 연결 방식, 전환 대상 서비스 목록이 먼저 정리되어야 현장에서의 변수가 줄어듭니다. 테크아이는 설치 전 결정 사항을 미리 구조화합니다.",
-                    imageSrc: "/images/server-design-review.jpg",
+                    imageSrc: "/images/v2/service/server-build-engineer-desk.jpeg",
                     imageAlt: "서버 구축 전 설계 문서와 다이어그램을 검토하는 엔지니어",
                     layout: "imageRight",
                     tone: "photo",
@@ -236,13 +237,35 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 가상화 영역", [
+                    {
+                        title: "VMware / Hyper-V / KVM",
+                        desc: "운영 환경과 관리 인력에 맞는 하이퍼바이저를 선택하고, 초기 구조와 자원 정책을 함께 설계합니다.",
+                    },
+                    {
+                        title: "VM 클러스터와 HA 구조",
+                        desc: "노드 장애 시 VM 절체 순서와 클러스터 쿼럼 유지 조건을 설계 단계에서 정의합니다.",
+                    },
+                    {
+                        title: "자원 풀과 운영 정책",
+                        desc: "워크로드별 CPU·메모리 우선순위 분리, 스냅샷 정책, 변경 관리 기준을 표준화합니다.",
+                    },
+                    {
+                        title: "플랫폼 전환과 마이그레이션",
+                        desc: "P2V·V2V 이행 시나리오를 단계별로 구성하고 전환 검증 기준과 롤백 조건을 함께 정의합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "가상화 설계",
                     title: "자원 풀이 늘어날수록\n기준 없는 가상화는\n복잡해집니다",
                     body: "가상화는 초기에는 편리하지만 VM이 늘어날수록 자원 경쟁, 스냅샷 누적, 구성 드리프트가 쌓입니다. 테크아이는 도입 시점부터 자원 정책과 운영 기준을 함께 설계해 확장 이후에도 관리 가능한 구조를 만듭니다.",
-                    imageSrc: "/images/server-virtualization-console.jpg",
+                    imageSrc: "/images/v2/service/server-virtualization-console.jpeg",
                     imageAlt: "하이퍼바이저 콘솔 화면과 VM 목록을 확인하는 운영 환경",
                     layout: "imageRight",
                     tone: "photo",
@@ -323,13 +346,35 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 모니터링 영역", [
+                    {
+                        title: "Zabbix / Grafana / MRTG",
+                        desc: "오픈소스 모니터링 도구를 환경에 맞게 구성하고, 수집 에이전트와 대시보드를 실제 운영에 맞게 조정합니다.",
+                    },
+                    {
+                        title: "알림 정책과 에스컬레이션",
+                        desc: "임계값 기준을 서비스 영향 중심으로 설정하고, 알림이 발생했을 때 누가 어떤 순서로 대응하는지 체계를 정의합니다.",
+                    },
+                    {
+                        title: "운영 런북과 RCA 관리",
+                        desc: "반복 장애 조치 절차를 런북으로 문서화하고, 장애 종료 후 원인 분석과 재발 방지 과제를 구조화합니다.",
+                    },
+                    {
+                        title: "성능 지표와 정기 보고",
+                        desc: "수집 범위를 정의하고, 운영 지표와 알림 이력을 주간·월간 보고서로 연결해 SLA 근거로 활용합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "운영 & 모니터링",
                     title: "모니터링 도구가 있어도\n기준이 없으면 노이즈만\n쌓입니다",
                     body: "알림이 많을수록 운영자는 중요한 것을 놓칩니다. 어떤 지표를 보고, 어떤 알림에 즉시 대응하며, 어떤 것은 주간 리뷰로 넘기는지가 정의되어야 모니터링이 운영의 일부가 됩니다. 테크아이는 도구 설정과 함께 운영 기준을 동시에 설계합니다.",
-                    imageSrc: "/images/security-noc-room.jpg",
+                    imageSrc: "/images/v2/service/server-ops-noc-wide.jpeg",
                     imageAlt: "대형 벽면 디스플레이와 다수 운영자가 상황을 모니터링하는 관제 센터",
                     layout: "imageRight",
                     tone: "photo",
@@ -392,14 +437,36 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("설계 범위", [
+                    {
+                        title: "L2",
+                        desc: "VLAN 분할 · STP · Trunk · 포트 보안",
+                    },
+                    {
+                        title: "L3",
+                        desc: "Subnetting · Static / OSPF / BGP 라우팅 · 게이트웨이",
+                    },
+                    {
+                        title: "L4-7",
+                        desc: "방화벽 ACL · Load Balancer · 인증 정책",
+                    },
+                    {
+                        title: "무선",
+                        desc: "SSID 설계 · VLAN 매핑 · 인증 정책",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "구축 현장",
                     title: "현장 구축은 설치보다 검증 장면이 더 중요합니다",
                     body: "케이블이 연결되고 장비가 올라가는 순간보다 더 중요한 것은 그 다음입니다. 회선 상태, 링크 업다운, 정책 반영, 서비스 경로, 이중화 절체까지 확인되어야 비로소 구축이 끝납니다. 테크아이는 설치 사진보다 검증 기준이 남는 구축을 지향합니다.",
-                    imageSrc: "/images/network-fiber-photo.jpg",
-                    imageAlt: "광케이블과 네트워크 연결 상태를 점검하는 현장 이미지",
+                    imageSrc: "/images/v2/service/network-design-whiteboard.jpeg",
+                    imageAlt: "네트워크 설계 화이트보드 토폴로지 다이어그램",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 1600,
@@ -420,6 +487,8 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     "기존 장비 증설은 했지만 VLAN, 정책, 회선 구성이 뒤엉켜 장애 영향 범위가 커진 경우",
                     "방화벽, 스위치, 무선, 인터넷 회선을 각기 다른 업체가 나눠 구축해 기준 문서가 분리된 경우",
                     "구축 이후 운영팀이 실제 관리할 수 있는 인수 문서와 점검 기준이 필요한 경우",
+                    "신규 사이트 개설 또는 데이터센터 이전과 함께 전체 네트워크 구조를 재정비해야 하는 경우",
+                    "장비 EOL 교체 시점에 맞춰 네트워크 토폴로지와 정책 구조를 정리해야 하는 환경",
                 ])
             ),
             section(
@@ -477,6 +546,26 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                         desc: "정책 이력, 변경 승인, 로그 보존, 점검 결과를 남겨 내부 감사나 규제 대응 시 설명 가능한 상태를 유지합니다.",
                     },
                 ])
+            ),
+            section(
+                "s3b",
+                "cards",
+                featureCards("차세대 방화벽 벤더", [
+                    { title: "Palo Alto", desc: "" },
+                    { title: "Fortinet", desc: "" },
+                    { title: "Check Point", desc: "" },
+                    { title: "시큐아이", desc: "" },
+                    { title: "안랩", desc: "" },
+                ], "badges")
+            ),
+            section(
+                "s3c",
+                "cards",
+                featureCards("대응 가능 보안 표준", [
+                    { title: "ISMS-P", desc: "" },
+                    { title: "망 분리 가이드라인", desc: "" },
+                    { title: "개인정보보호법", desc: "" },
+                ], "badges")
             ),
             section(
                 "s4",
@@ -566,18 +655,32 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 표준·기술", [
+                    {
+                        title: "무선 표준",
+                        desc: "Wi-Fi 6 · Wi-Fi 6E · Wi-Fi 7\n대응 가능 AP 벤더: Cisco · Aruba · Ruckus · Meraki",
+                    },
+                    {
+                        title: "이중화 프로토콜",
+                        desc: "HSRP · VRRP · GLBP · Stacking · MC-LAG\n레이어3 절체와 스태킹 기반 절체 모두 지원",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "가용성 이중화",
                     title: "사용자는 끊기지 않아야 하고 운영자는 바로 알아야 합니다",
                     body: "네트워크 이중화와 무선 인프라는 평소보다 장애 순간에 평가받습니다. 절체가 되더라도 서비스 영향 범위가 크면 의미가 없습니다. 테크아이는 끊김 없는 접근 경험과 빠른 원인 판단을 동시에 고려해 구조를 설계합니다.",
-                    imageSrc: "/images/network-fiber-photo.jpg",
-                    imageAlt: "무선 및 이중화 설계를 검토하는 기술 회의 장면",
+                    imageSrc: "/images/v2/service/network-ha-ceiling-ap.jpeg",
+                    imageAlt: "사무실 천장 무선 액세스 포인트 배치",
                     layout: "imageRight",
                     tone: "photo",
-                    imageWidth: 6000,
-                    imageHeight: 4000,
+                    imageWidth: 1600,
+                    imageHeight: 1067,
                     caption: "설계 검토 / HA 경로, 로밍 정책, 운영 가시성",
                     points: [
                         "이중화 경로와 장애 영향 범위를 시나리오 단위로 검토합니다.",
@@ -588,13 +691,13 @@ const serviceDetailPageOverrides: Record<string, Page> = {
             ),
             section(
                 "s5",
-                "benefits",
-                benefits("도입 이후 달라지는 것", [
-                    "장애나 회선 전환 시 서비스 중단 범위가 예측 가능해집니다.",
-                    "무선 품질 이슈를 단순 민원 수준이 아니라 구조적 문제로 분류해 대응할 수 있습니다.",
-                    "장애 발생 시 네트워크팀이 절체 경로와 원인 구간을 더 빠르게 파악할 수 있습니다.",
-                    "무선 증설과 이중화 확장을 같은 기준 아래에서 이어갈 수 있습니다.",
-                ])
+                "cards",
+                featureCards("도입 이후 달라지는 것", [
+                    { title: "장애나 회선 전환 시 서비스 중단 범위가 예측 불가", desc: "서비스 중단 범위가 예측 가능해집니다" },
+                    { title: "무선 품질 이슈를 단순 민원으로 처리", desc: "구조적 문제로 분류해 대응합니다" },
+                    { title: "장애 발생 시 절체 경로와 원인 구간 불명", desc: "절체 경로와 원인 구간을 빠르게 파악합니다" },
+                    { title: "무선 증설과 이중화가 따로 진행", desc: "같은 기준 아래에서 이어집니다" },
+                ], "before-after")
             ),
             section(
                 "s6",
@@ -654,13 +757,35 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 스토리지 영역", [
+                    {
+                        title: "블록 스토리지",
+                        desc: "SAN / FC · iSCSI · NVMe-oF — 고성능 워크로드(DB, VM)에 적합한 블록 레벨 저장 구조를 설계합니다.",
+                    },
+                    {
+                        title: "파일 스토리지",
+                        desc: "NAS · 분산 파일시스템 · 클라우드 파일 — 파일 공유, 백업 대상, 협업 환경에 맞는 파일 계층을 구성합니다.",
+                    },
+                    {
+                        title: "오브젝트 · SDS",
+                        desc: "S3 호환 · Ceph · MinIO — 대용량 비정형 데이터와 아카이브 계층을 위한 소프트웨어 정의 스토리지를 구성합니다.",
+                    },
+                    {
+                        title: "대응 가능 벤더",
+                        desc: "HPE · Dell EMC · NetApp · Pure Storage · 시놀로지 — 보유 장비와 운영 환경을 먼저 확인 후 권고안을 제시합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "스토리지 엔지니어링",
                     title: "스토리지는 용량표가 아니라 데이터 흐름으로 설계해야 합니다",
                     body: "실무에서는 저장 공간보다 더 중요한 것이 데이터가 어떻게 생성되고, 얼마나 자주 읽히며, 언제 복구되어야 하는지입니다. 테크아이는 현장 운영 기준을 바탕으로 성능 계층과 보호 계층이 함께 맞물리는 구조를 설계합니다.",
-                    imageSrc: "/images/server-photo-racks.jpg",
+                    imageSrc: "/images/v2/service/storage-tiering-rack.jpeg",
                     imageAlt: "데이터센터 랙과 스토리지 인프라 이미지",
                     layout: "imageRight",
                     tone: "photo",
@@ -742,13 +867,35 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 백업 영역", [
+                    {
+                        title: "백업 솔루션",
+                        desc: "Veeam · Commvault · Rubrik · 오픈소스 — 환경과 예산에 맞는 솔루션을 확인한 뒤 구성 방향을 제안합니다.",
+                    },
+                    {
+                        title: "백업 정책",
+                        desc: "GFS · Incremental · Synthetic Full · Forever Incremental — 데이터 중요도와 복구 목표에 맞는 스케줄을 설계합니다.",
+                    },
+                    {
+                        title: "보존 정책",
+                        desc: "Hot · Warm · Cold · Archive 티어링 — 보존 기간과 접근 빈도에 따라 저장 계층을 나눠 비용과 복구 속도를 균형 있게 설계합니다.",
+                    },
+                    {
+                        title: "복구 검증",
+                        desc: "파일 단위 · VM 단위 · 서비스 단위 리허설 — 정기적인 복구 검증으로 실제 복구 가능 시간을 측정하고 이력을 남깁니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "복구 준비도",
                     title: "복구는 장애 순간에 처음 해보면 늦습니다",
                     body: "백업은 쌓여 있어도 복구 절차가 없다면 운영 기준이 되지 못합니다. 테크아이는 장애 순간 필요한 담당자, 데이터 범위, 복구 순서, 검증 결과까지 한 흐름으로 정리해 실제로 복구할 수 있는 체계를 만듭니다.",
-                    imageSrc: "/images/server-photo-inspection.jpg",
+                    imageSrc: "/images/v2/service/backup-restore-verification.jpeg",
                     imageAlt: "엔지니어가 장비 상태와 복구 준비를 점검하는 장면",
                     layout: "imageRight",
                     tone: "photo",
@@ -812,18 +959,40 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 DR 옵션", [
+                    {
+                        title: "RPO 범위",
+                        desc: "분 단위 · 시간 단위 · 일 단위 구현 가능 — 데이터 중요도와 복제 방식에 따라 실현 가능한 복구 시점 목표를 설계합니다.",
+                    },
+                    {
+                        title: "RTO 범위",
+                        desc: "분 단위 · 시간 단위 · 일 단위 구현 가능 — 서비스 우선순위와 절체 자원 규모에 따라 목표 복구 시간을 설정합니다.",
+                    },
+                    {
+                        title: "사이트 옵션",
+                        desc: "Hot Site · Warm Site · Cold Site · 클라우드 DR — 비용과 복구 목표를 함께 고려해 현실적인 사이트 구성을 제안합니다.",
+                    },
+                    {
+                        title: "BCP 산출물",
+                        desc: "업무 영향 분석 · 복구 절차서 · 훈련 시나리오 · 개정 기록 — 실제 위기 상황에서 바로 사용할 수 있는 형태로 문서를 정리합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "연속성 계획",
                     title: "중요한 것은 살아남는 시스템보다 이어지는 업무입니다",
                     body: "재해복구 체계는 서버와 스토리지만으로 완성되지 않습니다. 연락 체계, 승인 절차, 복구 순서, 대체 업무 방식이 함께 정리되어야 실제 업무 연속성이 유지됩니다. 테크아이는 기술 구조와 운영 절차를 한 문서 체계로 연결합니다.",
-                    imageSrc: "/images/solution-monitoring-room.jpg",
+                    imageSrc: "/images/v2/service/dr-bcp-runbook-detail.jpeg",
                     imageAlt: "운영실에서 복구와 연속성 계획을 확인하는 장면",
                     layout: "imageRight",
                     tone: "photo",
-                    imageWidth: 5464,
-                    imageHeight: 8192,
+                    imageWidth: 1600,
+                    imageHeight: 1067,
                     caption: "연속성 뷰 / 절체 트리거, 서비스 우선순위, 복구 플레이북",
                     points: [
                         "서비스 중요도에 맞춘 복구 순서와 목표 시간을 정의합니다.",
@@ -869,7 +1038,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 featureCards("진단은 이 세 가지를 분명하게 만드는 작업입니다", [
                     {
                         title: "현재 구조 파악",
-                        desc: "장비 현황보다 서비스 흐름, 운영 의존성, 장애 발생 지점을 먼저 파악해 구조적 문제를 읽어냅니다.",
+                        desc: "장비 현황보다 서비스 흐름과 운영 의존성을 먼저 봅니다. 장애 발생 지점을 통해 구조적 문제를 읽어냅니다.",
                     },
                     {
                         title: "리스크 우선순위화",
@@ -888,12 +1057,12 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     eyebrow: "진단 검토",
                     title: "좋은 진단은 더 많은 설명이 아니라 더 명확한 기준을 남깁니다",
                     body: "현황 진단의 가치는 보고서 분량에 있지 않습니다. 무엇이 실제 리스크인지, 어떤 순서로 손봐야 하는지, 지금 가능한 범위가 어디까지인지가 정리되어야 합니다. 테크아이는 운영 현실과 의사결정 관점에 맞는 진단 결과를 제공합니다.",
-                    imageSrc: "/images/consulting-review-photo.jpg",
-                    imageAlt: "프로젝트 자료와 아키텍처 현황을 검토하는 회의 장면",
+                    imageSrc: "/images/v2/service/consulting-assessment-checklist.jpeg",
+                    imageAlt: "인프라 진단 체크리스트 작업",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 1600,
-                    imageHeight: 1068,
+                    imageHeight: 1067,
                     caption: "진단 검토 / 현재 상태, 리스크 순위, 다음 단계 과제",
                     points: [
                         "인프라 구조를 서비스 영향 관점에서 재해석합니다.",
@@ -939,15 +1108,15 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 featureCards("로드맵 설계의 핵심 요소", [
                     {
                         title: "단계별 전환 범위",
-                        desc: "한 번에 바꾸지 않고 서비스 영향이 적은 순서로 분할해 전환 계획을 세웁니다.",
+                        desc: "한 번에 바꾸지 않고 서비스 영향이 적은 순서로 분할해 전환 계획을 세웁니다. 예: 비핵심 워크로드 → 백업·DR → 핵심 트랜잭션 순서로 리스크를 분산합니다.",
                     },
                     {
                         title: "투자 우선순위",
-                        desc: "효과가 큰 과제부터 실행할 수 있도록 비용, 리스크, 운영 편익을 함께 비교합니다.",
+                        desc: "효과가 큰 과제부터 실행할 수 있도록 비용·리스크·운영 편익을 함께 비교합니다. 예산 제약이 있을 때도 단계를 나눠 의미 있는 진전을 만들 수 있습니다.",
                     },
                     {
                         title: "운영 조직 반영",
-                        desc: "기술적으로 가능한 시나리오가 아니라 실제 운영 조직이 감당 가능한 시나리오를 설계합니다.",
+                        desc: "기술적으로 가능한 시나리오가 아니라 실제 운영 조직이 감당 가능한 시나리오를 설계합니다. 인수 시점과 교육 범위까지 계획에 포함합니다.",
                     },
                 ])
             ),
@@ -957,7 +1126,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 mediaFeature({
                     eyebrow: "로드맵 설계",
                     title: "로드맵은 발표용 그림보다 전환 이후의 안정성이 더 중요합니다",
-                    body: "장기 계획이 멋져 보여도 단계별 실행 조건이 없으면 프로젝트는 중간에 흔들립니다. 테크아이는 현황 진단 결과를 바탕으로 우선순위, 투자 타이밍, 전환 시나리오, 운영 인수 시점을 한 문서에 묶어 로드맵을 설계합니다.",
+                    body: "장기 계획이 멋져 보여도 단계별 실행 조건이 없으면 프로젝트는 중간에 흔들립니다. 테크아이는 현황 진단 결과를 바탕으로 우선순위·투자 타이밍·전환 시나리오·운영 인수 시점을 한 문서에 묶어 로드맵을 설계합니다.",
                     imageSrc: "/images/about-team-strategy.jpg",
                     imageAlt: "프로젝트 방향과 로드맵을 논의하는 전략 회의 이미지",
                     layout: "imageRight",
@@ -974,13 +1143,25 @@ const serviceDetailPageOverrides: Record<string, Page> = {
             ),
             section(
                 "s5",
-                "benefits",
-                benefits("정리 이후 달라지는 것", [
-                    "무엇부터 시작할지에 대한 조직 내 합의가 빨라집니다.",
-                    "예산과 일정이 부족해도 단계별로 추진 가능한 기준이 생깁니다.",
-                    "인프라, 보안, 운영 개선 과제를 하나의 흐름으로 관리할 수 있습니다.",
-                    "단기 처방과 중장기 전환 계획을 분리해 더 현실적인 추진이 가능해집니다.",
-                ])
+                "cards",
+                featureCards("정리 이후 달라지는 것", [
+                    {
+                        title: "큰 그림만 있는 로드맵",
+                        desc: "무엇부터 시작할지 조직 내 합의가 빨라집니다.",
+                    },
+                    {
+                        title: "예산·일정에 막히는 계획",
+                        desc: "단계별로 추진 가능한 기준이 생겨 유연하게 진행됩니다.",
+                    },
+                    {
+                        title: "영역별로 흩어진 개선 과제",
+                        desc: "인프라·보안·운영 과제를 하나의 흐름으로 관리합니다.",
+                    },
+                    {
+                        title: "단기 처방과 장기 전환 계획 혼재",
+                        desc: "분리된 단계 계획으로 더 현실적인 추진이 가능해집니다.",
+                    },
+                ], "before-after")
             ),
         ],
     }),
@@ -995,7 +1176,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 "s2",
                 "hero",
                 heroBlock(
-                    "보안 요구사항을\n운영 가능한 정책과 절차로\n구체화합니다",
+                    "보안 요구사항을\n운영 가능한\n정책과 절차로 구체화합니다",
                     "컴플라이언스는 체크리스트 통과가 아니라 실제 환경에서 계속 지켜질 수 있어야 의미가 있습니다. 테크아이는 보안 요구사항을 망 구조, 접근 통제, 로그, 점검, 증적 관리까지 이어지는 운영 기준으로 구체화합니다.",
                     "/images/hero-security.jpg",
                     "보안 거버넌스 정책과 접근 통제 기준을 운영하는 보안 환경",
@@ -1028,8 +1209,8 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     eyebrow: "거버넌스 & 컴플라이언스",
                     title: "보안은 요구사항이 아니라 실행 기준으로 남아야 합니다",
                     body: "규정은 조직마다 다르지만, 실제로 필요한 것은 누가 어떤 조건에서 무엇을 검토하고 기록할지에 대한 기준입니다. 테크아이는 보안과 컴플라이언스를 조직의 운영 흐름 안으로 끌어들여 실행 가능한 형태로 정리합니다.",
-                    imageSrc: "/images/security-control-room.jpg",
-                    imageAlt: "보안 이벤트와 컴플라이언스 운영 현황을 모니터링하는 관제실",
+                    imageSrc: "/images/v2/service/Security_operations_center_at_night.jpeg",
+                    imageAlt: "야간 보안 관제 센터에서 모니터를 통해 운영 현황을 확인하는 장면",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 4000,
@@ -1044,6 +1225,18 @@ const serviceDetailPageOverrides: Record<string, Page> = {
             ),
             section(
                 "s5",
+                "cards",
+                featureCards("대응 가능한 보안·컴플라이언스 기준", [
+                    { title: "ISMS-P", desc: "" },
+                    { title: "ISO 27001", desc: "" },
+                    { title: "SOC 2", desc: "" },
+                    { title: "개인정보보호법", desc: "" },
+                    { title: "전자금융감독규정", desc: "" },
+                    { title: "CSAP", desc: "" },
+                ], "badges")
+            ),
+            section(
+                "s6",
                 "useCases",
                 caseList("이런 환경에서 주로 찾습니다", [
                     "공공, 제조, 유통 등 규제와 내부 통제가 중요한 인프라 환경",
@@ -1098,8 +1291,8 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     eyebrow: "지원 운영",
                     title: "좋은 SLA는 연락이 잘 되는 것이 아니라 대응이 예측 가능한 상태입니다",
                     body: "유지보수 품질은 담당자 개인의 숙련도보다 체계에서 갈립니다. 어떤 이슈가 어떤 경로로 접수되고, 누가 판단하며, 어떤 형식으로 보고되는지가 정의되어야 운영이 안정됩니다. 테크아이는 현장과 운영실 사이의 흐름을 표준화합니다.",
-                    imageSrc: "/images/dark-console-operator.jpg",
-                    imageAlt: "운영자가 콘솔을 보며 지원 상황을 확인하는 이미지",
+                    imageSrc: "/images/v2/service/maintenance-sla-matrix-desk.jpeg",
+                    imageAlt: "SLA 지원 체계 산출물",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 1600,
@@ -1114,13 +1307,13 @@ const serviceDetailPageOverrides: Record<string, Page> = {
             ),
             section(
                 "s5",
-                "benefits",
-                benefits("도입 이후 운영이 달라지는 부분", [
-                    "장애 접수와 우선순위 분류가 더 빠르고 일관되게 진행됩니다.",
-                    "담당자 변경이 있어도 서비스 품질 편차가 줄어듭니다.",
-                    "반복 이슈가 누적되지 않고 보고와 개선 과제로 연결됩니다.",
-                    "지원 범위와 책임 구간이 명확해 커뮤니케이션 비용이 줄어듭니다.",
-                ])
+                "cards",
+                featureCards("도입 이후 운영이 달라지는 부분", [
+                    { title: "장애 접수와 우선순위 분류 기준이 없음", desc: "더 빠르고 일관된 분류가 가능합니다" },
+                    { title: "담당자 변경 시 품질 편차 발생", desc: "서비스 품질 편차가 줄어듭니다" },
+                    { title: "반복 이슈가 종료 후 사라짐", desc: "보고와 개선 과제로 연결됩니다" },
+                    { title: "지원 범위와 책임 구간이 불명확", desc: "커뮤니케이션 비용이 줄어듭니다" },
+                ], "before-after")
             ),
         ],
     }),
@@ -1136,7 +1329,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "문제가 생긴 뒤 점검하는 것이 아니라\n문제가 커지기 전에\n징후를 읽어내야 합니다",
-                    "정기 헬스체크는 단순 점검표 검토가 아닙니다. 용량 증가, 오류 로그, 성능 저하, 정책 누락, 구성 드리프트를 조기에 파악해 운영 리스크가 커지기 전에 대응하는 작업입니다. 테크아이는 정기 진단을 개선 과제로 연결합니다.",
+                    "정기 헬스체크는 단순 점검표 검토가 아닙니다. 용량 증가·오류 로그·성능 저하·정책 누락·구성 드리프트를 조기에 파악해 운영 리스크가 커지기 전에 대응하는 작업입니다. 테크아이는 정기 진단을 개선 과제로 연결합니다.",
                     "/images/server-photo-inspection.jpg",
                     "장비와 운영 상태를 점검하는 엔지니어 이미지",
                     { label: "SLA 기반 지원 보기", href: "/service/maintenance/sla-support" },
@@ -1206,7 +1399,7 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                 "hero",
                 heroBlock(
                     "장애 대응은\n빨리 복구하는 것만큼\n원인을 남기는 일이 중요합니다",
-                    "장애 대응은 단기 복구와 재발 방지를 분리해서 보면 반복됩니다. 테크아이는 접수, 우선순위 판단, 원인 파악, 임시 복구, 영구 조치, RCA 정리까지 연결해 장애 대응 체계를 설계하고 운영합니다.",
+                    "장애 대응은 단기 복구와 재발 방지를 분리하지 않으면 반복됩니다. 테크아이는 접수, 우선순위 판단, 원인 파악, 임시 복구, 영구 조치, RCA 정리까지 연결해 장애 대응 체계를 설계하고 운영합니다.",
                     "/images/solution-monitoring-room.jpg",
                     "운영실에서 장애 상황을 대응하는 장면",
                     { label: "SLA 기반 지원 보기", href: "/service/maintenance/sla-support" },
@@ -1238,8 +1431,8 @@ const serviceDetailPageOverrides: Record<string, Page> = {
                     eyebrow: "장애 대응",
                     title: "좋은 복구는 조용히 끝나는 것이 아니라 다시 반복되지 않는 복구입니다",
                     body: "운영 현장에서는 일단 살아나는 것이 중요하지만, 원인이 정리되지 않으면 같은 유형의 장애가 계속 반복됩니다. 테크아이는 복구 과정에서 필요한 로그, 확인 포인트, 보고 체계를 함께 관리해 대응 품질을 높입니다.",
-                    imageSrc: "/images/dark-console-operator.jpg",
-                    imageAlt: "콘솔을 통해 장애 상황을 모니터링하는 운영자 이미지",
+                    imageSrc: "/images/v2/service/maintenance-incident-noc-alert.jpeg",
+                    imageAlt: "장애 대응 NOC 운영 화면",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 1600,
@@ -1254,13 +1447,13 @@ const serviceDetailPageOverrides: Record<string, Page> = {
             ),
             section(
                 "s5",
-                "benefits",
-                benefits("도입 이후 달라지는 것", [
-                    "장애 발생 시 누가 무엇을 먼저 해야 하는지 대응 순서가 빨라집니다.",
-                    "복구 이후 보고와 RCA가 표준화되어 커뮤니케이션 비용이 줄어듭니다.",
-                    "반복 장애가 개별 이슈가 아니라 구조 개선 대상으로 관리됩니다.",
-                    "운영 품질이 사람 의존이 아니라 체계 의존으로 바뀝니다.",
-                ])
+                "cards",
+                featureCards("도입 이후 달라지는 것", [
+                    { title: "장애 발생 시 누구를 먼저 깨워야 할지 모름", desc: "대응 순서가 빨라집니다" },
+                    { title: "반복 장애가 개별 이슈로 누적", desc: "구조 개선 대상으로 관리됩니다" },
+                    { title: "복구 이후 보고와 RCA가 비표준화", desc: "표준화된 커뮤니케이션 비용이 줄어듭니다" },
+                    { title: "운영 품질이 사람 의존", desc: "체계 의존으로 바뀝니다" },
+                ], "before-after")
             ),
         ],
     }),

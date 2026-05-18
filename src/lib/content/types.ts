@@ -41,12 +41,13 @@ export interface FeatureCardItem {
   href?: string;
   imageSrc?: string;
   imageAlt?: string;
+  icon?: string;
 }
 
 export interface FeatureCardsData {
   title: string;
   items: FeatureCardItem[];
-  variant?: "standard" | "image-cards";
+  variant?: "standard" | "image-cards" | "badges" | "before-after";
   eyebrow?: string;
 }
 
@@ -58,11 +59,14 @@ export interface InfographicData {
 export interface UseCasesData {
   title: string;
   items: string[];
+  icons?: string[];
 }
 
 export interface BenefitsData {
   title: string;
   items: string[];
+  icons?: string[];
+  variant?: "standard" | "checklist";
 }
 
 export interface ComparisonTableData {

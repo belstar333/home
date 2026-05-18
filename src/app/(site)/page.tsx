@@ -241,6 +241,7 @@ export default function Home() {
                                     width={140}
                                     height={44}
                                     className={styles.logoImg}
+                                    style={logo.alt === "Intel" ? { transform: "scale(1.7)" } : undefined}
                                 />
                             </div>
                         ))}

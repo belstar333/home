@@ -85,12 +85,13 @@ function mediaFeature(config: {
     };
 }
 
-function benefits(title: string, items: string[]): BlockData {
+function benefits(title: string, items: string[], variant?: "standard" | "checklist"): BlockData {
     return {
         type: "benefits",
         data: {
             title,
             items,
+            variant,
         },
     };
 }
@@ -164,7 +165,7 @@ const productPageOverrides: Record<string, Page> = {
                     "검증 기준과 본 운영 기준이 구분되는가",
                     "운영팀이 지속적으로 관리 가능한가",
                     "향후 확장과 통합에 무리가 없는가",
-                ])
+                ], "checklist")
             ),
         ],
     }),
@@ -181,8 +182,8 @@ const productPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "중요 서비스는\n장애가 없는 것보다\n복구가 예측 가능해야 합니다",
                     "RoseHA는 실시간 복제, 장애 감지, 자동 전환, 시점 복구, 운영 콘솔을 하나의 흐름으로 묶는 고가용성 제품군입니다. 테크아이는 단순 설치가 아니라 운영 환경에 맞는 DR·HA 체계로 RoseHA를 설계하고 적용합니다.",
-                    "/images/hero-datacenter.jpg",
-                    "미션크리티컬 서비스 고가용성을 위한 데이터센터 인프라",
+                    "/images/v2/product/roseha-hero-paired-rack.jpeg",
+                    "이중화 랙 구성의 RoseHA 고가용성 환경",
                     { label: "실시간 복제 보기", href: "/product/roseha/replication" },
                     { label: "장애 감지·페일오버 보기", href: "/product/roseha/failover" }
                 )
@@ -214,18 +215,40 @@ const productPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 가용성 구성 옵션", [
+                    {
+                        title: "HA 구성 범위",
+                        desc: "Active-Active, Active-Standby 등 서비스 특성에 맞는 구성 옵션을 지원합니다.",
+                    },
+                    {
+                        title: "지원 OS·환경",
+                        desc: "Linux, Windows 등 주요 서버 OS를 지원합니다.",
+                    },
+                    {
+                        title: "지원 DB·앱",
+                        desc: "주요 RDBMS와 애플리케이션 가용성 구성을 지원합니다.",
+                    },
+                    {
+                        title: "전환 방식",
+                        desc: "자동·수동·단계별 전환 등 전환 정책을 설계할 수 있습니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "가용성 플랫폼",
                     title: "고가용성은 장애 감지부터 운영 화면까지 이어져야 완성됩니다",
                     body: "HA 제품은 단일 기능으로 설명되지 않습니다. 복제, 감지, 절체, 복구, 운영 가시성이 하나의 구조 안에서 연결되어야 운영팀이 실제로 믿고 사용할 수 있습니다. 테크아이는 RoseHA를 고객 환경에 맞는 서비스 연속성 체계로 설계합니다.",
-                    imageSrc: "/images/product-roseha-ui.png",
-                    imageAlt: "Rose HA/DR 제품 구성과 핵심 기능을 보여주는 마케팅 인포그래픽",
+                    imageSrc: "/images/v2/product/roseha-hero-paired-rack.jpeg",
+                    imageAlt: "이중화 랙 구성의 RoseHA 고가용성 환경",
                     layout: "imageRight",
-                    tone: "diagram",
-                    imageWidth: 1400,
-                    imageHeight: 900,
+                    tone: "photo",
+                    imageWidth: 1600,
+                    imageHeight: 1067,
                     caption: "RoseHA / 복제 상태, 페일오버 제어, 복구 가시성",
                     points: [
                         "복제와 절체, 복구를 한 체계로 운영할 수 있습니다.",
@@ -259,8 +282,8 @@ const productPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "복제는 데이터를 옮기는 기능이 아니라\n복구 시점을 지키는 기준입니다",
                     "실시간 복제는 장애 이후 얼마나 최근 상태로 서비스를 복구할 수 있는지를 결정합니다. RoseHA는 운영 데이터와 대기 시스템을 지속적으로 동기화해 장애 발생 시 손실 범위를 줄이고 복구 준비 상태를 유지합니다.",
-                    "/images/hero-datacenter.jpg",
-                    "실시간 데이터 복제 대상 인프라가 구성된 데이터센터",
+                    "/images/v2/product/roseha-replication-network.jpeg",
+                    "복제 네트워크 구성의 RoseHA 실시간 동기화 환경",
                     { label: "페일오버 보기", href: "/product/roseha/failover" },
                     { label: "시점 복구 보기", href: "/product/roseha/point-in-time-recovery" }
                 )
@@ -284,18 +307,40 @@ const productPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 복제 옵션", [
+                    {
+                        title: "동기 복제",
+                        desc: "데이터 손실 없는 동기 복제 구성을 지원합니다.",
+                    },
+                    {
+                        title: "비동기 복제",
+                        desc: "RPO 목표에 맞는 비동기 복제 옵션을 제공합니다.",
+                    },
+                    {
+                        title: "지원 프로토콜",
+                        desc: "블록·파일·앱 레벨 복제를 지원합니다.",
+                    },
+                    {
+                        title: "RPO 목표 범위",
+                        desc: "운영 환경에 맞는 RPO 범위를 설계할 수 있습니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "복제 제어",
                     title: "실시간 복제는 보이지 않는 동안 더 안정적이어야 합니다",
                     body: "운영팀이 실시간 복제를 신뢰하려면 평소에는 조용하고 장애 순간에는 명확해야 합니다. RoseHA는 복제 상태와 지연 구간을 운영 관점에서 파악할 수 있게 구성되어 복구 준비 상태를 꾸준히 유지할 수 있습니다.",
-                    imageSrc: "/images/product-roseha-ui.png",
-                    imageAlt: "Rose HA/DR 제품 구성과 핵심 기능을 보여주는 마케팅 인포그래픽",
+                    imageSrc: "/images/v2/product/roseha-replication-network.jpeg",
+                    imageAlt: "복제 네트워크 구성의 RoseHA 실시간 동기화 환경",
                     layout: "imageRight",
-                    tone: "diagram",
-                    imageWidth: 1400,
-                    imageHeight: 900,
+                    tone: "photo",
+                    imageWidth: 1600,
+                    imageHeight: 1067,
                     caption: "복제 / 동기화 상태, 지연 가시성, 복구 준비도",
                     points: [
                         "복제 상태와 지연 구간을 쉽게 파악할 수 있습니다.",
@@ -329,8 +374,8 @@ const productPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "자동 전환은 빠르기만 해서는 안 되고\n정확한 조건 위에서\n작동해야 합니다",
                     "장애 감지와 페일오버는 오탐과 미탐 모두가 리스크가 됩니다. RoseHA는 서비스 상태와 시스템 조건을 기준으로 자동 전환을 수행하고, 운영자가 판단할 수 있는 가시성을 함께 제공합니다.",
-                    "/images/hero-cloud.jpg",
-                    "장애 감지 이후 자동·수동 전환 조건을 설계하는 환경",
+                    "/images/v2/product/roseha-failover-monitoring.jpeg",
+                    "페일오버 모니터링 화면의 RoseHA 장애 전환 환경",
                     { label: "실시간 복제 보기", href: "/product/roseha/replication" },
                     { label: "운영 콘솔 보기", href: "/product/roseha/management-console" }
                 )
@@ -354,18 +399,40 @@ const productPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 페일오버 옵션", [
+                    {
+                        title: "감지 조건 유형",
+                        desc: "프로세스·네트워크·스토리지·서비스 상태 등 감지 기준을 설계합니다.",
+                    },
+                    {
+                        title: "전환 정책 유형",
+                        desc: "자동·수동·조건부 전환 등 서비스 특성에 맞는 정책을 구성합니다.",
+                    },
+                    {
+                        title: "RTO 목표 범위",
+                        desc: "서비스 중요도에 맞는 RTO 목표를 설계할 수 있습니다.",
+                    },
+                    {
+                        title: "수동 전환 지원",
+                        desc: "운영자 판단이 필요한 상황에서 수동 전환 절차를 지원합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "페일오버 정책",
                     title: "정교한 페일오버는 장애보다 운영 혼선을 먼저 줄입니다",
                     body: "자동 전환은 실패하지 않는 것만큼 불필요하게 작동하지 않는 것도 중요합니다. RoseHA는 서비스 중요도와 시스템 특성에 맞춰 전환 정책을 설계하고, 운영자가 그 상태를 빠르게 파악할 수 있도록 지원합니다.",
-                    imageSrc: "/images/product-roseha-ui.png",
-                    imageAlt: "Rose HA/DR 제품 구성과 핵심 기능을 보여주는 마케팅 인포그래픽",
+                    imageSrc: "/images/v2/product/roseha-failover-monitoring.jpeg",
+                    imageAlt: "페일오버 모니터링 화면의 RoseHA 장애 전환 환경",
                     layout: "imageRight",
-                    tone: "diagram",
-                    imageWidth: 1400,
-                    imageHeight: 900,
+                    tone: "photo",
+                    imageWidth: 1600,
+                    imageHeight: 1067,
                     caption: "페일오버 / 감지 규칙, 전환 정책, 운영자 가시성",
                     points: [
                         "서비스 특성에 맞는 감지 기준을 세밀하게 설정합니다.",
@@ -399,8 +466,8 @@ const productPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "장애보다 더 까다로운 사고는\n데이터가 잘못된 상태로\n정상 동작할 때입니다",
                     "시점 복구는 삭제, 오염, 잘못된 배치, 운영 실수처럼 시스템은 살아 있지만 데이터가 틀어진 상황에 대응하는 핵심 기능입니다. RoseHA는 원하는 시점으로 안전하게 되돌릴 수 있는 복구 옵션을 제공합니다.",
-                    "/images/hero-cloud.jpg",
-                    "특정 시점으로 복구하기 위한 데이터 보호 체계 환경",
+                    "/images/v2/product/roseha-pit-rollback-timeline.jpeg",
+                    "시점 복구 타임라인의 RoseHA 데이터 롤백 환경",
                     { label: "실시간 복제 보기", href: "/product/roseha/replication" },
                     { label: "운영 콘솔 보기", href: "/product/roseha/management-console" }
                 )
@@ -424,18 +491,40 @@ const productPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 복구 옵션", [
+                    {
+                        title: "복구 시점 범위",
+                        desc: "운영 환경에 맞는 복구 시간 축을 확보합니다.",
+                    },
+                    {
+                        title: "지원 데이터 유형",
+                        desc: "DB·파일·앱 상태 등 복구 대상 데이터를 지원합니다.",
+                    },
+                    {
+                        title: "복구 검증 방법",
+                        desc: "복구 이후 데이터 무결성과 서비스 상태를 확인할 수 있습니다.",
+                    },
+                    {
+                        title: "복구 시간 목표",
+                        desc: "시점 복구에 필요한 시간 범위를 사전에 설계합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "시점 복구",
                     title: "시점 복구는 되돌릴 수 있다는 말보다 어떤 시점까지 돌아갈 수 있는지가 중요합니다",
                     body: "운영 사고는 항상 완전한 장애 형태로 오지 않습니다. 잘못된 데이터가 정상처럼 흘러가는 경우일수록 정확한 시점 복구가 필요합니다. RoseHA는 복구 가능한 시간 축을 확보하고, 운영팀이 복구 판단을 더 빠르게 할 수 있게 돕습니다.",
-                    imageSrc: "/images/product-roseha-ui.png",
-                    imageAlt: "Rose HA/DR 제품 구성과 핵심 기능을 보여주는 마케팅 인포그래픽",
+                    imageSrc: "/images/v2/product/roseha-pit-rollback-timeline.jpeg",
+                    imageAlt: "시점 복구 타임라인의 RoseHA 데이터 롤백 환경",
                     layout: "imageRight",
-                    tone: "diagram",
-                    imageWidth: 1400,
-                    imageHeight: 900,
+                    tone: "photo",
+                    imageWidth: 1600,
+                    imageHeight: 1067,
                     caption: "복구 시점 / 롤백 범위, 검증 단계, 서비스 연속성",
                     points: [
                         "운영 사고에 대응할 수 있는 복구 시점 범위를 확보합니다.",
@@ -469,8 +558,8 @@ const productPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "가용성 제품은\n기능보다 먼저\n운영 화면이 명확해야 합니다",
                     "복제와 전환 기능이 아무리 좋아도 운영자가 상태를 빠르게 읽지 못하면 실제 대응 속도는 느려집니다. RoseHA 운영 콘솔은 상태 확인, 이벤트 파악, 복구 판단을 한 화면에서 지원하도록 설계되었습니다.",
-                    "/images/product-roseha-ui.png",
-                    "Rose HA/DR 제품 인포그래픽",
+                    "/images/v2/product/roseha-console-overview.jpeg",
+                    "RoseHA 가용성 운영 상태를 통합 조회하는 콘솔 화면",
                     { label: "실시간 복제 보기", href: "/product/roseha/replication" },
                     { label: "장애 감지·페일오버 보기", href: "/product/roseha/failover" }
                 )
@@ -494,18 +583,40 @@ const productPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 콘솔 기능", [
+                    {
+                        title: "상태 모니터링",
+                        desc: "복제·페일오버·복구 상태를 한 화면에서 확인합니다.",
+                    },
+                    {
+                        title: "이벤트 추적",
+                        desc: "운영 이벤트와 이력을 실시간으로 추적합니다.",
+                    },
+                    {
+                        title: "정책 관리",
+                        desc: "감지 기준과 전환 정책을 콘솔에서 관리할 수 있습니다.",
+                    },
+                    {
+                        title: "보고·알림",
+                        desc: "운영 상태를 보고 형식으로 구성하고 알림을 설정할 수 있습니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "운영 콘솔",
                     title: "운영 콘솔은 상황을 설명하는 화면이 아니라 결정을 돕는 화면이어야 합니다",
                     body: "운영자는 복잡한 이벤트 목록보다 지금 무엇이 문제인지, 얼마나 위험한지, 무엇을 확인해야 하는지를 빠르게 알고 싶어 합니다. RoseHA 콘솔은 가용성 운영의 핵심 상태를 직관적으로 보여주도록 구성됩니다.",
-                    imageSrc: "/images/product-roseha-ui.png",
-                    imageAlt: "Rose HA/DR 제품 구성과 핵심 기능을 보여주는 마케팅 인포그래픽",
+                    imageSrc: "/images/v2/product/roseha-console-overview.jpeg",
+                    imageAlt: "RoseHA 가용성 운영 상태를 통합 조회하는 콘솔 화면",
                     layout: "imageRight",
-                    tone: "diagram",
-                    imageWidth: 1400,
-                    imageHeight: 900,
+                    tone: "photo",
+                    imageWidth: 1600,
+                    imageHeight: 1067,
                     caption: "콘솔 / 상태 개요, 이벤트 추적, 운영 판단 지원",
                     points: [
                         "복제와 절체 상태를 한눈에 확인할 수 있습니다.",
@@ -539,8 +650,8 @@ const productPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "보안 운영은\n장비 수보다 먼저\n통제 기준이 분명해야 합니다",
                     "Omniguard 제품군은 권한 통제, 세션 제어, 감사와 증적 관리를 한 흐름으로 묶어 운영 보안 수준을 높입니다. 테크아이는 고객 환경에 맞는 통제 기준과 운영 절차까지 함께 설계합니다.",
-                    "/images/hero-security.jpg",
-                    "Omniguard 보안 정책과 접근 통제를 관리하는 운영 환경",
+                    "/images/v2/product/omniguard-hero-control-detail.jpeg",
+                    "보안 통제 현황을 관리하는 Omniguard 운영 환경",
                     { label: "UAC 보기", href: "/product/lsware/uac" },
                     { label: "SecuMS 보기", href: "/product/lsware/secums" }
                 )
@@ -567,18 +678,40 @@ const productPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 보안 제어 영역", [
+                    {
+                        title: "접근 통제(UAC)",
+                        desc: "특권 계정과 중요 시스템 접근 기준을 정의하고 관리합니다.",
+                    },
+                    {
+                        title: "세션 제어(UCC)",
+                        desc: "원격 접속과 세션 연결을 제어하고 작업 이력을 기록합니다.",
+                    },
+                    {
+                        title: "감사 증적(SecuMS)",
+                        desc: "보안 로그와 감사 증적을 통합 관리합니다.",
+                    },
+                    {
+                        title: "보안 운영 보고",
+                        desc: "운영 결과를 보고 형식으로 구성하고 공유할 수 있습니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "보안 제품군",
                     title: "보안 제품은 통제 화면보다 운영 체계와 증적 흐름이 먼저 설명되어야 합니다",
                     body: "보안 통제는 기능이 많다고 강해지지 않습니다. 누가 어떤 권한으로 접근하고, 어떤 세션을 어떻게 통제하며, 어떤 로그를 남겨 감사에 대응하는지가 함께 이어져야 합니다. Omniguard는 그 흐름을 제품 중심으로 정리합니다.",
-                    imageSrc: "/images/product-omniguard-ui.png",
-                    imageAlt: "통합 모듈식 서버보안 솔루션 Omniguard 제품 소개 이미지",
+                    imageSrc: "/images/v2/product/omniguard-hero-control-detail.jpeg",
+                    imageAlt: "보안 통제 현황을 관리하는 Omniguard 운영 환경",
                     layout: "imageRight",
-                    tone: "diagram",
+                    tone: "photo",
                     imageWidth: 1600,
-                    imageHeight: 600,
+                    imageHeight: 1067,
                     caption: "Omniguard / 접근 통제, 세션 가시성, 감사 대응 운영",
                     points: [
                         "권한, 세션, 감사 흐름을 하나의 체계로 연결합니다.",
@@ -612,8 +745,8 @@ const productPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "중요 시스템 접근은\n누가 들어갔는지보다\n왜 허용됐는지가 더 중요합니다",
                     "UAC는 특권 계정과 중요 시스템 접근을 통제하는 기능입니다. 테크아이는 승인 기준, 권한 부여 방식, 로그 이력, 운영 절차를 함께 설계해 실제 통제가 작동하는 환경을 만듭니다.",
-                    "/images/hero-security.jpg",
-                    "UAC 권한 요청·승인·사용 이력을 관리하는 보안 운영 화면",
+                    "/images/v2/product/omniguard-uac-approval-detail.jpeg",
+                    "UAC 권한 요청과 승인 이력을 관리하는 보안 운영 화면",
                     { label: "UCC 보기", href: "/product/lsware/ucc" },
                     { label: "SecuMS 보기", href: "/product/lsware/secums" }
                 )
@@ -637,18 +770,40 @@ const productPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 권한 통제 영역", [
+                    {
+                        title: "특권 계정 관리",
+                        desc: "서버·DB·네트워크 등 중요 시스템 특권 계정을 관리합니다.",
+                    },
+                    {
+                        title: "최소 권한 정책",
+                        desc: "필요한 시점에 필요한 범위만 접근하도록 권한을 제어합니다.",
+                    },
+                    {
+                        title: "승인 워크플로우",
+                        desc: "접근 요청과 승인 절차를 표준화하고 이력을 남깁니다.",
+                    },
+                    {
+                        title: "접근 이력 관리",
+                        desc: "누가 어떤 권한으로 언제 접근했는지 이력을 보존합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "권한 통제",
                     title: "권한 통제는 막는 기능이 아니라 운영 기준을 분명하게 만드는 기능입니다",
                     body: "중요 시스템 접근은 모든 것을 차단하는 방식으로는 지속되지 않습니다. 테크아이는 필요할 때 필요한 권한만 허용하고, 그 과정이 이력으로 남는 구조를 통해 보안과 운영의 균형을 맞춥니다.",
-                    imageSrc: "/images/product-omniguard-ui.png",
-                    imageAlt: "통합 모듈식 서버보안 솔루션 Omniguard 제품 소개 이미지",
+                    imageSrc: "/images/v2/product/omniguard-uac-approval-detail.jpeg",
+                    imageAlt: "UAC 권한 요청과 승인 이력을 관리하는 보안 운영 화면",
                     layout: "imageRight",
-                    tone: "diagram",
+                    tone: "photo",
                     imageWidth: 1600,
-                    imageHeight: 600,
+                    imageHeight: 1067,
                     caption: "UAC / 권한 정책, 승인 이력, 통제된 접근",
                     points: [
                         "권한 부여와 회수를 더 세밀하게 관리할 수 있습니다.",
@@ -682,8 +837,8 @@ const productPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "접속을 허용하는 순간부터\n세션 통제가 시작되어야\n보안이 작동합니다",
                     "UCC는 단순 접속 중계가 아니라 세션 제어와 기록을 통해 운영 행위를 더 안전하게 관리하는 기능입니다. 테크아이는 원격 작업과 외부 협력 접근이 많은 환경에 맞춰 세션 통제 체계를 설계합니다.",
-                    "/images/hero-security.jpg",
-                    "UCC 접속 경로와 세션 흐름을 통제하는 보안 운영 환경",
+                    "/images/v2/product/omniguard-ucc-session-monitor.jpeg",
+                    "UCC 세션 연결과 작업 흐름을 실시간 모니터링하는 화면",
                     { label: "UAC 보기", href: "/product/lsware/uac" },
                     { label: "SecuMS 보기", href: "/product/lsware/secums" }
                 )
@@ -707,18 +862,40 @@ const productPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 세션 통제 영역", [
+                    {
+                        title: "세션 연결 제어",
+                        desc: "내부 및 외부 접근 세션을 통제 기준에 따라 관리합니다.",
+                    },
+                    {
+                        title: "작업 기록",
+                        desc: "세션 내 작업 내용을 기록해 감사와 사고 대응에 활용합니다.",
+                    },
+                    {
+                        title: "외부 협력 접근",
+                        desc: "협력사와 외부 운영 인력의 접근을 내부 기준으로 통제합니다.",
+                    },
+                    {
+                        title: "프로토콜 지원",
+                        desc: "SSH, RDP 등 주요 원격 접속 프로토콜을 지원합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "세션 관리",
                     title: "세션 관리가 분명해질수록 외부 접근 리스크가 줄어듭니다",
                     body: "보안 사고는 접속 자체보다 접속 후 행위 통제가 느슨할 때 커집니다. 테크아이는 UCC를 통해 세션 가시성과 작업 통제 수준을 높여 원격 운영 환경을 더 안전하게 만듭니다.",
-                    imageSrc: "/images/product-omniguard-ui.png",
-                    imageAlt: "통합 모듈식 서버보안 솔루션 Omniguard 제품 소개 이미지",
+                    imageSrc: "/images/v2/product/omniguard-ucc-session-monitor.jpeg",
+                    imageAlt: "UCC 세션 연결과 작업 흐름을 실시간 모니터링하는 화면",
                     layout: "imageRight",
-                    tone: "diagram",
+                    tone: "photo",
                     imageWidth: 1600,
-                    imageHeight: 600,
+                    imageHeight: 1067,
                     caption: "UCC / 세션 추적, 원격 제어, 외부 접근 거버넌스",
                     points: [
                         "원격 접속과 세션 상태를 더 명확히 볼 수 있습니다.",
@@ -752,8 +929,8 @@ const productPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "보안 운영의 신뢰는\n통제 기능보다 먼저\n증적 관리에서 결정됩니다",
                     "SecuMS는 보안 로그와 감사 증적을 한 체계로 관리해 운영과 감사 대응을 더 명확하게 만들어 줍니다. 테크아이는 수집 기준, 보존 정책, 보고 구조를 함께 설계해 실제로 활용 가능한 감사 체계를 제공합니다.",
-                    "/images/security-control-room.jpg",
-                    "SecuMS 보안 이벤트와 감사 증적을 통합 관리하는 관제 환경",
+                    "/images/v2/product/omniguard-secums-log-archive.jpeg",
+                    "SecuMS 보안 로그와 감사 증적을 통합 관리하는 관제 환경",
                     { label: "UAC 보기", href: "/product/lsware/uac" },
                     { label: "UCC 보기", href: "/product/lsware/ucc" }
                 )
@@ -777,18 +954,40 @@ const productPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 감사·증적 영역", [
+                    {
+                        title: "로그 수집 범위",
+                        desc: "보안 장비·서버·애플리케이션 로그를 통합 수집합니다.",
+                    },
+                    {
+                        title: "증적 보존 정책",
+                        desc: "감사 기준에 맞는 보존 기간과 보관 정책을 설계합니다.",
+                    },
+                    {
+                        title: "보고 구조",
+                        desc: "보안 운영 결과를 목적에 맞는 보고 형식으로 제공합니다.",
+                    },
+                    {
+                        title: "보안 이벤트 분류",
+                        desc: "이벤트 유형과 심각도를 분류해 대응 우선순위를 결정합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "감사 증적",
                     title: "로그가 많다고 증적이 되는 것은 아닙니다",
                     body: "감사 대응에서 중요한 것은 로그 양이 아니라 설명 가능한 구조입니다. 테크아이는 SecuMS를 통해 어떤 로그를 어떤 기준으로 보존하고, 어떤 형태로 제시할지까지 체계화해 보안 운영의 신뢰도를 높입니다.",
-                    imageSrc: "/images/product-omniguard-ui.png",
-                    imageAlt: "통합 모듈식 서버보안 솔루션 Omniguard 제품 소개 이미지",
+                    imageSrc: "/images/v2/product/omniguard-secums-log-archive.jpeg",
+                    imageAlt: "SecuMS 보안 로그와 감사 증적을 통합 관리하는 관제 화면",
                     layout: "imageRight",
-                    tone: "diagram",
+                    tone: "photo",
                     imageWidth: 1600,
-                    imageHeight: 600,
+                    imageHeight: 1067,
                     caption: "SecuMS / 감사 증적, 로그 거버넌스, 보고 명확성",
                     points: [
                         "보안 로그를 목적에 맞게 통합 관리할 수 있습니다.",

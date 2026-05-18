@@ -232,6 +232,28 @@ const solutionPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 회의 자동화 영역", [
+                    {
+                        title: "회의 도구",
+                        desc: "Zoom · Google Meet · Microsoft Teams · 웹엑스 — 현재 사용 중인 화상 회의 환경에 맞게 연동 방식을 설계합니다.",
+                    },
+                    {
+                        title: "협업툴 연계",
+                        desc: "슬랙 · 노션 · 지라 · 컨플루언스 — 회의록과 액션아이템이 실제로 사용하는 협업 도구에 자동 전달되도록 연결합니다.",
+                    },
+                    {
+                        title: "언어 지원",
+                        desc: "한국어 STT · 도메인 어휘 학습 · 영어 혼용 — 전문 용어와 사내 약어가 많은 환경에 맞게 인식 품질을 조정합니다.",
+                    },
+                    {
+                        title: "출력 포맷",
+                        desc: "요약 · 액션 아이템 · 의사결정 로그 — 조직별 회의 문화에 맞는 출력 구조로 표준화합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
@@ -298,6 +320,28 @@ const solutionPageOverrides: Record<string, Page> = {
                     {
                         title: "팀 기준 반영",
                         desc: "조직별 코드 스타일과 품질 기준, 리뷰 문화에 맞춰 분석 결과가 다르게 보이도록 설계할 수 있습니다.",
+                    },
+                ])
+            ),
+            section(
+                "s3b",
+                "cards",
+                featureCards("다루는 코드 분석 영역", [
+                    {
+                        title: "지원 언어",
+                        desc: "JavaScript · TypeScript · Python · Java · Go · Rust — 현재 팀의 주요 언어와 프레임워크를 먼저 확인합니다.",
+                    },
+                    {
+                        title: "VCS 연동",
+                        desc: "Git · GitHub · GitLab · Bitbucket — 기존 코드 저장소 흐름에 자연스럽게 통합되도록 연동 구조를 설계합니다.",
+                    },
+                    {
+                        title: "CI/CD 연결",
+                        desc: "GitHub Actions · GitLab CI · Jenkins — 파이프라인 단계에서 자동 분석이 트리거되도록 구성합니다.",
+                    },
+                    {
+                        title: "품질 기준 반영",
+                        desc: "팀별 룰셋 · 기존 컨벤션 학습 — 조직이 이미 사용하는 품질 기준을 분석 결과에 반영해 재학습 없이 바로 사용할 수 있게 합니다.",
                     },
                 ])
             ),
@@ -372,14 +416,36 @@ const solutionPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 에이전트 영역", [
+                    {
+                        title: "오케스트레이션 프레임워크",
+                        desc: "LangChain · LangGraph · CrewAI · AutoGen — 업무 흐름 복잡도와 팀 역량에 맞는 프레임워크를 선택합니다.",
+                    },
+                    {
+                        title: "모델 백엔드",
+                        desc: "OpenAI · Anthropic · 로컬 LLM 연결 — 보안 정책과 비용 기준에 맞게 모델 백엔드를 구성합니다.",
+                    },
+                    {
+                        title: "로깅·추적",
+                        desc: "LangSmith · Helicone · 자체 감사 로그 — 에이전트 실행 이력과 도구 호출을 추적해 운영 개선 근거로 활용합니다.",
+                    },
+                    {
+                        title: "승인 구조",
+                        desc: "사람 게이트 · 자동 실행 · 검토 워크플로우 — 중요도에 따라 자동 실행과 사람 검토 구간을 구분해 리스크를 관리합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "오케스트레이션",
                     title: "에이전트는 많아질수록 역할이 더 선명해야 합니다",
                     body: "업무 자동화에서 중요한 것은 복잡한 에이전트 구성이 아니라 예측 가능한 흐름입니다. 테크아이는 검색, 분석, 실행, 검토 단계를 명확히 나누고 운영 기준과 로그 체계를 함께 설계해 실제 업무에 쓸 수 있는 오케스트레이션을 구현합니다.",
-                    imageSrc: "/images/solution-monitoring-room.jpg",
-                    imageAlt: "AI 에이전트 작업 흐름을 모니터링하는 관제 환경",
+                    imageSrc: "/images/v2/solution/agent-orchestration-flowboard.jpeg",
+                    imageAlt: "에이전트 오케스트레이션 워크플로우 다이어그램",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 5464,
@@ -442,14 +508,36 @@ const solutionPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 로컬 LLM 영역", [
+                    {
+                        title: "지원 오픈소스 모델",
+                        desc: "Llama 3 · Qwen · Mistral · Gemma · Solar — 환경과 언어 요구사항에 맞는 모델을 선택하고 파인튜닝 여부를 검토합니다.",
+                    },
+                    {
+                        title: "추론 서버",
+                        desc: "vLLM · Ollama · Triton · TGI — 처리량과 지연 목표에 맞는 추론 서버를 선택해 배포합니다.",
+                    },
+                    {
+                        title: "GPU 옵션",
+                        desc: "NVIDIA H100 · A100 · L40 · RTX 시리즈 — 워크로드 규모와 예산에 맞는 GPU 구성을 계획합니다.",
+                    },
+                    {
+                        title: "데이터 통제",
+                        desc: "반입·반출 정책 · 감사 로그 · 격리 네트워크 — 민감 데이터 경계를 명확히 하고 접근 이력을 남깁니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "사내 AI 스택",
                     title: "로컬 LLM은 모델보다 운영 구조에서 성패가 갈립니다",
                     body: "민감한 데이터 환경에서는 모델 선택만으로 프로젝트가 끝나지 않습니다. 어떤 데이터가 들어오고, 누가 접근하며, 추론 자원이 어떻게 소모되는지까지 운영 체계로 묶여야 안정적인 사내 AI가 됩니다.",
-                    imageSrc: "/images/hero-datacenter.jpg",
-                    imageAlt: "사내 LLM 운영을 위한 GPU 서버와 데이터센터 인프라",
+                    imageSrc: "/images/v2/solution/local-llm-gpu-detail.jpeg",
+                    imageAlt: "GPU 서버 추론 워크로드",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 6016,
@@ -512,14 +600,36 @@ const solutionPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 추론 운영 영역", [
+                    {
+                        title: "추론 서버",
+                        desc: "vLLM · TGI · Triton Inference Server — 처리량과 응답 지연 목표에 맞게 추론 서버를 선택하고 배포 구조를 설계합니다.",
+                    },
+                    {
+                        title: "라우팅 전략",
+                        desc: "요청 유형별 모델 분기 · 폴백 정책 — 경량 모델과 고성능 모델을 요청 특성에 따라 분기해 비용과 성능을 균형 있게 맞춥니다.",
+                    },
+                    {
+                        title: "캐싱",
+                        desc: "Redis · KV-Cache · 응답 캐싱 — 반복 요청을 캐싱해 응답 지연을 줄이고 추론 비용을 절감합니다.",
+                    },
+                    {
+                        title: "운영 지표",
+                        desc: "지연 시간 · 처리량 · 토큰 사용량 · 캐시 적중률 — 관제 지표를 정의해 지속적인 최적화 근거를 확보합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "추론 운영",
                     title: "추론 엔진은 AI 기능보다 운영 품질이 먼저 평가받습니다",
                     body: "사용자는 응답 속도와 안정성으로 시스템을 판단합니다. 테크아이는 모델 성능뿐 아니라 요청 분산, 캐시, 장애 대응, 관제 구조를 함께 설계해 기업 환경에서 쓸 수 있는 추론 엔진을 제공합니다.",
-                    imageSrc: "/images/solution-ai-inference-ui.jpg",
-                    imageAlt: "AI 추론 엔진 운영 UI",
+                    imageSrc: "/images/v2/solution/ai-inference-dashboard.jpeg",
+                    imageAlt: "AI 추론 모니터링 대시보드",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 2294,
@@ -582,14 +692,36 @@ const solutionPageOverrides: Record<string, Page> = {
                 ])
             ),
             section(
+                "s3b",
+                "cards",
+                featureCards("다루는 시각화 영역", [
+                    {
+                        title: "지원 도구",
+                        desc: "Grafana · Tableau · Power BI · Superset · Metabase — 조직의 기술 스택과 관리 인력 수준에 맞는 도구를 선택합니다.",
+                    },
+                    {
+                        title: "데이터 소스",
+                        desc: "SQL DB · API · 파일 · 로그 스트림 — 기존 데이터 위치와 구조를 먼저 파악하고 연결 방식을 설계합니다.",
+                    },
+                    {
+                        title: "갱신 주기",
+                        desc: "실시간 · 분 단위 · 시간 단위 · 일 단위 — 의사결정 속도와 데이터 신선도 요구에 맞게 갱신 방식을 결정합니다.",
+                    },
+                    {
+                        title: "사용자 역할",
+                        desc: "운영자 · 관리자 · 경영진 · 현업 — 역할별로 필요한 지표와 화면 밀도를 다르게 설계합니다.",
+                    },
+                ])
+            ),
+            section(
                 "s4",
                 "media",
                 mediaFeature({
                     eyebrow: "의사결정 대시보드",
                     title: "시각화는 보기 좋은 화면보다 운영 판단을 앞당겨야 합니다",
                     body: "많은 대시보드가 데이터를 예쁘게 보여주는 데 그칩니다. 테크아이는 사용자의 역할과 의사결정 순간을 중심으로 지표 구조를 설계해 더 적은 화면으로 더 빠른 판단이 가능하게 만듭니다.",
-                    imageSrc: "/images/solution-knowledge-ui.jpg",
-                    imageAlt: "운영 데이터와 지표가 정리된 대시보드 화면",
+                    imageSrc: "/images/v2/solution/data-visualization-overlay.jpeg",
+                    imageAlt: "매니저 시점의 운영 데이터 대시보드 화면",
                     layout: "imageRight",
                     tone: "photo",
                     imageWidth: 1692,
@@ -648,6 +780,28 @@ const solutionPageOverrides: Record<string, Page> = {
                     {
                         title: "지속적 갱신",
                         desc: "문서 색인, 메타데이터, 운영 정책이 계속 갱신되어야 검색 품질이 유지됩니다.",
+                    },
+                ])
+            ),
+            section(
+                "s3b",
+                "cards",
+                featureCards("다루는 RAG 영역", [
+                    {
+                        title: "임베딩 모델",
+                        desc: "OpenAI · Cohere · 한국어 전용 임베딩 — 문서 언어와 도메인 특성에 맞는 임베딩 모델을 선택합니다.",
+                    },
+                    {
+                        title: "벡터 DB",
+                        desc: "Pinecone · Weaviate · Milvus · Qdrant · pgvector — 규모·운영 방식·기존 인프라에 맞는 벡터 저장소를 결정합니다.",
+                    },
+                    {
+                        title: "문서 처리",
+                        desc: "PDF · Office · Confluence · Notion · 위키 — 다양한 사내 문서 포맷을 처리하고 청크·메타데이터 전략을 설계합니다.",
+                    },
+                    {
+                        title: "권한 연동",
+                        desc: "SAML · OAuth · SSO · 기존 IDM 연동 — 사용자 권한을 검색 인덱스에 반영해 인가된 문서만 조회되도록 구성합니다.",
                     },
                 ])
             ),

@@ -239,10 +239,15 @@
   grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
 }
 
-.painLead,
-.domainLead {
+.painLead {
   display: grid;
   align-content: start;
+  gap: 0;
+}
+
+.domainLead {
+  display: flex;
+  flex-direction: column;
   gap: 0;
 }
 
@@ -291,7 +296,20 @@
 .domainLeadVisual {
   margin-top: 34px;
   min-height: 480px;
+  flex: 1;
   border-radius: 12px;
+}
+
+.domainLeadVisual::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.68) 100%);
+  border-radius: 0 0 12px 12px;
+  pointer-events: none;
 }
 
 .domainVisual {
@@ -571,12 +589,12 @@
   left: 22px;
   right: 22px;
   bottom: 20px;
-  color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.95);
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
 }
 
 .domainItem {

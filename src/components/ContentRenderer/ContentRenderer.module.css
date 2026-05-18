@@ -169,18 +169,21 @@
 }
 
 .page[data-page-variant="storage-overview"] {
-    --page-accent: #355cc9;
-    --page-accent-strong: #1b2f67;
-    --page-accent-soft: rgba(53, 92, 201, 0.12);
-    --page-surface: #eef3ff;
+    --page-accent: #4338ca;
+    --page-accent-strong: #1e1b4b;
+    --page-accent-soft: rgba(67, 56, 202, 0.12);
+    --page-surface: #eef2ff;
     --hero-min-height: clamp(455px, 60vh, 630px);
     --hero-radius: 34px;
-    --hero-bg: linear-gradient(128deg, #0b142a 0%, #1b3a80 46%, #4b79f0 100%);
+    --hero-bg: linear-gradient(128deg, #0f0d2a 0%, #2a1f72 46%, #5c4fcc 100%);
     --hero-overlay-bg:
-        linear-gradient(92deg, rgba(6, 10, 22, 0.93) 0%, rgba(6, 10, 22, 0.66) 44%, rgba(6, 10, 22, 0.18) 100%),
-        radial-gradient(circle at 84% 18%, rgba(170, 199, 255, 0.22), transparent 34%);
-    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(13, 24, 58, 0.46));
+        linear-gradient(92deg, rgba(10, 8, 28, 0.94) 0%, rgba(10, 8, 28, 0.66) 48%, rgba(10, 8, 28, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(190, 180, 255, 0.24), transparent 30%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(15, 12, 46, 0.46));
     --panel-radius: 30px;
+    --panel-bg: linear-gradient(180deg, #f1f0ff, rgba(238, 237, 255, 0.9));
+    --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(240, 238, 255, 0.92));
+    --table-head-bg: rgba(67, 56, 202, 0.12);
 }
 
 .page[data-page-variant="consulting-overview"] {
@@ -221,7 +224,9 @@
     --hero-after-opacity: 0.24;
     --hero-overlay-bg:
         linear-gradient(92deg, rgba(6, 12, 26, 0.93) 0%, rgba(6, 12, 26, 0.68) 44%, rgba(6, 12, 26, 0.18) 100%),
-        radial-gradient(circle at 84% 18%, rgba(162, 228, 255, 0.2), transparent 34%);
+        radial-gradient(circle at 84% 18%, rgba(162, 228, 255, 0.2), transparent 34%),
+        radial-gradient(circle at 70% 30%, rgba(0, 200, 255, 0.15), transparent 60%),
+        radial-gradient(circle at 86% 68%, rgba(0, 150, 255, 0.12), transparent 50%);
     --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(10, 28, 58, 0.44));
     --panel-radius: 30px;
 }
@@ -384,12 +389,12 @@
 }
 
 .page[data-page-variant="server-build"] {
-    --page-accent: #bb621f;
-    --page-accent-strong: #4e2f14;
-    --page-accent-soft: rgba(187, 98, 31, 0.12);
-    --page-surface: #fff7ef;
+    --page-accent: #2d66e4;
+    --page-accent-strong: #122554;
+    --page-accent-soft: rgba(45, 102, 228, 0.12);
+    --page-surface: #eef4ff;
     --hero-radius: 24px;
-    --hero-bg: linear-gradient(132deg, #1d1410 0%, #714625 48%, #d37a29 100%);
+    --hero-bg: linear-gradient(126deg, #0a1530 0%, #16377e 42%, #3f88ef 100%);
     --hero-after:
         linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 26%),
         repeating-linear-gradient(
@@ -401,28 +406,28 @@
         );
     --hero-after-opacity: 0.24;
     --hero-overlay-bg:
-        linear-gradient(92deg, rgba(17, 11, 8, 0.94) 0%, rgba(17, 11, 8, 0.7) 46%, rgba(17, 11, 8, 0.18) 100%),
-        radial-gradient(circle at 84% 20%, rgba(255, 213, 160, 0.22), transparent 34%);
-    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(44, 22, 8, 0.46));
+        linear-gradient(92deg, rgba(5, 11, 24, 0.94) 0%, rgba(5, 11, 24, 0.66) 48%, rgba(5, 11, 24, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(168, 218, 255, 0.24), transparent 30%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(10, 23, 55, 0.46));
     --panel-radius: 22px;
-    --panel-bg: linear-gradient(180deg, #fffaf4, rgba(255, 248, 241, 0.9));
+    --panel-bg: linear-gradient(180deg, #f2f6ff, rgba(244, 248, 255, 0.9));
     --card-radius: 20px;
-    --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 249, 244, 0.92));
+    --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 248, 255, 0.92));
     --card-accent-inset: 20px auto 20px 18px;
     --card-accent-width: 4px;
     --card-accent-height: auto;
     --card-accent-radius: 999px;
     --card-accent-bg: linear-gradient(180deg, var(--page-accent), transparent 90%);
-    --table-head-bg: rgba(187, 98, 31, 0.12);
+    --table-head-bg: rgba(45, 102, 228, 0.12);
 }
 
 .page[data-page-variant="server-virtualization"] {
-    --page-accent: #0f8f9d;
-    --page-accent-strong: #0a3e45;
-    --page-accent-soft: rgba(15, 143, 157, 0.12);
-    --page-surface: #edf9fb;
+    --page-accent: #2d66e4;
+    --page-accent-strong: #122554;
+    --page-accent-soft: rgba(45, 102, 228, 0.12);
+    --page-surface: #eef4ff;
     --hero-radius: 36px;
-    --hero-bg: linear-gradient(132deg, #071c22 0%, #0d5962 46%, #16a6b5 100%);
+    --hero-bg: linear-gradient(126deg, #0a1530 0%, #16377e 42%, #3f88ef 100%);
     --hero-after:
         radial-gradient(circle at 24% 20%, rgba(255, 255, 255, 0.12), transparent 18%),
         radial-gradient(circle at 68% 62%, rgba(255, 255, 255, 0.1), transparent 22%),
@@ -435,21 +440,23 @@
         );
     --hero-after-opacity: 0.3;
     --hero-overlay-bg:
-        linear-gradient(92deg, rgba(5, 19, 24, 0.9) 0%, rgba(5, 19, 24, 0.58) 48%, rgba(5, 19, 24, 0.16) 100%),
-        radial-gradient(circle at 84% 18%, rgba(140, 247, 255, 0.26), transparent 32%);
-    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(7, 34, 39, 0.42));
+        linear-gradient(92deg, rgba(5, 11, 24, 0.94) 0%, rgba(5, 11, 24, 0.66) 48%, rgba(5, 11, 24, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(168, 218, 255, 0.24), transparent 30%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(10, 23, 55, 0.46));
     --panel-radius: 30px;
-    --panel-bg: linear-gradient(180deg, #f4feff, rgba(246, 254, 255, 0.94));
+    --panel-bg: linear-gradient(180deg, #f2f6ff, rgba(244, 248, 255, 0.9));
     --card-radius: 28px;
+    --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 248, 255, 0.92));
+    --table-head-bg: rgba(45, 102, 228, 0.12);
 }
 
 .page[data-page-variant="server-ops"] {
-    --page-accent: #1c8d72;
-    --page-accent-strong: #0d322c;
-    --page-accent-soft: rgba(28, 141, 114, 0.12);
-    --page-surface: #eef8f4;
+    --page-accent: #2d66e4;
+    --page-accent-strong: #122554;
+    --page-accent-soft: rgba(45, 102, 228, 0.12);
+    --page-surface: #eef4ff;
     --hero-radius: 26px;
-    --hero-bg: linear-gradient(132deg, #071311 0%, #0d2c28 48%, #20856c 100%);
+    --hero-bg: linear-gradient(126deg, #0a1530 0%, #16377e 42%, #3f88ef 100%);
     --hero-after:
         linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 26%),
         repeating-linear-gradient(
@@ -461,16 +468,16 @@
         );
     --hero-after-opacity: 0.28;
     --hero-overlay-bg:
-        linear-gradient(92deg, rgba(5, 13, 11, 0.92) 0%, rgba(5, 13, 11, 0.66) 44%, rgba(5, 13, 11, 0.18) 100%),
-        radial-gradient(circle at 84% 18%, rgba(151, 255, 224, 0.18), transparent 34%);
-    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(6, 28, 23, 0.48));
+        linear-gradient(92deg, rgba(5, 11, 24, 0.94) 0%, rgba(5, 11, 24, 0.66) 48%, rgba(5, 11, 24, 0.18) 100%),
+        radial-gradient(circle at 84% 18%, rgba(168, 218, 255, 0.24), transparent 30%);
+    --hero-proof-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(10, 23, 55, 0.46));
     --panel-radius: 22px;
-    --panel-bg: linear-gradient(180deg, #f7fcfa, rgba(244, 251, 248, 0.96));
+    --panel-bg: linear-gradient(180deg, #f2f6ff, rgba(244, 248, 255, 0.9));
     --card-radius: 18px;
     --card-accent-inset: 0 auto 0 0;
     --card-accent-width: 5px;
     --card-accent-height: 100%;
     --card-accent-radius: 18px 0 0 18px;
     --card-accent-bg: linear-gradient(180deg, var(--page-accent), color-mix(in srgb, var(--page-accent) 55%, white));
-    --table-head-bg: rgba(28, 141, 114, 0.12);
+    --table-head-bg: rgba(45, 102, 228, 0.12);
 }

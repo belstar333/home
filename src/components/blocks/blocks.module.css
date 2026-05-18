@@ -405,8 +405,8 @@
     right: 0;
     bottom: 0;
     margin: 0;
-    padding: 20px 22px 18px;
-    background: linear-gradient(180deg, transparent 0%, rgba(7, 12, 19, 0.82) 100%);
+    padding: 80px 22px 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
     color: #fff;
     font-size: 0.9rem;
     font-weight: 600;
@@ -517,6 +517,8 @@
     aspect-ratio: auto;
     padding: 0;
     border: 0;
+    overflow: hidden;
+    border-radius: 12px;
     border-radius: 12px;
     background: #0f1724;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
@@ -543,6 +545,21 @@
     font-size: 0.76rem;
     font-weight: 700;
     letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.mediaFeatureCaptionOverlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 64px 22px 18px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, transparent 100%);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
 }
 
@@ -576,6 +593,7 @@
     padding: 24px;
     border: 1px solid var(--page-border);
     border-radius: var(--card-radius);
+    overflow: hidden;
     text-decoration: none;
     color: inherit;
     background: var(--card-bg);
@@ -614,6 +632,11 @@
     letter-spacing: 0.16em;
 }
 
+.cardIconSymbol {
+    font-size: 2rem;
+    display: block;
+}
+
 .cardTitle {
     margin: 0;
     color: var(--on-background);
@@ -640,6 +663,94 @@
     color: #0052cc;
     font-size: 0.78rem;
     font-weight: 700;
+}
+
+.badgeRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.complianceBadge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    border-radius: 100px;
+    border: 1.5px solid color-mix(in srgb, var(--page-accent) 28%, #d0d5dd);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--on-background);
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.complianceBadge:hover {
+    background: var(--page-accent-soft);
+    border-color: var(--page-accent);
+    color: var(--page-accent);
+}
+
+.beforeAfterGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.beforeAfterCard {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 8px;
+    padding: 20px 22px;
+    border-radius: var(--card-radius, 16px);
+    border: 1px solid var(--page-border);
+    background: var(--card-bg, #fff);
+    box-shadow: var(--panel-shadow);
+}
+
+.beforeAfterBefore {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--on-background);
+    line-height: 1.5;
+}
+
+.beforeAfterBefore::before {
+    content: "Before";
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--on-background) 40%, transparent);
+    margin-bottom: 4px;
+}
+
+.beforeAfterArrow {
+    font-size: 1.1rem;
+    color: var(--page-accent);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.beforeAfterAfter {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--page-accent);
+    line-height: 1.5;
+}
+
+.beforeAfterAfter::before {
+    content: "After";
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--page-accent) 60%, transparent);
+    margin-bottom: 4px;
 }
 
 .infographic,
@@ -722,11 +833,33 @@
     padding-top: 2px;
 }
 
+.useCaseItemWithIcon {
+    grid-template-columns: 28px 1fr !important;
+}
+
+.useCaseIcon {
+    font-size: 1.25rem;
+    color: var(--page-accent);
+    line-height: 1;
+}
+
 .useCaseText,
 .benefitCard span {
     color: var(--on-background);
     font-size: 0.96rem;
     line-height: 1.72;
+}
+
+.benefitCardCheck {
+    grid-template-columns: 22px 1fr;
+    align-items: start;
+    gap: 0 10px;
+}
+
+.benefitCheckIcon {
+    color: var(--page-accent, #0052cc);
+    font-size: 1.3rem;
+    margin-top: 2px;
 }
 
 .contactForm {
@@ -870,6 +1003,68 @@
     height: 16px;
     accent-color: var(--page-accent);
     cursor: pointer;
+}
+
+.privacyWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.privacyRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.privacyToggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--page-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    flex-shrink: 0;
+}
+
+.privacyDetail {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.24s ease;
+}
+
+.privacyDetailOpen {
+    grid-template-rows: 1fr;
+}
+
+.privacyDl {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 14px;
+    margin: 10px 0 0 26px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--page-accent) 6%, #f4f6f9);
+    font-size: 0.81rem;
+    line-height: 1.55;
+    color: #4B5563;
+}
+
+.privacyDl dt {
+    font-weight: 700;
+    color: var(--on-background);
+    white-space: nowrap;
+}
+
+.privacyDl dd {
+    margin: 0;
 }
 
 .formSla {
@@ -1126,7 +1321,7 @@
     grid-template-rows: 0fr;
     overflow: hidden;
     transition: grid-template-rows 0.28s ease;
-    color: var(--page-muted);
+    color: #4B5563;
     font-size: 0.92rem;
     line-height: 1.7;
 }
@@ -1743,14 +1938,19 @@
 :global([data-page-variant="network-overview"]) .useCaseList,
 :global([data-page-variant="storage-overview"]) .benefitGrid,
 :global([data-page-variant="storage-overview"]) .useCaseList,
-:global([data-page-variant="consulting-overview"]) .benefitGrid,
 :global([data-page-variant="consulting-overview"]) .useCaseList,
+:global([data-page-variant="consulting-overview"]) .benefitGrid,
 :global([data-page-variant="maintenance-overview"]) .benefitGrid,
 :global([data-page-variant="maintenance-overview"]) .useCaseList,
 :global([data-page-variant="generic-service"]) .benefitGrid,
 :global([data-page-variant="generic-service"]) .useCaseList {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0 24px;
+}
+
+:global([data-page-variant="consulting-overview"]) .useCaseList,
+:global([data-page-variant="maintenance-overview"]) .useCaseList {
+    grid-auto-rows: 1fr;
 }
 
 :global([data-page-variant="service-overview"]) .benefitCard,
@@ -1831,7 +2031,7 @@
 }
 
 :global([data-page-variant="solution-overview"]) .cardGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
 }
 
@@ -1866,6 +2066,29 @@
 
 :global([data-page-variant="product-overview"]) .tableWrap {
     border-radius: 12px;
+}
+
+:global([data-page-variant="product-overview"]) .imageCard {
+    background: #f4f6fa;
+    border-color: rgba(15, 23, 38, 0.09);
+}
+
+:global([data-page-variant="product-overview"]) .imageCardImageWrap {
+    box-shadow: inset 0 -24px 32px -8px #f4f6fa;
+}
+
+:global([data-page-variant="product-overview"]) .benefitGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0 28px;
+}
+
+:global([data-page-variant="product-overview"]) .benefitCard {
+    padding: 20px 0;
+    border: 0;
+    border-top: 1px solid var(--page-border);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 :global([data-page-variant="product-roseha"]) .heroProof {
@@ -2018,6 +2241,11 @@
     grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
     padding: 12px 0 0;
     border-radius: 0;
+}
+
+:global([data-page-variant="about-overview"]) .faq {
+    margin-top: 12px;
+    border-top: 2px solid var(--page-accent);
 }
 
 :global([data-page-variant="about-overview"]) .imageGalleryGrid,
@@ -2208,6 +2436,25 @@
     padding: 0;
     border: 0;
     background: transparent;
+}
+
+:global([data-page-variant="contact-page"]) .mediaFeature[data-tone="photo"] {
+    align-items: stretch;
+}
+
+:global([data-page-variant="contact-page"]) .mediaFeatureFigure {
+    height: 100%;
+}
+
+:global([data-page-variant="contact-page"]) .mediaFeatureImageWrap[data-tone="photo"] {
+    height: 100%;
+    overflow: hidden;
+}
+
+:global([data-page-variant="contact-page"]) .mediaFeatureImageWrap[data-tone="photo"] .mediaFeatureImageStatic {
+    height: 100% !important;
+    width: 100%;
+    object-fit: cover;
 }
 
 :global([data-page-variant="about-overview"]) .logoSlider,
@@ -2616,30 +2863,45 @@
     }
 }
 
-/* 5-item image-card grid: switch from 2-col (2+2+1 orphan) to 3-col equal cards */
+/* 5-item image-card grid: 1(wide) + 2 + 2 layout */
 .imageCardGrid:has(> :nth-child(5):last-child) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.imageCardGrid:has(> :nth-child(5):last-child) .imageCardWide {
+/* First card spans full width with horizontal layout */
+.imageCardGrid:has(> :nth-child(5):last-child) > .imageCard:first-child {
+    grid-column: 1 / -1;
+    flex-direction: row;
+}
+
+.imageCardGrid:has(> :nth-child(5):last-child) > .imageCard:first-child .imageCardImageWrap {
+    flex: 0 0 44%;
+    aspect-ratio: unset;
+    min-height: 260px;
+}
+
+.imageCardGrid:has(> :nth-child(5):last-child) > .imageCard:first-child .imageCardBody {
+    align-content: center;
+    padding: 28px 36px;
+    gap: 12px;
+}
+
+/* Last card (auto-wide) reverted back to column layout */
+.imageCardGrid:has(> :nth-child(5):last-child) .imageCardWide:not(:first-child) {
     grid-column: auto;
     flex-direction: column;
 }
 
-.imageCardGrid:has(> :nth-child(5):last-child) .imageCardWide .imageCardImageWrap {
+.imageCardGrid:has(> :nth-child(5):last-child) .imageCardWide:not(:first-child) .imageCardImageWrap {
     flex: unset;
     aspect-ratio: 16 / 9;
     min-height: 0;
 }
 
-.imageCardGrid:has(> :nth-child(5):last-child) .imageCardWide .imageCardBody {
+.imageCardGrid:has(> :nth-child(5):last-child) .imageCardWide:not(:first-child) .imageCardBody {
     align-content: start;
     padding: 22px 24px;
     gap: 10px;
-}
-
-.imageCardGrid:has(> :nth-child(5):last-child) .imageCardWide .imageCardTitle {
-    font-size: 1.14rem;
 }
 
 /* 3-item image gallery: equal 3-column grid instead of 1-big + 2-stacked */
@@ -2650,6 +2912,26 @@
 .imageGalleryGrid:has(> :nth-child(3):last-child) .imageGalleryItemFeature {
     grid-row: auto;
     min-height: 260px;
+}
+
+/* about-overview: restore 1-large-left + 2-stacked-right with visual rhythm */
+:global([data-page-variant="about-overview"]) .imageGalleryGrid:has(> :nth-child(3):last-child) {
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+}
+
+:global([data-page-variant="about-overview"]) .imageGalleryGrid:has(> :nth-child(3):last-child) .imageGalleryItemFeature {
+    grid-row: span 2;
+    min-height: 560px;
+}
+
+:global([data-page-variant="about-overview"]) .imageGalleryGrid:has(> :nth-child(3):last-child) .imageGalleryItem:nth-child(2) {
+    aspect-ratio: 3 / 2;
+    min-height: 0;
+}
+
+:global([data-page-variant="about-overview"]) .imageGalleryGrid:has(> :nth-child(3):last-child) .imageGalleryItem:nth-child(3) {
+    aspect-ratio: 1 / 1;
+    min-height: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

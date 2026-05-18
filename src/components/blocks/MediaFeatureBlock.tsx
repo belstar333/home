@@ -49,8 +49,13 @@ export default function MediaFeatureBlock({ data }: { data: MediaFeatureData }) 
                             className={styles.mediaFeatureImage}
                         />
                     )}
+                    {data.caption && tone === "photo" && (
+                        <figcaption className={styles.mediaFeatureCaptionOverlay}>{data.caption}</figcaption>
+                    )}
                 </div>
-                {data.caption && <figcaption className={styles.mediaFeatureCaption}>{data.caption}</figcaption>}
+                {data.caption && tone !== "photo" && (
+                    <figcaption className={styles.mediaFeatureCaption}>{data.caption}</figcaption>
+                )}
             </figure>
         </section>
     );

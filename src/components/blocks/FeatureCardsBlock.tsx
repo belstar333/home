@@ -9,6 +9,38 @@ function makeBadgeLabel(index: number) {
 }
 
 export default function FeatureCardsBlock({ data }: { data: FeatureCardsData }) {
+    if (data.variant === "badges") {
+        return (
+            <section className={styles.featureCards}>
+                <h3 className={styles.sectionTitle}>{data.title}</h3>
+                <div className={styles.badgeRow}>
+                    {data.items.map((item, index) => (
+                        <span key={`${item.title}-${index}`} className={styles.complianceBadge}>
+                            {item.title}
+                        </span>
+                    ))}
+                </div>
+            </section>
+        );
+    }
+
+    if (data.variant === "before-after") {
+        return (
+            <section className={styles.featureCards}>
+                <h3 className={styles.sectionTitle}>{data.title}</h3>
+                <div className={styles.beforeAfterGrid}>
+                    {data.items.map((item, index) => (
+                        <div key={`${item.title}-${index}`} className={styles.beforeAfterCard}>
+                            <p className={styles.beforeAfterBefore}>{item.title}</p>
+                            <span className={styles.beforeAfterArrow} aria-hidden="true">→</span>
+                            <p className={styles.beforeAfterAfter}>{item.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+        );
+    }
+
     if (data.variant === "image-cards") {
         return (
             <section className={styles.featureCards}>
@@ -68,7 +100,11 @@ export default function FeatureCardsBlock({ data }: { data: FeatureCardsData }) 
                     const href = item.href && !isContactHref(item.href) ? item.href : undefined;
                     const content = (
                         <>
-                            <div className={styles.cardIcon}>{makeBadgeLabel(index)}</div>
+                            <div className={styles.cardIcon}>
+                                {item.icon
+                                    ? <span className={`material-symbols-outlined ${styles.cardIconSymbol}`}>{item.icon}</span>
+                                    : makeBadgeLabel(index)}
+                            </div>
                             <h4 className={styles.cardTitle}>{item.title}</h4>
                             <p className={styles.cardDesc}>{item.desc}</p>
                             {href && <span className={styles.cardArrow}>자세히 보기</span>}

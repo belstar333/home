@@ -22,6 +22,7 @@ export default function ContactFormBlock({
 }) {
     const [submitted, setSubmitted] = useState(false);
     const [privacyChecked, setPrivacyChecked] = useState(false);
+    const [privacyExpanded, setPrivacyExpanded] = useState(false);
     const checklist = presentation?.contactPoints ?? defaultChecklist;
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -96,20 +97,36 @@ export default function ContactFormBlock({
                             rows={5}
                         />
                     </div>
-                    <label className={styles.privacyLabel}>
-                        <input
-                            type="checkbox"
-                            className={styles.privacyCheckbox}
-                            checked={privacyChecked}
-                            onChange={(e) => setPrivacyChecked(e.target.checked)}
-                            required
-                        />
-                        <span>
-                            <strong>개인정보 수집 및 이용에 동의합니다.</strong>{" "}
-                            수집 항목: 이름, 이메일, 연락처, 회사명. 이용 목적: 상담 답변 및 프로젝트 검토. 보유 기간: 상담 종료 후 1년.{" "}
-                            <span className={styles.formRequired}>*</span>
-                        </span>
-                    </label>
+                    <div className={styles.privacyWrap}>
+                        <div className={styles.privacyRow}>
+                            <label className={styles.privacyLabel}>
+                                <input
+                                    type="checkbox"
+                                    className={styles.privacyCheckbox}
+                                    checked={privacyChecked}
+                                    onChange={(e) => setPrivacyChecked(e.target.checked)}
+                                    required
+                                />
+                                <span>개인정보 수집·이용에 동의합니다. <span className={styles.formRequired}>*</span></span>
+                            </label>
+                            <button
+                                type="button"
+                                className={styles.privacyToggle}
+                                onClick={() => setPrivacyExpanded((p) => !p)}
+                                aria-expanded={privacyExpanded}
+                            >
+                                자세히 보기 {privacyExpanded ? "▲" : "▼"}
+                            </button>
+                        </div>
+                        <div className={`${styles.privacyDetail}${privacyExpanded ? ` ${styles.privacyDetailOpen}` : ""}`}>
+                            <dl className={styles.privacyDl}>
+                                <dt>수집 항목</dt><dd>이름, 이메일, 연락처, 회사명</dd>
+                                <dt>이용 목적</dt><dd>상담 답변 및 프로젝트 검토</dd>
+                                <dt>보유 기간</dt><dd>상담 종료 후 1년</dd>
+                                <dt>거부 시 불이익</dt><dd>동의를 거부할 수 있으나, 상담 진행이 어려울 수 있습니다.</dd>
+                            </dl>
+                        </div>
+                    </div>
                     <p className={styles.formSla}>보통 1영업일 이내에 회신드립니다.</p>
                     <button type="submit" className={styles.formSubmit} disabled={!privacyChecked}>
                         상담 신청하기
