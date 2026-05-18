@@ -126,8 +126,8 @@ const solutionPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "AI를 기능으로 붙이는 것이 아니라\n실제 업무 흐름으로\n연결합니다",
                     "테크아이의 AI 솔루션은 데모 중심 화면이 아니라 회의, 문서, 코드, 검색, 추론, 운영 업무에 실제로 연결되는 구조를 목표로 합니다. 데이터 위치, 권한, 운영 기준까지 함께 설계해 조직 안에서 지속 가능한 AI 도입을 지원합니다.",
-                    "/images/solution-agent-control-room.jpg",
-                    "AI 에이전트 흐름과 운영 화면이 보이는 관제 환경",
+                    "/images/v2/solution/hero-ai-workspace-ambient.jpg",
+                    "AI 워크스페이스 주변 환경과 운영 화면",
                     { label: "도입 문의하기", href: "/contact" },
                     { label: "AI 회의 시스템 보기", href: "/solution/meeting" }
                 )

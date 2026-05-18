@@ -55,13 +55,14 @@ function heroBlock(
     };
 }
 
-function featureCards(title: string, items: Array<{ title: string; desc: string; href?: string }>): BlockData {
+function featureCards(
+    title: string,
+    items: Array<{ title: string; desc: string; href?: string; imageSrc?: string; imageAlt?: string }>,
+    variant?: "standard" | "image-cards"
+): BlockData {
     return {
         type: "featureCards",
-        data: {
-            title,
-            items,
-        },
+        data: { title, items, variant },
     };
 }
 
@@ -108,7 +109,7 @@ const productPageOverrides: Record<string, Page> = {
                 heroBlock(
                     "제품은 기능보다 먼저\n운영 목적이 분명해야\n현장에서 살아남습니다",
                     "테크아이는 제품을 카탈로그처럼 나열하지 않습니다. 고가용성, 복구, 접근 제어, 감사 대응처럼 실제 운영 과제에 맞춰 RoseHA와 Omniguard 제품군을 제안하고, 도입 이후 운영 구조까지 함께 설계합니다.",
-                    "/images/hero-cloud.jpg",
+                    "/images/v2/product/hero-laptop-code.jpg",
                     "엔터프라이즈 제품 라인업과 운영 환경 개요",
                     { label: "RoseHA 보기", href: "/product/roseha" },
                     { label: "Omniguard 보기", href: "/product/lsware" }
@@ -122,13 +123,17 @@ const productPageOverrides: Record<string, Page> = {
                         title: "RoseHA",
                         desc: "실시간 복제, 장애 감지, 자동 전환, 시점 복구, 운영 콘솔까지 포함한 고가용성·복구 플랫폼입니다.",
                         href: "/product/roseha",
+                        imageSrc: "/images/v2/product/card-roseha-twin-racks.jpg",
+                        imageAlt: "RoseHA 이중화 구성 서버 랙",
                     },
                     {
                         title: "Omniguard",
                         desc: "권한 통제, 세션 제어, 보안 감사와 증적 관리를 통합해 운영 보안 수준을 높이는 보안 제품군입니다.",
                         href: "/product/lsware",
+                        imageSrc: "/images/v2/product/card-omniguard-access.jpg",
+                        imageAlt: "Omniguard 접근 제어 보안 장치",
                     },
-                ])
+                ], "image-cards")
             ),
             section(
                 "s4",

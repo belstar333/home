@@ -127,8 +127,8 @@ export default function Home() {
         <div className={styles.page}>
             <section className={styles.heroSection} ref={heroRef}>
                 <Image
-                    src="/images/hero-datacenter.jpg"
-                    alt="데이터센터와 고밀도 인프라 전경"
+                    src="/images/v2/home/hero-datacenter-corridor.jpg"
+                    alt="데이터센터 통로와 서버 랙 전경"
                     fill
                     priority
                     sizes="100vw"
@@ -191,8 +191,8 @@ export default function Home() {
                             </p>
                             <div className={`${styles.painVisual} ${styles.revealScale} ${painVisible ? styles.active : ""}`}>
                                 <Image
-                                    src="/images/technical-design-review.jpg"
-                                    alt="설계 자료와 운영 기준을 함께 검토하는 장면"
+                                    src="/images/v2/home/ops-rack-cabling-detail.jpg"
+                                    alt="서버 랙 케이블링 작업 클로즈업"
                                     fill
                                     sizes="(max-width: 900px) 100vw, 40vw"
                                     className={styles.sectionImage}
@@ -284,8 +284,8 @@ export default function Home() {
                             </p>
                             <div className={styles.domainLeadVisual}>
                                 <Image
-                                    src="/images/about-team-strategy.jpg"
-                                    alt="프로젝트 방향을 논의하는 팀 미팅"
+                                    src="/images/v2/home/connection-whiteboard.jpg"
+                                    alt="팀이 화이트보드 앞에서 인프라 구조를 논의하는 장면"
                                     fill
                                     sizes="(max-width: 900px) 100vw, 42vw"
                                     className={styles.sectionImage}
