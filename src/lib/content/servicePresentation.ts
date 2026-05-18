@@ -674,18 +674,22 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
             "실시간 복제, 자동 전환, 시점 복구, 운영 콘솔이 실제 업무 환경에서 어떻게 연결되는지 중심으로 적용 범위를 설계합니다.",
     },
     "/product/roseha/replication": {
+        heroLabel: "실시간 복제",
         proofLabel: "복제 검토 항목",
         proofTitle: "좋은 복제는 데이터 전달 속도보다 복구 판단 기준이 운영 안에 남아 있어야 합니다.",
     },
     "/product/roseha/failover": {
+        heroLabel: "장애 감지·페일오버",
         proofLabel: "페일오버 검토 항목",
         proofTitle: "좋은 페일오버는 빠른 전환보다 오탐 없는 조건과 운영자 가시성이 먼저입니다.",
     },
     "/product/roseha/point-in-time-recovery": {
+        heroLabel: "시점 복구",
         proofLabel: "시점 복구 검토 항목",
         proofTitle: "좋은 복구는 최신 상태로 되돌리는 것보다 틀어진 시점을 정확히 찾는 것이 먼저입니다.",
     },
     "/product/roseha/management-console": {
+        heroLabel: "운영 콘솔",
         proofLabel: "운영 콘솔 검토 항목",
         proofTitle: "좋은 콘솔은 기능 목록보다 지금 무엇이 위험한지 먼저 보여주는 화면이어야 합니다.",
     },
@@ -697,14 +701,17 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
             "권한, 접속, 로그, 감사 대응 항목이 운영팀의 실제 절차와 맞아떨어지도록 적용 범위를 정리합니다.",
     },
     "/product/lsware/uac": {
+        heroLabel: "권한 계정 통제",
         proofLabel: "UAC 검토 항목",
         proofTitle: "좋은 권한 통제는 차단 규칙보다 왜 허용됐는지가 이력에 남아야 합니다.",
     },
     "/product/lsware/ucc": {
+        heroLabel: "세션 접속 통제",
         proofLabel: "UCC 검토 항목",
         proofTitle: "좋은 세션 통제는 접속 중계보다 접속 이후 행위가 관리되어야 합니다.",
     },
     "/product/lsware/secums": {
+        heroLabel: "감사 증적 관리",
         proofLabel: "SecuMS 검토 항목",
         proofTitle: "좋은 감사 증적은 로그 양보다 설명 가능한 구조로 정리되어야 합니다.",
     },
@@ -717,7 +724,7 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
         deliverables: [],
     },
     "/about/vision-mission": {
-        heroLabel: "Vision & Mission",
+        heroLabel: "비전·미션",
         proofLabel: "설계 철학",
         proofTitle: "좋은 인프라는 성능보다 먼저 오래 운영될 수 있어야 합니다.",
         proofBody:
@@ -734,7 +741,7 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
         ],
     },
     "/about/history": {
-        heroLabel: "Growth Timeline",
+        heroLabel: "회사 연혁",
         proofLabel: "핵심 이정표",
         proofTitle: "테크아이의 성장은 매출 확대보다 수행 범위의 확장에 더 가깝습니다.",
         proofBody:
@@ -751,7 +758,7 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
         ],
     },
     "/about/partners": {
-        heroLabel: "Partner Ecosystem",
+        heroLabel: "협업 구조",
         proofLabel: "협업 구조",
         proofTitle: "공급 안정성과 현장 실행력이 함께 있을 때 파트너십은 신뢰가 됩니다.",
         proofBody:
@@ -768,7 +775,7 @@ const pageOverrides: Record<string, Partial<PresentationConfig>> = {
         ],
     },
     "/about/location": {
-        heroLabel: "Office & Meeting",
+        heroLabel: "오시는 길",
         proofLabel: "방문 안내",
         proofTitle: "첫 미팅은 소개보다 검토 범위를 빠르게 정리하는 자리에 가깝습니다.",
         proofBody:

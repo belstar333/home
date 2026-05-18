@@ -29,7 +29,7 @@
 .bannerTitle {
     margin: 0 0 16px;
     font-family: var(--font-headline);
-    font-size: clamp(1.45rem, 2.2vw, 1.95rem);
+    font-size: var(--type-banner-title);
     font-weight: 800;
     line-height: 1.22;
     letter-spacing: -0.03em;

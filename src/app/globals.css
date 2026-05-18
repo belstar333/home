@@ -81,9 +81,39 @@
   --radius-2xl: 2rem;
   --radius-pill: 999px;
 
-  /* ── Typography ── */
+  /* ── Typography — Fonts ── */
   --font-headline: "Manrope", sans-serif;
   --font-body: "Inter", sans-serif;
+
+  /* ── Typography — Hero H1 (반응형 clamp) ── */
+  --type-hero-home:       clamp(3.55rem, 6.2vw, 6rem);    /* 홈 메인 히어로 */
+  --type-hero-service:    clamp(2.8rem, 5vw, 5rem);        /* 서비스·제품 메인 히어로 */
+  --type-hero-page:       clamp(1.9rem, 3.4vw, 3rem);      /* 하위 페이지 히어로 */
+
+  /* ── Typography — Section & Component 헤딩 ── */
+  --type-subnav-title:    clamp(1.7rem, 2.4vw, 2.3rem);    /* Subnav 페이지 타이틀 */
+  --type-section-home:    clamp(2rem, 2.8vw, 2.5rem);      /* 홈 섹션 H2 */
+  --type-section-service: clamp(1.7rem, 3vw, 2.7rem);      /* 서비스 메인 섹션 H2 */
+  --type-section-page:    clamp(1.45rem, 2.4vw, 2.1rem);   /* 하위 페이지 섹션 H2 */
+  --type-proof-title:     clamp(1.35rem, 2vw, 1.8rem);     /* 히어로 우측 박스 제목 */
+  --type-hero-sub:        clamp(1rem, 1.7vw, 1.14rem);     /* 히어로 부제목 */
+  --type-banner-title:    clamp(1.45rem, 2.2vw, 1.95rem);  /* CTA 배너 제목 */
+
+  /* ── Typography — 고정 스케일 ── */
+  --type-body-base: 1rem;       /* 16px — 본문·카드 desc 기준 */
+  --type-body-sm:   0.875rem;   /* 14px — 소형 카드·인라인 설명 */
+  --type-label:     0.78rem;    /* 12.5px — eyebrow·라벨 */
+  --type-caption:   0.76rem;    /* 12.2px — 미디어 캡션 */
+  --type-micro:     0.74rem;    /* 11.8px — 인덱스 번호 */
+
+  /* ── Typography — Leading ── */
+  --leading-tight:    1.06;
+  --leading-snug:     1.2;
+  --leading-relaxed:  1.7;
+
+  /* ── Typography — Tracking ── */
+  --tracking-tight:  -0.03em;
+  --tracking-normal: -0.01em;
 }
 
 html {
