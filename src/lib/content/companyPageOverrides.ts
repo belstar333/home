@@ -701,8 +701,8 @@ const companyPageOverrides: Record<string, Page> = {
                     imageHeight: 4032,
                     caption: "본사·지사 / 미팅 조율, 프로젝트 접수, 범위 검토",
                     points: [
-                        "본사(HQ): 대전광역시 서구 둔산대로117번길 25 6층 테크아이",
-                        "서울 지사: 서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터",
+                        "본사(HQ): 대전 서구 둔산대로117번길 25 동화빌딩 6층",
+                        "서울 지사: 경기 광명시 새빛공원로 67 광명자이타워A동 1628호",
                         "대표전화 042-471-9430 / 웹사이트 www.techi.co.kr",
                     ],
                 })
@@ -711,8 +711,8 @@ const companyPageOverrides: Record<string, Page> = {
                 "s5",
                 "cards",
                 featureCards("사무소 안내", [
-                    { title: "대전 본사", desc: "대전광역시 서구 둔산대로117번길 25 6층 테크아이" },
-                    { title: "서울 지사", desc: "서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터" },
+                    { title: "대전 본사", desc: "대전 서구 둔산대로117번길 25 동화빌딩 6층" },
+                    { title: "서울 지사", desc: "경기 광명시 새빛공원로 67 광명자이타워A동 1628호" },
                     { title: "대표전화", desc: "042-471-9430" },
                     { title: "웹사이트", desc: "www.techi.co.kr" },
                 ])
@@ -721,8 +721,8 @@ const companyPageOverrides: Record<string, Page> = {
                 type: "kakaoMap",
                 data: {
                     locations: [
-                        { label: "대전 본사", address: "대전광역시 서구 둔산대로117번길 25 6층 테크아이" },
-                        { label: "서울 지사", address: "서울특별시 강동구 고덕비즈밸리로 26" },
+                        { label: "대전 본사", address: "대전 서구 둔산대로117번길 25 동화빌딩 6층" },
+                        { label: "서울 지사", address: "경기 광명시 새빛공원로 67 광명자이타워A동 1628호" },
                     ],
                 },
             } as import("@/lib/content/types").BlockData),
@@ -778,8 +778,8 @@ const companyPageOverrides: Record<string, Page> = {
                     imageHeight: 1200,
                     caption: "상담 흐름 / 환경 파악 → 범위 정의 → 다음 단계",
                     points: [
-                        "본사 대전광역시 서구 둔산대로117번길 25 · 대표전화 042-471-9430",
-                        "서울 지사 강동구 고덕비즈밸리로 26, 강동 U1센터",
+                        "본사 대전 서구 둔산대로117번길 25 동화빌딩 6층 · 대표전화 042-471-9430",
+                        "서울 지사 경기 광명시 새빛공원로 67 광명자이타워A동 1628호",
                         "대전 본사·서울 지사 방문 미팅 또는 온라인 미팅으로 진행합니다.",
                     ],
                 })
