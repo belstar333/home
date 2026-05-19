@@ -2667,7 +2667,7 @@
 
 .kakaoMapCanvas {
     width: 100%;
-    height: 420px;
+    height: clamp(360px, 54vh, 560px);
     display: block;
 }
 
@@ -2995,4 +2995,814 @@
   .logoSlide {
     animation: none;
   }
+}
+
+/* =========================================================
+   SPLIT MANIFESTO BLOCK — About 페이지 시그니처 히어로
+   ========================================================= */
+
+.splitManifesto {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    min-height: 560px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.splitManifestoText {
+    padding: 88px 64px 64px;
+    display: flex;
+    flex-direction: column;
+}
+
+.splitManifestoEyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 28px;
+}
+
+.splitManifestoH1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.8vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.12;
+    margin: 0;
+    letter-spacing: -0.025em;
+    color: #0E1726;
+    word-break: keep-all;
+}
+
+.splitManifestoItalic {
+    font-style: italic;
+}
+
+.splitManifestoDesc {
+    margin: 36px 0 0;
+    font-size: 15.5px;
+    color: #374151;
+    line-height: 1.85;
+    max-width: 540px;
+}
+
+.splitManifestoActions {
+    margin-top: auto;
+    padding-top: 56px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.splitManifestoBtnPrimary {
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid transparent;
+    transition: opacity 0.15s;
+}
+
+.splitManifestoBtnPrimary:hover {
+    opacity: 0.85;
+}
+
+.splitManifestoBtnSecondary {
+    background: transparent;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid;
+    transition: opacity 0.15s;
+}
+
+.splitManifestoBtnSecondary:hover {
+    opacity: 0.7;
+}
+
+.splitManifestoPhoto {
+    position: relative;
+    min-height: 560px;
+    overflow: hidden;
+    background: #d1d5db;
+}
+
+.splitManifestoCaption {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    right: 28px;
+    z-index: 2;
+    background: linear-gradient(transparent, rgba(14, 23, 38, 0.7));
+    padding-top: 40px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.splitManifestoCaptionSub {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.splitManifestoCaptionMain {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 900px) {
+    .splitManifesto {
+        grid-template-columns: 1fr;
+    }
+
+    .splitManifestoText {
+        padding: 56px 24px 40px;
+    }
+
+    .splitManifestoPhoto {
+        min-height: 320px;
+    }
+
+    .splitManifestoActions {
+        padding-top: 32px;
+        margin-top: 0;
+    }
+}
+
+/* =========================================================
+   RICH TIMELINE BLOCK — 연혁 페이지 시그니처
+   ========================================================= */
+
+.richTimeline {
+    background: #FAFAF7;
+    padding: 56px 64px 96px;
+}
+
+.richTimelineGrid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 좌: sticky 연도 축 */
+.richTimelineAxis {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+}
+
+.richTimelineAxisLabel {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: #1F2937;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+    font-weight: 700;
+}
+
+.richTimelineAxisItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.richTimelineAxisItem:first-of-type {
+    border-top-color: #d1d5db;
+}
+
+.richTimelineAxisDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.richTimelineAxisYear {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* 우: 카드 */
+.richTimelineCards {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #d1d5db;
+}
+
+.richTimelineCard {
+    position: relative;
+    padding: 32px 24px 32px 36px;
+    transition: background 0.2s;
+}
+
+.richTimelineCardHot {
+    background: #F0F3F8;
+    border-radius: 6px;
+    margin-left: -12px;
+    padding-left: 48px;
+}
+
+.richTimelineNode {
+    position: absolute;
+    left: -8px;
+    top: 40px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #1F2937;
+}
+
+.richTimelineCardInner {
+    display: flex;
+    flex-direction: column;
+}
+
+.richTimelineCardMeta {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.richTimelineCardYear {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.richTimelineHotBadge {
+    background: #1B5BCE;
+    color: #fff;
+    font-size: 9px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.richTimelineCardTitle {
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-weight: 700;
+    color: #0E1726;
+    margin: 0 0 12px;
+    letter-spacing: -0.015em;
+}
+
+.richTimelineCardDesc {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.75;
+    margin: 0;
+    max-width: 640px;
+}
+
+.richTimelineTags {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.richTimelineTag {
+    font-size: 11px;
+    color: #6b7280;
+    padding: 4px 10px;
+    border-radius: 3px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+}
+
+@media (max-width: 768px) {
+    .richTimeline {
+        padding: 40px 24px 64px;
+    }
+
+    .richTimelineGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .richTimelineAxis {
+        position: static;
+        display: flex;
+        gap: 0;
+        overflow-x: auto;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .richTimelineAxisItem {
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 0 16px;
+        border-top: none;
+        border-left: 1px solid #e5e7eb;
+        flex-shrink: 0;
+    }
+
+    .richTimelineAxisItem:first-of-type {
+        border-left: none;
+    }
+
+    .richTimelineCards {
+        border-left: none;
+        border-top: 1px solid #d1d5db;
+        gap: 4px;
+    }
+
+    .richTimelineCard {
+        padding: 24px 0;
+    }
+
+    .richTimelineCardHot {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .richTimelineNode {
+        display: none;
+    }
+}
+
+/* ──────────────────────────────────────────
+   CATALOG HERO (service / solution overview editorial header)
+   ────────────────────────────────────────── */
+.catalogHero {
+    padding: 72px 64px 56px;
+    background: #fff;
+}
+
+.catalogHeroGrid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 48px;
+    align-items: end;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.catalogHeroText {
+    /* text column */
+}
+
+.catalogHeroEyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+}
+
+.catalogHeroH1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.4rem, 4.2vw, 3.875rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: #0E1726;
+    margin: 0;
+}
+
+.catalogHeroSub {
+    margin: 28px 0 0;
+    font-size: 15px;
+    color: #6b7280;
+    line-height: 1.85;
+    max-width: 540px;
+}
+
+.catalogHeroPhoto {
+    position: relative;
+    min-height: 280px;
+    align-self: end;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .catalogHero {
+        padding: 56px 24px 40px;
+    }
+
+    .catalogHeroGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalogHeroPhoto {
+        min-height: 220px;
+    }
+}
+
+/* ──────────────────────────────────────────
+   STICKY SERVICE SEQUENCE
+   ────────────────────────────────────────── */
+.stickySequenceItem {
+    padding: 80px 64px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.stickySequenceGrid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 56px;
+    align-items: start;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.stickySequenceMeta {
+    position: sticky;
+    top: 32px;
+}
+
+.stickySequenceNum {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+}
+
+.stickySequenceTitle {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #0E1726;
+    margin: 0;
+}
+
+.stickySequenceSub {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.stickySequenceDesc {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.8;
+    max-width: 360px;
+}
+
+.stickySequencePoints {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.stickySequencePoint {
+    display: flex;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 13px;
+    color: #1f2937;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.stickySequenceCta {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+}
+
+.stickySequenceCta:hover {
+    opacity: 0.85;
+}
+
+.stickySequencePhoto {
+    position: relative;
+    height: 460px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.stickySequencePhotoCaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7));
+    padding: 56px 28px 24px;
+    color: #fff;
+    z-index: 3;
+}
+
+.stickySequencePhotoCaptionLabel {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+}
+
+.stickySequencePhotoCaptionText {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .stickySequenceItem {
+        padding: 56px 24px;
+    }
+
+    .stickySequenceGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .stickySequenceMeta {
+        position: static;
+    }
+
+    .stickySequencePhoto {
+        height: 280px;
+    }
+}
+
+/* ──────────────────────────────────────────
+   TYPOGRAPHIC INDEX (solutions overview)
+   ────────────────────────────────────────── */
+.typIndexHero {
+    padding: 56px 64px 32px;
+    background: #fff;
+}
+
+.typIndexHeroGrid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 64px;
+    align-items: baseline;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.typIndexVerticalLabel {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    align-self: start;
+    margin-top: 12px;
+    white-space: nowrap;
+}
+
+.typIndexEyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+}
+
+.typIndexH1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.4rem, 4.6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: #0E1726;
+    margin: 0;
+    max-width: 1000px;
+}
+
+.typIndexItalic {
+    font-style: italic;
+}
+
+.typIndexSub {
+    margin-top: 28px;
+    font-size: 15px;
+    color: #6b7280;
+    line-height: 1.85;
+    max-width: 720px;
+}
+
+.typIndex {
+    padding: 48px 64px 80px;
+    background: #fff;
+}
+
+.typIndexHeader {
+    border-top: 1px solid #0E1726;
+    border-bottom: 1px solid #0E1726;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.typIndexRow {
+    display: grid;
+    grid-template-columns: 90px 1fr 400px 80px;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid #e5e7eb;
+    align-items: center;
+    text-decoration: none;
+    transition: background 0.15s, margin 0.15s, padding-left 0.15s, padding-right 0.15s;
+}
+
+.typIndexRow:hover {
+    background: #F0F3F8;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.typIndexRowNum {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+}
+
+.typIndexRowMain {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.typIndexRowTitle {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 2.8vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    color: #0E1726;
+    letter-spacing: -0.015em;
+}
+
+.typIndexRowMeta {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.typIndexRowPreview {
+    position: relative;
+    height: 140px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.typIndexRow:hover .typIndexRowPreview {
+    opacity: 1;
+}
+
+.typIndexRowPreviewInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.typIndexRowArrow {
+    text-align: right;
+    color: #9ca3af;
+    font-size: 22px;
+    font-weight: 300;
+    transition: color 0.15s;
+}
+
+.typIndexRow:hover .typIndexRowArrow {
+    color: #1E4A8C;
+}
+
+.typIndexHint {
+    margin-top: 16px;
+    font-size: 11px;
+    color: #9ca3af;
+    text-align: center;
+    font-family: var(--font-mono);
+    letter-spacing: 0.1em;
+}
+
+.darkCriteria {
+    background: #0E1726;
+    color: #fff;
+    padding: 72px 64px;
+}
+
+.darkCriteriaHead {
+    margin-bottom: 36px;
+}
+
+.darkCriteriaEyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    color: #4A86E5;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+}
+
+.darkCriteriaTitle {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    color: #fff;
+}
+
+.darkCriteriaGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.darkCriteriaItem {
+    background: #0E1726;
+    padding: 36px 28px;
+}
+
+.darkCriteriaNum {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: #4A86E5;
+    margin-bottom: 14px;
+}
+
+.darkCriteriaItemTitle {
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 12px;
+}
+
+.darkCriteriaItemDesc {
+    font-size: 13px;
+    color: #9ca3af;
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .typIndexHero {
+        padding: 40px 24px 24px;
+    }
+
+    .typIndexHeroGrid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .typIndexVerticalLabel {
+        writing-mode: horizontal-tb;
+        transform: none;
+    }
+
+    .typIndex {
+        padding: 32px 24px 56px;
+    }
+
+    .typIndexRow {
+        grid-template-columns: 56px 1fr 80px;
+    }
+
+    .typIndexRowPreview {
+        display: none;
+    }
+
+    .darkCriteria {
+        padding: 48px 24px;
+    }
+
+    .darkCriteriaGrid {
+        grid-template-columns: 1fr;
+    }
 }

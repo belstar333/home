@@ -14,6 +14,10 @@ import LogoSliderBlock from "@/components/blocks/LogoSliderBlock";
 import FaqBlock from "@/components/blocks/FaqBlock";
 import ContactFormBlock from "@/components/blocks/ContactFormBlock";
 import KakaoMapBlock from "@/components/blocks/KakaoMapBlock";
+import SplitManifestoBlock from "@/components/blocks/SplitManifestoBlock";
+import CatalogHeroBlock from "@/components/blocks/CatalogHeroBlock";
+import StickyServiceSequenceBlock from "@/components/blocks/StickyServiceSequenceBlock";
+import TypographicIndexBlock from "@/components/blocks/TypographicIndexBlock";
 import {
     getPagePresentation,
     getPageTheme,
@@ -46,6 +50,10 @@ function renderBlock(
         case "logoSlider": return <LogoSliderBlock key={key} data={block.data as any} />;
         case "faq": return <FaqBlock key={key} data={block.data as any} />;
         case "kakaoMap": return <KakaoMapBlock key={key} data={block.data as any} />;
+        case "splitManifesto": return <SplitManifestoBlock key={key} data={block.data as any} />;
+        case "catalogHero": return <CatalogHeroBlock key={key} data={block.data as any} />;
+        case "stickyServiceSequence": return <StickyServiceSequenceBlock key={key} data={block.data as any} />;
+        case "typographicIndex": return <TypographicIndexBlock key={key} data={block.data as any} />;
         case "contactForm":
             return showContactForm ? (
                 <ContactFormBlock

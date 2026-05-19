@@ -112,14 +112,37 @@ function benefits(title: string, items: string[]): BlockData {
     };
 }
 
-function timeline(title: string, items: Array<{ year: string; text: string }>): BlockData {
+function richTimeline(
+    title: string,
+    richItems: Array<{ year: string; title: string; desc: string; tags?: string[]; hot?: boolean; accent?: string }>
+): BlockData {
     return {
         type: "timeline",
         data: {
             title,
-            items,
+            items: [],
+            richItems,
         },
     };
+}
+
+function splitManifesto(config: {
+    eyebrow: string;
+    h1: string;
+    h1Italic?: string;
+    description: string;
+    imageSrc: string;
+    imageAlt: string;
+    imageCaption?: string;
+    imageCaptionSub?: string;
+    ctaPrimary?: { label: string; href: string };
+    ctaSecondary?: { label: string; href: string };
+    accent?: string;
+}): BlockData {
+    return {
+        type: "splitManifesto",
+        data: config,
+    } as BlockData;
 }
 
 function faq(title: string, items: Array<{ q: string; a: string }>): BlockData {
@@ -151,17 +174,24 @@ const companyPageOverrides: Record<string, Page> = {
         description:
             "기술을 공급하는 데서 끝나지 않고 운영 가능한 결과를 만드는 테크아이의 일하는 방식과 신뢰 기반을 소개합니다.",
         sections: [
+            section("s0", "header", subnavHeader("회사 소개", ["회사 소개"])),
             section(
                 "s1",
-                "hero",
-                heroBlock(
-                    "기술을 공급하는 회사보다 운영 가능한 결과를 만드는 회사를 지향합니다",
-                    "테크아이는 서버, 네트워크, 데이터 보호, 운영 지원, 업무형 AI까지 각 기술을 따로 다루기보다 고객 환경이 실제로 안정적으로 돌아가게 만드는 데 집중해 왔습니다. 구축 이후의 운영, 인수, 대응까지 이어지는 구조를 만드는 것이 저희가 일하는 방식입니다.",
-                    "/images/v2/about/hero-office-dusk.jpg",
-                    "테크아이 사무실 야경과 업무 환경",
-                    { label: "회사 연혁 보기", href: "/about/history" },
-                    { label: "상담 문의하기", href: "/contact" }
-                )
+                "splitManifesto",
+                splitManifesto({
+                    eyebrow: "회사 소개",
+                    h1: "기술을 공급하는 회사보다, 운영 가능한 결과를 만드는 회사를 지향합니다.",
+                    h1Italic: "운영 가능한 결과",
+                    description:
+                        "테크아이는 서버·네트워크·데이터 보호·운영 지원·업무 AI까지 각 기술을 따로 다루기보다 고객 환경에서 실제로 안정적으로 돌아가는 데 집중해왔습니다. 구축 이후의 운영, 인수, 대응까지 이어지는 구조를 만드는 것이 회사가 일하는 방식입니다.",
+                    imageSrc: "/images/v2/about/hero-office-dusk.jpg",
+                    imageAlt: "테크아이 사무실 야경과 업무 환경",
+                    imageCaptionSub: "대전 본사 · 설계 회의",
+                    imageCaption: "구축은 회사가 아니라 구조가 만듭니다.",
+                    ctaPrimary: { label: "회사 연혁 보기", href: "/about/history" },
+                    ctaSecondary: { label: "협업 구조 →", href: "/about/partners" },
+                    accent: "#1F2937",
+                })
             ),
             section(
                 "s2",
@@ -465,10 +495,42 @@ const companyPageOverrides: Record<string, Page> = {
             section(
                 "s4",
                 "timeline",
-                timeline("연혁", [
-                    { year: "2004-2009", text: "테크아이 설립, HPE 파트너십 체결, 기업부설연구소 설립으로 기초 체계를 만들었습니다." },
-                    { year: "2010-2019", text: "공공·엔터프라이즈 구축과 유지보수 범위를 넓히며 현장 역량을 쌓았습니다." },
-                    { year: "2020–현재", text: "AI 데이터센터, 위성 지상체, 고밀도 GPU 클러스터 등 초고성능 인프라로 수행 수준을 끌어올렸습니다." },
+                richTimeline("연혁", [
+                    {
+                        year: "2004–2009", title: "기반 구축",
+                        desc: "테크아이 설립, HPE 파트너십 체결, 기업부설연구소 설립으로 기초 체계를 만들었습니다. 초기부터 엔터프라이즈 인프라 설계 역량을 축적했습니다.",
+                        tags: ["설립", "HPE", "연구소"],
+                    },
+                    {
+                        year: "2010–2014", title: "엔터프라이즈 확장",
+                        desc: "GS리테일, 파르나스호텔, 대교 등 대규모 엔터프라이즈 현장에서 인프라 구축·유지보수 범위를 넓혔습니다.",
+                        tags: ["GS리테일", "파르나스호텔", "대교"],
+                    },
+                    {
+                        year: "2015–2018", title: "공공 영역 진입",
+                        desc: "국방과학연구소, 대법원, 공군 등 국가 중요 기관 프로젝트로 영역을 확장. 보안·감사 기준에 익숙해진 시기입니다.",
+                        tags: ["국방과학연구소", "대법원", "공군"],
+                    },
+                    {
+                        year: "2019", title: "보안·감사 영역",
+                        desc: "국토교통부·국토지리정보원 등 미션 크리티컬 환경 수행. ISMS-P, ISO 27001 등 컴플라이언스 대응 체계 완비.",
+                        tags: ["ISMS-P", "국토지리정보원"],
+                    },
+                    {
+                        year: "2021", title: "AI 인프라 진입", hot: true, accent: "#1B5BCE",
+                        desc: "엔터프라이즈 인프라에서 AI 인프라로 영역 전환. 국방과학연구소 GPU 클러스터, 위성 지상체 인프라 수행.",
+                        tags: ["GPU 클러스터", "위성 지상체"],
+                    },
+                    {
+                        year: "2024", title: "고밀도 GPU 클러스터", accent: "#1B5BCE",
+                        desc: "170+ PFLOPS급 딥러닝 인프라 운영. AI 데이터센터 설계·구축 표준을 사내에 정립.",
+                        tags: ["170+ PFLOPS", "DC 설계"],
+                    },
+                    {
+                        year: "2026", title: "오늘",
+                        desc: "AI 데이터센터와 고밀도 GPU 클러스터까지 대응 가능한 수준으로 확장. 다음 22년은 운영 가능성 위에 있습니다.",
+                        tags: ["AI 인프라", "RAG", "로컬 LLM"],
+                    },
                 ])
             ),
             section(
@@ -643,6 +705,15 @@ const companyPageOverrides: Record<string, Page> = {
             "대전 본사와 서울 지사 위치, 대표 연락처, 프로젝트 미팅 방식 등 방문 정보를 안내합니다.",
         sections: [
             section("s1", "header", subnavHeader("오시는 길", ["회사 소개", "오시는 길"])),
+            section("s1b", "map", {
+                type: "kakaoMap",
+                data: {
+                    locations: [
+                        { label: "대전 본사", address: "대전 서구 둔산대로117번길 25 동화빌딩 6층" },
+                        { label: "서울 지사", address: "경기 광명시 새빛공원로 67 광명자이타워A동 1628호" },
+                    ],
+                },
+            } as import("@/lib/content/types").BlockData),
             section(
                 "s2",
                 "hero",
@@ -717,15 +788,6 @@ const companyPageOverrides: Record<string, Page> = {
                     { title: "웹사이트", desc: "www.techi.co.kr" },
                 ])
             ),
-            section("s5b", "map", {
-                type: "kakaoMap",
-                data: {
-                    locations: [
-                        { label: "대전 본사", address: "대전 서구 둔산대로117번길 25 동화빌딩 6층" },
-                        { label: "서울 지사", address: "경기 광명시 새빛공원로 67 광명자이타워A동 1628호" },
-                    ],
-                },
-            } as import("@/lib/content/types").BlockData),
             section(
                 "s6",
                 "faq",

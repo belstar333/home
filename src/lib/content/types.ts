@@ -109,9 +109,33 @@ export interface TimelineItem {
   text: string;
 }
 
+export interface TimelineRichItem {
+  year: string;
+  title: string;
+  desc: string;
+  tags?: string[];
+  hot?: boolean;
+  accent?: string;
+}
+
 export interface TimelineData {
   title: string;
   items: TimelineItem[];
+  richItems?: TimelineRichItem[];
+}
+
+export interface SplitManifestoData {
+  eyebrow: string;
+  h1: string;
+  h1Italic?: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+  imageCaption?: string;
+  imageCaptionSub?: string;
+  ctaPrimary?: { label: string; href: string };
+  ctaSecondary?: { label: string; href: string };
+  accent?: string;
 }
 
 export interface LogoSliderData {
@@ -144,6 +168,61 @@ export interface KakaoMapData {
   locations: KakaoMapLocation[];
 }
 
+export interface CatalogHeroData {
+  eyebrow: string;
+  h1: string;
+  h1ItalicWords?: string[];
+  sub: string;
+  imageSrc: string;
+  imageAlt: string;
+  accent?: string;
+}
+
+export interface StickyServiceItem {
+  n: string;
+  title: string;
+  sub: string;
+  desc: string;
+  points: string[];
+  href: string;
+  imageSrc: string;
+  imageAlt: string;
+  imageCaption?: string;
+  tone: string;
+  toneBg: string;
+}
+
+export interface StickyServiceSequenceData {
+  items: StickyServiceItem[];
+}
+
+export interface TypographicIndexItem {
+  n: string;
+  title: string;
+  meta: string;
+  tone: string;
+  href: string;
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
+export interface DarkCriteriaItem {
+  title: string;
+  desc: string;
+}
+
+export interface TypographicIndexData {
+  verticalLabel?: string;
+  eyebrow: string;
+  h1: string;
+  h1Italic?: string;
+  sub: string;
+  accent?: string;
+  items: TypographicIndexItem[];
+  criteriaTitle?: string;
+  criteriaItems?: DarkCriteriaItem[];
+}
+
 export type BlockData =
   | { type: "hero"; data: HeroData }
   | { type: "subnavHeader"; data: SubnavHeaderData }
@@ -159,7 +238,11 @@ export type BlockData =
   | { type: "logoSlider"; data: LogoSliderData }
   | { type: "faq"; data: FaqData }
   | { type: "contactForm"; data: ContactFormData }
-  | { type: "kakaoMap"; data: KakaoMapData };
+  | { type: "kakaoMap"; data: KakaoMapData }
+  | { type: "splitManifesto"; data: SplitManifestoData }
+  | { type: "catalogHero"; data: CatalogHeroData }
+  | { type: "stickyServiceSequence"; data: StickyServiceSequenceData }
+  | { type: "typographicIndex"; data: TypographicIndexData };
 
 export interface Section {
   id: string;
