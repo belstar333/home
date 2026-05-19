@@ -84,24 +84,6 @@ function mediaFeature(config: {
     };
 }
 
-function imageGallery(config: {
-    eyebrow?: string;
-    title: string;
-    body?: string;
-    items: Array<{
-        imageSrc: string;
-        imageAlt: string;
-        caption: string;
-        imageWidth?: number;
-        imageHeight?: number;
-    }>;
-}): BlockData {
-    return {
-        type: "imageGallery",
-        data: config,
-    };
-}
-
 function benefits(title: string, items: string[]): BlockData {
     return {
         type: "benefits",
@@ -113,87 +95,51 @@ function benefits(title: string, items: string[]): BlockData {
 }
 
 const solutionPageOverrides: Record<string, Page> = {
-    "/solution": page({
+    "/solution": {
         id: "solution_root_override",
         title: "AI 솔루션",
         slug: "/solution",
-        description: "회의, 코드, 검색, 추론, 시각화 업무에 실제로 연결되는 엔터프라이즈 AI 솔루션을 제공합니다.",
+        seo: {
+            title: "AI 솔루션 | 테크아이",
+            description: "회의, 코드, 검색, 추론, 시각화 업무에 실제로 연결되는 엔터프라이즈 AI 솔루션을 제공합니다.",
+        },
         sections: [
-            section("s1", "header", subnavHeader("AI 솔루션", ["솔루션"])),
-            section(
-                "s2",
-                "hero",
-                heroBlock(
-                    "AI를 기능으로 붙이는 것이 아니라\n실제 업무 흐름으로\n연결합니다",
-                    "테크아이의 AI 솔루션은 데모 중심 화면이 아니라 회의, 문서, 코드, 검색, 추론, 운영 업무에 실제로 연결되는 구조를 목표로 합니다. 데이터 위치, 권한, 운영 기준까지 함께 설계해 조직 안에서 지속 가능한 AI 도입을 지원합니다.",
-                    "/images/v2/solution/hero-ai-workspace-ambient.jpg",
-                    "AI 워크스페이스 주변 환경과 운영 화면",
-                    { label: "도입 문의하기", href: "/contact" },
-                    { label: "AI 회의 시스템 보기", href: "/solution/meeting" }
-                )
-            ),
-            section(
-                "s3",
-                "cards",
-                featureCards("도입 전에 먼저 정리하는 세 가지 기준", [
-                    {
-                        title: "어떤 업무를 줄일 것인가",
-                        desc: "기능을 늘리는 접근보다 회의 정리, 코드 검토, 검색 응답 같은 반복 업무를 먼저 정리합니다.",
-                    },
-                    {
-                        title: "어떤 데이터에 연결할 것인가",
-                        desc: "사내 문서, 코드 저장소, 업무 시스템, 운영 데이터 등 실제 업무에 필요한 정보원을 분명히 합니다.",
-                    },
-                    {
-                        title: "누가 어떻게 운영할 것인가",
-                        desc: "권한, 로그, 배포, 모델 운영 방식까지 정리해 PoC 이후에도 계속 사용할 수 있는 체계를 만듭니다.",
-                    },
-                ])
-            ),
-            section(
-                "s4",
-                "gallery",
-                imageGallery({
-                    eyebrow: "솔루션 포트폴리오",
-                    title: "업무 흐름별 AI 솔루션 영역",
-                    body: "회의 자동화, 코드 분석, 오케스트레이션, 로컬 LLM, 추론 엔진, 데이터 시각화, RAG까지 각각의 과제를 분리해 실제 업무에 맞는 방식으로 설계합니다.",
+            section("s1", "typographicIndex", {
+                type: "typographicIndex",
+                data: {
+                    verticalLabel: "AI · BUSINESS · OPERATIONS",
+                    eyebrow: "업무형 AI 솔루션 — 8종",
+                    h1: "AI를 기능으로 붙이지 않고 실제 업무 흐름으로 연결합니다.",
+                    h1Italic: "실제 업무 흐름",
+                    sub: "테크아이의 AI 솔루션은 데모 중심 화면이 아니라 회의, 문서, 코드, 검색, 추론, 운영 업무에 실제로 연결되는 구조를 목표로 합니다.",
+                    accent: "#1E4A8C",
                     items: [
-                        {
-                            imageSrc: "/images/solution-meeting-ui.jpg",
-                            imageAlt: "회의 내용을 정리하는 AI 회의 UI",
-                            caption: "회의 자동화: 회의록 정리, 안건 추적, 후속 업무 생성",
-                            imageWidth: 1325,
-                            imageHeight: 1668,
-                        },
-                        {
-                            imageSrc: "/images/solution-code-review.jpg",
-                            imageAlt: "코드 분석 화면",
-                            caption: "코드 분석: 리스크 탐지, 변경 리뷰, 품질 점검",
-                            imageWidth: 7890,
-                            imageHeight: 5263,
-                        },
-                        {
-                            imageSrc: "/images/solution-knowledge-ui.jpg",
-                            imageAlt: "문서 기반 검색과 답변 UI",
-                            caption: "엔터프라이즈 RAG: 내부 문서 검색, 근거 제시, 권한 기반 응답",
-                            imageWidth: 1692,
-                            imageHeight: 1580,
-                        },
+                        { n: "01", title: "회의 자동화", meta: "STT 정확도부터 후속 액션까지", tone: "#1E4A8C", href: "/solution/meeting", imageSrc: "/images/v2/solution/hero-ai-workspace-ambient.jpg", imageAlt: "회의 자동화 미리보기" },
+                        { n: "02", title: "코드 분석기", meta: "리뷰 속도 + 일관된 판단 기준", tone: "#1E4A8C", href: "/solution/code-analysis", imageSrc: "/images/v2/solution/local-llm-gpu-detail.jpeg", imageAlt: "코드 분석기 미리보기" },
+                        { n: "03", title: "에이전트 오케스트레이션", meta: "역할 분리 · 승인 게이트 · 로그", tone: "#92410E", href: "/solution/agent-orchestration", imageSrc: "/images/v2/solution/agent-orchestration-flowboard.jpeg", imageAlt: "에이전트 오케스트레이션 미리보기" },
+                        { n: "04", title: "로컬 LLM 도입", meta: "사내 모델 · 데이터 경계 통제", tone: "#1E4A8C", href: "/solution/local-llm", imageSrc: "/images/v2/solution/local-llm-isolated-rack.jpeg", imageAlt: "로컬 LLM 미리보기" },
+                        { n: "05", title: "AI 추론 엔진", meta: "응답 시간 · 처리량 · 운영 가시성", tone: "#0B6E4F", href: "/solution/ai-inference", imageSrc: "/images/v2/solution/ai-inference-dashboard.jpeg", imageAlt: "AI 추론 엔진 미리보기" },
+                        { n: "06", title: "데이터 시각화", meta: "판단 속도를 앞당기는 대시보드", tone: "#1E4A8C", href: "/solution/data-visualization", imageSrc: "/images/v2/solution/data-visualization-overlay.jpeg", imageAlt: "데이터 시각화 미리보기" },
+                        { n: "07", title: "엔터프라이즈 RAG", meta: "권한 · 근거 · 출처가 살아있는 검색", tone: "#1E4A8C", href: "/solution/rag", imageSrc: "/images/v2/solution/hero-ai-workflow-sketch.jpg", imageAlt: "엔터프라이즈 RAG 미리보기" },
+                        { n: "08", title: "AI 회의 시스템", meta: "녹취보다 정리 품질이 핵심", tone: "#1E4A8C", href: "/solution/meeting", imageSrc: "/images/v2/solution/hero-ai-workspace-ambient.jpg", imageAlt: "AI 회의 시스템 미리보기" },
                     ],
-                })
-            ),
-            section(
-                "s5",
-                "benefits",
-                benefits("테크아이 AI 솔루션의 방향", [
-                    "업무에 붙지 않는 실험형 AI보다 운영 가능한 AI를 우선합니다.",
-                    "모델 선택보다 데이터 연결과 권한 구조를 먼저 설계합니다.",
-                    "화면 시연이 아니라 현업이 계속 사용할 수 있는 배포와 운영 기준을 남깁니다.",
-                    "단일 기능 도입이 아니라 확장 가능한 AI 아키텍처로 이어지게 만듭니다.",
-                ])
-            ),
+                    criteriaTitle: "파일럿이 끝나도 실제 현업이 계속 쓸 수 있는 구조인가.",
+                    criteriaItems: [
+                        { title: "어떤 업무를 줄일 것인가", desc: "기능을 늘리는 접근보다 회의 정리, 코드 검토, 검색 응답 같은 반복 업무를 먼저 정리합니다." },
+                        { title: "어떤 데이터에 연결할 것인가", desc: "사내 문서, 코드 저장소, 업무 시스템, 운영 데이터 등 실제 업무에 필요한 정보원을 분명히 합니다." },
+                        { title: "누가 어떻게 운영할 것인가", desc: "권한, 로그, 배포, 모델 운영 방식까지 정리해 PoC 이후에도 계속 사용할 수 있는 체계를 만듭니다." },
+                    ],
+                },
+            }),
+            section("s2", "contact", {
+                type: "contactForm",
+                data: {
+                    title: "AI 솔루션 상담",
+                    note: "현재 환경, 주요 이슈, 도입 목적이 있으면 함께 알려주세요. 더 현실적인 범위와 다음 단계를 정리해드릴 수 있습니다.",
+                },
+            }),
         ],
-    }),
+    },
     "/solution/meeting": page({
         id: "solution_meeting_override",
         title: "AI 회의 시스템",
