@@ -135,6 +135,15 @@ export interface ContactFormData {
   anchor?: string;
 }
 
+export interface KakaoMapLocation {
+  label: string;
+  address: string;
+}
+
+export interface KakaoMapData {
+  locations: KakaoMapLocation[];
+}
+
 export type BlockData =
   | { type: "hero"; data: HeroData }
   | { type: "subnavHeader"; data: SubnavHeaderData }
@@ -149,7 +158,8 @@ export type BlockData =
   | { type: "timeline"; data: TimelineData }
   | { type: "logoSlider"; data: LogoSliderData }
   | { type: "faq"; data: FaqData }
-  | { type: "contactForm"; data: ContactFormData };
+  | { type: "contactForm"; data: ContactFormData }
+  | { type: "kakaoMap"; data: KakaoMapData };
 
 export interface Section {
   id: string;

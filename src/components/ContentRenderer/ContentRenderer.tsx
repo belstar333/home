@@ -13,13 +13,13 @@ import TimelineBlock from "@/components/blocks/TimelineBlock";
 import LogoSliderBlock from "@/components/blocks/LogoSliderBlock";
 import FaqBlock from "@/components/blocks/FaqBlock";
 import ContactFormBlock from "@/components/blocks/ContactFormBlock";
+import KakaoMapBlock from "@/components/blocks/KakaoMapBlock";
 import {
     getPagePresentation,
     getPageTheme,
     getPageVariant,
     type PagePresentation,
 } from "@/lib/content/servicePresentation";
-import ServiceCtaBanner from "@/components/ServiceCtaBanner/ServiceCtaBanner";
 import styles from "./ContentRenderer.module.css";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -45,6 +45,7 @@ function renderBlock(
         case "timeline": return <TimelineBlock key={key} data={block.data as any} />;
         case "logoSlider": return <LogoSliderBlock key={key} data={block.data as any} />;
         case "faq": return <FaqBlock key={key} data={block.data as any} />;
+        case "kakaoMap": return <KakaoMapBlock key={key} data={block.data as any} />;
         case "contactForm":
             return showContactForm ? (
                 <ContactFormBlock
@@ -64,7 +65,6 @@ export default function ContentRenderer({ page }: { page: Page }) {
     const pageVariant = getPageVariant(page);
     const pageCategory = page.slug.startsWith("/service") ? "service" : "default";
     const presentation = getPagePresentation(page);
-    const isServiceDetail = page.slug === "/service" || (page.slug.startsWith("/service/") && page.slug.split("/").filter(Boolean).length >= 2);
     const hasNavBar =
         page.slug === "/service" || page.slug.startsWith("/service/") ||
         page.slug === "/solution" || page.slug.startsWith("/solution/") ||
@@ -84,7 +84,6 @@ export default function ContentRenderer({ page }: { page: Page }) {
                     renderBlock(block, `${section.id}-${bi}`, showContactForm, page, presentation, hasNavBar)
                 )
             )}
-            {isServiceDetail && <ServiceCtaBanner pageTitle={page.title} />}
         </article>
     );
 }

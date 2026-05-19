@@ -701,7 +701,7 @@ const companyPageOverrides: Record<string, Page> = {
                     imageHeight: 4032,
                     caption: "본사·지사 / 미팅 조율, 프로젝트 접수, 범위 검토",
                     points: [
-                        "본사(HQ): 대전광역시 서구 둔산대로117번길 25",
+                        "본사(HQ): 대전광역시 서구 둔산대로117번길 25 6층 테크아이",
                         "서울 지사: 서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터",
                         "대표전화 042-471-9430 / 웹사이트 www.techi.co.kr",
                     ],
@@ -711,12 +711,21 @@ const companyPageOverrides: Record<string, Page> = {
                 "s5",
                 "cards",
                 featureCards("사무소 안내", [
-                    { title: "대전 본사", desc: "대전광역시 서구 둔산대로117번길 25" },
+                    { title: "대전 본사", desc: "대전광역시 서구 둔산대로117번길 25 6층 테크아이" },
                     { title: "서울 지사", desc: "서울특별시 강동구 고덕비즈밸리로 26, 강동 U1센터" },
                     { title: "대표전화", desc: "042-471-9430" },
                     { title: "웹사이트", desc: "www.techi.co.kr" },
                 ])
             ),
+            section("s5b", "map", {
+                type: "kakaoMap",
+                data: {
+                    locations: [
+                        { label: "대전 본사", address: "대전광역시 서구 둔산대로117번길 25 6층 테크아이" },
+                        { label: "서울 지사", address: "서울특별시 강동구 고덕비즈밸리로 26" },
+                    ],
+                },
+            } as import("@/lib/content/types").BlockData),
             section(
                 "s6",
                 "faq",

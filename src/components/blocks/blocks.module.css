@@ -2632,6 +2632,53 @@
     }
 }
 
+/* ── Kakao Map Block ── */
+.kakaoMap {
+    border: 1px solid var(--page-border);
+    border-radius: var(--panel-radius);
+    background: var(--panel-bg);
+    box-shadow: var(--panel-shadow);
+    overflow: hidden;
+}
+
+.kakaoMapTabs {
+    display: flex;
+    border-bottom: 1px solid var(--page-border);
+}
+
+.kakaoMapTab {
+    flex: 1;
+    padding: 14px 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-family: var(--font-body);
+    font-size: var(--type-body-base);
+    font-weight: 600;
+    color: var(--on-surface-variant);
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.kakaoMapTabActive {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.kakaoMapCanvas {
+    width: 100%;
+    height: 420px;
+    display: block;
+}
+
+.kakaoMapAddress {
+    margin: 0;
+    padding: 14px 20px;
+    font-size: var(--type-body-sm);
+    color: var(--on-surface-variant);
+    border-top: 1px solid var(--page-border);
+}
+
 @media (max-width: 768px) {
     .hero,
     .richText,
