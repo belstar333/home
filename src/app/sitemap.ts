@@ -1,6 +1,8 @@
 import { loadPages } from "@/lib/content/loadContent";
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const pages = loadPages();
     const paths = Object.keys(pages);
