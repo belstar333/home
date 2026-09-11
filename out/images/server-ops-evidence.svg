@@ -1,0 +1,48 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" rx="40" fill="#0B1512"/>
+  <rect x="44" y="44" width="1512" height="912" rx="32" fill="url(#bg)"/>
+  <text x="112" y="142" fill="#ECFBF5" font-size="42" font-family="Arial, sans-serif" font-weight="700">Observability &amp; Response Control</text>
+  <text x="112" y="184" fill="#A6CEC1" font-size="22" font-family="Arial, sans-serif">How monitoring, alerting, runbooks and RCA connect as one operating system</text>
+
+  <rect x="110" y="244" width="650" height="556" rx="28" fill="#0D2520" stroke="#2E8E75"/>
+  <text x="148" y="298" fill="#A6E2D0" font-size="20" font-family="Arial, sans-serif" letter-spacing="3">LIVE SIGNALS</text>
+  <rect x="148" y="340" width="574" height="142" rx="22" fill="#12352E"/>
+  <rect x="148" y="502" width="274" height="118" rx="22" fill="#12352E"/>
+  <rect x="448" y="502" width="274" height="118" rx="22" fill="#12352E"/>
+  <rect x="148" y="640" width="574" height="118" rx="22" fill="#12352E"/>
+  <text x="186" y="392" fill="#F3FFFA" font-size="28" font-family="Arial, sans-serif" font-weight="700">Alert Heatmap / Service Status</text>
+  <text x="186" y="430" fill="#B6DED1" font-size="20" font-family="Arial, sans-serif">High-signal visibility for priority incidents</text>
+  <text x="186" y="560" fill="#F3FFFA" font-size="22" font-family="Arial, sans-serif" font-weight="700">Top Alerts</text>
+  <text x="486" y="560" fill="#F3FFFA" font-size="22" font-family="Arial, sans-serif" font-weight="700">Response SLA</text>
+  <text x="186" y="700" fill="#F3FFFA" font-size="22" font-family="Arial, sans-serif" font-weight="700">Daily Ops Summary / RCA Queue</text>
+  <g opacity="0.9">
+    <rect x="184" y="594" width="190" height="10" rx="5" fill="#44D5A8"/>
+    <rect x="484" y="594" width="178" height="10" rx="5" fill="#8FF0D0"/>
+    <rect x="184" y="724" width="474" height="10" rx="5" fill="#2BAF8D"/>
+  </g>
+
+  <rect x="826" y="244" width="664" height="556" rx="28" fill="#0C201C" stroke="#2E8E75"/>
+  <text x="864" y="298" fill="#A6E2D0" font-size="20" font-family="Arial, sans-serif" letter-spacing="3">RESPONSE FLOW</text>
+  <circle cx="964" cy="438" r="72" fill="#14483D"/>
+  <circle cx="1160" cy="438" r="72" fill="#14483D"/>
+  <circle cx="1356" cy="438" r="72" fill="#14483D"/>
+  <path d="M1036 438H1088" stroke="#52D3AF" stroke-width="4"/>
+  <path d="M1232 438H1284" stroke="#52D3AF" stroke-width="4"/>
+  <text x="964" y="430" fill="#F3FFFA" font-size="20" font-family="Arial, sans-serif" font-weight="700" text-anchor="middle">ALERT</text>
+  <text x="964" y="458" fill="#C2EBDD" font-size="18" font-family="Arial, sans-serif" text-anchor="middle">priority</text>
+  <text x="1160" y="430" fill="#F3FFFA" font-size="20" font-family="Arial, sans-serif" font-weight="700" text-anchor="middle">RUNBOOK</text>
+  <text x="1160" y="458" fill="#C2EBDD" font-size="18" font-family="Arial, sans-serif" text-anchor="middle">1st action</text>
+  <text x="1356" y="430" fill="#F3FFFA" font-size="20" font-family="Arial, sans-serif" font-weight="700" text-anchor="middle">RCA LOOP</text>
+  <text x="1356" y="458" fill="#C2EBDD" font-size="18" font-family="Arial, sans-serif" text-anchor="middle">improvement</text>
+  <rect x="884" y="576" width="548" height="124" rx="22" fill="#12352E"/>
+  <text x="924" y="632" fill="#F3FFFA" font-size="24" font-family="Arial, sans-serif" font-weight="700">Escalation / Reporting Matrix</text>
+  <text x="924" y="670" fill="#B6DED1" font-size="20" font-family="Arial, sans-serif">Incident owner, stakeholder notice, executive summary, recurring issue tracking</text>
+
+  <defs>
+    <linearGradient id="bg" x1="88" y1="72" x2="1512" y2="928" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#123028"/>
+      <stop offset="0.5" stop-color="#0B1512"/>
+      <stop offset="1" stop-color="#1A5B4B"/>
+    </linearGradient>
+  </defs>
+</svg>

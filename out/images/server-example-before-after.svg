@@ -1,0 +1,62 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" rx="40" fill="#EEF2F7"/>
+  <rect x="88" y="72" width="1424" height="856" rx="28" fill="#FFFFFF" stroke="#D4DBE4"/>
+  <rect x="88" y="72" width="1424" height="58" rx="28" fill="#F4F7FB"/>
+  <circle cx="132" cy="102" r="8" fill="#FF7A7A"/>
+  <circle cx="160" cy="102" r="8" fill="#FFBC5E"/>
+  <circle cx="188" cy="102" r="8" fill="#66D38A"/>
+  <text x="224" y="108" fill="#2A384B" font-size="24" font-family="Arial, sans-serif" font-weight="700">Server Operations / Before and After Example</text>
+
+  <rect x="130" y="164" width="636" height="728" rx="26" fill="#FFF7F7" stroke="#F0CECE"/>
+  <rect x="834" y="164" width="636" height="728" rx="26" fill="#F4FBF7" stroke="#CBE6D7"/>
+  <text x="164" y="220" fill="#B14646" font-size="32" font-family="Arial, sans-serif" font-weight="700">BEFORE</text>
+  <text x="868" y="220" fill="#167A4C" font-size="32" font-family="Arial, sans-serif" font-weight="700">AFTER</text>
+
+  <rect x="164" y="258" width="262" height="114" rx="18" fill="#FFFFFF" stroke="#F0CECE"/>
+  <rect x="452" y="258" width="262" height="114" rx="18" fill="#FFFFFF" stroke="#F0CECE"/>
+  <rect x="164" y="394" width="262" height="114" rx="18" fill="#FFFFFF" stroke="#F0CECE"/>
+  <rect x="452" y="394" width="262" height="114" rx="18" fill="#FFFFFF" stroke="#F0CECE"/>
+  <text x="194" y="304" fill="#7B4242" font-size="18" font-family="Arial, sans-serif">Alerts / day</text>
+  <text x="194" y="352" fill="#D04F4F" font-size="38" font-family="Arial, sans-serif" font-weight="700">142</text>
+  <text x="482" y="304" fill="#7B4242" font-size="18" font-family="Arial, sans-serif">MTTR</text>
+  <text x="482" y="352" fill="#D04F4F" font-size="38" font-family="Arial, sans-serif" font-weight="700">3h 45m</text>
+  <text x="194" y="440" fill="#7B4242" font-size="18" font-family="Arial, sans-serif">Manual checks</text>
+  <text x="194" y="488" fill="#D04F4F" font-size="38" font-family="Arial, sans-serif" font-weight="700">21</text>
+  <text x="482" y="440" fill="#7B4242" font-size="18" font-family="Arial, sans-serif">Weekly incidents</text>
+  <text x="482" y="488" fill="#D04F4F" font-size="38" font-family="Arial, sans-serif" font-weight="700">11</text>
+  <rect x="164" y="556" width="550" height="292" rx="18" fill="#FFFFFF" stroke="#F0CECE"/>
+  <text x="194" y="604" fill="#7B4242" font-size="20" font-family="Arial, sans-serif" font-weight="700">Alert Profile</text>
+  <rect x="194" y="640" width="480" height="24" rx="12" fill="#FBE1E1"/>
+  <rect x="194" y="640" width="390" height="24" rx="12" fill="#E17878"/>
+  <rect x="194" y="690" width="480" height="24" rx="12" fill="#FBE1E1"/>
+  <rect x="194" y="690" width="320" height="24" rx="12" fill="#E17878"/>
+  <rect x="194" y="740" width="480" height="24" rx="12" fill="#FBE1E1"/>
+  <rect x="194" y="740" width="418" height="24" rx="12" fill="#E17878"/>
+  <text x="194" y="632" fill="#9B5959" font-size="16" font-family="Arial, sans-serif">Noise alerts</text>
+  <text x="194" y="682" fill="#9B5959" font-size="16" font-family="Arial, sans-serif">Escalation delay</text>
+  <text x="194" y="732" fill="#9B5959" font-size="16" font-family="Arial, sans-serif">Manual checks</text>
+
+  <rect x="868" y="258" width="262" height="114" rx="18" fill="#FFFFFF" stroke="#CBE6D7"/>
+  <rect x="1156" y="258" width="262" height="114" rx="18" fill="#FFFFFF" stroke="#CBE6D7"/>
+  <rect x="868" y="394" width="262" height="114" rx="18" fill="#FFFFFF" stroke="#CBE6D7"/>
+  <rect x="1156" y="394" width="262" height="114" rx="18" fill="#FFFFFF" stroke="#CBE6D7"/>
+  <text x="898" y="304" fill="#426B58" font-size="18" font-family="Arial, sans-serif">Alerts / day</text>
+  <text x="898" y="352" fill="#20825A" font-size="38" font-family="Arial, sans-serif" font-weight="700">39</text>
+  <text x="1186" y="304" fill="#426B58" font-size="18" font-family="Arial, sans-serif">MTTR</text>
+  <text x="1186" y="352" fill="#20825A" font-size="38" font-family="Arial, sans-serif" font-weight="700">58m</text>
+  <text x="898" y="440" fill="#426B58" font-size="18" font-family="Arial, sans-serif">Manual checks</text>
+  <text x="898" y="488" fill="#20825A" font-size="38" font-family="Arial, sans-serif" font-weight="700">6</text>
+  <text x="1186" y="440" fill="#426B58" font-size="18" font-family="Arial, sans-serif">Weekly incidents</text>
+  <text x="1186" y="488" fill="#20825A" font-size="38" font-family="Arial, sans-serif" font-weight="700">3</text>
+  <rect x="868" y="556" width="550" height="292" rx="18" fill="#FFFFFF" stroke="#CBE6D7"/>
+  <text x="898" y="604" fill="#426B58" font-size="20" font-family="Arial, sans-serif" font-weight="700">Operational Outcome</text>
+  <rect x="898" y="640" width="480" height="24" rx="12" fill="#E5F6EC"/>
+  <rect x="898" y="640" width="126" height="24" rx="12" fill="#45B178"/>
+  <rect x="898" y="690" width="480" height="24" rx="12" fill="#E5F6EC"/>
+  <rect x="898" y="690" width="142" height="24" rx="12" fill="#45B178"/>
+  <rect x="898" y="740" width="480" height="24" rx="12" fill="#E5F6EC"/>
+  <rect x="898" y="740" width="92" height="24" rx="12" fill="#45B178"/>
+  <text x="898" y="632" fill="#5A7F6C" font-size="16" font-family="Arial, sans-serif">Noise alerts</text>
+  <text x="898" y="682" fill="#5A7F6C" font-size="16" font-family="Arial, sans-serif">Escalation delay</text>
+  <text x="898" y="732" fill="#5A7F6C" font-size="16" font-family="Arial, sans-serif">Manual checks</text>
+</svg>

@@ -1,0 +1,58 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" rx="40" fill="#ECEFF4"/>
+  <rect x="88" y="72" width="1424" height="856" rx="28" fill="#FFFFFF" stroke="#D3D8E2"/>
+  <rect x="88" y="72" width="1424" height="58" rx="28" fill="#F4F6FA"/>
+  <circle cx="132" cy="102" r="8" fill="#FF7A7A"/>
+  <circle cx="160" cy="102" r="8" fill="#FFBC5E"/>
+  <circle cx="188" cy="102" r="8" fill="#66D38A"/>
+  <text x="224" y="108" fill="#2A384B" font-size="24" font-family="Arial, sans-serif" font-weight="700">Server Delivery Pack / Handover Example</text>
+
+  <rect x="120" y="160" width="290" height="736" rx="22" fill="#152334"/>
+  <text x="156" y="212" fill="#EAF2FF" font-size="24" font-family="Arial, sans-serif" font-weight="700">Project Package</text>
+  <rect x="156" y="252" width="218" height="56" rx="16" fill="#1F3652"/>
+  <rect x="156" y="326" width="218" height="56" rx="16" fill="#1F3652"/>
+  <rect x="156" y="400" width="218" height="56" rx="16" fill="#1F3652"/>
+  <rect x="156" y="474" width="218" height="56" rx="16" fill="#1F3652"/>
+  <rect x="156" y="548" width="218" height="56" rx="16" fill="#1F3652"/>
+  <text x="186" y="287" fill="#FFFFFF" font-size="19" font-family="Arial, sans-serif">01_Architecture_Pack.pdf</text>
+  <text x="186" y="361" fill="#FFFFFF" font-size="19" font-family="Arial, sans-serif">02_Migration_Plan.xlsx</text>
+  <text x="186" y="435" fill="#FFFFFF" font-size="19" font-family="Arial, sans-serif">03_Rack_Power_Map.vsdx</text>
+  <text x="186" y="509" fill="#FFFFFF" font-size="19" font-family="Arial, sans-serif">04_Validation_Checklist.xlsx</text>
+  <text x="186" y="583" fill="#FFFFFF" font-size="19" font-family="Arial, sans-serif">05_Handover_Runbook.docx</text>
+
+  <rect x="448" y="160" width="1032" height="220" rx="24" fill="#F8FAFD" stroke="#D6DCE5"/>
+  <text x="484" y="208" fill="#52657D" font-size="18" font-family="Arial, sans-serif" letter-spacing="3">ARCHITECTURE PACK</text>
+  <rect x="484" y="236" width="288" height="104" rx="18" fill="#EFF5FF" stroke="#C4D8FF"/>
+  <rect x="796" y="236" width="308" height="104" rx="18" fill="#EFF5FF" stroke="#C4D8FF"/>
+  <rect x="1128" y="236" width="316" height="104" rx="18" fill="#EFF5FF" stroke="#C4D8FF"/>
+  <text x="516" y="286" fill="#244B8B" font-size="22" font-family="Arial, sans-serif" font-weight="700">Standard Architecture</text>
+  <text x="516" y="318" fill="#62758E" font-size="18" font-family="Arial, sans-serif">Target topology / host grouping</text>
+  <text x="828" y="286" fill="#244B8B" font-size="22" font-family="Arial, sans-serif" font-weight="700">Capacity Sheet</text>
+  <text x="828" y="318" fill="#62758E" font-size="18" font-family="Arial, sans-serif">CPU / RAM / storage forecast</text>
+  <text x="1160" y="286" fill="#244B8B" font-size="22" font-family="Arial, sans-serif" font-weight="700">Rack &amp; Power Plan</text>
+  <text x="1160" y="318" fill="#62758E" font-size="18" font-family="Arial, sans-serif">Placement / port / power mapping</text>
+
+  <rect x="448" y="408" width="498" height="488" rx="24" fill="#F8FAFD" stroke="#D6DCE5"/>
+  <text x="484" y="456" fill="#52657D" font-size="18" font-family="Arial, sans-serif" letter-spacing="3">MIGRATION PLAN</text>
+  <rect x="484" y="486" width="426" height="56" rx="14" fill="#FFFFFF" stroke="#E1E6EE"/>
+  <rect x="484" y="554" width="426" height="56" rx="14" fill="#FFFFFF" stroke="#E1E6EE"/>
+  <rect x="484" y="622" width="426" height="56" rx="14" fill="#FFFFFF" stroke="#E1E6EE"/>
+  <rect x="484" y="690" width="426" height="56" rx="14" fill="#FFFFFF" stroke="#E1E6EE"/>
+  <rect x="484" y="758" width="426" height="56" rx="14" fill="#FFFFFF" stroke="#E1E6EE"/>
+  <text x="516" y="521" fill="#304155" font-size="18" font-family="Arial, sans-serif">Window 01 / Storage sync / rollback confirmed</text>
+  <text x="516" y="589" fill="#304155" font-size="18" font-family="Arial, sans-serif">Window 02 / App cutover / smoke test complete</text>
+  <text x="516" y="657" fill="#304155" font-size="18" font-family="Arial, sans-serif">Window 03 / DB failover rehearsal / sign-off</text>
+  <text x="516" y="725" fill="#304155" font-size="18" font-family="Arial, sans-serif">Window 04 / DNS switch / monitoring validation</text>
+  <text x="516" y="793" fill="#304155" font-size="18" font-family="Arial, sans-serif">Window 05 / Handover / ops owner confirmation</text>
+
+  <rect x="974" y="408" width="506" height="488" rx="24" fill="#F8FAFD" stroke="#D6DCE5"/>
+  <text x="1010" y="456" fill="#52657D" font-size="18" font-family="Arial, sans-serif" letter-spacing="3">VALIDATION &amp; HANDOVER</text>
+  <rect x="1010" y="488" width="434" height="308" rx="18" fill="#FFFFFF" stroke="#E1E6EE"/>
+  <text x="1044" y="538" fill="#304155" font-size="19" font-family="Arial, sans-serif">[x] Host inventory updated</text>
+  <text x="1044" y="586" fill="#304155" font-size="19" font-family="Arial, sans-serif">[x] VM placement verified</text>
+  <text x="1044" y="634" fill="#304155" font-size="19" font-family="Arial, sans-serif">[x] Monitoring alert test complete</text>
+  <text x="1044" y="682" fill="#304155" font-size="19" font-family="Arial, sans-serif">[x] Backup / replica validation</text>
+  <text x="1044" y="730" fill="#304155" font-size="19" font-family="Arial, sans-serif">[x] Ops runbook / contact tree handover</text>
+  <rect x="1010" y="824" width="434" height="36" rx="12" fill="#E9F6EE"/>
+  <text x="1227" y="848" fill="#1F7A4C" font-size="18" font-family="Arial, sans-serif" text-anchor="middle">Handover Ready / Operations Sign-off</text>
+</svg>
